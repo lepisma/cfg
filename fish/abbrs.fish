@@ -1,8 +1,8 @@
 # Abbreviations
 
 # Apt-get (fast)
-abbr -a af "apt-fast"
-abbr -a ac "apt-cache"
+abbr -a ag "sudo apt-get"
+abbr -a ac "sudo apt-cache"
 
 # NVM
 abbr -a ni "nvm use node"

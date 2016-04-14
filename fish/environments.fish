@@ -11,6 +11,7 @@ set -x NOTES_DIR /media/lepisma/Dropbox/Journal/
 
 # Python environments
 set PATH ~/tools/anaconda/bin $PATH
+set PATH ~/tools/go/bin $PATH
 
 # Torch to path
 bass source ~/tools/torch/install/bin/torch-activate
