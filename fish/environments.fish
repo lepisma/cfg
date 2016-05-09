@@ -20,5 +20,7 @@ bass source ~/tools/torch/install/bin/torch-activate
 set PATH ~/tools/anaconda/bin $PATH
 set PATH ~/tools/go/bin $PATH
 set PATH /usr/local/cuda-7.5/bin $PATH
+set PATH ~/.cargo/bin $PATH
+set PATH ~/tools/processing-3.0.2 $PATH
 
 set LD_LIBRARY_PATH /usr/local/cuda-7.5/lib64: $LD_LIBRARY_PATH

@@ -1,0 +1,43 @@
+@-moz-document domain("facebook.com") {
+    @namespace url(http://www.w3.org/1999/xhtml);
+    #BuddylistPagelet,
+    #suggestedNav,
+    #groupsNav,
+    #appsNav,
+    #listsNav,
+    #interestsNav,
+    #pagesNav,
+    #developerNav,
+    #eventsNav {
+        display: none;
+    }
+    #blueBarNAX Anchor {
+        box-shadow: 0px 0px 70px;
+    }
+    #pagelet_ego_pane {
+        display: none;
+    }
+    #rhc_col > div:nth-child(2),
+    #rhc_col > div:nth-child(3),
+    #rhc_col > div:nth-child(4),
+    #rhc_col > div:nth-child(5) {
+        display: none;
+    }
+    * {
+        font-family: "open sans";
+        font-size: 10px;
+    }
+    body,
+    #rightColContent > ul,
+    .fbTimelineCapsule,
+    #contentCol {
+        background: white !important;
+    }
+    div._3399._1f6t._4_dr {
+        display: none;
+    }
+
+    #u_0_2 > div:nth-child(1) > div:nth-child(1) > div > a > span {
+        font-size: 12px;
+    }
+}

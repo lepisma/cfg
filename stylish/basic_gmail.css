@@ -1,0 +1,177 @@
+@-moz-document domain("mail.google.com") {
+/* Defaults */
+
+* {
+    font-family: "Open Sans";
+}
+tr,
+td {
+    background: white;
+}
+/* Search bar things */
+
+#sbq {
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: #ddd;
+}
+#sbq:focus {
+    outline: none;
+    border-color: black;
+}
+/* Buttons and other inputs */
+
+input[type="submit"],
+input[type="button"],
+input[type="file"],
+select,
+.searchPageLink,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > a,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(6) > tbody > tr > td:nth-child(2) > a,
+body > table:nth-child(15) > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) > font:nth-child(3) > a,
+body > table:nth-child(15) > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) > font:nth-child(1) > a,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td > div > font > a,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(8) > tbody > tr > td:nth-child(2) > a {
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+    background: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf', GradientType=0);
+    background-color: #ededed;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #777777;
+    padding: 2px 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+    font-size: 11px;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="file"]:hover,
+select:hover,
+.searchPageLink:hover,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > a:hover,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(6) > tbody > tr > td:nth-child(2) > a:hover,
+body > table:nth-child(15) > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) > font:nth-child(3) > a:hover,
+body > table:nth-child(15) > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) > font:nth-child(1) > a:hover,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td > div > font > a:hover,
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(8) > tbody > tr > td:nth-child(2) > a:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+    background: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed', GradientType=0);
+    background-color: #dfdfdf;
+}
+a.searchPageLink,
+a.nu {
+    color: inherit;
+    text-decoration: none;
+}
+input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+}
+/* Topbar things */
+
+a.gb1,
+a.gb4,
+u {
+    text-decoration: none !important;
+    color: #929292 !important;
+}
+.gbh {
+    display: none;
+}
+body > table:nth-child(15) > tbody > tr:nth-child(3) > td > table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+body > table:nth-child(15) > tbody > tr:nth-child(3) > td > table > tbody > tr > td {
+    padding: 5px 30px;
+    border-radius: 4px;
+    color: white;
+    background: -webkit-repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+    background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+}
+body > table:nth-child(15) > tbody > tr:nth-child(3) > td > table > tbody > tr > td > b > a {
+    color: white !important;
+}
+body > table:nth-child(15) > tbody > tr:nth-child(1) > td:nth-child(1) {
+    vertical-align: top;
+}
+body > table:nth-child(15) > tbody > tr:nth-child(1) > td:nth-child(1) > h1 > a > img {
+    margin-top: 8px;
+}
+body > table:nth-child(15) > tbody > tr:nth-child(2) > td > table > tbody > tr > td:nth-child(2) {
+    display: inline-flex;
+    margin-top: 2px
+}
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table:nth-child(2) {
+    display: none;
+}
+/* Mail listing */
+
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > form {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > form > table.th {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: white;
+}
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > form > table.th > tbody > tr {
+    height: 40px;
+}
+
+/* Sidebar */
+body > table:nth-child(16) > tbody > tr > td:nth-child(1) > table.m > tbody > tr > td a {
+    text-decoration: none;
+    color: gray;
+}
+body > table:nth-child(16) > tbody > tr > td:nth-child(1) > table.m > tbody > tr > td a:hover {
+    color: black;
+}
+body > table:nth-child(16) > tbody > tr > td:nth-child(1) > table.m > tbody > tr:nth-child(4) > td a > img,
+body > table:nth-child(16) > tbody > tr > td:nth-child(1) > table.l {
+    display: none;
+}
+
+/* Inside view */
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table.h > tbody > tr > td > h2 > font > b {
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table.h > tbody > tr {
+    height: 50px;
+}
+
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > form > table.compose {
+    margin: 30px 0px;
+    width: 50%;
+}
+
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table:nth-child(1) > tbody > tr > td:nth-child(2) > table > tbody > tr > td > table.qr > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(2) > td > textarea {
+    margin: 30px 0px;
+}
+
+/* Footer */
+body > table:nth-child(16) > tbody > tr > td:nth-child(2) > table.ft {
+    display: none;
+}
+}
