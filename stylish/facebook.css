@@ -36,8 +36,14 @@
     div._3399._1f6t._4_dr {
         display: none;
     }
-
     #u_0_2 > div:nth-child(1) > div:nth-child(1) > div > a > span {
         font-size: 12px;
+    }
+    /* Hide fb trending and other side bar (right)*/
+
+    ._64b.fixed_elem,
+    #rhc_col > div:nth-child(6),
+    #pagelet_rhc_footer {
+        display: none;
     }
 }
