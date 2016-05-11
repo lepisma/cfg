@@ -3,9 +3,6 @@
 # BEETSDIR
 set -x BEETSDIR /media/lepisma/Data/Music/
 
-# NVM mirror
-set -x NVM_NODEJS_ORG_MIRROR http://nodejs.org/dist
-
 # Deft notes
 set -x NOTES_DIR /media/lepisma/Dropbox/Journal/
 
@@ -21,6 +18,6 @@ set PATH ~/tools/anaconda/bin $PATH
 set PATH ~/tools/go/bin $PATH
 set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH ~/.cargo/bin $PATH
-set PATH ~/tools/processing-3.0.2 $PATH
+set PATH ~/tools/processing $PATH
 
 set LD_LIBRARY_PATH /usr/local/cuda-7.5/lib64: $LD_LIBRARY_PATH
