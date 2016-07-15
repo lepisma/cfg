@@ -10,6 +10,9 @@ set -x NOTES_DIR /media/lepisma/Dropbox/Journal/
 set -x GOROOT ~/tools/go
 set -x GOPATH ~/.go
 
+# Racer
+set -x RUST_SRC_PATH ~/tools/rustc-1.10.0/src
+
 # Torch
 bass source ~/tools/torch/install/bin/torch-activate
 
