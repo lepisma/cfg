@@ -23,6 +23,7 @@ bass source ~/tools/torch/install/bin/torch-activate
 # Path
 set PATH ~/tools/anaconda/bin $PATH
 set PATH ~/tools/go/bin $PATH
+set PATH ~/.go/bin $PATH
 set PATH /usr/local/cuda-7.5/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH ~/tools/processing $PATH
