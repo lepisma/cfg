@@ -1,4 +1,4 @@
-# Abbreviations
+# Abbreviations and aliases
 
 # Apt-get (fast)
 abbr -a ag "sudo apt-get"
@@ -12,3 +12,6 @@ abbr -a x "xdg-open"
 
 # Android keyboard init
 abbr -a ak "adb forward tcp:7777 tcp:7777; xdg-open 'http://localhost:7777'"
+
+# Set gpg2 as gpg (14.04)
+alias gpg gpg2
