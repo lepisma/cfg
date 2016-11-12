@@ -1,3 +1,3 @@
 # Deploy config
 
-cp -r *.fish ./functions fishfile ~/.config/fish
+cp -r *.fish fishfile ~/.config/fish
