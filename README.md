@@ -1,3 +1,3 @@
-# Config
+# cfg
 
 Config files and scripts
