@@ -1,0 +1,230 @@
+# plasma-applet-tomatoid language translation file.
+# Copyright (C) 2013 Arthur Taborda
+# This file is distributed under the same license as the plasma-applet-tomatoid package.
+# 
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-29 21:13-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. i18n: file: ../config/main.xml:10
+#. i18n: file: ../config/main.xml:14
+#: ../ui/main.qml:104 rc.js:71 rc.js:73
+msgid "Tasks"
+msgstr ""
+
+#: ../ui/main.qml:105
+msgid "Completed"
+msgstr ""
+
+#: ../ui/main.qml:199
+msgid "Pomodoro completed"
+msgstr ""
+
+#: ../ui/main.qml:199
+msgid "Great job! Now take a break and relax for a moment."
+msgstr ""
+
+#: ../ui/main.qml:203
+msgid "Relax time is over"
+msgstr ""
+
+#: ../ui/main.qml:203
+msgid "Get back to work. Choose a task and start again."
+msgstr ""
+
+#: ../ui/TopBar.qml:34
+msgid "Running pomodoro #"
+msgstr ""
+
+#: ../ui/TopBar.qml:36
+msgid "Break time!"
+msgstr ""
+
+#: ../ui/TopBar.qml:53
+msgid "The estimation of pomodoros necessary to complete this task"
+msgstr ""
+
+#: ../ui/TopBar.qml:58
+msgid "Est."
+msgstr ""
+
+#: ../ui/TopBar.qml:71
+msgid "Task Name"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:27
+#. i18n: ectx: attribute (title), widget (QWidget, general)
+#: rc.js:3
+msgid "General"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:39
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.js:6
+msgid "Play ticking sound"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:58
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.js:9
+msgid "Show icon timer"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:213
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_flatIconTheme)
+#: rc.js:12
+msgid "Flat"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:223
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_simpleIconTheme)
+#: rc.js:15
+msgid "Simple"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:252
+#. i18n: ectx: property (toolTip), widget (QLabel, label_9)
+#: rc.js:18
+msgid ""
+"Make next pomodoro start automatically after a break. Stop after long break."
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:258
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.js:21
+msgid "Continuous mode"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:274
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.js:24
+msgid "Icon theme"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:283
+#. i18n: ectx: attribute (title), widget (QWidget, time)
+#: rc.js:27
+msgid "Time"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:295
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.js:30
+msgid "Short break lenght"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:314
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_pomodorosPerLongBreak)
+#: rc.js:33
+msgid " pomodoros"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:352
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.js:36
+msgid "Pomodoros/long break"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:368
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.js:39
+msgid "Long break lenght"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:387
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_pomodoroLenght)
+#. i18n: file: ../ui/config.ui:428
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_shortBreakLenght)
+#. i18n: file: ../ui/config.ui:488
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_longBreakLenght)
+#: rc.js:42 rc.js:45 rc.js:51
+msgid " minutes"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:469
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.js:48
+msgid "Pomodoro lenght"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:519
+#. i18n: ectx: attribute (title), widget (QWidget, notification)
+#: rc.js:54
+msgid "Notification"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:531
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_playNotificationSound)
+#: rc.js:57
+msgid "Play notification sound"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:547
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.js:60
+msgid "Notification action"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:559
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_popupNotification)
+#: rc.js:63
+msgid "Pop up tomatoid"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:575
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_kdeNotification)
+#: rc.js:66
+msgid "Standart KDE notification"
+msgstr ""
+
+#. i18n: file: ../ui/config.ui:588
+#. i18n: ectx: property (text), widget (QRadioButton, kcfg_noNotification)
+#: rc.js:69
+msgid "Do nothing"
+msgstr ""
+
+#. i18n: file: ../config/main.xml:19
+#: rc.js:75
+msgid "The lenght in minutes of one pomodoro"
+msgstr ""
+
+#. i18n: file: ../config/main.xml:23
+#: rc.js:77
+msgid "The lenght in minutes of a short break"
+msgstr ""
+
+#. i18n: file: ../config/main.xml:27
+#: rc.js:79
+msgid "The lenght in minutes of a long break"
+msgstr ""
+
+#. i18n: file: ../config/main.xml:31
+#: rc.js:81
+msgid "The amount of pomodoros needed to take a long break"
+msgstr ""
+
+#. i18n: file: ../config/main.xml:36
+#: rc.js:83
+msgid "Make the timer in icon visible"
+msgstr ""
+
+#: rc.js:84
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: rc.js:85
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

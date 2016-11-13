@@ -1,0 +1,18 @@
+#
+# Spacemacs requirements
+#
+jedi
+json-rpc
+service_factory
+flake8
+autoflake
+yapf
+#
+# Personal utilities
+#
+hy
+grip
+eep
+git+https://github.com/lepisma/u@python
+cookiecutter
+youtube_dl

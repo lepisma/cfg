@@ -1,0 +1,17 @@
+#Caledonia KSplash Theme created by Malcer Quaid <malcer@gmx.com> for the Caledonia Suite. This is a official component.
+#Some rights reserved. Creative Commons BY-SA.
+
+SCALE ON
+BACKGROUND_IMAGE 0 0 background.jpeg
+SCALE OFF
+
+IMAGE_REL CC 0 0 CC progress0.png
+#WAIT_STATE initial
+IMAGE_REL CC 0 0 CC progress1.png
+WAIT_STATE kcminit
+IMAGE_REL CC 0 0 CC progress2.png
+WAIT_STATE wm
+IMAGE_REL CC 0 0 CC progress3.png
+WAIT_STATE desktop
+IMAGE_REL CC 0 0 CC progress4.png
+WAIT_STATE ready

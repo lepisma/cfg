@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+	http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+		<kcfgfile name=""/>
+
+		<group name="General">
+			<entry name="incompleteTasks" type="String">
+				<label>Tasks</label>
+				<default></default>
+			</entry>
+			<entry name="completeTasks" type="String">
+				<label>Tasks</label>
+				<default></default>
+			</entry>
+
+			<entry name="pomodoroLenght" type="Int">
+				<label>The lenght in minutes of one pomodoro</label>
+				<default>25</default>
+			</entry>
+			<entry name="shortBreakLenght" type="Int">
+				<label>The lenght in minutes of a short break</label>
+				<default>5</default>
+			</entry>
+			<entry name="longBreakLenght" type="Int">
+				<label>The lenght in minutes of a long break</label>
+				<default>20</default>
+			</entry>
+			<entry name="pomodorosPerLongBreak" type="Int">
+				<label>The amount of pomodoros needed to take a long break</label>
+				<default>4</default>
+			</entry>
+
+			<entry name="showIconTimer" type="Bool">
+				<label>Make the timer in icon visible</label>
+				<default>true</default>
+			</entry>
+			<entry name="flatIconTheme" type="Bool">
+				<default>true</default>
+			</entry>
+			<entry name="simpleIconTheme" type="Bool">
+				<default>false</default>
+			</entry>
+
+			<entry name="continuousMode" type="Bool">
+				<default>false</default>
+			</entry>
+
+			<entry name="playTickingSound" type="Bool">
+				<default>false</default>
+			</entry>
+			<entry name="tickingVolume" type="Int">
+				<default>50</default>
+			</entry>
+
+			<entry name="playNotificationSound" type="Bool">
+				<default>true</default>
+			</entry>
+			<entry name="popupNotification" type="Bool">
+				<default>true</default>
+			</entry>
+			<entry name="kdeNotification" type="Bool">
+				<default>false</default>
+			</entry>
+			<entry name="noNotification" type="Bool">
+				<default>false</default>
+			</entry>			
+			<entry name="actionStartTimer" type="String">
+				<default></default>
+			</entry>			
+			<entry name="actionStartBreak" type="String">
+				<default></default>
+			</entry>			
+			<entry name="actionEndBreak" type="String">
+				<default></default>
+			</entry>			
+			<entry name="actionEndCycle" type="String">
+				<default></default>
+			</entry>
+		</group>
+</kcfg>
