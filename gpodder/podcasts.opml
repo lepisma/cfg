@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="2.0">
+    <head>
+        <title>gPodder subscriptions</title>
+        <dateCreated>Sun, 13 Nov 2016 12:38:20 -0500</dateCreated>
+    </head>
+    <body>
+        <outline text="Human conversation about machine learning" title="Talking Machines" type="rss" xmlUrl="http://www.thetalkingmachines.com/blog/?format=RSS"/>
+        <outline text="Your Escape to Reality" title="The Skeptics' Guide to the Universe" type="rss" xmlUrl="http://www.theskepticsguide.org/feed/sgu"/>
+        <outline text="The Changelog" title="The Changelog" type="rss" xmlUrl="http://feeds.5by5.tv/changelog"/>
+        <outline text="Science meets comedy and pop culture on StarTalk …" title="StarTalk Radio" type="rss" xmlUrl="http://feeds.soundcloud.com/users/soundcloud%3Ausers%3A38128127/sounds.rss"/>
+        <outline text="Stuff You Should Know" title="Stuff You Should Know" type="rss" xmlUrl="http://www.howstuffworks.com/podcasts/stuff-you-should-know.rss"/>
+        <outline text="The data of everything" title="Partially Derivative" type="rss" xmlUrl="http://feeds.feedburner.com/PartiallyDerivative"/>
+    </body>
+</opml>
