@@ -1,0 +1,63 @@
+# The default backend
+backend : TkAgg
+toolbar : None
+
+# Keymap
+keymap.fullscreen : f               # toggling
+keymap.home : h, r, home            # home or reset mnemonic
+keymap.back : left, c, backspace    # forward / backward keys to enable
+keymap.forward : right, v           # left handed quick navigation
+keymap.pan : p                      # pan mnemonic
+keymap.zoom : o                     # zoom mnemonic
+keymap.save : s                     # saving current figure
+keymap.quit : ctrl+w, cmd+w, q      # close the current figure
+keymap.grid : g                     # switching on/off a grid in current axes
+keymap.yscale : l                   # toggle scaling of y-axes ('log'/'linear')
+keymap.xscale : L, k                # toggle scaling of x-axes ('log'/'linear')
+keymap.all_axes : a                 # enable all axes
+
+# Color scheme
+lines.linewidth : 2
+lines.solid_capstyle : butt
+
+legend.fancybox : true
+legend.fontsize : medium
+
+axes.prop_cycle : cycler('color', ['30a2da', 'fc4f30', 'e5ae38', '6d904f', '8b8b8b'])
+axes.facecolor : f0f0f0
+axes.labelsize : small
+axes.axisbelow : true
+axes.grid : true
+axes.edgecolor : f0f0f0
+axes.linewidth : 2.0
+axes.titlesize : large
+
+image.cmap : rainbow
+
+patch.edgecolor : f0f0f0
+patch.linewidth : 0.5
+
+svg.fonttype : path
+
+grid.linestyle : -
+grid.linewidth : 1.0
+grid.color : cbcbcb
+
+xtick.major.size : 0
+xtick.minor.size : 0
+ytick.major.size : 0
+ytick.minor.size : 0
+
+font.size : 10.0
+
+savefig.format : png
+savefig.transparent : True
+savefig.edgecolor : f0f0f0
+savefig.facecolor : f0f0f0
+
+figure.titlesize : large
+figure.figsize : 8, 6
+figure.subplot.left : 0.08
+figure.subplot.right : 0.95 
+figure.subplot.bottom : 0.07
+figure.facecolor : f0f0f0
