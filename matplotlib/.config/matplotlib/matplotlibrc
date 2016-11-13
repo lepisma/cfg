@@ -20,6 +20,9 @@ keymap.all_axes : a                 # enable all axes
 lines.linewidth : 2
 lines.solid_capstyle : butt
 
+xtick.labelsize : small
+ytick.labelsize : small
+
 legend.fancybox : true
 legend.fontsize : medium
 
