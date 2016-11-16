@@ -12,6 +12,10 @@ clicks_in_new_buffer_button = 1;
 
 session_auto_save_auto_load = true;
 
+// Use letters for hint
+hint_digits = "abcdefghijklmnopqrstuvwxyz";
+hints_minibuffer_annotation_mode(true);
+
 // Mode line
 add_hook("mode_line_hook", mode_line_adder(buffer_count_widget), true);
 add_hook("mode_line_hook", mode_line_adder(loading_count_widget), true);
