@@ -15,20 +15,20 @@ enable_top_status_line(0);
 No_Backups = 1;
 Startup_With_File = 0;
 DISPLAY_TIME = -1; % 24 hours
-HIGHLIGHT	= 1;
+HIGHLIGHT = 1;
 WANT_SYNTAX_HIGHLIGHT = 1;
 
-LINENUMBERS	= 2;
+LINENUMBERS = 2;
 
-BLINK	= 1;
-TAB_DEFAULT	= 2;
+BLINK = 1;
+TAB_DEFAULT = 2;
 USE_TABS = 0;
 
 Tab_Always_Inserts_Tab = 0;
 
 WRAP_DEFAULT = 72;
-ADD_NEWLINE	= 1;
-IGNORE_BEEP	= 3;
+ADD_NEWLINE = 1;
+IGNORE_BEEP = 3;
 _traceback = 1;
 WRAP_INDENTS = 0;
 
