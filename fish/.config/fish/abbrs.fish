@@ -3,6 +3,7 @@
 # Apt-get
 abbr -a g "sudo apt-get"
 abbr -a c "sudo apt-cache"
+abbr -a up "sudo apt-get update; sudo apt-get upgrade"
 
 # Youtube-dl
 abbr -a yt "youtube-dl --external-downloader=aria2c"
