@@ -1,0 +1,31 @@
+#! /usr/bin/env hy
+
+(import [sh [notify-send]])
+(import [markdown [markdown]])
+(import [time [sleep]])
+
+
+(setv work-time (* 60 30))
+(setv break-time (* 60 5))
+
+(setv notify (.bake notify-send
+                    :u "critical"
+                    :t 10000
+                    :a "pom"))
+(setv m markdown)
+
+(defn take-a-break []
+  "Break time notification"
+  (notify (m "##Break time")
+          (m "Take a break. Go eat/drink something !")
+          :i "applications-toys"))
+
+(defn start-work []
+  "Work time notification"
+  (notify (m "##Work time")
+          (m "Time to get things done !")
+          :i "task-reminder"))
+
+;; Main loop
+(while True
+  (start-work) (sleep work-time) (take-a-break) (sleep break-time))
