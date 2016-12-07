@@ -1,4 +1,4 @@
-#! /usr/bin/env hy
+#!/usr/bin/env hy
 
 (import [sh [notify-send]])
 (import [markdown [markdown]])
