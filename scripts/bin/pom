@@ -3,6 +3,7 @@
 (import [sh [notify-send]])
 (import [markdown [markdown]])
 (import [time [sleep]])
+(import [cellbell [ding]])
 
 
 (setv work-time (* 60 30))
@@ -16,12 +17,14 @@
 
 (defn take-a-break []
   "Break time notification"
+  (ding)
   (notify (m "##Break time")
           (m "Take a break. Go eat/drink something !")
           :i "applications-toys"))
 
 (defn start-work []
   "Work time notification"
+  (ding)
   (notify (m "##Work time")
           (m "Time to get things done !")
           :i "task-reminder"))
