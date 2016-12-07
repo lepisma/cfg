@@ -22,3 +22,5 @@ pyyaml
 docopt
 tabulate
 pyfiglet
+twine
+cellbell
