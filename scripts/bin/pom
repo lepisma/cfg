@@ -18,15 +18,15 @@
 (defn take-a-break []
   "Break time notification"
   (ding)
-  (notify (m "##Break time")
-          (m "Take a break. Go eat/drink something !")
+  (notify (m "###Break time")
+          "Take a break. Go eat/drink something !"
           :i "applications-toys"))
 
 (defn start-work []
   "Work time notification"
   (ding)
-  (notify (m "##Work time")
-          (m "Time to get things done !")
+  (notify (m "###Work time")
+          "Time to get things done !"
           :i "task-reminder"))
 
 ;; Main loop
