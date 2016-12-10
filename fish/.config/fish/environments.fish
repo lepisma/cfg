@@ -15,6 +15,7 @@ set -x NAME Abhinav Tushar
 
 set PATH ~/bin $PATH
 set PATH ~/tools/anaconda/bin $PATH
+set PATH ~/tools/Nim/bin $PATH
 set PATH ~/.nimble/bin $PATH
 set PATH /usr/local/cuda-8.0/bin $PATH
 
