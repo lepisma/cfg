@@ -17,6 +17,7 @@ set PATH ~/bin $PATH
 set PATH ~/tools/anaconda/bin $PATH
 set PATH ~/tools/Nim/bin $PATH
 set PATH ~/.nimble/bin $PATH
+set PATH ~/.cargo/bin $PATH
 set PATH /usr/local/cuda-8.0/bin $PATH
 
 set LD_LIBRARY_PATH /usr/local/cuda-8.0/lib64: $LD_LIBRARY_PATH
