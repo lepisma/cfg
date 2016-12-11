@@ -25,3 +25,14 @@ function py
     return 1
   end
 end
+
+
+# Install zipped fonts
+function install-fonts
+  for zipped in *.zip
+    unzip -o $zipped "*tf" -d /var/tmp
+  end
+
+  sudo cp /var/tmp/*tf /usr/share/fonts/
+  fc-cache -f -v
+end
