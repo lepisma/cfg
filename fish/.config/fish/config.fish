@@ -36,3 +36,19 @@ function install-fonts
   sudo cp /var/tmp/*tf /usr/share/fonts/
   fc-cache -f -v
 end
+
+# Pip shorthands
+function p
+  if count $argv > /dev/null
+    switch $argv[1]
+      case "i"
+        pip install $argv[2..-1]
+      case "r"
+        pip uninstall $argv[2..-1]
+      case "g"
+        pipreqs --force "./"
+    end
+  else
+    return 1
+  end
+end
