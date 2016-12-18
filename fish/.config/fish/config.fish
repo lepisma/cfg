@@ -46,7 +46,7 @@ function p
       case "r"
         pip uninstall $argv[2..-1]
       case "g"
-        pipreqs --force "./"
+        pipreqs --force ./
     end
   else
     return 1

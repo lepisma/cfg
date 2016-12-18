@@ -1,4 +1,4 @@
-#! /usr/bin/env fish
+#!/usr/bin/env fish
 
 # Setup symlinks
 set linkDirs bibtex conkeror fish jed git matplotlib scripts
