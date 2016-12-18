@@ -2,7 +2,7 @@
 
 # Install packages from ./packges
 
-echo "Install apt packages"
+echo "Installing apt packages"
 cat ./packages/apt | read -z -a packages
 sudo apt-get install $packages
 
