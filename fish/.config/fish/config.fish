@@ -52,3 +52,19 @@ function p
     return 1
   end
 end
+
+# Do the most sensible thing
+function do
+  if count $argv > /dev/null
+    switch (echo $argv[1] | hiss "(.split \".\") (last) (.lower)")
+      case "gz"
+        tar xvf $argv[1]
+      case "zip"
+        unzip $argv[1]
+      case "*"
+        xdg-open $argv[1]
+    end
+  else
+    return 1
+  end
+end
