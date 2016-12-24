@@ -5,26 +5,23 @@
 (import [time [sleep]])
 
 
-(setv work-time (* 60 30))
-(setv break-time (* 60 5))
+(def work-time (* 60 30))
+(def break-time (* 60 5))
 
-(setv notify (.bake notify-send
-                    :u "critical"
-                    :t 10000
-                    :a "pom"))
-(setv m markdown)
+(def notify (.bake notify-send
+                   :u "critical"
+                   :t 10000
+                   :a "pom"))
 
 (defn take-a-break []
   "Break time notification"
-  (notify (m "###Break time")
-          "Take a break. Go eat/drink something !"
-          :i "applications-toys"))
+  (notify (markdown "###Break time")
+          "Take a break. Go eat/drink something !"))
 
 (defn start-work []
   "Work time notification"
-  (notify (m "###Work time")
-          "Time to get things done !"
-          :i "task-reminder"))
+  (notify (markdown "###Work time")
+          "Time to get things done !"))
 
 ;; Main loop
 (while True
