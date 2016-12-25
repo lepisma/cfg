@@ -63,6 +63,12 @@ function do
         unzip $argv[1]
       case "deb"
         sudo dpkg -i $argv[1]
+      case "py"
+        python $argv[1]
+      case "hy"
+        hy $argv[1]
+      case "js"
+        node $argv[1]
       case "*"
         xdg-open $argv[1]
     end
