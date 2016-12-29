@@ -23,3 +23,4 @@ abbr -a v "sudo openconnect --juniper sslvpn.umass.edu"
 
 # Better colors
 alias ls "exa"
+alias sl "exa"
