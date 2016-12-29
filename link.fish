@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # Setup symlinks
-set linkDirs bibtex conkeror fish jed git matplotlib scripts
+set linkDirs bibtex conkeror fish jed git matplotlib scripts redshift
 
 for directory in $linkDirs
   stow -t ~/ $directory
