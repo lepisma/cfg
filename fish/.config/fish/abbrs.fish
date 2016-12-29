@@ -1,9 +1,9 @@
 # Abbreviations and aliases
 
 # Apt-get
-abbr -a g "sudo apt-get"
+abbr -a g "sudo apt"
 abbr -a c "sudo apt-cache"
-abbr -a up "sudo apt-get update; sudo apt-get upgrade"
+abbr -a up "sudo apt update; sudo apt upgrade"
 
 # Youtube-dl
 abbr -a yt "youtube-dl --external-downloader=aria2c"
