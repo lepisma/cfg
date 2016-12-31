@@ -3,6 +3,7 @@
 (import [sh [notify-send]])
 (import [markdown [markdown]])
 (import [time [sleep]])
+(import [setproctitle [setproctitle]])
 
 
 (def work-time (* 60 30))
@@ -23,6 +24,8 @@
   (notify (markdown "###Work time")
           "Time to get things done !"))
 
-;; Main loop
-(while True
-  (start-work) (sleep work-time) (take-a-break) (sleep break-time))
+(defmain [&rest args]
+  (progn
+   (setproctitle "pom")
+   (while True
+     (start-work) (sleep work-time) (take-a-break) (sleep break-time))))

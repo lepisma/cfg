@@ -30,3 +30,4 @@ discogs_client
 tqdm
 jupyter_contrib_nbextensions
 pipreqs
+setproctitle
