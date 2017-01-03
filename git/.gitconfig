@@ -1,5 +1,8 @@
 [user]
   name = Abhinav Tushar
-  email = abhinav.tushar.vs@gmail.com
+	email = abhinav.tushar.vs@gmail.com
+	signingkey = 24C44C69
 [core]
-  editor = jed
+	editor = jed
+[commit]
+	gpgsign = true
