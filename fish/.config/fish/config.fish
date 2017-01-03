@@ -53,6 +53,11 @@ function p
   end
 end
 
+# Download
+function dl
+  aria2c $argv
+end
+
 # Do the most sensible thing
 function do
   if count $argv > /dev/null
