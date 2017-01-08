@@ -33,3 +33,6 @@ sheet.append("style.css");
 register_user_stylesheet(make_uri(sheet));
 
 content_handlers.set("application/pdf", content_handler_save);
+
+// Extensions
+session_pref("xpinstall.whitelist.required", false);
