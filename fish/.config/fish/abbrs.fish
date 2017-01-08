@@ -1,8 +1,7 @@
 # Abbreviations and aliases
 
 # Apt-get
-abbr -a g "sudo apt"
-abbr -a c "sudo apt-cache"
+abbr -a a "sudo apt"
 abbr -a up "sudo apt update; sudo apt upgrade"
 abbr -a cl "sudo apt autoremove; sudo apt autoclean"
 
@@ -24,3 +23,4 @@ abbr -a v "sudo openconnect --juniper sslvpn.umass.edu"
 # Better colors
 alias ls "exa"
 alias sl "exa"
+alias g "git"

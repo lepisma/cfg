@@ -6,3 +6,5 @@
 	editor = jed
 [commit]
 	gpgsign = true
+[alias]
+	s = status
