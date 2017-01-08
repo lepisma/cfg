@@ -82,6 +82,11 @@ function do
   end
 end
 
+# Wrapper for q
+function q
+  python2 (which q)
+end
+
 # Tablet default keyset
 function huion-set
   xsetwacom --set "HUION PenTablet Pad pad" Button 1 "key +ctrl +z -z -ctrl"
