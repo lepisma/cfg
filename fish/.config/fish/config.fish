@@ -64,6 +64,8 @@ function do
     switch (echo $argv[1] | hiss "(.split \".\") (last) (.lower)")
       case "gz"
         tar xvf $argv[1]
+      case "xz"
+        tar xvf $argv[1]
       case "zip"
         unzip $argv[1]
       case "deb"
