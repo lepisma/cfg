@@ -4,6 +4,7 @@
 abbr -a a "sudo apt"
 abbr -a up "sudo apt update; sudo apt upgrade"
 abbr -a cl "sudo apt autoremove; sudo apt autoclean"
+abbr -a s "sudo"
 
 # Youtube-dl
 abbr -a yt "youtube-dl --external-downloader=aria2c"
