@@ -26,6 +26,10 @@ function py
   end
 end
 
+# Conkeror
+function conkeror
+  firefox -app ~/tools/conkeror/application.ini $argv
+end
 
 # Install zipped fonts
 function install-fonts
@@ -51,11 +55,6 @@ function p
   else
     return 1
   end
-end
-
-# Download
-function dl
-  aria2c $argv
 end
 
 # Do the most sensible thing
