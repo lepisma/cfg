@@ -1,9 +1,6 @@
 {
-  "*.html": {
-    "tabsize": 2
-  },
-  "*.js": {
-    "tabsize": 2
+  "*.py": {
+    "tabsize": 4
   },
   "autoclose": true,
   "autoindent": true,
@@ -32,6 +29,6 @@
   "splitRight": true,
   "statusline": true,
   "syntax": true,
-  "tabsize": 4,
+  "tabsize": 2,
   "tabstospaces": true
 }
