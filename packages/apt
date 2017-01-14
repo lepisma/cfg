@@ -1,5 +1,4 @@
 stow
-jed
 redshift
 pandoc
 tree
@@ -9,6 +8,10 @@ gparted
 bleachbit
 mplayer
 libnotify-bin
-jekyll
-qtpass
 git-extras
+emacs-snapshot
+krita
+gimp
+inkscape
+pulseaudio-equalizer
+fish
