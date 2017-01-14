@@ -24,3 +24,7 @@ pip install -r ./python
 echo -e "\n>> Installing node packages\n"
 yarn global add $(grep -vE "^\s*#" ./node  | tr "\n" " ")
 echo -e "\n"
+
+echo -e "\n>> Installing cargo packages\n"
+cargo install $(grep -vE "^\s*#" ./cargo  | tr "\n" " ")
+echo -e "\n"
