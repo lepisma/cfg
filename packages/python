@@ -32,3 +32,4 @@ jupyter_contrib_nbextensions
 pipreqs
 setproctitle
 thefuck
+csvkit
