@@ -3,7 +3,7 @@
 	email = abhinav.tushar.vs@gmail.com
 	signingkey = 24C44C69
 [core]
-	editor = jed
+	editor = micro
 [commit]
 	gpgsign = true
 [alias]

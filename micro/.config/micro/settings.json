@@ -1,0 +1,37 @@
+{
+  "*.html": {
+    "tabsize": 2
+  },
+  "*.js": {
+    "tabsize": 2
+  },
+  "autoclose": true,
+  "autoindent": true,
+  "autosave": false,
+  "colorcolumn": 0,
+  "colorscheme": "default",
+  "cursorline": true,
+  "eofnewline": false,
+  "ignorecase": false,
+  "indentchar": " ",
+  "infobar": true,
+  "keepautoindent": false,
+  "linter": true,
+  "pluginchannels": [
+    "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
+  ],
+  "pluginrepos": [],
+  "rmtrailingws": false,
+  "ruler": true,
+  "savecursor": false,
+  "saveundo": false,
+  "scrollmargin": 3,
+  "scrollspeed": 2,
+  "softwrap": true,
+  "splitBottom": true,
+  "splitRight": true,
+  "statusline": true,
+  "syntax": true,
+  "tabsize": 4,
+  "tabstospaces": true
+}
