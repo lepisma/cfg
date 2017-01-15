@@ -10,9 +10,13 @@ set -x NOTES_DIR /media/lepisma/Data/Cloud/Journal/
 set -x EMAIL abhinav.tushar.vs@gmail.com
 set -x NAME Abhinav Tushar
 
-# PATH
-# ----
+set -x EDITOR micro
+set -x RTV_EDITOR micro
+set -x BROWSER w3m
+set -x PAGER less
+set -x RTV_URLVIEWER urlscan
 
+# PATH
 set PATH ~/bin $PATH
 set PATH ~/tools/anaconda/bin $PATH
 set PATH ~/tools/Nim/bin $PATH

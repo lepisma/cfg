@@ -33,3 +33,5 @@ pipreqs
 setproctitle
 thefuck
 csvkit
+rtv
+glances
