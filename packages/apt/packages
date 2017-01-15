@@ -18,5 +18,8 @@ fish
 silversearcher-ag
 feh
 mpv
+mpd
+mpc
+vlc
 w3m
 urlscan
