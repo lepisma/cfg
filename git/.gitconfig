@@ -8,3 +8,6 @@
 	gpgsign = true
 [alias]
 	s = status
+	c = commit
+	p = push
+	a = add
