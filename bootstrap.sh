@@ -19,7 +19,7 @@ fi
 
 if [ $1 == "link" ]; then
     echo -e ">> Setting up symlinks\n"
-    to_stow=( conkeror fish git matplotlib scripts redshift theano micro rtv mpd )
+    to_stow=( conkeror fish git matplotlib scripts redshift theano micro rtv mpd beets )
     for dir in ${to_stow[@]}; do
         stow -t ~/ $dir
     done
