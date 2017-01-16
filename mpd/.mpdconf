@@ -1,0 +1,4 @@
+music_directory "/media/lepisma/Data/Music"
+
+db_file "~/.config/mpd/database"
+log_file "~/.config/mpd/log"
