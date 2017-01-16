@@ -45,7 +45,7 @@ play:
   command: mplayer $args -playlist
 smartplaylist:
   relative_to: /media/lepisma/Data/Music
-  playlist_dir: ~/.mpd/playlists
+  playlist_dir: /media/lepisma/Data/Music/Playlists
   playlists:
     - name: all.m3u
       query: ""
