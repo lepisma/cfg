@@ -6,7 +6,7 @@ echo "/ __| | __| | '_ \ / _\` |/ __| |/ /"
 echo "\__ \ | |_  | |_) | (_| | (__|   <  "
 echo "|___/_|\__| |_.__/ \__,_|\___|_|\_\ "
 echo "                                    "
-echo -e "--------------------------------------\n"
+echo "--------------------------------------"
 
 help_and_die () {
     echo -e ">> usage: bootstrap <link|packages>"
@@ -18,11 +18,21 @@ if [ ! $# == 1 ]; then
 fi
 
 if [ $1 == "link" ]; then
-    echo -e ">> Setting up symlinks\n"
+    echo -e "\n>> Setting up symlinks"
     to_stow=( conkeror fish git matplotlib scripts redshift theano micro rtv mpd beets )
     for dir in ${to_stow[@]}; do
         stow -t ~/ $dir
+        echo "✓ $dir"
     done
+
+    echo -e "\n>> Copying stuff needing modifications"
+    to_copy=( mopidy/.config )
+
+    for dir in ${to_copy[@]}; do
+        cp -r $dir ~/
+        echo "✓ $dir"
+    done
+    echo ""
 elif [ $1 == "packages" ]; then
     cd ./packages
     bash ./setup.sh
