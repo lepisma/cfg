@@ -35,6 +35,9 @@ function mu
         mpc ls | mpc add; and mpc shuffle; and mpc play
       case "up"
         mpc update --wait
+      case "l"
+        # Love track on last.fm
+        mpc sendmessage mpdas love
       case "*"
         echo "Invalid argument"
         return 1
