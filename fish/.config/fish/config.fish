@@ -26,6 +26,27 @@ function py
   end
 end
 
+# MPD stuff
+function mu
+  if count $argv > /dev/null
+    switch $argv[1]
+      case "p"
+        echo "Playing all songs on shuffle"
+        mpc ls | mpc add; and mpc shuffle; and mpc play
+      case "up"
+        mpc update --wait
+      case "*"
+        echo "Invalid argument"
+        return 1
+    end
+  else
+    # Run daemon with scrobbler
+    echo "Starting mpd"
+    mpd --stderr
+    mpdas &
+  end
+end
+
 # Conkeror
 function conkeror
   firefox -app ~/tools/conkeror/application.ini $argv
