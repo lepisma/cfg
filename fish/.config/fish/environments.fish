@@ -12,6 +12,7 @@ set -x RTV_EDITOR micro
 set -x BROWSER w3m
 set -x PAGER less
 set -x RTV_URLVIEWER urlscan
+set -x XDG_MUSIC_DIR /media/lepisma/Data/Music
 
 # PATH
 set PATH ~/bin $PATH
