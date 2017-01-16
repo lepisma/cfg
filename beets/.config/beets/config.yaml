@@ -1,8 +1,10 @@
+# Main beets config
 directory: /media/lepisma/Data/Music
 library: /media/lepisma/Data/Music/beets.db
 import:
   copy: yes
   write: yes
+threaded: yes
 ui:
   color: yes
   colors:
@@ -13,28 +15,37 @@ ui:
     text_highlight_minor: lightgray
     action_default: turquoise
     action: blue
-threaded: yes
+
+# Plugins and config
 pluginpath:
   - /media/lepisma/Data/Projects/bbq/beetsplug
   - /media/lepisma/Data/Projects/jove/beetsplug
 plugins: >
-  chroma discogs fromfilename embedart
-  fetchart ftintitle play web jove bbq
-  mpdstats mpdupdate bpd smartplaylist
+  acousticbrainz bbq bpd chroma discogs duplicates edit embedart export fetchart
+  fromfilename ftintitle fuzzy info jove lastgenre lastimport lyrics mbsync
+  mpdstats mpdupdate play smartplaylist web
+bbq:
+  fields: artist title album
+chroma:
+  auto: no
+embedart:
+  remove_art_file: yes
+fetchart:
+  auto: yes
+  maxwidth: 500
+lastfm:
+  user: AbhinavTushar
+lastgenre:
+  auto: yes
+  canonical: yes
+  count: 5
+lyrics:
+  auto: yes
+play:
+  command: mplayer $args -playlist
 smartplaylist:
   relative_to: /media/lepisma/Data/Music
   playlist_dir: ~/.mpd/playlists
   playlists:
     - name: all.m3u
       query: ""
-bbq:
-  fields: artist title album
-play:
-  command: vlc
-chroma:
-  auto: no
-fetchart:
-  auto: yes
-  maxwidth: 500
-embedart:
-  remove_art_file: yes

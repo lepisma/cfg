@@ -39,3 +39,6 @@ proselint
 coala
 coala-bears
 python-mpd2
+pylast
+flask
+flask-cors
