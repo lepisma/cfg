@@ -24,6 +24,5 @@ abbr -a v "sudo openconnect --juniper sslvpn.umass.edu"
 # Aliases
 alias ls "exa"
 alias sl "exa"
-alias g "git"
 alias m "micro"
 alias dl "aria2c"

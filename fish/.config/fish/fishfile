@@ -1,8 +1,14 @@
 fisherman/await
 edc/bass
 oh-my-fish/theme-bobthefish
+fisherman/cprintf
+fisherman/debug
+fisherman/done
 fisherman/fnm
+fisherman/g2
 fisherman/get_file_age
+fisherman/getopts
+fisherman/git_util
 fisherman/last_job_id
 fisherman/menu
 simnalamburt/fish-sensible
