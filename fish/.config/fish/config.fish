@@ -97,7 +97,7 @@ end
 # Do the most sensible thing
 function do
   if count $argv > /dev/null
-    switch (echo $argv[1] | hiss "(.split \".\") (last) (.lower)")
+    switch (echo $argv[1] | awk -F . '{if (NF>1) {print $NF}}')
       case "gz"
         tar xvf $argv[1]
       case "xz"
