@@ -98,10 +98,14 @@ end
 function do
   if count $argv > /dev/null
     switch (echo $argv[1] | awk -F . '{if (NF>1) {print $NF}}')
-      case "gz"
+      case "gz" "xz"
         tar xvf $argv[1]
-      case "xz"
-        tar xvf $argv[1]
+      case "ace"
+        unace x $argv[1]
+      case "rar"
+        unrar x $argv[1]
+      case "7z"
+        7z x $argv[1]
       case "zip"
         unzip $argv[1]
       case "deb"
