@@ -27,7 +27,7 @@ function py
 end
 
 # Pomodoro
-function pom
+function _pom
   function _pom_notify
     notify-send -u "critical" -t 10000 -a "pom" $argv
   end
