@@ -26,6 +26,11 @@ function py
   end
 end
 
+# Not bc
+function :
+  python -c "print($argv)"
+end
+
 # Pomodoro
 function _pom
   function _pom_notify
