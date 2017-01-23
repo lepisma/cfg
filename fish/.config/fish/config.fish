@@ -3,6 +3,7 @@ set fish_greeting ""
 set fish_home ~/.config/fish
 
 # Source
+source $fish_home/music.fish
 source $fish_home/environments.fish
 source $fish_home/abbrs.fish
 
@@ -41,30 +42,6 @@ function _pom
     sleep 1800 # 30 mins
     _pom_notify "Break time" "Take a break, drink water etc."
     sleep 300 # 5 mins
-  end
-end
-
-# MPD stuff
-function mu
-  if count $argv > /dev/null
-    switch $argv[1]
-      case "p"
-        echo "Playing all songs on shuffle"
-        mpc ls | mpc add; and mpc shuffle; and mpc play
-      case "up"
-        mpc update --wait
-      case "l"
-        # Love track on last.fm
-        mpc sendmessage mpdas love
-      case "*"
-        echo "Invalid argument"
-        return 1
-    end
-  else
-    # Run daemon with scrobbler
-    echo "Starting mpd"
-    mpd --stderr
-    mpdas &
   end
 end
 
