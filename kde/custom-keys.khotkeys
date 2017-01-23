@@ -40,16 +40,16 @@ Type=SHORTCUT
 Uuid={942f339f-d53a-409d-bf1c-64d01d185d27}
 
 [Data_1_2]
-Comment=Go to next track in mpd
+Comment=Go to next song
 Enabled=true
-Name=MPD Next
+Name=Player Next
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_2Actions]
 ActionsCount=1
 
 [Data_1_2Actions0]
-CommandURL=mpc next
+CommandURL=player-next
 Type=COMMAND_URL
 
 [Data_1_2Conditions]
@@ -66,16 +66,16 @@ Type=SHORTCUT
 Uuid={3d56bfcd-bf4b-4f97-bcb0-7528a3c9be6b}
 
 [Data_1_3]
-Comment=Go to previous song
+Comment=Go to previous track
 Enabled=true
-Name=MPD Prev
+Name=Player Prev
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_3Actions]
 ActionsCount=1
 
 [Data_1_3Actions0]
-CommandURL=mpc prev
+CommandURL=player-prev
 Type=COMMAND_URL
 
 [Data_1_3Conditions]
@@ -94,14 +94,14 @@ Uuid={45366bcd-1ba1-47c1-a2cb-78c6f2e4964c}
 [Data_1_4]
 Comment=Toggle playback
 Enabled=true
-Name=MPD toggle
+Name=Player Toggle
 Type=SIMPLE_ACTION_DATA
 
 [Data_1_4Actions]
 ActionsCount=1
 
 [Data_1_4Actions0]
-CommandURL=mpc toggle
+CommandURL=player-toggle
 Type=COMMAND_URL
 
 [Data_1_4Conditions]
