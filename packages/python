@@ -42,3 +42,4 @@ python-mpd2
 pylast
 flask
 flask-cors
+pipenv
