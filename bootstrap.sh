@@ -24,7 +24,8 @@ if [ $1 == "link" ]; then
         stow -t ~/ $dir
         echo "✓ $dir"
     done
-
+    echo ""
+elif [ $1 == "copy" ]; then
     echo -e "\n>> Copying stuff needing modifications"
     to_copy=( mopidy/.config )
 
