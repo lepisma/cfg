@@ -6,3 +6,5 @@
 	editor = micro
 [commit]
 	gpgsign = true
+[github]
+	user = lepisma
