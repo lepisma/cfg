@@ -13,7 +13,6 @@ yapf
 hy
 grip
 eep
-git+https://github.com/lepisma/u@python
 cookiecutter
 youtube_dl
 markdown
