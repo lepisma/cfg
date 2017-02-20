@@ -13,8 +13,7 @@ function mp
         # Love track on last.fm
         mpc sendmessage mpdas love
       case "*"
-        echo "Invalid argument"
-        return 1
+        mpc clear; and mpc search $argv | mpc add; and mpc play
     end
   else
     # Run daemon with scrobbler
