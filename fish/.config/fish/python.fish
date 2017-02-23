@@ -36,6 +36,3 @@ function p
     return 1
   end
 end
-
-# pipenv completion
-eval (env _PIPENV_COMPLETE=source-fish pipenv)
