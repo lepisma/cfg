@@ -74,6 +74,8 @@ end
 function player-next
   if _work_on_mpd
     mpc next > /dev/null 2>&1
+    set current (mpc)
+    notify-send "mpd" "$current"
   else if _work_on_spotify
     sp next
   else
@@ -84,6 +86,8 @@ end
 function player-prev
   if _work_on_mpd
     mpc prev > /dev/null 2>&1
+    set current (mpc)
+    notify-send "mpd" "$current"
   else if _work_on_spotify
     sp prev
   else
