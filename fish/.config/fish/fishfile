@@ -1,6 +1,5 @@
 fisherman/await
 edc/bass
-oh-my-fish/theme-bobthefish
 fisherman/cprintf
 fisherman/debug
 fisherman/done
@@ -13,5 +12,6 @@ fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/menu
 simnalamburt/fish-sensible
+simnalamburt/shellder
 oh-my-fish/plugin-thefuck
 joehillen/to-fish
