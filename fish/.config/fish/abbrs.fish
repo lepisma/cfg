@@ -20,7 +20,6 @@ abbr -a ak "adb forward tcp:7777 tcp:7777; xdg-open 'http://localhost:7777'"
 abbr -a v "sudo openconnect --juniper sslvpn.umass.edu"
 
 # Aliases
-alias ls "exa"
-alias sl "exa"
+alias sl "ls"
 alias m "micro"
 alias dl "aria2c"
