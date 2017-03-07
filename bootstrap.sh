@@ -27,7 +27,7 @@ if [ $1 == "link" ]; then
     echo ""
 elif [ $1 == "copy" ]; then
     echo -e "\n>> Copying stuff needing modifications"
-    to_copy=( mopidy/.config )
+    to_copy=( mopidy/.config mpdas/.mpdasrc )
 
     for dir in ${to_copy[@]}; do
         cp -r $dir ~/
