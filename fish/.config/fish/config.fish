@@ -8,6 +8,7 @@ source $fish_home/environments.fish
 source $fish_home/abbrs.fish
 source $fish_home/python.fish
 
+set theme_color_scheme terminal-dark
 
 # Not bc
 function :
