@@ -18,7 +18,6 @@ ui:
 
 # Plugins and config
 pluginpath:
-  - /media/lepisma/Data/Projects/bbq/beetsplug
   - /media/lepisma/Data/Projects/jove/beetsplug
 plugins: >
   acousticbrainz bbq bpd chroma discogs duplicates edit embedart export fetchart
