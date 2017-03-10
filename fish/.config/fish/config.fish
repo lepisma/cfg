@@ -25,4 +25,4 @@ set -g __color_repo_dirty            brred $colorfg
 set -g __color_repo_staged           yellow $colorfg
 
 set -g __color_username              white black
-set -g __color_virtualfish           brblue $colorfg --bold
+set -g __color_virtualfish           brblue $colorfg
