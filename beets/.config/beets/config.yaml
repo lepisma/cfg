@@ -17,12 +17,10 @@ ui:
     action: blue
 
 # Plugins and config
-pluginpath:
-  - /media/lepisma/Data/Projects/jove/beetsplug
 plugins: >
   acousticbrainz bbq bpd chroma discogs duplicates edit embedart export fetchart
-  fromfilename ftintitle fuzzy info jove lastgenre lastimport lyrics mbsync
-  mpdstats mpdupdate play smartplaylist web
+  fromfilename ftintitle fuzzy info lastgenre lastimport lyrics mbsync mpdstats
+  mpdupdate play smartplaylist web
 bbq:
   fields: artist title album
 chroma:
