@@ -1,5 +1,3 @@
-# Environment variables
-
 # Notes
 set -x NOTES_DIR /media/lepisma/Data/Cloud/Journal/
 
