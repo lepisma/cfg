@@ -1,5 +1,6 @@
-# Notes
-set -x NOTES_DIR /media/lepisma/Data/Cloud/Journal/
+# Directories
+set -x JOURNAL_DIR /media/lepisma/Data/Cloud/Journal
+set -x PROJECTS_DIR /media/lepisma/Data/Projects
 
 # Personal
 set -x EMAIL abhinav.tushar.vs@gmail.com
