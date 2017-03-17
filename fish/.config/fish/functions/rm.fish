@@ -3,7 +3,7 @@ function rm -d "Avoid frustration"
   if test $status -ne 0
     echo 'force? [yn] '
     read -l -n1 ans
-    string match -qi y -- $ans; or return 0
+    string match -qi y -- $ans; or return 1
   end
   command rm -rf $argv
 end
