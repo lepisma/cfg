@@ -34,11 +34,8 @@ pipreqs
 setproctitle
 thefuck
 csvkit
-rtv
 glances
 proselint
 python-mpd2
 pylast
-flask
-flask-cors
 pipenv
