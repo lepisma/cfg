@@ -18,8 +18,8 @@ sudo apt-get -qq update
 echo -e "\n>> Installing apt packages\n"
 sudo apt-get install $(grep -vE "^\s*#" ./apt/packages  | tr "\n" " ")
 
-echo -e "\n>> Installing python packages\n"
-pip install -r ./python
+echo -e "\n>> Installing pip packages\n"
+pip install -r ./pip
 
 echo -e "\n>> Installing node packages\n"
 yarn global add $(grep -vE "^\s*#" ./node  | tr "\n" " ")
@@ -27,4 +27,16 @@ echo -e "\n"
 
 echo -e "\n>> Installing cargo packages\n"
 cargo install $(grep -vE "^\s*#" ./cargo  | tr "\n" " ")
+echo -e "\n"
+
+echo -e "\n>> Installing nimble packages\n"
+nimble install $(grep -vE "^\s*#" ./nimble  | tr "\n" " ")
+echo -e "\n"
+
+echo -e "\n>> Installing cabal packages\n"
+cabal install $(grep -vE "^\s*#" ./cabal  | tr "\n" " ")
+echo -e "\n"
+
+echo -e "\n>> Installing roswell packages\n"
+ros install $(grep -vE "^\s*#" ./roswell  | tr "\n" " ")
 echo -e "\n"
