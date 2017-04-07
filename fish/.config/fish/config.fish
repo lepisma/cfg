@@ -26,3 +26,12 @@ set -g __color_repo_staged           yellow $colorfg
 
 set -g __color_username              white black
 set -g __color_virtualfish           brblue $colorfg
+
+# Emacs
+if test -n "$EMACS"
+  set -x TERM eterm-color
+end
+
+function fish_title
+  true
+end
