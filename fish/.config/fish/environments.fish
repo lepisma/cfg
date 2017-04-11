@@ -22,6 +22,7 @@ set PATH ~/.cargo/bin $PATH
 set PATH ~/.cask/bin $PATH
 set PATH ~/.cabal/bin $PATH
 set PATH ~/.roswell/bin $PATH
+set PATH ~/.pkr/bin $PATH
 set PATH /opt/ghc/bin $PATH
 set PATH /opt/cabal/1.22/bin $PATH
 set PATH /opt/happy/1.19.5/bin $PATH
