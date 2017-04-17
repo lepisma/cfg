@@ -1,5 +1,9 @@
 ## Music related functions
 
+function mpd-current -d "Notify current song from mpd"
+  notify-send -i "music" "mpd" (mpc | sed -n "1p")
+end
+
 # MPD Control
 function mp
   if count $argv > /dev/null
@@ -7,6 +11,7 @@ function mp
       case "all"
         echo "Playing all songs on shuffle"
         mpc clear; and mpc ls | mpc add; and mpc shuffle; and mpc play
+        mpd-current
       case "up"
         mpc update --wait
       case "l"
@@ -14,6 +19,7 @@ function mp
         mpc sendmessage mpdas love
       case "*"
         mpc clear; and mpc search $argv | mpc add; and mpc play
+        mpd-current
     end
   else
     # Run daemon with scrobbler
@@ -64,6 +70,7 @@ end
 function player-toggle
   if _work_on_mpd
     mpc toggle > /dev/null 2>&1
+    mpd-current
   else if _work_on_spotify
     sp play
   else
@@ -74,8 +81,7 @@ end
 function player-next
   if _work_on_mpd
     mpc next > /dev/null 2>&1
-    set current (mpc)
-    notify-send "mpd" "$current"
+    mpd-current
   else if _work_on_spotify
     sp next
   else
@@ -87,7 +93,7 @@ function player-prev
   if _work_on_mpd
     mpc prev > /dev/null 2>&1
     set current (mpc)
-    notify-send "mpd" "$current"
+    mpd-current
   else if _work_on_spotify
     sp prev
   else
