@@ -1,7 +1,7 @@
 ## Music related functions
 
 function mpd-current -d "Notify current song from mpd"
-  notify-send -i "music" "mpd" (mpc | sed -n "1p")
+  notify-send -i "audio" "mpd" (mpc | sed -n "1p")
 end
 
 # MPD Control
