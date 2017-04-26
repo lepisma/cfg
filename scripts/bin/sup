@@ -63,8 +63,17 @@
       (+ (cut text 0 limit) "...")
       text)))
 
+(defn print-and-die-maybe [text]
+  (if text
+    (do
+     (print (clip text))
+     (exit))))
+
 (defmain [&rest args]
-  (let [r (random)]
-    (cond [(and (music) (> r 0.75)) (print (clip (music)))]
-          [(and (cricket) (> r 0.40)) (print (clip (cricket)))]
-          [True (print (clip (news)))])))
+  (let [r (random)
+        text '()]
+    (if (> r 0.75)
+      (print-and-die-maybe (music))
+      (if (> r 0.4)
+        (print-and-die-maybe (cricket))
+        (print-and-die-maybe (news))))))
