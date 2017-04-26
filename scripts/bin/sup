@@ -3,12 +3,12 @@
 (import time)
 (import [random [random randint]])
 (import subprocess)
-(import [sh [mpc hn]])
+(import [sh [mpc hn criclive]])
 
 (defn music []
   "Return current music"
   (let [prefix "♫ | "
-        song (first (.split (str (mpc)) "\n"))]
+        song (first (.splitlines (str (mpc))))]
     (if (.startswith song "volume: ")
       '()
       (+ prefix song))))
@@ -21,6 +21,41 @@
         text (second (.split selected "\x1b[0m"))]
     (+ prefix (.strip text))))
 
+(defn cricket []
+  "Cricket scores"
+  (let [prefix "C | "
+        teams '("india"
+                "australia"
+                "pakistan"
+                "sri lanka"
+                "new zealand"
+                "england"
+                "west indies"
+                "south africa"
+                "royal challenger bangalore"
+                "rising pune supergiant"
+                "kolkata knight riders"
+                "gujrat lions"
+                "delhi daredevils"
+                "kings xi punjab"
+                "mumbai indians"
+                "sunrisers hyderabad")
+        criclive-lines (.splitlines (criclive))
+        filtered (filter (fn [x]
+                                 (let [out False]
+                                   (for [team teams]
+                                     (if (in team (.lower x))
+                                       (do (setv out True)
+                                           (break))))
+                                   out)) criclive-lines)
+        filtered-live (list (filter (fn [x]
+                                      (not (in "[]" (.lower x))))
+                                    filtered))]
+    (if (> (len filtered-live) 0)
+      (let [text (nth filtered-live (randint 0 (- (len filtered-live) 1)))]
+        (+ prefix (.join " " (cut (.split text ". ") 1))))
+      '())))
+
 (defn clip [text]
   "Clip text to a limit"
   (let [limit 60]
@@ -29,8 +64,7 @@
       text)))
 
 (defmain [&rest args]
-  (if (< (random) 0.7)
-    (print (clip (news)))
-    (if (music)
-      (print (clip (music)))
-      (print (clip (news))))))
+  (let [r (random)]
+    (cond [(and (music) (> r 0.75)) (print (clip (music)))]
+          [(and (cricket) (> r 0.40)) (print (clip (cricket)))]
+          [True (print (clip (news)))])))
