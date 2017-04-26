@@ -23,7 +23,7 @@
 
 (defn cricket []
   "Cricket scores"
-  (let [prefix "C | "
+  (let [prefix "ℭ | "
         teams '("india"
                 "australia"
                 "pakistan"
