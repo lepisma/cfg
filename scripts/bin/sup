@@ -1,3 +1,36 @@
-#!/usr/bin/env fish
+#!/usr/bin/env hy
 
-mpc | sed -n "1p"
+(import time)
+(import [random [random randint]])
+(import subprocess)
+(import [sh [mpc hn]])
+
+(defn music []
+  "Return current music"
+  (let [prefix "♫ | "
+        song (first (.split (str (mpc)) "\n"))]
+    (if (.startswith song "volume: ")
+      '()
+      (+ prefix song))))
+
+(defn news []
+  "Return random top news from hacker news"
+  (let [prefix "ℋ | "
+        hn-lines (.splitlines (hn.top))
+        selected (nth hn-lines (* 2 (randint 0 9)))
+        text (second (.split selected "\x1b[0m"))]
+    (+ prefix (.strip text))))
+
+(defn clip [text]
+  "Clip text to a limit"
+  (let [limit 60]
+    (if (> (len text) limit)
+      (+ (cut text 0 limit) "...")
+      text)))
+
+(defmain [&rest args]
+  (if (< (random) 0.7)
+    (print (clip (news)))
+    (if (music)
+      (print (clip (music)))
+      (print (clip (news))))))
