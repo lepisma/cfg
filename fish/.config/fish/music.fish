@@ -17,15 +17,13 @@ function mp
       case "l"
         # Love track on last.fm
         mpc sendmessage mpdas love
+      case "s"
+        echo "Running scrobbler"
+        mpdas &
       case "*"
         mpc clear; and mpc search $argv | mpc add; and mpc play
         mpd-current
     end
-  else
-    # Run daemon with scrobbler
-    echo "Starting mpd"
-    mpd --stderr
-    mpdas &
   end
 end
 
