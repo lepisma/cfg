@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 sudo rmmod hid-kye
 sudo rmmod hid-uclogic
 sudo rmmod hid-huion
