@@ -1,4 +1,4 @@
-function huion-set -d "Huion tablet setup"
+function huion-setup-keys -d "Huion tablet setup"
   xsetwacom --set "HUION PenTablet Pad pad" Button 1 "key +ctrl +z -z -ctrl"
   xsetwacom --set "HUION PenTablet Pad pad" Button 2 "key e"
   xsetwacom --set "HUION PenTablet Pad pad" Button 3 "key b"
