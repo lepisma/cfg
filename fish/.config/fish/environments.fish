@@ -12,6 +12,7 @@ set -x PAGER less
 set -x RTV_URLVIEWER urlscan
 set -x XDG_MUSIC_DIR /media/lepisma/Data/Music
 set -x VIRTUAL_ENV_DISABLE_PROMPT TRUE
+set -x BORG_REPO /media/lepisma/Data/Cloud/Backup
 
 # PATH
 set PATH ~/bin $PATH
