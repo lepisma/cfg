@@ -24,4 +24,4 @@ thefuck
 glances
 proselint
 pipenv
-borg
+borgbackup[fuse]
