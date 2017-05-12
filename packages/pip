@@ -9,33 +9,19 @@ autoflake
 yapf
 mypy
 #
-# Personal utilities
+# Other command line tools
 #
 hy
 grip
-eep
 cookiecutter
 youtube_dl
-markdown
-sh
-pyyaml
-docopt
-tabulate
-pyfiglet
 twine
-cellbell
 beets
 beets-bbq
 pyacoustid
 discogs_client
-tqdm
-jupyter_contrib_nbextensions
-pipreqs
-setproctitle
 thefuck
-csvkit
 glances
 proselint
-python-mpd2
-pylast
 pipenv
+borg
