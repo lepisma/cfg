@@ -1,0 +1,12 @@
+#!/usr/bin/env fish
+
+begin
+  set IGNORE_FILE ~/cfg/misc/borg-ignore.txt
+  set TO_BACKUP /media/lepisma/Data/Projects /media/lepisma/Data/Vault
+  set_color green
+  get -p "Enter repo passphrase: " --silent 0 | read -lx BORG_PASSPHRASE
+  set_color normal
+
+  borg create -v -s -p --compression lzma,9 --exclude-from $IGNORE_FILE --read-special ::"{hostname}-{now:%Y-%m-%d}" $TO_BACKUP
+  borg prune --keep-daily 2 -v --list --prefix "{hostname}-"
+end

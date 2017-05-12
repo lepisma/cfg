@@ -6,6 +6,7 @@ fisherman/debug
 fisherman/done
 fisherman/fnm
 fisherman/g2
+fisherman/get
 fisherman/get_file_age
 fisherman/getopts
 fisherman/git_util

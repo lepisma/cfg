@@ -1,0 +1,4 @@
+sh:**/.git
+sh:**/node_modules
+sh:**/.sass-cache
+*.pyc
