@@ -41,7 +41,7 @@
 (set-unfocus-color "#303d43")
 (set-win-bg-color "#303d43")
 
-(setf *mouse-focus-policy* :sloppy)
+(setf *mouse-focus-policy* :click)
 
 (defvar *useless-gaps-size* 7)
 (defvar *useless-gaps-on* nil)
