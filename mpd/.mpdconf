@@ -2,10 +2,3 @@ music_directory "/media/lepisma/Data/Music"
 
 db_file "~/.config/mpd/database"
 log_file "~/.config/mpd/log"
-
-audio_output {
-  type "fifo"
-  name "my_fifo"
-  path "/tmp/mpd.fifo"
-  format "44100:16:2"
-}
