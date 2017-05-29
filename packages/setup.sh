@@ -19,7 +19,7 @@ echo -e "\n>> Installing apt packages\n"
 sudo apt-get install $(grep -vE "^\s*#" ./apt/packages  | tr "\n" " ")
 
 echo -e "\n>> Installing pip packages\n"
-pip install -r ./pip
+pip install -r ./pip --upgrade
 
 echo -e "\n>> Installing node packages\n"
 yarn global add $(grep -vE "^\s*#" ./node  | tr "\n" " ")

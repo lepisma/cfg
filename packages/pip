@@ -25,3 +25,4 @@ glances
 proselint
 pipenv
 borgbackup[fuse]
+git+https://github.com/lepisma/sup
