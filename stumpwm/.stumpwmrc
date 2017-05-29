@@ -117,8 +117,8 @@
   "Firefox"
   (run-or-raise "firefox" '(:class "Firefox") T T))
 
-(defcommand run-chrome () ()
-  (run-shell-command "google-chrome"))
+(defcommand run-chromium () ()
+  (run-shell-command "chromium-browser"))
 
 (defcommand player-next () ()
   (run-shell-command "player-next"))
@@ -143,7 +143,7 @@
 (define-key *top-map* (kbd "s-x") "run-xkill")
 (define-key *top-map* (kbd "s-w") "run-htop")
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
-(define-key *root-map* (kbd "C-c") "run-chrome")
+(define-key *root-map* (kbd "C-c") "run-chromium")
 
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
