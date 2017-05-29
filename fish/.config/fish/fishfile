@@ -1,6 +1,5 @@
 fisherman/await
 edc/bass
-lepisma/theme-bobthefish
 fisherman/cprintf
 fisherman/debug
 fisherman/done
@@ -14,6 +13,7 @@ fisherman/git_util
 fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/menu
+lepisma/rogue-fish
 simnalamburt/fish-sensible
 oh-my-fish/plugin-thefuck
 joehillen/to-fish
