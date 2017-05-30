@@ -151,6 +151,12 @@
 (defcommand run-htop () ()
   (run-shell-command "konsole -e htop"))
 
+(defcommand refresh-desktop () ()
+  (run-shell-command "sh ~/.fehbg")
+  (gnew "*refresh-group*")
+  (gkill)
+  (message "desktop refreshed"))
+
 (define-key *top-map* (kbd "C-M-t") "run-konsole")
 (define-key *top-map* (kbd "C-M-Left") "player-prev")
 (define-key *top-map* (kbd "C-M-Right") "player-next")
@@ -162,6 +168,7 @@
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-chromium")
 (define-key *root-map* (kbd "b") "windowlist")
+(define-key *root-map* (kbd "q") "refresh-desktop")
 
 (define-key *groups-map* (kbd "Right") "gnext")
 (define-key *groups-map* (kbd "Left") "gprev")
