@@ -29,11 +29,10 @@
 (set-maxsize-gravity :center)
 (set-transient-gravity :top)
 
-(setf *maxsize-border-width* 3
+(setf *maxsize-border-width* 2
       *transient-border-width* 0
-      *float-window-title-height* 3
-      *float-window-border* 3
-      *normal-border-width* 3)
+      *float-window-border* 2
+      *normal-border-width* 2)
 
 (setf *window-border-style* :thin)
 
