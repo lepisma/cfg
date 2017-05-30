@@ -25,21 +25,37 @@
 (setf *message-window-gravity* :center)
 (setf *input-window-gravity* :center)
 (setf *message-window-padding* 5)
+(set-normal-gravity :top)
+(set-maxsize-gravity :center)
+(set-transient-gravity :top)
 
 (setf *maxsize-border-width* 3
-      *transient-border-width* 3
+      *transient-border-width* 0
       *float-window-title-height* 3
       *float-window-border* 3
       *normal-border-width* 3)
 
 (setf *window-border-style* :thin)
 
-(set-fg-color "#D7D0C7")
+(set-fg-color "#d7d0c7")
 (set-bg-color "#303d43")
 (set-border-color "#425e5a")
-(set-focus-color "#425e5a")
+(set-focus-color "#6c7b8b")
 (set-unfocus-color "#303d43")
-(set-win-bg-color "#303d43")
+(set-win-bg-color "#1d1f20")
+(set-float-focus-color "#a9a9a9")
+(set-float-unfocus-color "#303d43")
+
+(setf *colors* (list "#171717"      ; 0 black
+                     "#ff6a6a"      ; 1 red
+                     "#66cd00"      ; 2 green
+                     "#ffd700"      ; 3 yellow
+                     "#4f94cd"      ; 4 blue
+                     "#c6e2ff"      ; 5 magenta
+                     "#00cdcd"      ; 6 cyan
+                     "#ffffff"))    ; 7 white
+
+(update-color-map (current-screen))
 
 (setf *mouse-focus-policy* :click)
 
