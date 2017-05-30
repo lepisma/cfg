@@ -158,8 +158,14 @@
 (define-key *top-map* (kbd "C-M-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-x") "run-xkill")
 (define-key *top-map* (kbd "s-w") "run-htop")
+
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-chromium")
+
+(define-key *groups-map* (kbd "Right") "gnext")
+(define-key *groups-map* (kbd "Left") "gprev")
+(define-key *groups-map* (kbd "M-Right") "gnext-with-window")
+(define-key *groups-map* (kbd "M-Left") "gprev-with-window")
 
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
