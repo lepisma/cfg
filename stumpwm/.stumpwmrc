@@ -32,7 +32,7 @@
       *float-window-border* 3
       *normal-border-width* 3)
 
-(setf *window-border-style* :thick)
+(setf *window-border-style* :thin)
 
 (set-fg-color "#D7D0C7")
 (set-bg-color "#303d43")
