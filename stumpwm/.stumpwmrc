@@ -16,6 +16,16 @@
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm/contrib")))
 
 (load-module "ttf-fonts")
+(load-module "winner-mode")
+
+(defvar *winner-map* (make-sparse-keymap))
+(define-key *root-map* (kbd "c") '*winner-map*)
+(define-key *winner-map* (kbd "Left") "winner-undo")
+(define-key *winner-map* (kbd "Right") "winner-redo")
+
+(add-hook *post-command-hook* (lambda (command)
+                                (when (member command winner-mode:*default-commands*)
+                                  (winner-mode:dump-group-to-file))))
 
 (setf *shell-program* (getenv "SHELL"))
 (set-font (make-instance 'xft:font
@@ -178,5 +188,6 @@
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
 (run-shell-command "dunst")
+(run-shell-command "mpdas")
 
 (toggle-gaps)
