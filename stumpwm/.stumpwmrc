@@ -11,12 +11,24 @@
 (set-prefix-key (kbd "C-e"))
 (setf *startup-message* NIL)
 (setf *suppress-abort-messages* t)
+(setf *shell-program* (getenv "SHELL"))
 
 (set-module-dir
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm/contrib")))
 
+(defun add-locals (names)
+  (map nil (lambda (n) (add-to-load-path (pathname-as-directory (concat (getenv "HOME") "/stumpwm/local/" n)))) names))
+
+(add-locals '("swm-calibre"))
+
 (load-module "ttf-fonts")
 (load-module "winner-mode")
+(load-module "swm-calibre")
+(setf swm-calibre:*calibre-root* "~/.tofish/d/Cloud/Calibre Shared/")
+
+(defvar *open-stuff-map* (make-sparse-keymap))
+(define-key *root-map* (kbd "x") '*open-stuff-map*)
+(define-key *open-stuff-map* (kbd "b") "open-book")
 
 (defvar *winner-map* (make-sparse-keymap))
 (define-key *root-map* (kbd "c") '*winner-map*)
@@ -27,7 +39,6 @@
                                 (when (member command winner-mode:*default-commands*)
                                   (winner-mode:dump-group-to-file))))
 
-(setf *shell-program* (getenv "SHELL"))
 (set-font (make-instance 'xft:font
                          :family "Source Code Pro"
                          :subfamily "Regular"
