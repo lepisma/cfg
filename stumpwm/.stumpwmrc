@@ -27,7 +27,7 @@
 (setf swm-calibre:*calibre-root* "~/.tofish/d/Cloud/Calibre Shared/")
 
 (defvar *open-stuff-map* (make-sparse-keymap))
-(define-key *root-map* (kbd "x") '*open-stuff-map*)
+(define-key *root-map* (kbd ".") '*open-stuff-map*)
 (define-key *open-stuff-map* (kbd "b") "open-book")
 
 (defvar *winner-map* (make-sparse-keymap))
