@@ -35,3 +35,5 @@ end
 function fish_title
   true
 end
+
+eval (dircolors -c ~/cfg/misc/dircolors.ansi-dark)
