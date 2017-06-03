@@ -13,6 +13,15 @@
 (setf *suppress-abort-messages* t)
 (setf *shell-program* (getenv "SHELL"))
 
+(defvar *message-filters* '("Group Dumped")
+  "Don't show these messages.")
+
+(defun message (fmt &rest args)
+  "run FMT and ARGS through `format' and echo the result to the current screen."
+  (let ((msg-string (apply 'format nil fmt args)))
+    (unless (member msg-string *message-filters* :test #'string=)
+      (echo-string (current-screen) msg-string))))
+
 (set-module-dir
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm/contrib")))
 
@@ -24,7 +33,7 @@
 (load-module "ttf-fonts")
 (load-module "winner-mode")
 (load-module "swm-calibre")
-(setf swm-calibre:*calibre-root* "~/.tofish/d/Cloud/Calibre Shared/")
+(setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
 
 (defvar *open-stuff-map* (make-sparse-keymap))
 (define-key *root-map* (kbd ".") '*open-stuff-map*)
