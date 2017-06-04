@@ -4,7 +4,7 @@ set fish_home ~/.config/fish
 
 # Source
 source $fish_home/music.fish
-source $fish_home/environments.fish
+source $fish_home/environment.fish
 source $fish_home/abbrs.fish
 
 # Colors for bob-the-fish
