@@ -2,16 +2,11 @@
 
 (in-package :stumpwm)
 
-;; (require :swank)
-;; (swank-loader:init)
-;; (swank:create-server :port 4004
-;;                      :style swank:*communication-style*
-;;                      :dont-close t)
-
+;; Basics
 (set-prefix-key (kbd "C-e"))
-(setf *startup-message* NIL)
-(setf *suppress-abort-messages* t)
-(setf *shell-program* (getenv "SHELL"))
+(setf *startup-message* NIL
+      *suppress-abort-messages* t
+      *shell-program* (getenv "SHELL"))
 
 (defvar *message-filters* '("Group Dumped")
   "Don't show these messages.")
@@ -26,36 +21,45 @@
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm/contrib")))
 
 (defun add-locals (names)
-  (map nil (lambda (n) (add-to-load-path (pathname-as-directory (concat (getenv "HOME") "/stumpwm/local/" n)))) names))
+  (map nil (lambda (n) (add-to-load-path
+                   (pathname-as-directory (concat (getenv "HOME") "/stumpwm/local/" n))))
+       names))
 
-(add-locals '("swm-calibre"))
+(add-locals '("swm-calibre" "swm-gaps"))
 
+;; Modules
 (load-module "ttf-fonts")
 (load-module "winner-mode")
 (load-module "swm-calibre")
+(load-module "swm-gaps")
+
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
+(setf swm-gaps:*inner-gaps-size* 7
+      swm-gaps:*outer-gaps-size* 15)
 
 (add-hook *post-command-hook* (lambda (command)
                                 (when (member command winner-mode:*default-commands*)
                                   (winner-mode:dump-group-to-file))))
 
+;; Looks
 (set-font (make-instance 'xft:font
                          :family "Source Code Pro"
                          :subfamily "Regular"
                          :size 9))
-(setf *message-window-gravity* :center)
-(setf *input-window-gravity* :center)
-(setf *message-window-padding* 5)
+
+(setf *message-window-gravity* :center
+      *input-window-gravity* :center
+      *message-window-padding* 5
+      *window-border-style* :thin
+      *maxsize-border-width* 2
+      *transient-border-width* 0
+      *float-window-border* 2
+      *normal-border-width* 2
+      *mouse-focus-policy* :click)
+
 (set-normal-gravity :top)
 (set-maxsize-gravity :center)
 (set-transient-gravity :top)
-
-(setf *maxsize-border-width* 2
-      *transient-border-width* 0
-      *float-window-border* 2
-      *normal-border-width* 2)
-
-(setf *window-border-style* :thin)
 
 (set-fg-color "#d7d0c7")
 (set-bg-color "#303d43")
@@ -75,76 +79,7 @@
                      "#00cdcd"      ; 6 cyan
                      "#ffffff"))    ; 7 white
 
-(update-color-map (current-screen))
-
-(setf *mouse-focus-policy* :click)
-
-(defvar *useless-gaps-size* 7)
-(defvar *useless-gaps-on* nil)
-
-;; Redefined - with `if`s for *useless-gaps-on*
-(defun maximize-window (win)
-  "Maximize the window."
-  (multiple-value-bind (x y wx wy width height border stick)
-      (geometry-hints win)
-
-    (if *useless-gaps-on*
-        (setf width (- width (* 2 *useless-gaps-size*))
-              height (- height (* 2 *useless-gaps-size*))
-              x (+ x *useless-gaps-size*)
-              y (+ y *useless-gaps-size*)))
-
-    (dformat 4 "maximize window ~a x: ~d y: ~d width: ~d height: ~d border: ~d stick: ~s~%" win x y width height border stick)
-    ;; This is the only place a window's geometry should change
-    (set-window-geometry win :x wx :y wy :width width :height height :border-width 0)
-    (xlib:with-state ((window-parent win))
-      ;; FIXME: updating the border doesn't need to be run everytime
-      ;; the window is maximized, but only when the border style or
-      ;; window type changes. The overhead is probably minimal,
-      ;; though.
-      (setf (xlib:drawable-x (window-parent win)) x
-            (xlib:drawable-y (window-parent win)) y
-            (xlib:drawable-border-width (window-parent win)) border)
-      ;; the parent window should stick to the size of the window
-      ;; unless it isn't being maximized to fill the frame.
-      (if (or stick
-              (find *window-border-style* '(:tight :none)))
-          (setf (xlib:drawable-width (window-parent win)) (window-width win)
-                (xlib:drawable-height (window-parent win)) (window-height win))
-          (let ((frame (window-frame win)))
-            (setf (xlib:drawable-width (window-parent win)) (- (frame-width frame)
-                                                               (* 2 (xlib:drawable-border-width (window-parent win)))
-                                                               (if *useless-gaps-on* (* 2 *useless-gaps-size*) 0))
-                  (xlib:drawable-height (window-parent win)) (- (frame-display-height (window-group win) frame)
-                                                                (* 2 (xlib:drawable-border-width (window-parent win)))
-                                                                (if *useless-gaps-on* (* 2 *useless-gaps-size*) 0)))))
-      ;; update the "extents"
-      (xlib:change-property (window-xwin win) :_NET_FRAME_EXTENTS
-                            (list wx wy
-                                  (- (xlib:drawable-width (window-parent win)) width wx)
-                                  (- (xlib:drawable-height (window-parent win)) height wy))
-                            :cardinal 32))))
-
-(defun reset-all-windows ()
-  "Reset the size for all tiled windows"
-  (let ((windows (mapcan (lambda (g)
-                           (mapcar (lambda (w) w) (sort-windows g)))
-                         (sort-groups (current-screen)))))
-    (mapcar (lambda (w)
-              (if (string= (class-name (class-of w)) "TILE-WINDOW")
-                  (maximize-window w))) windows)))
-
-(defcommand toggle-gaps () ()
-  "Toggle the padding of tiled windows"
-  (setf *useless-gaps-on* (null *useless-gaps-on*))
-
-  ;; Following is pseudo code to use hooks
-  ;; to do something like change border colors or size
-  ;; (if *useless-gaps-on*
-  ;;     (run-hook 'frame-gap-on)
-  ;;     (run-hook 'frame-gap-off))
-  (reset-all-windows))
-
+;; Commands
 (defcommand run-or-raise-firefox () ()
   (run-or-raise "firefox" '(:class "Firefox") T T))
 
@@ -159,7 +94,6 @@
   (gnew "*refresh-group*")
   (gkill)
   (message "desktop refreshed"))
-
 
 ;; All the keys
 (define-key *top-map* (kbd "C-M-t") "exec konsole")
@@ -193,8 +127,9 @@
 (define-key *winner-map* (kbd "Right") "winner-redo")
 
 ;; Init
+(update-color-map (current-screen))
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
 ;; (run-shell-command "dunst")
 (run-shell-command "mpdas")
-(toggle-gaps)
+(run-commands "toggle-gaps")
