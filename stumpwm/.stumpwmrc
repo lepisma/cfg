@@ -157,11 +157,11 @@
 
 (define-frame-preference "main"
     (0 t t :class "konsole")
-  (0 t t :class "Emacs"))
+  (0 nil t :class "Emacs"))
 
 (define-frame-preference "docs"
     (0 t t :class "Chromium")
-  (0 t t :class "Firefox")
+  (0 nil t :class "Firefox")
   (0 t t :class "okular"))
 
 (define-frame-preference "sketch"
