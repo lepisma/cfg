@@ -151,7 +151,7 @@
 
 ;; Groups
 (setf (group-name (car (screen-groups (current-screen)))) "main")
-(run-commands "gnewbg reads" "gnewbg sketch")
+(run-commands "gnewbg docs" "gnewbg sketch")
 
 (clear-window-placement-rules)
 
@@ -159,7 +159,7 @@
     (0 t t :class "konsole")
   (0 t t :class "Emacs"))
 
-(define-frame-preference "reads"
+(define-frame-preference "docs"
     (0 t t :class "Chromium")
   (0 t t :class "Firefox")
   (0 t t :class "okular"))
