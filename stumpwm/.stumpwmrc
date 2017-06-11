@@ -35,15 +35,6 @@
 (load-module "swm-calibre")
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
 
-(defvar *open-stuff-map* (make-sparse-keymap))
-(define-key *root-map* (kbd ".") '*open-stuff-map*)
-(define-key *open-stuff-map* (kbd "b") "open-book")
-
-(defvar *winner-map* (make-sparse-keymap))
-(define-key *root-map* (kbd "c") '*winner-map*)
-(define-key *winner-map* (kbd "Left") "winner-undo")
-(define-key *winner-map* (kbd "Right") "winner-redo")
-
 (add-hook *post-command-hook* (lambda (command)
                                 (when (member command winner-mode:*default-commands*)
                                   (winner-mode:dump-group-to-file))))
@@ -154,31 +145,14 @@
   ;;     (run-hook 'frame-gap-off))
   (reset-all-windows))
 
-(defcommand run-konsole () ()
-  "Run konsole"
-  (run-shell-command "konsole"))
-
 (defcommand run-or-raise-firefox () ()
-  "Firefox"
   (run-or-raise "firefox" '(:class "Firefox") T T))
 
-(defcommand run-chromium () ()
-  (run-shell-command "chromium-browser"))
+(defcommand run-or-raise-chromium () ()
+  (run-or-raise "chromium-browser" '(:class "Chromium") T T))
 
-(defcommand player-next () ()
-  (run-shell-command "player-next"))
-
-(defcommand player-prev () ()
-  (run-shell-command "player-prev"))
-
-(defcommand player-toggle () ()
-  (run-shell-command "player-toggle"))
-
-(defcommand run-xkill () ()
-  (run-shell-command "xkill"))
-
-(defcommand run-htop () ()
-  (run-shell-command "konsole -e htop"))
+(defcommand run-or-raise-konsole () ()
+  (run-or-raise "konsole" '(:class "konsole") T T))
 
 (defcommand refresh-desktop () ()
   (run-shell-command "sh ~/.fehbg")
@@ -186,18 +160,22 @@
   (gkill)
   (message "desktop refreshed"))
 
-(define-key *top-map* (kbd "C-M-t") "run-konsole")
-(define-key *top-map* (kbd "C-M-Left") "player-prev")
-(define-key *top-map* (kbd "C-M-Right") "player-next")
-(define-key *top-map* (kbd "C-M-SPC") "player-toggle")
+
+;; All the keys
+(define-key *top-map* (kbd "C-M-t") "exec konsole")
+(define-key *top-map* (kbd "C-M-Left") "exec player-prev")
+(define-key *top-map* (kbd "C-M-Right") "exec player-next")
+(define-key *top-map* (kbd "C-M-SPC") "exec player-toggle")
 (define-key *top-map* (kbd "C-M-g") "toggle-gaps")
-(define-key *top-map* (kbd "s-x") "run-xkill")
-(define-key *top-map* (kbd "s-w") "run-htop")
+(define-key *top-map* (kbd "s-x") "exec xkill")
+(define-key *top-map* (kbd "s-w") "exec konsole -e htop")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
-(define-key *root-map* (kbd "C-c") "run-chromium")
+(define-key *root-map* (kbd "C-c") "run-or-raise-chromium")
+(define-key *root-map* (kbd "C-k") "run-or-raise-konsole")
 (define-key *root-map* (kbd "b") "windowlist")
 (define-key *root-map* (kbd "q") "refresh-desktop")
+(define-key *root-map* (kbd "TAB") "pull-hidden-other")
 
 (define-key *groups-map* (kbd "Right") "gnext")
 (define-key *groups-map* (kbd "Left") "gprev")
@@ -205,9 +183,18 @@
 (define-key *groups-map* (kbd "M-Left") "gprev-with-window")
 (define-key *groups-map* (kbd "b") "grouplist")
 
+(defvar *open-stuff-map* (make-sparse-keymap))
+(define-key *root-map* (kbd ".") '*open-stuff-map*)
+(define-key *open-stuff-map* (kbd "b") "open-book")
+
+(defvar *winner-map* (make-sparse-keymap))
+(define-key *root-map* (kbd "c") '*winner-map*)
+(define-key *winner-map* (kbd "Left") "winner-undo")
+(define-key *winner-map* (kbd "Right") "winner-redo")
+
+;; Init
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
-(run-shell-command "dunst")
+;; (run-shell-command "dunst")
 (run-shell-command "mpdas")
-
 (toggle-gaps)
