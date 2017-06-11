@@ -8,11 +8,11 @@
       *suppress-abort-messages* t
       *shell-program* (getenv "SHELL"))
 
-(defvar *message-filters* '("Group Dumped")
+(defvar *message-filters* '("Group dumped")
   "Don't show these messages.")
 
 (defun message (fmt &rest args)
-  "run FMT and ARGS through `format' and echo the result to the current screen."
+  "Overwritten message function to allow filters"
   (let ((msg-string (apply 'format nil fmt args)))
     (unless (member msg-string *message-filters* :test #'string=)
       (echo-string (current-screen) msg-string))))
@@ -20,12 +20,12 @@
 (set-module-dir
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm/contrib")))
 
-(defun add-locals (names)
+(defun load-local (names)
   (map nil (lambda (n) (add-to-load-path
                    (pathname-as-directory (concat (getenv "HOME") "/stumpwm/local/" n))))
        names))
 
-(add-locals '("swm-calibre" "swm-gaps"))
+(load-local '("swm-calibre" "swm-gaps"))
 
 ;; Modules
 (load-module "ttf-fonts")
@@ -148,3 +148,22 @@
 ;; (run-shell-command "dunst")
 (run-shell-command "mpdas")
 (run-commands "toggle-gaps")
+
+;; Groups
+(setf (group-name (car (screen-groups (current-screen)))) "main")
+(run-commands "gnewbg reads" "gnewbg sketch")
+
+(clear-window-placement-rules)
+
+(define-frame-preference "main"
+    (0 t t :class "konsole")
+  (0 t t :class "Emacs"))
+
+(define-frame-preference "reads"
+    (0 t t :class "Chromium")
+  (0 t t :class "Firefox")
+  (0 t t :class "okular"))
+
+(define-frame-preference "sketch"
+    (0 t t :class "Gimp")
+  (0 t t :class "krita"))
