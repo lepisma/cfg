@@ -49,28 +49,29 @@
 
 (setf *message-window-gravity* :center
       *input-window-gravity* :center
-      *message-window-padding* 5
       *window-border-style* :thin
+      *message-window-padding* 10
       *maxsize-border-width* 2
-      *transient-border-width* 0
-      *float-window-border* 2
       *normal-border-width* 2
+      *transient-border-width* 0
+      stumpwm::*float-window-border* 2
+      stumpwm::*float-window-title-height* 2
       *mouse-focus-policy* :click)
 
 (set-normal-gravity :top)
 (set-maxsize-gravity :center)
 (set-transient-gravity :top)
 
-(set-fg-color "#d7d0c7")
-(set-bg-color "#303d43")
-(set-border-color "#425e5a")
-(set-focus-color "#6c7b8b")
-(set-unfocus-color "#303d43")
-(set-win-bg-color "#1d1f20")
-(set-float-focus-color "#a9a9a9")
-(set-float-unfocus-color "#303d43")
+(set-fg-color "#eeeeee")
+(set-bg-color "#2d2e2e")
+(set-border-color "#39393d")
+(set-focus-color "#828290")
+(set-unfocus-color "#39393d")
+(set-win-bg-color "#1c1e1f")
+(set-float-focus-color "#828290")
+(set-float-unfocus-color "#39393d")
 
-(setf *colors* (list "#171717"      ; 0 black
+(setf *colors* (list "#1c1e1f"      ; 0 black
                      "#ff6a6a"      ; 1 red
                      "#66cd00"      ; 2 green
                      "#ffd700"      ; 3 yellow
