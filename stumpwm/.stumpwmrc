@@ -79,6 +79,15 @@
                      "#00cdcd"      ; 6 cyan
                      "#ffffff"))    ; 7 white
 
+(defun shift-windows-forward (frames win)
+  "Exchange windows through cycling frames."
+  (when frames
+    (let ((frame (car frames)))
+      (shift-windows-forward (cdr frames)
+                             (stumpwm::frame-window frame))
+      (when win
+        (stumpwm::pull-window win frame)))))
+
 ;; Commands
 (defcommand run-or-raise-firefox () ()
   (run-or-raise "firefox" '(:class "Firefox") T T))
@@ -95,14 +104,20 @@
   (gkill)
   (message "desktop refreshed"))
 
+(defcommand rotate-windows () ()
+  (let* ((frames (stumpwm::group-frames (current-group)))
+         (win (stumpwm::frame-window (car (last frames)))))
+    (shift-windows-forward frames win)))
+
 ;; All the keys
-(define-key *top-map* (kbd "C-M-t") "exec konsole")
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
 (define-key *top-map* (kbd "C-M-SPC") "exec player-toggle")
-(define-key *top-map* (kbd "C-M-g") "toggle-gaps")
+(define-key *top-map* (kbd "s-t") "exec konsole")
+(define-key *top-map* (kbd "s-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole -e htop")
+(define-key *top-map* (kbd "s-r") "rotate-windows")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-chromium")
