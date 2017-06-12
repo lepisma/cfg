@@ -122,7 +122,7 @@
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-chromium")
-(define-key *root-map* (kbd "C-k") "run-or-raise-konsole")
+(define-key *root-map* (kbd "C-d") "run-or-raise-konsole")
 (define-key *root-map* (kbd "b") "windowlist")
 (define-key *root-map* (kbd "q") "refresh-desktop")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
