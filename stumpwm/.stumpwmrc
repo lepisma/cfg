@@ -152,7 +152,7 @@
 
 ;; Groups
 (setf (group-name (car (screen-groups (current-screen)))) "main")
-(run-commands "gnewbg docs" "gnewbg sketch" "gnewbg-float float")
+(run-commands "gnewbg docs" "gnewbg-float float")
 
 (clear-window-placement-rules)
 
@@ -165,9 +165,7 @@
   (0 nil t :class "Firefox")
   (0 t t :class "okular"))
 
-(define-frame-preference "sketch"
-    (0 t t :class "Gimp")
-  (0 t t :class "krita"))
-
 (define-frame-preference "float"
+    (0 t t :class "Gimp")
+  (0 t t :class "krita")
   (0 nil t :class "Pithos"))
