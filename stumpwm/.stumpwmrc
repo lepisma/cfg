@@ -157,15 +157,15 @@
 (clear-window-placement-rules)
 
 (define-frame-preference "main"
-    (0 t t :class "konsole")
-  (0 nil t :class "Emacs"))
+    (nil t t :class "konsole")
+  (nil nil t :class "Emacs"))
 
 (define-frame-preference "docs"
-    (0 t t :class "Chromium")
-  (0 nil t :class "Firefox")
-  (0 t t :class "okular"))
+    (nil t t :class "Chromium")
+  (nil nil t :class "Firefox")
+  (nil t t :class "okular"))
 
 (define-frame-preference "float"
-    (0 t t :class "Gimp")
-  (0 t t :class "krita")
-  (0 nil t :class "Pithos"))
+    (nil t t :class "Gimp")
+  (nil t t :class "krita")
+  (nil nil t :class "Pithos"))
