@@ -93,8 +93,8 @@
 (defcommand run-or-raise-firefox () ()
   (run-or-raise "firefox" '(:class "Firefox") T T))
 
-(defcommand run-or-raise-chromium () ()
-  (run-or-raise "chromium-browser" '(:class "Chromium") T T))
+(defcommand run-or-raise-vivaldi () ()
+  (run-or-raise "vivaldi" '(:class "Vivaldi-snapshot") T T))
 
 (defcommand run-or-raise-konsole () ()
   (run-or-raise "konsole" '(:class "konsole") T T))
@@ -121,8 +121,8 @@
 (define-key *top-map* (kbd "s-r") "rotate-windows")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
-(define-key *root-map* (kbd "C-c") "run-or-raise-chromium")
-(define-key *root-map* (kbd "C-v") "run-or-raise-konsole")
+(define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
+(define-key *root-map* (kbd "C-v") "run-or-raise-vivaldi")
 (define-key *root-map* (kbd "b") "windowlist")
 (define-key *root-map* (kbd "q") "refresh-desktop")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
@@ -161,7 +161,7 @@
   (nil nil t :class "Emacs"))
 
 (define-frame-preference "docs"
-    (nil t t :class "Chromium")
+    (nil t t :class "Vivaldi-snapshot")
   (nil nil t :class "Firefox")
   (nil t t :class "okular"))
 
