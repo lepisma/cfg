@@ -123,12 +123,16 @@
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
 (define-key *top-map* (kbd "C-M-SPC") "exec player-toggle")
 (define-key *top-map* (kbd "s-t") "exec konsole")
-(define-key *top-map* (kbd "s-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole -e htop")
+
+(define-key *top-map* (kbd "s-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-r") "rotate-windows")
 (define-key *top-map* (kbd "s-v") "windows-left-right")
 (define-key *top-map* (kbd "s-h") "windows-up-down")
+(define-key *top-map* (kbd "s-f") "only")
+(define-key *top-map* (kbd "s-k") "delete")
+(define-key *top-map* (kbd "s-c") "fclear")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
