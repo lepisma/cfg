@@ -131,7 +131,6 @@
 (define-key *top-map* (kbd "s-v") "windows-left-right")
 (define-key *top-map* (kbd "s-h") "windows-up-down")
 (define-key *top-map* (kbd "s-f") "only")
-(define-key *top-map* (kbd "s-k") "delete")
 (define-key *top-map* (kbd "s-c") "fclear")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
