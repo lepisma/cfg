@@ -110,6 +110,14 @@
          (win (stumpwm::frame-window (car (last frames)))))
     (shift-windows-forward frames win)))
 
+(defcommand windows-left-right () ()
+  "Open windows side by side"
+  (run-commands "only" "vsplit"))
+
+(defcommand windows-up-down () ()
+  "Open windows up and down"
+  (run-commands "only" "hsplit"))
+
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
@@ -119,6 +127,8 @@
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole -e htop")
 (define-key *top-map* (kbd "s-r") "rotate-windows")
+(define-key *top-map* (kbd "s-v") "windows-left-right")
+(define-key *top-map* (kbd "s-h") "windows-up-down")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
