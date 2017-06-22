@@ -206,17 +206,17 @@ key.setViewKey('B', function (ev) {
                 BrowserBack();
             }, 'Back');
 
-key.setViewKey('F', function (ev) {
-                BrowserForward();
-            }, 'Forward');
+// key.setViewKey('F', function (ev) {
+//                 BrowserForward();
+//             }, 'Forward');
 
 key.setViewKey(['C-x', 'h'], function (ev) {
                 goDoCommand("cmd_selectAll");
             }, 'Select all', true);
 
-key.setViewKey('f', function (ev) {
-                command.focusElement(command.elementsRetrieverTextarea, 0);
-            }, 'Focus to the first textarea', true);
+// key.setViewKey('f', function (ev) {
+//                 command.focusElement(command.elementsRetrieverTextarea, 0);
+//             }, 'Focus to the first textarea', true);
 
 key.setViewKey('M-p', function (ev) {
                 command.walkInputElement(command.elementsRetrieverButton, true, true);
@@ -488,3 +488,24 @@ key.setCaretKey('M-p', function (ev) {
 key.setCaretKey('M-n', function (ev) {
                 command.walkInputElement(command.elementsRetrieverButton, false, true);
 }, 'Focus to the previous button');
+
+// hok
+key.setViewKey(['f'], function (aEvent, aArg) {
+        ext.exec("hok-start-foreground-mode", aArg);
+}, 'Hok - Foreground hint mode', true);
+
+key.setViewKey(['F'], function (aEvent, aArg) {
+        ext.exec("hok-start-background-mode", aArg);
+}, 'HoK - Background hint mode', true);
+
+key.setViewKey(['y'], function (aEvent, aArg) {
+        ext.exec("hok-yank-foreground-mode", aArg);
+}, 'HoK - Background hint mode', true);
+
+key.setViewKey(['e'], function (aEvent, aArg) {
+        ext.exec("hok-start-extended-mode", aArg);
+}, 'HoK - Extented hint mode', true);
+
+key.setViewKey(['c'], function (aEvent, aArg) {
+        ext.exec("hok-start-continuous-mode", aArg);
+}, 'Start continuous HaH', true);
