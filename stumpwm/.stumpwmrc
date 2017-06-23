@@ -133,6 +133,10 @@
 (define-key *top-map* (kbd "s-f") "only")
 (define-key *top-map* (kbd "s-c") "fclear")
 
+(define-key *top-map* (kbd "XF86Launch5") "gselect 1")
+(define-key *top-map* (kbd "XF86Launch6") "gselect 2")
+(define-key *top-map* (kbd "XF86Launch7") "gselect 3")
+
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
 (define-key *root-map* (kbd "C-v") "run-or-raise-vivaldi")
