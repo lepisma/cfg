@@ -13,11 +13,10 @@ sudo make install
 
 # Create entry
 sudo mkdir -p /etc/X11/xorg.conf.d
-cd /etc/X11/xorg.conf.d
 
-sudo echo -e "Section \"InputClass\"
+echo -e "Section \"InputClass\"
 Identifier \"Huion on wacom\"
 MatchProduct \"HUION\"
 MatchDevicePath \"/dev/input/event*\"
 Driver \"wacom\"
-EndSection" > 52-tablet.conf
+EndSection" | sudo tee /etc/X11/xorg.conf.d/52-tablet.conf > /dev/null

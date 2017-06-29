@@ -136,6 +136,8 @@
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
 (define-key *top-map* (kbd "XF86Launch7") "gselect 3")
+(define-key *top-map* (kbd "XF86Launch8") "exec xdotool key XF86MonBrightnessDown")
+(define-key *top-map* (kbd "XF86Launch9") "exec xdotool key XF86MonBrightnessUp")
 (define-key *top-map* (kbd "XF86Mail") "exec kmail")
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
