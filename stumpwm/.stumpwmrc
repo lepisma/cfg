@@ -186,12 +186,5 @@
     (nil t t :class "konsole")
   (nil nil t :class "Emacs"))
 
-(define-frame-preference "docs"
-    (nil t t :class "Vivaldi-snapshot")
-  (nil nil t :class "Firefox")
-  (nil t t :class "okular"))
-
 (define-frame-preference "float"
-    (nil t t :class "Gimp")
-  (nil t t :class "krita")
-  (nil nil t :class "Pithos"))
+    (nil nil t :class "Pithos"))
