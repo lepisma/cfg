@@ -181,9 +181,7 @@
 (run-commands "gnewbg docs" "gnewbg-float float")
 
 (clear-window-placement-rules)
-
 (define-frame-preference "main"
-    (nil t t :class "konsole")
   (nil nil t :class "Emacs"))
 
 (define-frame-preference "float"
