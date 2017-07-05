@@ -34,8 +34,8 @@
 (load-module "swm-gaps")
 
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
-(setf swm-gaps:*inner-gaps-size* 7
-      swm-gaps:*outer-gaps-size* 15)
+(setf swm-gaps:*inner-gaps-size* 20
+      swm-gaps:*outer-gaps-size* 30)
 
 (add-hook *post-command-hook* (lambda (command)
                                 (when (member command winner-mode:*default-commands*)
@@ -51,10 +51,10 @@
       *input-window-gravity* :center
       *window-border-style* :thin
       *message-window-padding* 10
-      *maxsize-border-width* 0
-      *normal-border-width* 0
-      *transient-border-width* 0
-      stumpwm::*float-window-border* 0
+      *maxsize-border-width* 7
+      *normal-border-width* 7
+      *transient-border-width* 5
+      stumpwm::*float-window-border* 7
       stumpwm::*float-window-title-height* 2
       *mouse-focus-policy* :click)
 
@@ -64,8 +64,8 @@
 
 (set-fg-color "#eeeeee")
 (set-bg-color "#2d2e2e")
-(set-border-color "#39393d")
-(set-focus-color "#828290")
+(set-border-color "#222222")
+(set-focus-color "#39393d")
 (set-unfocus-color "#39393d")
 (set-win-bg-color "#1c1e1f")
 (set-float-focus-color "#828290")
@@ -172,7 +172,6 @@
 (update-color-map (current-screen))
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
-;; (run-shell-command "dunst")
 (run-shell-command "mpdas")
 (run-commands "toggle-gaps")
 
