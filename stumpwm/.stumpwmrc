@@ -34,8 +34,8 @@
 (load-module "swm-gaps")
 
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
-(setf swm-gaps:*inner-gaps-size* 20
-      swm-gaps:*outer-gaps-size* 30)
+(setf swm-gaps:*inner-gaps-size* 15
+      swm-gaps:*outer-gaps-size* 20)
 
 (add-hook *post-command-hook* (lambda (command)
                                 (when (member command winner-mode:*default-commands*)
@@ -51,11 +51,11 @@
       *input-window-gravity* :center
       *window-border-style* :thin
       *message-window-padding* 10
-      *maxsize-border-width* 7
-      *normal-border-width* 7
-      *transient-border-width* 5
-      stumpwm::*float-window-border* 7
-      stumpwm::*float-window-title-height* 2
+      *maxsize-border-width* 0
+      *normal-border-width* 0
+      *transient-border-width* 0
+      stumpwm::*float-window-border* 0
+      stumpwm::*float-window-title-height* 5
       *mouse-focus-policy* :click)
 
 (set-normal-gravity :top)
@@ -68,7 +68,7 @@
 (set-focus-color "#39393d")
 (set-unfocus-color "#39393d")
 (set-win-bg-color "#1c1e1f")
-(set-float-focus-color "#828290")
+(set-float-focus-color "#ff6a6a")
 (set-float-unfocus-color "#39393d")
 
 (setf *colors* (list "#1c1e1f"      ; 0 black
