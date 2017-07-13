@@ -68,7 +68,7 @@
 (set-focus-color "#39393d")
 (set-unfocus-color "#39393d")
 (set-win-bg-color "#1c1e1f")
-(set-float-focus-color "#ff6a6a")
+(set-float-focus-color "#fb2874")
 (set-float-unfocus-color "#39393d")
 
 (setf *colors* (list "#1c1e1f"      ; 0 black
