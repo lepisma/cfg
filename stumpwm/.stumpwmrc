@@ -97,7 +97,7 @@
   (run-or-raise "vivaldi" '(:class "Vivaldi-snapshot") T T))
 
 (defcommand run-or-raise-konsole () ()
-  (run-or-raise "konsole" '(:class "konsole") T T))
+  (run-or-raise "konsole" '(:class "konsole") nil T))
 
 (defcommand refresh-desktop () ()
   (run-shell-command "sh ~/.fehbg")
