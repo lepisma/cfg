@@ -58,9 +58,9 @@
       stumpwm::*float-window-title-height* 5
       *mouse-focus-policy* :click)
 
-(set-normal-gravity :top)
+(set-normal-gravity :center)
 (set-maxsize-gravity :center)
-(set-transient-gravity :top)
+(set-transient-gravity :center)
 
 (set-fg-color "#eeeeee")
 (set-bg-color "#2d2e2e")
