@@ -34,8 +34,8 @@
 (load-module "swm-gaps")
 
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
-(setf swm-gaps:*inner-gaps-size* 15
-      swm-gaps:*outer-gaps-size* 20)
+(setf swm-gaps:*inner-gaps-size* 7
+      swm-gaps:*outer-gaps-size* 10)
 
 (add-hook *post-command-hook* (lambda (command)
                                 (when (member command winner-mode:*default-commands*)
