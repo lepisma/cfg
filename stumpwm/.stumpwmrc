@@ -118,6 +118,12 @@
   "Open windows up and down"
   (run-commands "only" "hsplit"))
 
+(defcommand raise-brightness () ()
+  (run-shell-command "light -A 5"))
+
+(defcommand lower-brightness () ()
+  (run-shell-command "light -U 5"))
+
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
@@ -125,6 +131,7 @@
 (define-key *top-map* (kbd "s-t") "exec konsole")
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole -e htop")
+(define-key *top-map* (kbd "XF86Mail") "exec kmail")
 
 (define-key *top-map* (kbd "s-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-r") "rotate-windows")
@@ -132,13 +139,17 @@
 (define-key *top-map* (kbd "s-h") "windows-up-down")
 (define-key *top-map* (kbd "s-f") "only")
 (define-key *top-map* (kbd "s-c") "fclear")
+(define-key *top-map* (kbd "s-l") "exec slock")
 
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
 (define-key *top-map* (kbd "XF86Launch7") "gselect 3")
-(define-key *top-map* (kbd "XF86Launch8") "exec xdotool key XF86MonBrightnessDown")
-(define-key *top-map* (kbd "XF86Launch9") "exec xdotool key XF86MonBrightnessUp")
-(define-key *top-map* (kbd "XF86Mail") "exec kmail")
+
+(define-key *top-map* (kbd "XF86Launch8") "lower-brightness")
+(define-key *top-map* (kbd "XF86Launch9") "raise-brightness")
+
+(define-key *top-map* (kbd "XF86MonBrightnessUp") "raise-brightness")
+(define-key *top-map* (kbd "XF86MonBrightnessDown") "lower-brightness")
 
 (define-key *root-map* (kbd "XF86Launch5") "pull 0")
 (define-key *root-map* (kbd "XF86Launch6") "pull 1")
@@ -173,6 +184,7 @@
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "compton")
 (run-shell-command "mpdas")
+(run-shell-command "dunst")
 (run-commands "toggle-gaps")
 
 ;; Groups
