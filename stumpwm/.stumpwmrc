@@ -32,6 +32,7 @@
 (load-module "winner-mode")
 (load-module "swm-calibre")
 (load-module "swm-gaps")
+(load-module "amixer")
 
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
 (setf swm-gaps:*inner-gaps-size* 7
@@ -151,6 +152,10 @@
 (define-key *top-map* (kbd "XF86MonBrightnessUp") "raise-brightness")
 (define-key *top-map* (kbd "XF86MonBrightnessDown") "lower-brightness")
 
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "amixer-Master-1-")
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "amixer-Master-1+")
+(define-key *top-map* (kbd "XF86AudioMute") "amixer-Master-toggle pulse")
+
 (define-key *root-map* (kbd "XF86Launch5") "pull 0")
 (define-key *root-map* (kbd "XF86Launch6") "pull 1")
 (define-key *root-map* (kbd "XF86Launch7") "pull 2")
@@ -170,10 +175,6 @@
 (define-key *groups-map* (kbd "M-Left") "gprev-with-window")
 (define-key *groups-map* (kbd "b") "grouplist")
 
-(defvar *open-stuff-map* (make-sparse-keymap))
-(define-key *root-map* (kbd ".") '*open-stuff-map*)
-(define-key *open-stuff-map* (kbd "b") "open-book")
-
 (defvar *winner-map* (make-sparse-keymap))
 (define-key *root-map* (kbd "c") '*winner-map*)
 (define-key *winner-map* (kbd "Left") "winner-undo")
@@ -181,11 +182,14 @@
 
 ;; Init
 (update-color-map (current-screen))
-(run-shell-command "sh ~/.fehbg")
+(run-shell-command "polybar example")
 (run-shell-command "compton")
+(run-shell-command "mpd")
 (run-shell-command "mpdas")
 (run-shell-command "dunst")
-(run-commands "toggle-gaps")
+(run-shell-command "redshift")
+(run-shell-command "sh ~/.fehbg")
+(run-shell-command "xmodmap ~/.Xmodmap")
 
 ;; Groups
 (setf (group-name (car (screen-groups (current-screen)))) "main")
