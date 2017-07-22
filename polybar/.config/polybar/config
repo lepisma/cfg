@@ -1,0 +1,165 @@
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #55
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[global/wm]
+margin-top = 2
+margin-bottom = 2
+
+[bar/bar]
+width = 100%
+height = 22
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 2
+overline-color = #f00
+underline-size = 1
+underline-color = #00f
+
+border-bottom-size = 2
+border-bottom-color = #333
+
+padding-left = 3
+padding-right = 3
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "SauceCodePro Nerd Font:size=8;0"
+font-1 = "SauceCodePro Nerd Font:size=8;0"
+font-2 = "SauceCodePro Nerd Font:size=8:weight=bold;0"
+
+modules-left = volume mpd
+modules-center = date
+modules-right = cpu memory wlan battery
+
+tray-position = right
+tray-padding = 2
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+label-foreground = ${colors.foreground-alt}
+
+[module/mpd]
+type = internal/mpd
+
+format-online = <icon-repeat> <icon-random> <toggle> | <label-song>
+
+label-song-maxlen = 50
+label-song-ellipsis = true
+
+icon-random = RAND
+icon-repeat = REP
+icon-play = PLAY
+icon-pause = PAUSE
+
+toggle-on-foreground = ${colors.primary}
+toggle-off-foreground = ${colors.foreground-alt}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 3
+format-prefix = "MEM "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 3
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-overline = #9f78e1
+
+label-connected = %essid%
+label-disconnected = WLAN
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = ▂
+ramp-signal-2 = ▄
+ramp-signal-3 = ▆
+ramp-signal-4 = █
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+time = "%H:%M"
+date = "%a %d %b[%m], %Y [%Z]"
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+
+label = %time% %date%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <bar-volume>
+
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = MUTE
+
+bar-volume-width = 5
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = #ff
+bar-volume-fill = ─
+bar-volume-fill-font = 0
+bar-volume-empty = ─
+bar-volume-empty-font = 0
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-overline = #0a6cf5
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-overline = ${colors.alert}
+
+format-full-prefix = "█ "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-overline = ${self.format-charging-overline}
+
+ramp-capacity-0 = ▂
+ramp-capacity-1 = ▄
+ramp-capacity-2 = ▆
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = ▂
+animation-charging-1 = ▄
+animation-charging-2 = ▆
+animation-charging-3 = █
+animation-charging-foreground = ${self.format-charging-overline}
+animation-charging-framerate = 750
