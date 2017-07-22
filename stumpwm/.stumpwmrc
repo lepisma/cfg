@@ -30,6 +30,7 @@
 ;; Modules
 (load-module "ttf-fonts")
 (load-module "winner-mode")
+(load-module "globalwindows")
 (load-module "swm-calibre")
 (load-module "swm-gaps")
 
@@ -190,7 +191,7 @@
 (define-key *groups-map* (kbd "Left") "gprev")
 (define-key *groups-map* (kbd "M-Right") "gnext-with-window")
 (define-key *groups-map* (kbd "M-Left") "gprev-with-window")
-(define-key *groups-map* (kbd "b") "grouplist")
+(define-key *groups-map* (kbd "b") "global-windowlist")
 
 (defvar *winner-map* (make-sparse-keymap))
 (define-key *root-map* (kbd "c") '*winner-map*)
