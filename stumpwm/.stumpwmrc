@@ -107,7 +107,7 @@
   (message "desktop refreshed"))
 
 (defcommand rotate-windows () ()
-  (let* ((frames (stumpwm::group-frames (current-group)))
+  (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
          (win (stumpwm::frame-window (car (last frames)))))
     (shift-windows-forward frames win)))
 
