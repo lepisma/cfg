@@ -38,10 +38,6 @@
 (setf swm-gaps:*inner-gaps-size* 7
       swm-gaps:*outer-gaps-size* 10)
 
-(add-hook *post-command-hook* (lambda (command)
-                                (when (member command winner-mode:*default-commands*)
-                                  (winner-mode:dump-group-to-file))))
-
 ;; Looks
 (set-font (make-instance 'xft:font
                          :family "Source Code Pro"
@@ -217,3 +213,22 @@
 
 (define-frame-preference "float"
     (nil nil t :class "Pithos"))
+
+;; Hooks
+(add-hook *post-command-hook* (lambda (command)
+                                (when (member command winner-mode:*default-commands*)
+                                  (winner-mode:dump-group-to-file))))
+
+;; Update polybar group indicator
+(add-hook *post-command-hook* (lambda (command)
+                                (when (member command '(stumpwm:gnext
+                                                        stumpwm:gnext-with-window
+                                                        stumpwm:gprev
+                                                        stumpwm:gprev-with-window
+                                                        stumpwm:gother
+                                                        stumpwm:gkill
+                                                        stumpwm:gselect
+                                                        stumpwm:gmove-and-follow
+                                                        stumpwm:gnew
+                                                        stumpwm:gnew-float))
+                                  (run-shell-command "polybar-msg hook stumpwmgroups 1"))))

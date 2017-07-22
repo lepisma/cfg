@@ -146,9 +146,6 @@ animation-charging-foreground = #0a6cf5
 animation-charging-framerate = 750
 
 [module/stumpwmgroups]
-; type = custom/ipc
-; hook-0 = ~/.config/polybar/stumpwmgroups.sh
-; initial = 1
-type = custom/script
-exec = ~/.config/polybar/stumpwmgroups.sh
-interval = 5
+type = custom/ipc
+hook-0 = ~/.config/polybar/stumpwmgroups.sh
+initial = 1
