@@ -57,6 +57,7 @@ click-left = ~/.config/polybar/redshift-toggle.sh
 type = internal/mpd
 
 format-online = <icon-repeat> <icon-random>  <label-song>
+format-paused = <icon-repeat> <icon-random> PAUSED
 
 label-song = %title% - %artist%
 label-song-maxlen = 50
