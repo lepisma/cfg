@@ -143,7 +143,7 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = #0a6cf5
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/stumpwmgroups]
