@@ -16,9 +16,10 @@ abbr -a ak "adb forward tcp:7777 tcp:7777; xdg-open 'http://localhost:7777'"
 # VPN
 abbr -a v "sudo openconnect --juniper sslvpn.umass.edu"
 
+abbr -a d "nmcli device disconnect wlo1"
+
 # Aliases
 alias sl "ls"
 alias m "micro"
 alias dl "aria2c"
 alias e "emacsclient -n -a micro"
-alias d "nmcli device disconnect wlo1"
