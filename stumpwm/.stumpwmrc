@@ -230,5 +230,9 @@
                                                         stumpwm:gselect
                                                         stumpwm:gmove-and-follow
                                                         stumpwm:gnew
-                                                        stumpwm:gnew-float))
+                                                        stumpwm:gnew-float
+                                                        stumpwm:emacs
+                                                        run-or-raise-firefox
+                                                        run-or-raise-konsole
+                                                        run-or-raise-vivaldi))
                                   (run-shell-command "polybar-msg hook stumpwmgroups 1"))))
