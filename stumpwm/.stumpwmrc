@@ -94,7 +94,7 @@
   (run-or-raise "vivaldi" '(:class "Vivaldi-snapshot") T T))
 
 (defcommand run-or-raise-konsole () ()
-  (run-or-raise "konsole" '(:class "konsole") nil T))
+  (run-or-raise "konsole --stylesheet ~/cfg/konsole/konsole.css" '(:class "konsole") nil T))
 
 (defcommand refresh-desktop () ()
   (run-shell-command "sh ~/.fehbg")
@@ -143,9 +143,9 @@
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
 (define-key *top-map* (kbd "C-M-SPC") "exec player-toggle")
-(define-key *top-map* (kbd "s-t") "exec konsole")
+(define-key *top-map* (kbd "s-t") "exec konsole --stylesheet ~/cfg/konsole/konsole.css")
 (define-key *top-map* (kbd "s-x") "exec xkill")
-(define-key *top-map* (kbd "s-w") "exec konsole -e htop")
+(define-key *top-map* (kbd "s-w") "exec konsole --stylesheet ~/cfg/konsole/konsole.css -e htop ")
 (define-key *top-map* (kbd "XF86Mail") "exec kmail")
 
 (define-key *top-map* (kbd "s-g") "toggle-gaps")

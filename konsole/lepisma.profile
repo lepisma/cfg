@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Breeze
-Font=SauceCodePro Nerd Font,9,-1,5,50,0,0,0,0,0
+Font=Source Code Pro,8,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
 CursorShape=1
@@ -8,10 +8,10 @@ CursorShape=1
 [General]
 Command=/usr/bin/fish
 Directory=/home/lepisma/Desktop
-LocalTabTitleFormat=%d %n
+LocalTabTitleFormat=%d | %n
 Name=lepisma
 Parent=FALLBACK/
-RemoteTabTitleFormat=%d %n
+RemoteTabTitleFormat=%d | %n
 
 [Interaction Options]
 AutoCopySelectedText=true
