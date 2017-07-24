@@ -60,7 +60,7 @@
 (set-transient-gravity :center)
 
 (set-fg-color "#eeeeee")
-(set-bg-color "#2d2e2e")
+(set-bg-color "#222222")
 (set-border-color "#222222")
 (set-focus-color "#39393d")
 (set-unfocus-color "#39393d")
