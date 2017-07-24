@@ -42,7 +42,7 @@
 (set-font (make-instance 'xft:font
                          :family "Source Code Pro"
                          :subfamily "Regular"
-                         :size 9))
+                         :size 8))
 
 (setf *message-window-gravity* :center
       *input-window-gravity* :center
