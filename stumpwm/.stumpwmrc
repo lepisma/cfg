@@ -238,5 +238,6 @@
                                                         stumpwm:emacs
                                                         run-or-raise-firefox
                                                         run-or-raise-konsole
-                                                        run-or-raise-vivaldi))
+                                                        run-or-raise-vivaldi
+                                                        globalwindows:global-windowlist))
                                   (run-shell-command "polybar-msg hook stumpwmgroups 1"))))
