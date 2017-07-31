@@ -20,12 +20,12 @@
 (set-module-dir
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm/contrib")))
 
-(defun load-local (names)
+(defun add-local (names)
   (map nil (lambda (n) (add-to-load-path
                    (pathname-as-directory (concat (getenv "HOME") "/stumpwm/local/" n))))
        names))
 
-(load-local '("swm-calibre" "swm-gaps"))
+(add-local '("swm-calibre"))
 
 ;; Modules
 (load-module "ttf-fonts")
