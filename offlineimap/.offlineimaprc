@@ -1,0 +1,69 @@
+[general]
+accounts = UMass, UMassCS, Gmail, Outlook
+maxsyncaccounts = 5
+pythonfile = ~/offlineimapext.py
+
+[Account Gmail]
+localrepository = LocalGmail
+remoterepository = RemoteGmail
+status_backend = sqlite
+
+[Repository LocalGmail]
+type = Maildir
+localfolders = ~/Maildir/Gmail
+
+[Repository RemoteGmail]
+type = Gmail
+maxconnections = 2
+remoteusereval = mailuser("Gmail")
+remotepasseval = mailpass("Gmail")
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account UMass]
+localrepository = LocalUMass
+remoterepository = RemoteUMass
+status_backend = sqlite
+
+[Repository LocalUMass]
+type = Maildir
+localfolders = ~/Maildir/UMass
+
+[Repository RemoteUMass]
+type = IMAP
+remotehost = mail-a.oit.umass.edu
+remoteusereval = mailuser("UMass")
+remotepasseval = mailpass("UMass")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account UMassCS]
+localrepository = LocalUMassCS
+remoterepository = RemoteUMassCS
+status_backend = sqlite
+
+[Repository LocalUMassCS]
+type = Maildir
+localfolders = ~/Maildir/UMassCS
+
+[Repository RemoteUMassCS]
+type = IMAP
+remotehost = mailsrv.cs.umass.edu
+remoteusereval = mailuser("UMassCS")
+remotepasseval = mailpass("UMassCS")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account Outlook]
+localrepository = LocalOutlook
+remoterepository = RemoteOutlook
+status_backend = sqlite
+
+[Repository LocalOutlook]
+type = Maildir
+localfolders = ~/Maildir/Outlook
+
+[Repository RemoteOutlook]
+type = IMAP
+remotehost = imap-mail.outlook.com
+remoteusereval = mailuser("Outlook")
+remotepasseval = mailpass("Outlook")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
