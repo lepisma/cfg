@@ -1,0 +1,2 @@
+((music-dir . "~/.tofish/d/Music")
+ (beets-db . "~/.tofish/d/Music/beets.db"))

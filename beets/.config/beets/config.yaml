@@ -1,6 +1,6 @@
 # Main beets config
-directory: /media/lepisma/Data/Music
-library: /media/lepisma/Data/Music/beets.db
+directory: /run/media/lepisma/Data/Music
+library: /run/media/lepisma/Data/Music/beets.db
 import:
   copy: yes
   write: yes
@@ -41,8 +41,8 @@ lyrics:
 play:
   command: mplayer $args -playlist
 smartplaylist:
-  relative_to: /media/lepisma/Data/Music
-  playlist_dir: /media/lepisma/Data/Music/Playlists
+  relative_to: /run/media/lepisma/Data/Music
+  playlist_dir: /run/media/lepisma/Data/Music/Playlists
   playlists:
     - name: all.m3u
       query: ""

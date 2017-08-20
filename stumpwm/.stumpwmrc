@@ -40,7 +40,7 @@
 
 ;; Looks
 (set-font (make-instance 'xft:font
-                         :family "Source Code Pro"
+                         :family "SauceCodePro Nerd Font"
                          :subfamily "Regular"
                          :size 8))
 
@@ -96,11 +96,12 @@
 (defcommand run-or-raise-konsole () ()
   (run-or-raise "konsole --stylesheet ~/cfg/konsole/konsole.css" '(:class "konsole") T T))
 
-(defcommand refresh-desktop () ()
+(defcommand refresh-stuff () ()
   (run-shell-command "sh ~/.fehbg")
+  (run-commands "mode-line" "mode-line")
   (gnew "*refresh-group*")
   (gkill)
-  (message "desktop refreshed"))
+  (message "refreshed"))
 
 (defcommand rotate-windows () ()
   (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
@@ -180,7 +181,7 @@
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
 (define-key *root-map* (kbd "C-v") "run-or-raise-vivaldi")
 (define-key *root-map* (kbd "b") "windowlist")
-(define-key *root-map* (kbd "q") "refresh-desktop")
+(define-key *root-map* (kbd "q") "refresh-stuff")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
 
 (define-key *groups-map* (kbd "Right") "gnext")
@@ -196,13 +197,14 @@
 
 ;; Init
 (update-color-map (current-screen))
+(run-shell-command "sh ~/.screenlayout/multi.sh")
+(run-shell-command "xmodmap ~/.Xmodmap")
 (run-shell-command "mpd")
-(run-shell-command "polybar bar")
+(run-shell-command "polybar bar --reload")
 (run-shell-command "compton")
-(run-shell-command "dunst")
+;; (run-shell-command "dunst")
 (run-shell-command "redshift")
 (run-shell-command "sh ~/.fehbg")
-(run-shell-command "xmodmap ~/.Xmodmap")
 
 ;; Wait for mpd before firing mpdas
 (sb-thread:make-thread (lambda () (progn

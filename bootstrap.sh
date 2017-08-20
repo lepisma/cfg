@@ -19,15 +19,17 @@ fi
 
 if [ $1 == "link" ]; then
     echo -e "\n>> Setting up symlinks"
-    to_stow=( fish git matplotlib scripts micro mpd beets stumpwm dunst compton redshift xmodmap polybar vis offlineimap )
+    to_stow=( fish git matplotlib scripts micro mpd beets bbq stumpwm dunst compton redshift xmodmap polybar vis offlineimap )
     for dir in ${to_stow[@]}; do
         stow -t ~/ $dir
         echo "✓ $dir"
     done
+    # Extra stuff
+    mkdir ~/.config/mpd
     echo ""
 elif [ $1 == "copy" ]; then
     echo -e "\n>> Copying stuff needing modifications"
-    to_copy=( mopidy/.config mpdas/.mpdasrc )
+    to_copy=( mpdas/.mpdasrc )
 
     for dir in ${to_copy[@]}; do
         cp -r $dir ~/

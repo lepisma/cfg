@@ -2,7 +2,7 @@
 background = #222
 background-alt = #444
 foreground = #dfdfdf
-foreground-alt = #55
+foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -25,6 +25,8 @@ overline-color = #f00
 underline-size = 1
 underline-color = #00f
 
+border-top-size = 2
+border-top-color = #222
 border-bottom-size = 2
 border-bottom-color = #333
 
@@ -34,7 +36,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Source Code Pro:size=8;0"
-font-1 = "FontAwesome:size=8;-1"
+font-1 = "FontAwesome:size=8;0"
 
 modules-left = stumpwmgroups volume mpd
 modules-center =

@@ -25,4 +25,5 @@ glances
 proselint
 pipenv
 borgbackup[fuse]
-git+https://github.com/lepisma/sup
+pylast
+python-mpd2
