@@ -9,6 +9,7 @@
     "colorscheme": "simple",
     "cursorline": true,
     "eofnewline": false,
+    "ftoptions": true,
     "ignorecase": false,
     "indentchar": " ",
     "infobar": true,
@@ -29,7 +30,9 @@
     "splitRight": true,
     "statusline": true,
     "syntax": true,
+    "tabmovement": false,
     "tabsize": 2,
     "tabstospaces": true,
+    "termtitle": false,
     "useprimary": true
 }
