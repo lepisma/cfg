@@ -1,8 +1,8 @@
 # Apt-get
-abbr -a p "sudo pacman -S"
-abbr -a up "sudo pacman -Syu"
-abbr -a cl "sudo pacman -R (sudo pacman -Qdtq); sudo pacman -Scc"
-abbr -a y "yaourt -S"
+abbr -a p "pacaur -S"
+abbr -a up "pacaur -Syyu"
+abbr -a cl "pacaur -Rsn (pacaur -Qdtq); pacaur -Scc"
+abbr -a y "pacaur -S"
 abbr -a s "sudo"
 
 # Youtube-dl
