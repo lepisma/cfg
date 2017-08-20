@@ -1,0 +1,2 @@
+(require :stumpwm)
+(stumpwm:stumpwm)
