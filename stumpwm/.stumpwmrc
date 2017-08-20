@@ -28,7 +28,6 @@
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm")))
 
 ;; Modules
-(load-module "amixer")
 (load-module "ttf-fonts")
 (load-module "winner-mode")
 (load-module "globalwindows")
@@ -123,24 +122,6 @@
 (defcommand lower-brightness () ()
   (run-shell-command "light -U 5"))
 
-;; (defun volcontrol (device channel amount)
-;;   (let* ((output (run-shell-command
-;;                   (concat "amixer -D "
-;;                           (or device "default")
-;;                           " sset "
-;;                           channel
-;;                           " "
-;;                           (or amount "toggle"))
-;;                   t)))))
-
-;; (defmacro defvolcontrol (name channel valence)
-;;   `(defcommand ,name (&optional device) ((:string))
-;;      (volcontrol device ,channel ,valence)))
-
-;; (defvolcontrol amixer-lower-volume "Master" "5%-")
-;; (defvolcontrol amixer-raise-volume "Master" "5%+")
-;; (defvolcontrol amixer-toggle "Master" "toggle")
-
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
@@ -168,9 +149,9 @@
 (define-key *top-map* (kbd "XF86MonBrightnessUp") "raise-brightness")
 (define-key *top-map* (kbd "XF86MonBrightnessDown") "lower-brightness")
 
-;; (define-key *top-map* (kbd "XF86AudioLowerVolume") "amixer-lower-volume")
-;; (define-key *top-map* (kbd "XF86AudioRaiseVolume") "amixer-raise-volume")
-(define-key *top-map* (kbd "XF86AudioMute") "amixer-toggle pulse")
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "amixer-Master-1-")
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "amixer-Master-1+")
+(define-key *top-map* (kbd "XF86AudioMute") "amixer-Master-toggle")
 
 (define-key *root-map* (kbd "XF86Launch5") "pull 0")
 (define-key *root-map* (kbd "XF86Launch6") "pull 1")
