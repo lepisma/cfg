@@ -1,8 +1,8 @@
 # Apt-get
-abbr -a p "pacaur -S"
+abbr -a i "pacaur -S"
+abbr -a r "pacaur -Rsn"
 abbr -a up "pacaur -Syyu"
 abbr -a cl "pacaur -Rsn (pacaur -Qdtq); pacaur -Scc"
-abbr -a y "pacaur -S"
 abbr -a s "sudo"
 
 # Youtube-dl
