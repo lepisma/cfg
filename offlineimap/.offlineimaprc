@@ -6,7 +6,6 @@ pythonfile = ~/offlineimapext.py
 [Account Gmail]
 localrepository = LocalGmail
 remoterepository = RemoteGmail
-status_backend = sqlite
 
 [Repository LocalGmail]
 type = Maildir
@@ -23,7 +22,6 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 [Account UMass]
 localrepository = LocalUMass
 remoterepository = RemoteUMass
-status_backend = sqlite
 
 [Repository LocalUMass]
 type = Maildir
@@ -39,7 +37,6 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 [Account UMassCS]
 localrepository = LocalUMassCS
 remoterepository = RemoteUMassCS
-status_backend = sqlite
 
 [Repository LocalUMassCS]
 type = Maildir
@@ -55,7 +52,6 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 [Account Outlook]
 localrepository = LocalOutlook
 remoterepository = RemoteOutlook
-status_backend = sqlite
 
 [Repository LocalOutlook]
 type = Maildir
