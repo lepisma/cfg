@@ -1,2 +1,2 @@
-((music-dir . "~/.tofish/d/Music")
- (beets-db . "~/.tofish/d/Music/beets.db"))
+((music-dir . "/run/media/lepisma/Data/Music/")
+ (beets-db . "/run/media/lepisma/Data/Music/beets.db"))
