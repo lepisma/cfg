@@ -1,0 +1,16 @@
+*
+
+!.gitignore
+!abbrs.fish
+!config.fish
+!environment.fish
+!fishfile
+!music.fish
+!completions/peeve.fish
+!functions/:.fish
+!functions/do.fish
+!functions/huion-setup-keys.fish
+!functions/ip-public.fish
+!functions/peeve.fish
+!functions/rm.fish
+!functions/sdl.fish
