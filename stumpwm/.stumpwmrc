@@ -35,8 +35,8 @@
 (load-module "swm-calibre")
 
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
-(setf swm-gaps:*inner-gaps-size* 7
-      swm-gaps:*outer-gaps-size* 10)
+(setf swm-gaps:*inner-gaps-size* 15
+      swm-gaps:*outer-gaps-size* 20)
 
 ;; Looks
 (set-font (make-instance 'xft:font

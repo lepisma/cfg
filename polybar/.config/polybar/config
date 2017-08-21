@@ -1,8 +1,9 @@
 [colors]
 background = #222
+background-dark = #111
 background-alt = #444
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #777
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -13,7 +14,7 @@ margin-bottom = 2
 
 [bar/bar]
 width = 100%
-height = 22
+height = 28
 offset-x = 0
 offset-y = 0
 
@@ -21,13 +22,13 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 overline-size = 1
-overline-color = #f00
-underline-size = 1
-underline-color = #00f
+overline-color = ${colors.background}
+underline-size = 2
+underline-color = ${colors.background}
 
-border-top-size = 2
+border-top-size = 0
 border-top-color = #222
-border-bottom-size = 2
+border-bottom-size = 0
 border-bottom-color = #333
 
 padding-left = 3
@@ -35,17 +36,36 @@ padding-right = 3
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Source Code Pro:size=8;0"
-font-1 = "FontAwesome:size=8;0"
+font-0 = "Source Code Pro:size=8;1"
+font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = stumpwmgroups volume mpd
-modules-center =
-modules-right = redshift cpu memory wlan battery date
+modules-center = 
+modules-right = redshift cpu memory wlan battery date powermenu
 
-tray-position = right
-tray-padding = 2
+tray-position = left
+tray-padding = 1
 
 enable-ipc = true
+
+[module/powermenu]
+type = custom/menu
+
+label-open = "  "
+label-open-foreground = ${colors.foreground}
+label-close = "  "
+label-close-foreground = ${colors.foreground-alt}
+
+menu-0-0 = 
+menu-0-0-exec = systemctl suspend
+menu-0-1 = 
+menu-0-1-exec = reboot
+menu-0-2 = 
+menu-0-2-exec = poweroff
+
+menu-0-0-padding = 1
+menu-0-1-padding = 1
+menu-0-2-padding = 1
 
 [module/redshift]
 type = custom/script
@@ -90,9 +110,9 @@ type = internal/network
 interface = wlo1
 interval = 3
 
-format-connected = <label-connected>
-format-connected-prefix = " "
-format-connected-prefix-foreground = #9f78e1
+format-connected = "<label-connected> "
+format-connected-prefix = "  "
+format-connected-underline = ${colors.foreground-alt}
 
 label-connected = %essid%
 label-disconnected =  WLAN
@@ -103,9 +123,12 @@ type = internal/date
 interval = 5
 time = "%H:%M"
 date = "%a %d %b"
-label = %time%, %date%
-format-prefix = " "
+label = "%time%, %date%  "
+format-prefix = "   "
 format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-background = ${colors.background-dark}
+label-background = ${colors.background-dark}
+
 
 [module/volume]
 type = internal/volume
