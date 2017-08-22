@@ -11,8 +11,11 @@ roswell
 ttf-fira-code
 emacs
 xorg-xset
-fish
+xorg-xinput
 xdotool
+xf86-input-wacom
+digimend-kernel-drivers-dkms-git
+fish
 stow
 w3m
 redshift

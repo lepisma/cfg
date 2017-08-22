@@ -4,12 +4,8 @@ sudo rmmod hid-kye
 sudo rmmod hid-uclogic
 sudo rmmod hid-huion
 
-# Download driver
-rm -rf /tmp/digimend
-git clone "https://github.com/DIGImend/digimend-kernel-drivers" /tmp/digimend
-cd /tmp/digimend
-make
-sudo make install
+# Setup driver
+# Use https://aur.archlinux.org/packages/digimend-kernel-drivers-dkms-git/
 
 # Create entry
 sudo mkdir -p /etc/X11/xorg.conf.d
