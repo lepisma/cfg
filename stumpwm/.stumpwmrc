@@ -123,6 +123,9 @@
 (defcommand lower-brightness () ()
   (run-shell-command "light -U 5"))
 
+(amixer::defvolcontrol amixer-Master-5- "Master" "5%-")
+(amixer::defvolcontrol amixer-Master-5+ "Master" "5%+")
+
 (defcommand bbq (search-term) ((:string " "))
   "Play via bbq"
   (run-shell-command (format nil "bbq ~A " search-term)))
@@ -155,8 +158,8 @@
 (define-key *top-map* (kbd "XF86MonBrightnessUp") "raise-brightness")
 (define-key *top-map* (kbd "XF86MonBrightnessDown") "lower-brightness")
 
-(define-key *top-map* (kbd "XF86AudioLowerVolume") "amixer-Master-1-")
-(define-key *top-map* (kbd "XF86AudioRaiseVolume") "amixer-Master-1+")
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "amixer-Master-5-")
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "amixer-Master-5+")
 (define-key *top-map* (kbd "XF86AudioMute") "amixer-Master-toggle")
 
 (define-key *root-map* (kbd "XF86Launch5") "pull 0")
