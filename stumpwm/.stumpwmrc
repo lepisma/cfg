@@ -123,6 +123,10 @@
 (defcommand lower-brightness () ()
   (run-shell-command "light -U 5"))
 
+(defcommand bbq (search-term) ((:string " "))
+  "Play via bbq"
+  (run-shell-command (format nil "bbq ~A " search-term)))
+
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
@@ -139,6 +143,7 @@
 (define-key *top-map* (kbd "s-f") "only")
 (define-key *top-map* (kbd "s-c") "fclear")
 (define-key *top-map* (kbd "s-l") "exec slock")
+(define-key *top-map* (kbd "s-SPC") "bbq")
 
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
