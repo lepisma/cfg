@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
-pico2wave -w=/tmp/test.wav "$1"
-aplay /tmp/test.wav
-rm /tmp/test.wav
+pgrep -x aplay &> /dev/null
+if [[ $? -eq 0 ]]; then
+    # Only kill the process
+    killall aplay
+else
+    pico2wave -w=/tmp/test.wav "$1"
+    aplay /tmp/test.wav
+    rm /tmp/test.wav
+fi
