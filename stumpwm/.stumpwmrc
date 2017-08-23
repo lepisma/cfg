@@ -128,7 +128,8 @@
 
 (defcommand bbq (search-term) ((:string " "))
   "Play via bbq"
-  (run-shell-command (format nil "bbq ~A " search-term)))
+  (if search-term
+      (run-shell-command (format nil "bbq ~A " search-term))))
 
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
