@@ -194,7 +194,7 @@
 (run-shell-command "mpd")
 (run-shell-command "polybar bar --reload")
 (run-shell-command "compton")
-;; (run-shell-command "dunst")
+(run-shell-command "dunst")
 (run-shell-command "redshift")
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "xset b off")
