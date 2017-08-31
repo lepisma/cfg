@@ -24,6 +24,5 @@ thefuck
 glances
 proselint
 pipenv
-borgbackup[fuse]
 pylast
 python-mpd2
