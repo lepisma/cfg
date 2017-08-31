@@ -2,7 +2,7 @@
 
 begin
   set IGNORE_FILE ~/cfg/misc/borg-ignore.txt
-  set TO_BACKUP /run/media/lepisma/Data/Projects /run/media/lepisma/Data/Vault /run/media/lepisma/Data/Cloud/Calibre\ Shared
+  set TO_BACKUP /run/media/lepisma/Data/Projects /run/media/lepisma/Data/Vault /run/media/lepisma/Data/Cloud/Calibre\ Shared /run/media/lepisma/Data/Cloud/Documents
   set_color green
   get -p "Enter repo passphrase: " --silent 0 | read -lx BORG_PASSPHRASE
   set_color normal
