@@ -60,7 +60,9 @@ function _work_on_spotify
 end
 
 function player-toggle
-  if _work_on_mpd
+  if true
+    bbq :toggle
+  else if _work_on_mpd
     mpc toggle > /dev/null 2>&1
   else if _work_on_spotify
     sp play
@@ -70,7 +72,9 @@ function player-toggle
 end
 
 function player-next
-  if _work_on_mpd
+  if true
+    bbq :next
+  else if _work_on_mpd
     mpc next > /dev/null 2>&1
   else if _work_on_spotify
     sp next
@@ -80,7 +84,9 @@ function player-next
 end
 
 function player-prev
-  if _work_on_mpd
+  if true
+    bbq :prev
+  else if _work_on_mpd
     mpc prev > /dev/null 2>&1
   else if _work_on_spotify
     sp prev

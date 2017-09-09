@@ -1,2 +1,2 @@
 ((music-dir . "/run/media/lepisma/Data/Music/")
- (beets-db . "/run/media/lepisma/Data/Music/beets.db"))
+ (mpm-db . "/home/lepisma/.mpm.d/database"))
