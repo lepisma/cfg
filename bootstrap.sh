@@ -9,7 +9,7 @@ echo "                                    "
 echo "--------------------------------------"
 
 help_and_die () {
-    echo -e ">> usage: bootstrap <link|copy|packages>"
+    echo -e ">> usage: bootstrap <link|packages>"
     exit
 }
 
@@ -19,23 +19,11 @@ fi
 
 if [ $1 == "link" ]; then
     echo -e "\n>> Setting up symlinks"
-    to_stow=( fish git matplotlib scripts micro mpd beets bbq stumpwm dunst compton redshift xmodmap polybar vis offlineimap )
+    to_stow=( fish git matplotlib scripts micro beets mpm stumpwm dunst compton redshift xmodmap polybar vis offlineimap )
     for dir in ${to_stow[@]}; do
         stow -t ~/ $dir
         echo "✓ $dir"
     done
-    # Extra stuff
-    mkdir ~/.config/mpd
-    echo ""
-elif [ $1 == "copy" ]; then
-    echo -e "\n>> Copying stuff needing modifications"
-    to_copy=( mpdas/.mpdasrc )
-
-    for dir in ${to_copy[@]}; do
-        cp -r $dir ~/
-        echo "✓ $dir"
-    done
-    echo ""
 elif [ $1 == "packages" ]; then
     cd ./packages
     bash ./setup.sh
