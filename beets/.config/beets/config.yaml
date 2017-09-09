@@ -19,8 +19,8 @@ ui:
 # Plugins and config
 plugins: >
   acousticbrainz bbq bpd chroma discogs duplicates edit embedart export fetchart
-  fromfilename ftintitle fuzzy info lastgenre lastimport lyrics mbsync mpdstats
-  mpdupdate play smartplaylist web
+  fromfilename ftintitle fuzzy info lastgenre lastimport lyrics mbsync play
+  smartplaylist web
 bbq:
   fields: artist title album
 chroma:
