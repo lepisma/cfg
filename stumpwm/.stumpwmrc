@@ -191,18 +191,13 @@
 (update-color-map (current-screen))
 (run-shell-command "sh ~/.screenlayout/multi.sh")
 (run-shell-command "xmodmap ~/.Xmodmap")
-(run-shell-command "mpd")
+(run-shell-command "mpm-play")
 (run-shell-command "polybar bar --reload")
 (run-shell-command "compton")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "xset b off")
-
-;; Wait for mpd before firing mpdas
-(sb-thread:make-thread (lambda () (progn
-                               (sleep 10)
-                               (run-shell-command "mpdas"))))
 
 ;; Groups
 (setf (group-name (car (screen-groups (current-screen)))) "main")
