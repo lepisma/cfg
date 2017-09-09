@@ -39,7 +39,7 @@ module-margin-right = 1
 font-0 = "Source Code Pro:size=8;1"
 font-1 = "FontAwesome:pixelsize=8;1"
 
-modules-left = stumpwmgroups volume mpd
+modules-left = stumpwmgroups volume mpm
 modules-center = 
 modules-right = redshift cpu memory wlan battery date powermenu
 
@@ -75,21 +75,12 @@ format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/redshift.sh
 click-left = ~/.config/polybar/redshift-toggle.sh
 
-[module/mpd]
-type = internal/mpd
-
-format-online = <icon-repeat> <icon-random>  <label-song>
-format-paused = <icon-repeat> <icon-random> PAUSED
-
-label-song = %title% - %artist%
-label-song-maxlen = 50
-label-song-ellipsis = true
-
-icon-random = RAND
-icon-repeat = REP
-
-toggle-on-foreground = ${colors.primary}
-toggle-off-foreground = ${colors.foreground-alt}
+[module/mpm]
+type = custom/script
+interval = 10
+format-prefix = "MPM "
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/mpm.sh
 
 [module/cpu]
 type = internal/cpu
