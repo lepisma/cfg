@@ -1,5 +1,5 @@
 [general]
-accounts = UMass, UMassCS, Gmail, Outlook
+accounts = UMass, UMassCS, Gmail, Fastmail
 maxsyncaccounts = 5
 pythonfile = ~/offlineimapext.py
 
@@ -14,8 +14,8 @@ localfolders = ~/Maildir/Gmail
 [Repository RemoteGmail]
 type = Gmail
 maxconnections = 2
-remoteusereval = mailuser("Gmail")
-remotepasseval = mailpass("Gmail")
+remoteusereval = get_authinfo_value("imap.gmail.com", "993", "login")
+remotepasseval = get_authinfo_value("imap.gmail.com", "993", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
@@ -30,8 +30,8 @@ localfolders = ~/Maildir/UMass
 [Repository RemoteUMass]
 type = IMAP
 remotehost = mail-a.oit.umass.edu
-remoteusereval = mailuser("UMass")
-remotepasseval = mailpass("UMass")
+remoteusereval = get_authinfo_value("mail-a.oit.umass.edu", "993", "login")
+remotepasseval = get_authinfo_value("mail-a.oit.umass.edu", "993", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account UMassCS]
@@ -45,21 +45,21 @@ localfolders = ~/Maildir/UMassCS
 [Repository RemoteUMassCS]
 type = IMAP
 remotehost = mailsrv.cs.umass.edu
-remoteusereval = mailuser("UMassCS")
-remotepasseval = mailpass("UMassCS")
+remoteusereval = get_authinfo_value("mailsrv.cs.umass.edu", "993", "login")
+remotepasseval = get_authinfo_value("mailsrv.cs.umass.edu", "993", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
-[Account Outlook]
-localrepository = LocalOutlook
-remoterepository = RemoteOutlook
+[Account Fastmail]
+localrepository = LocalFastmail
+remoterepository = RemoteFastmail
 
-[Repository LocalOutlook]
+[Repository LocalFastmail]
 type = Maildir
-localfolders = ~/Maildir/Outlook
+localfolders = ~/Maildir/Fastmail
 
-[Repository RemoteOutlook]
+[Repository RemoteFastmail]
 type = IMAP
-remotehost = imap-mail.outlook.com
-remoteusereval = mailuser("Outlook")
-remotepasseval = mailpass("Outlook")
+remotehost = imap.fastmail.com
+remoteusereval = get_authinfo_value("imap.fastmail.com", "993", "login")
+remotepasseval = get_authinfo_value("imap.fastmail.com", "993", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt

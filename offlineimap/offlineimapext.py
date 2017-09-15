@@ -2,35 +2,18 @@
 Things for offlineimap
 """
 
-import os
 import subprocess
-import sys
 
-def readgpg(acct):
-    acct = os.path.basename(acct)
-    path = "/home/lepisma/.mailaccounts/{}.gpg".format(acct)
-    args = ["gpg", "--use-agent", "--quiet", "--batch", "-d", path]
-    try:
-        return subprocess.check_output(args).strip().splitlines()
-    except subprocess.CalledProcessError:
-        return ["", ""]
+def plist_get(key, plist):
+    for i in range(len(plist) // 2):
+        if plist[i * 2] == key:
+            return plist[1 + (i * 2)]
+    return None
 
-def mailuser(acct):
-    return readgpg(acct)[0]
-
-def mailpass(acct):
-    return readgpg(acct)[1]
-
-def prime_gpg_agent():
-  ret = False
-  i = 1
-  while not ret:
-    ret = (mailpass("prime") == "prime")
-    if i > 2:
-      from offlineimap.ui import getglobalui
-      sys.stderr.write("Error reading in passwords. Terminating.\n")
-      getglobalui().terminate()
-    i += 1
-  return ret
-
-prime_gpg_agent()
+def get_authinfo_value(machine, port, key):
+    machines = [
+        line.decode("utf-8").split(" ")
+        for line in subprocess.check_output(["gpg", "--use-agent", "--quiet", "--batch", "-d", "/home/lepisma/.authinfo.gpg"]).strip().splitlines()
+    ]
+    item = list(filter(lambda x: plist_get("machine", x) == machine and plist_get("port", x) == port, machines))[0]
+    return plist_get(key, item)
