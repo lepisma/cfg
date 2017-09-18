@@ -169,6 +169,19 @@
 (define-key *root-map* (kbd "XF86Launch8") "pull 3")
 (define-key *root-map* (kbd "XF86Launch9") "pull 4")
 
+;; Lazy people
+(define-key *top-map* (kbd "KP_Up") "ratrelwarp 0 -10")
+(define-key *top-map* (kbd "KP_Down") "ratrelwarp 0 10")
+(define-key *top-map* (kbd "KP_Left") "ratrelwarp -10 0")
+(define-key *top-map* (kbd "KP_Right") "ratrelwarp 10 0")
+(define-key *top-map* (kbd "KP_Begin") "ratclick")
+
+(define-key *top-map* (kbd "s-KP_Up") "ratrelwarp 0 -100")
+(define-key *top-map* (kbd "s-KP_Down") "ratrelwarp 0 100")
+(define-key *top-map* (kbd "s-KP_Left") "ratrelwarp -100 0")
+(define-key *top-map* (kbd "s-KP_Right") "ratrelwarp 100 0")
+(define-key *top-map* (kbd "s-KP_Begin") "ratclick 3")
+
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
 (define-key *root-map* (kbd "C-v") "run-or-raise-vivaldi")
