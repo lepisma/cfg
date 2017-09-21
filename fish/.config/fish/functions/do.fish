@@ -19,6 +19,8 @@ function do -d "Do the most sensible thing"
         hy $argv[1]
       case "js"
         node $argv[1]
+      case "pdf" "djvu"
+        okular $argv[1]
       case "*"
         xdg-open $argv[1]
     end
