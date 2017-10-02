@@ -52,22 +52,22 @@
       *maxsize-border-width* 0
       *normal-border-width* 0
       *transient-border-width* 0
-      stumpwm::*float-window-border* 0
-      stumpwm::*float-window-title-height* 3
+      stumpwm::*float-window-border* 2
+      stumpwm::*float-window-title-height* 2
       *mouse-focus-policy* :click)
 
 (set-normal-gravity :center)
 (set-maxsize-gravity :center)
 (set-transient-gravity :center)
 
-(set-fg-color "#eeeeee")
 (set-bg-color "#222222")
+(set-fg-color "#fdf6e3")
 (set-border-color "#222222")
-(set-focus-color "#39393d")
-(set-unfocus-color "#39393d")
-(set-win-bg-color "#1c1e1f")
-(set-float-focus-color "#16A085")
-(set-float-unfocus-color "#39393d")
+(set-focus-color "#a47dd0")
+(set-unfocus-color "#FBF8EF")
+(set-win-bg-color "#fbf8ef")
+(set-float-focus-color "#FBF8EF")
+(set-float-unfocus-color "#FBF8EF")
 
 (setf *colors* (list "#1c1e1f"      ; 0 black
                      "#ff6a6a"      ; 1 red

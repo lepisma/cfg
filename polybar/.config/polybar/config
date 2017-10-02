@@ -1,8 +1,8 @@
 [colors]
-background = #222
-background-dark = #111
-background-alt = #444
-foreground = #dfdfdf
+background = #bbeeeeee
+background-dark = #dda47dd0
+background-alt = #333
+foreground = #333
 foreground-alt = #777
 primary = #ffb52a
 secondary = #e60053
@@ -117,8 +117,8 @@ date = "%a %d %b"
 label = "%time%, %date%  "
 format-prefix = "   "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-background = ${colors.background-dark}
-label-background = ${colors.background-dark}
+format-prefix-background = ${colors.background}
+label-background = ${colors.background}
 
 
 [module/volume]
