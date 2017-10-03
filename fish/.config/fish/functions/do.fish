@@ -1,6 +1,10 @@
 function do -d "Do the most sensible thing"
   if count $argv > /dev/null
-    switch (echo $argv[1] | awk -F . '{if (NF>1) {print $NF}}')
+    if [ $argv[1] = "milk" ]
+      echo "Bitch Lasagna!"
+      return 1
+    end
+    switch (echo $argv[1] | awk -F . "{if (NF>1) {print $NF}}")
       case "gz" "xz" "tar" "bz2"
         tar xvf $argv[1]
       case "ace"
@@ -21,8 +25,6 @@ function do -d "Do the most sensible thing"
         node $argv[1]
       case "pdf" "djvu"
         okular $argv[1]
-      case "milk"
-        echo "bitch lasagna"
       case "*"
         xdg-open $argv[1]
     end
