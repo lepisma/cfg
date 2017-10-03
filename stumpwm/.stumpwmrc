@@ -43,7 +43,7 @@
 (set-font (make-instance 'xft:font
                          :family "SauceCodePro Nerd Font"
                          :subfamily "Regular"
-                         :size 8))
+                         :size 10))
 
 (setf *message-window-gravity* :center
       *input-window-gravity* :center
@@ -60,9 +60,9 @@
 (set-maxsize-gravity :center)
 (set-transient-gravity :center)
 
-(set-bg-color "#222222")
-(set-fg-color "#fdf6e3")
-(set-border-color "#222222")
+(set-fg-color "#FBF8EF")
+(set-bg-color "#8164A3")
+(set-border-color "#8164A3")
 (set-focus-color "#a47dd0")
 (set-unfocus-color "#FBF8EF")
 (set-win-bg-color "#fbf8ef")
