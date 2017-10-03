@@ -25,7 +25,8 @@ mu
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
 sqlitebrowser
-slock
+i3lock-color-git
+i3lock-fancy-git
 qt5ct
 arandr
 okular
