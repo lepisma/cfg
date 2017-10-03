@@ -21,6 +21,8 @@ function do -d "Do the most sensible thing"
         node $argv[1]
       case "pdf" "djvu"
         okular $argv[1]
+      case "milk"
+        echo "bitch lasagna"
       case "*"
         xdg-open $argv[1]
     end
