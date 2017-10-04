@@ -21,6 +21,7 @@ set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
 set PATH /usr/local/cuda-8.0/bin $PATH
 set PATH ~/.opam/system/bin $PATH
+set PATH ~/.gem/ruby/2.4.0/bin $PATH
 
 set LD_LIBRARY_PATH /usr/local/cuda-8.0/lib64 $LD_LIBRARY_PATH
 set LD_LIBRARY_PATH ~/tools/anaconda/lib $LD_LIBRARY_PATH
