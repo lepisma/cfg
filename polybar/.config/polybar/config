@@ -12,7 +12,8 @@ alert = #bd2c40
 margin-top = 2
 margin-bottom = 2
 
-[bar/bar]
+[bar/screen]
+monitor = HDMI1
 width = 100%
 height = 28
 offset-x = 0
@@ -41,19 +42,69 @@ font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = stumpwmgroups volume mpm
 modules-center = 
-modules-right = redshift cpu memory wlan battery date powermenu
+modules-right = compton redshift cpu memory wlan muunreads battery date powermenu
+
+enable-ipc = true
+
+[bar/laptop]
+monitor = LVDS1
+width = 100%
+height = 24
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 1
+overline-color = ${colors.background}
+underline-size = 2
+underline-color = ${colors.background}
+
+border-top-size = 0
+border-top-color = #222
+border-bottom-size = 0
+border-bottom-color = #333
+
+padding-left = 3
+padding-right = 3
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Source Code Pro:size=8;1"
+font-1 = "FontAwesome:pixelsize=8;1"
+
+modules-left = 
+modules-center = 
+modules-right = wlan battery date
 
 tray-position = left
 tray-padding = 1
 
 enable-ipc = true
 
+[module/muunreads]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/mu-unreads.sh
+
+[module/compton]
+type = custom/script
+format-prefix = "CMPTN "
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/compton.sh
+click-left = ~/.config/polybar/compton-toggle.sh
+interval = 5
+
 [module/powermenu]
 type = custom/menu
 
-label-open = "  "
+label-open = 
 label-open-foreground = ${colors.foreground}
-label-close = "  "
+label-close = " "
 label-close-foreground = ${colors.foreground-alt}
 
 menu-0-0 = 
@@ -114,8 +165,8 @@ type = internal/date
 interval = 5
 time = "%H:%M"
 date = "%a %d %b"
-label = "%time%, %date%  "
-format-prefix = "   "
+label = "%time%, %date%"
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-background = ${colors.background}
 label-background = ${colors.background}
