@@ -3,7 +3,7 @@ set -x JOURNAL_DIR /run/media/lepisma/Data/Cloud/Journal
 set -x PROJECTS_DIR /run/media/lepisma/Data/Projects
 
 # Personal
-set -x EMAIL abhinav.tushar.vs@gmail.com
+set -x EMAIL lepisma@fastmail.com
 set -x NAME Abhinav Tushar
 
 set -x EDITOR micro
@@ -15,16 +15,16 @@ set -x BORG_REPO /run/media/lepisma/Data/Cloud/Backup
 
 # PATH
 set PATH ~/bin $PATH
-set PATH ~/tools/anaconda/bin $PATH
 set PATH ~/.cask/bin $PATH
 set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
-set PATH /usr/local/cuda-8.0/bin $PATH
 set PATH ~/.opam/system/bin $PATH
 set PATH ~/.gem/ruby/2.4.0/bin $PATH
+set PATH ~/.pyenv/bin $PATH
 
-set LD_LIBRARY_PATH /usr/local/cuda-8.0/lib64 $LD_LIBRARY_PATH
-set LD_LIBRARY_PATH ~/tools/anaconda/lib $LD_LIBRARY_PATH
+# Pyenv stuff
+status --is-interactive; and . (pyenv init -|psub)
+status --is-interactive; and . (pyenv virtualenv-init -|psub)
 
 # Ocaml stuff
 set -x OCAML_TOPLEVEL_PATH ~/.opam/system/lib/toplevel
