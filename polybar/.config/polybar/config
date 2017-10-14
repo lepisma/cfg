@@ -127,11 +127,11 @@ exec = ~/.config/polybar/redshift.sh
 click-left = ~/.config/polybar/redshift-toggle.sh
 
 [module/mpm]
-type = custom/script
-interval = 10
+type = custom/ipc
+hook-0 = ~/.config/polybar/mpm.sh
+initial = 1
 format-prefix = "MPM "
 format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/mpm.sh
 
 [module/cpu]
 type = internal/cpu

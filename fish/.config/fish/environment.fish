@@ -7,10 +7,9 @@ set -x EMAIL lepisma@fastmail.com
 set -x NAME Abhinav Tushar
 
 set -x EDITOR micro
-set -x RTV_EDITOR micro
 set -x PAGER less
+set -x BROWSER firefox-nightly
 set -x XDG_MUSIC_DIR /run/media/lepisma/Data/Music
-set -x VIRTUAL_ENV_DISABLE_PROMPT TRUE
 set -x BORG_REPO /run/media/lepisma/Data/Cloud/Backup
 
 # PATH

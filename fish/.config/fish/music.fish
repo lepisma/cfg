@@ -13,6 +13,7 @@ end
 function player-next
   if bbq :current > /dev/null 2>&1
     bbq :next
+    polybar-msg hook mpm 1
   else if sp > /dev/null 2>&1
     sp next
   else
@@ -23,6 +24,7 @@ end
 function player-prev
   if bbq :current > /dev/null 2>&1
     bbq :prev
+    polybar-msg hook mpm 1
   else if sp > /dev/null 2>&1
     sp prev
   else

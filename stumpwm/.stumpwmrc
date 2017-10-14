@@ -135,7 +135,6 @@
 (define-key *top-map* (kbd "s-t") "exec konsole --stylesheet ~/cfg/konsole/konsole.css")
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole --stylesheet ~/cfg/konsole/konsole.css -e htop ")
-(define-key *top-map* (kbd "XF86Mail") "exec kmail")
 
 (define-key *top-map* (kbd "s-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-r") "rotate-windows")
