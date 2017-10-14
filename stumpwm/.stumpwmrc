@@ -200,7 +200,6 @@
 (update-color-map (current-screen))
 (run-shell-command "sh ~/.screenlayout/multi.sh")
 (run-shell-command "xmodmap ~/.Xmodmap")
-(run-shell-command "mpm-play")
 ;(run-shell-command "polybar screen --reload")
 ;(run-shell-command "polybar laptop --reload")
 (run-shell-command "compton")
