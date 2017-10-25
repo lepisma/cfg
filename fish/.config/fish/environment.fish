@@ -20,6 +20,7 @@ set PATH ~/.pkr/bin $PATH
 set PATH ~/.opam/system/bin $PATH
 set PATH ~/.gem/ruby/2.4.0/bin $PATH
 set PATH ~/.pyenv/bin $PATH
+set PATH ~/.cargo/bin $PATH
 
 # Pyenv stuff
 status --is-interactive; and . (pyenv init -|psub)

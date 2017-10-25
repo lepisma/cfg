@@ -52,22 +52,22 @@
       *maxsize-border-width* 0
       *normal-border-width* 0
       *transient-border-width* 0
-      stumpwm::*float-window-border* 2
-      stumpwm::*float-window-title-height* 2
+      stumpwm::*float-window-border* 0
+      stumpwm::*float-window-title-height* 5
       *mouse-focus-policy* :click)
 
 (set-normal-gravity :center)
 (set-maxsize-gravity :center)
 (set-transient-gravity :center)
 
-(set-fg-color "#FBF8EF")
-(set-bg-color "#8164A3")
-(set-border-color "#8164A3")
-(set-focus-color "#a47dd0")
-(set-unfocus-color "#FBF8EF")
-(set-win-bg-color "#fbf8ef")
-(set-float-focus-color "#FBF8EF")
-(set-float-unfocus-color "#FBF8EF")
+(set-fg-color "#fefff9")
+(set-bg-color "#333")
+(set-border-color "#333")
+(set-focus-color "#191d1d")
+(set-unfocus-color "#191d1d")
+(set-win-bg-color "#191d1d")
+(set-float-focus-color "#819391")
+(set-float-unfocus-color "#eee")
 
 (setf *colors* (list "#1c1e1f"      ; 0 black
                      "#ff6a6a"      ; 1 red
@@ -99,7 +99,8 @@
 
 (defcommand refresh-stuff () ()
   (run-shell-command "sh ~/.fehbg")
-  (run-commands "mode-line" "mode-line"))
+  (run-commands "mode-line" "mode-line")
+  (run-shell-command "xmodmap ~/.Xmodmap"))
 
 (defcommand rotate-windows () ()
   (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
@@ -199,9 +200,9 @@
 ;; Init
 (update-color-map (current-screen))
 (run-shell-command "sh ~/.screenlayout/multi.sh")
-(run-shell-command "xmodmap ~/.Xmodmap")
-;(run-shell-command "polybar screen --reload")
 ;(run-shell-command "polybar laptop --reload")
+;(run-shell-command "polybar screen --reload")
+(run-shell-command "xmodmap ~/.Xmodmap")
 (run-shell-command "compton")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
