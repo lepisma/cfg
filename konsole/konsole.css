@@ -1,5 +1,5 @@
 QMenu {
-  background-color: #343434;
+  background-color: #222323;
   color: #f92672;
 }
 
@@ -20,8 +20,8 @@ QTabBar::tab
   font-weight: normal;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-color: #343434;
-  background-color: #343434;
+  border-color: #222323;
+  background-color: #222323;
   color: #666;
 }
 
@@ -31,7 +31,7 @@ QTabBar::tab:selected
 }
 
 QWidget {
-  background: #343434;
+  background: #222323;
   padding: 6px;
   padding-bottom: 0;
 }
