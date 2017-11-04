@@ -36,4 +36,4 @@ function fish_title
   true
 end
 
-eval (dircolors -c ~/cfg/misc/dircolors.ansi-light)
+eval (dircolors -c ~/cfg/misc/dircolors)
