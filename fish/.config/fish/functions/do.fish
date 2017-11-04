@@ -4,7 +4,7 @@ function do -d "Do the most sensible thing"
       echo "Bitch Lasagna!"
       return 1
     end
-    switch (echo $argv[1] | awk -F . "{if (NF>1) {print $NF}}")
+    switch (echo $argv[1] | awk -F . '{if (NF>1) {print $NF}}')
       case "gz" "xz" "tar" "bz2"
         tar xvf $argv[1]
       case "ace"
