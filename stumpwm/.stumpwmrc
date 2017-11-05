@@ -132,7 +132,7 @@
 (defun rofi (mode)
   (run-shell-command (concat "rofi -show " mode " -m " (write-to-string (head-number (current-head))))))
 
-(defcommand rofi-run () () (rofi "run"))
+(defcommand rofi-run () () (rofi "run -sidebar-mode"))
 (defcommand rofi-window () () (rofi "window"))
 (defcommand rofi-windowcd () () (rofi "windowcd"))
 

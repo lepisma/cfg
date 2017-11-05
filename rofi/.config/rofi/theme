@@ -102,11 +102,12 @@
     padding:      0;
 }
 #sidebar {
-    border:       2px dash 0px 0px ;
+    border:       0px dash 0px 0px ;
     border-color: @separatorcolor;
 }
 #button {
     spacing:    0;
+    padding:    10;
     text-color: @normal-foreground;
 }
 #button.selected {
