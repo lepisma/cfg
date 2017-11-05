@@ -129,6 +129,13 @@
   (if search-term
       (run-shell-command (format nil "bbq ~A " search-term))))
 
+(defun rofi (mode)
+  (run-shell-command (concat "rofi -show " mode " -m " (write-to-string (head-number (current-head))))))
+
+(defcommand rofi-run () () (rofi "run"))
+(defcommand rofi-window () () (rofi "window"))
+(defcommand rofi-windowcd () () (rofi "windowcd"))
+
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec player-prev")
 (define-key *top-map* (kbd "C-M-Right") "exec player-next")
@@ -144,7 +151,6 @@
 (define-key *top-map* (kbd "s-f") "only")
 (define-key *top-map* (kbd "s-c") "fclear")
 (define-key *top-map* (kbd "s-l") "exec i3lock-fancy -p -t '' -- scrot")
-(define-key *top-map* (kbd "C-RET") "exec rofi -show run")
 (define-key *top-map* (kbd "s-SPC") "bbq")
 
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
@@ -183,7 +189,8 @@
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
 (define-key *root-map* (kbd "C-v") "run-or-raise-vivaldi")
-(define-key *root-map* (kbd "b") "windowlist")
+(define-key *root-map* (kbd "!") "rofi-run")
+(define-key *root-map* (kbd "b") "rofi-windowcd")
 (define-key *root-map* (kbd "q") "refresh-stuff")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
 
@@ -191,7 +198,7 @@
 (define-key *groups-map* (kbd "Left") "gprev")
 (define-key *groups-map* (kbd "M-Right") "gnext-with-window")
 (define-key *groups-map* (kbd "M-Left") "gprev-with-window")
-(define-key *groups-map* (kbd "b") "global-windowlist")
+(define-key *groups-map* (kbd "b") "rofi-window")
 
 (defvar *winner-map* (make-sparse-keymap))
 (define-key *root-map* (kbd "c") '*winner-map*)
