@@ -89,13 +89,13 @@
 
 ;; Commands
 (defcommand run-or-raise-firefox () ()
-  (run-or-raise "firefox-nightly" '(:class "Firefox") T T))
+  (run-or-raise "firefox-nightly" '(:class "Firefox") nil T))
 
 (defcommand run-or-raise-vivaldi () ()
-  (run-or-raise "vivaldi-snapshot" '(:class "Vivaldi-stable") T T))
+  (run-or-raise "vivaldi-snapshot" '(:class "Vivaldi-stable") nil T))
 
 (defcommand run-or-raise-konsole () ()
-  (run-or-raise "konsole --stylesheet ~/cfg/konsole/konsole.css" '(:class "konsole") T T))
+  (run-or-raise "konsole --stylesheet ~/cfg/konsole/konsole.css" '(:class "konsole") nil T))
 
 (defcommand refresh-stuff () ()
   (run-shell-command "sh ~/.fehbg")
