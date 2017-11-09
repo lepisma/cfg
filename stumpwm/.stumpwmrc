@@ -232,20 +232,7 @@
                                   (winner-mode:dump-group-to-file))))
 
 ;; Update polybar group indicator
-(add-hook *post-command-hook* (lambda (command)
-                                (when (member command '(stumpwm:gnext
-                                                        stumpwm:gnext-with-window
-                                                        stumpwm:gprev
-                                                        stumpwm:gprev-with-window
-                                                        stumpwm:gother
-                                                        stumpwm:gkill
-                                                        stumpwm:gselect
-                                                        stumpwm:gmove-and-follow
-                                                        stumpwm:gnew
-                                                        stumpwm:gnew-float
-                                                        stumpwm:emacs
-                                                        run-or-raise-firefox
-                                                        run-or-raise-konsole
-                                                        run-or-raise-vivaldi
-                                                        globalwindows:global-windowlist))
-                                  (run-shell-command "polybar-msg hook stumpwmgroups 1"))))
+(add-hook *new-window-hook* (lambda (win) (run-shell-command "polybar-msg hook stumpwmgroups 1")))
+(add-hook *destroy-window-hook* (lambda (win) (run-shell-command "polybar-msg hook stumpwmgroups 1")))
+(add-hook *focus-window-hook* (lambda (win lastw) (run-shell-command "polybar-msg hook stumpwmgroups 1")))
+(add-hook *focus-group-hook* (lambda (grp lastg) (run-shell-command "polybar-msg hook stumpwmgroups 1")))
