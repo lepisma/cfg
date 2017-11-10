@@ -108,7 +108,7 @@ label-close = " "
 label-close-foreground = ${colors.foreground-alt}
 
 menu-0-0 = 
-menu-0-0-exec = systemctl suspend
+menu-0-0-exec = lock-suspend
 menu-0-1 = 
 menu-0-1-exec = reboot
 menu-0-2 = 

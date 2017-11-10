@@ -150,7 +150,7 @@
 (define-key *top-map* (kbd "s-h") "windows-up-down")
 (define-key *top-map* (kbd "s-f") "only")
 (define-key *top-map* (kbd "s-c") "fclear")
-(define-key *top-map* (kbd "s-l") "exec i3lock-fancy -p -t '' -- scrot")
+(define-key *top-map* (kbd "s-l") "exec lock")
 (define-key *top-map* (kbd "s-SPC") "bbq")
 
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
