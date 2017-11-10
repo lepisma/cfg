@@ -4,8 +4,7 @@ light
 micro
 neofetch
 nerd-fonts-source-code-pro
-pandoc-lite
-papirus-icon-theme-git
+pandoc-bin
 polybar-git
 roswell
 ttf-fira-code
@@ -26,7 +25,6 @@ texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
 sqlitebrowser
 i3lock-color-git
-i3lock-fancy-git
 scrot
 qt5ct
 arandr
