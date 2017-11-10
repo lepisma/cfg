@@ -28,7 +28,4 @@ status --is-interactive; and . (pyenv init -|psub)
 status --is-interactive; and . (pyenv virtualenv-init -|psub)
 
 # Ocaml stuff
-set -x OCAML_TOPLEVEL_PATH ~/.opam/system/lib/toplevel
-set -x PERL5LIB ~/.opam/system/lib/perl5:$PERL5LIB
-set -x MANPATH $MANPATH ~/.opam/system/man
-set -x CAML_LD_LIBRARY_PATH ~/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs
+eval (opam config env)
