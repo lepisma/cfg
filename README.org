@@ -1,0 +1,24 @@
+#+TITLE: cfg
+#+AUTHOR: Abhinav Tushar
+
+(IN PROGRESS) Config files and scripts in (almost) literate style configuration.
+
+* Basic packages
+
+My current OS is manjaro. Need to setup pacaur from AUR first.
+
+#+BEGIN_SRC bash :exports both :results output
+uname -a
+#+END_SRC
+
+#+RESULTS:
+: Linux euclid-blue 4.9.60-1-MANJARO #1 SMP PREEMPT Thu Nov 2 13:08:20 UTC 2017 x86_64 GNU/Linux
+
+#+BEGIN_SRC bash :dir /sudo:: :results output
+pacman --help
+#+END_SRC
+
+
+** Install packages now
+
+TODO
