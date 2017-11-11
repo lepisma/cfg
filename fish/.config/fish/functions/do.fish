@@ -5,7 +5,7 @@ function do -d "Do the most sensible thing"
       return 1
     end
     switch (echo $argv[1] | awk -F . '{if (NF>1) {print $NF}}')
-      case "gz" "xz" "tar" "bz2"
+      case "gz" "xz" "tar" "bz2" "tgz"
         tar xvf $argv[1]
       case "ace"
         unace x $argv[1]
