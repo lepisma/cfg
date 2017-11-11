@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 cd ~/cfg/screen-lock
-bash ./lock -p -t '' -- scrot; systemctl suspend
+bash ./lock -t '' -- scrot; systemctl suspend
