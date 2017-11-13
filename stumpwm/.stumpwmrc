@@ -219,7 +219,7 @@
 
 ;; Groups
 (setf (group-name (car (screen-groups (current-screen)))) "main")
-(run-commands "gnewbg docs" "gnewbg-float float")
+(run-commands "gnewbg canvas" "gnewbg-float float")
 
 (clear-window-placement-rules)
 

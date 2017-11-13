@@ -6,7 +6,7 @@ echo "
                                 (let* ((name (string-upcase (group-name g)))
                                        (n-win (write-to-string (length (group-windows g))))
                                        (display-text (cond ((string-equal name \"MAIN\" ) \"   MAIN \")
-                                                           ((string-equal name \"DOCS\") \"   DOCS \")
+                                                           ((string-equal name \"CANVAS\") \"   CANVAS \")
                                                            ((string-equal name \"FLOAT\") \"   FLOAT \")
                                                            (t (concat \"   \" name \"  \")))))
                                   (if (eq g (current-group))
