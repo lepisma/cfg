@@ -87,15 +87,26 @@
       (when win
         (stumpwm::pull-window win frame)))))
 
+(defun run-or-raise-prefer-group (cmd win-cls)
+  "If there are windows in the same class, cycle in those. Otherwise call
+run-or-raise with group search t."
+  (let ((windows (group-windows (current-group))))
+    (if (member win-cls (mapcar #'window-class windows) :test #'string-equal)
+        (run-or-raise cmd `(:class ,win-cls) nil T)
+        (run-or-raise cmd `(:class ,win-cls) T T))))
+
 ;; Commands
 (defcommand run-or-raise-firefox () ()
-  (run-or-raise "firefox-nightly" '(:class "Firefox") nil T))
+  (run-or-raise-prefer-group "firefox-nightly" "Firefox"))
 
 (defcommand run-or-raise-vivaldi () ()
-  (run-or-raise "vivaldi-snapshot" '(:class "Vivaldi-stable") nil T))
+  (run-or-raise-prefer-group "vivaldi-snapshot" "Vivaldi-stable"))
 
 (defcommand run-or-raise-konsole () ()
-  (run-or-raise "konsole --stylesheet ~/cfg/konsole/konsole.css" '(:class "konsole") nil T))
+  (run-or-raise-prefer-group "konsole --stylesheet ~/cfg/konsole/konsole.css" "konsole"))
+
+(defcommand run-or-raise-emacs () ()
+  (run-or-raise-prefer-group "emacs" "Emacs"))
 
 (defcommand refresh-stuff () ()
   (run-shell-command "sh ~/.fehbg")
