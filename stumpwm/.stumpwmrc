@@ -97,7 +97,7 @@ run-or-raise with group search t."
 
 ;; Commands
 (defcommand run-or-raise-firefox () ()
-  (run-or-raise-prefer-group "firefox-nightly" "Firefox"))
+  (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
 
 (defcommand run-or-raise-vivaldi () ()
   (run-or-raise-prefer-group "vivaldi-snapshot" "Vivaldi-stable"))
