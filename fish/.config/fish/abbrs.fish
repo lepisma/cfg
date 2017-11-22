@@ -14,6 +14,6 @@ abbr -a w "python2 -m SimpleHTTPServer 8000"
 
 # Aliases
 alias sl "ls"
-alias m "micro"
+alias m "mumacs"
 alias dl "aria2c"
-alias e "emacsclient -n -a micro"
+alias e "emacsclient -n -a mumacs"

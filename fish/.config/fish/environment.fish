@@ -6,7 +6,7 @@ set -x PROJECTS_DIR /run/media/lepisma/Data/Projects
 set -x EMAIL lepisma@fastmail.com
 set -x NAME Abhinav Tushar
 
-set -x EDITOR micro
+set -x EDITOR mumacs
 set -x PAGER less
 set -x BROWSER firefox-nightly
 set -x XDG_MUSIC_DIR /run/media/lepisma/Data/Music
