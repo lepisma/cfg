@@ -24,8 +24,8 @@ set PATH ~/.cargo/bin $PATH
 set PATH ~/.nimble/bin $PATH
 
 # Pyenv stuff
+set -x PYENV_ROOT ~/.pyenv
 status --is-interactive; and . (pyenv init -|psub)
-status --is-interactive; and . (pyenv virtualenv-init -|psub)
 
 # Ocaml stuff
 eval (opam config env)
