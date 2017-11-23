@@ -1,6 +1,5 @@
 # The default backend
 backend : TkAgg
-toolbar : None
 
 # Keymap
 keymap.fullscreen : f               # toggling
@@ -17,7 +16,7 @@ keymap.xscale : L, k                # toggle scaling of x-axes ('log'/'linear')
 keymap.all_axes : a                 # enable all axes
 
 # Color scheme
-lines.linewidth : 2
+lines.linewidth : 1
 lines.solid_capstyle : butt
 
 xtick.labelsize : small
@@ -32,10 +31,10 @@ axes.labelsize : small
 axes.axisbelow : true
 axes.grid : true
 axes.edgecolor : f0f0f0
-axes.linewidth : 2.0
+axes.linewidth : 1.0
 axes.titlesize : large
 
-image.cmap : rainbow
+image.cmap : viridis
 
 patch.edgecolor : f0f0f0
 patch.linewidth : 0.5
