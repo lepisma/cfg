@@ -16,3 +16,7 @@
 !functions/sdl.fish
 !functions/bat.fish
 !functions/t.fish
+!functions/fish_greeting.fish
+!functions/fish_mode_prompt.fish
+!functions/fish_prompt.fish
+!functions/fish_right_prompt.fish
