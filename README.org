@@ -1,7 +1,8 @@
 #+TITLE: cfg
 #+AUTHOR: Abhinav Tushar
 
-(IN PROGRESS) Config files and scripts in (almost) literate style configuration.
+Config files and scripts in (almost) literate style configuration using Emacs
+Org mode.
 
 * Basic packages
 
@@ -14,11 +15,114 @@ uname -a
 #+RESULTS:
 : Linux euclid-blue 4.9.60-1-MANJARO #1 SMP PREEMPT Thu Nov 2 13:08:20 UTC 2017 x86_64 GNU/Linux
 
-#+BEGIN_SRC bash :dir /sudo:: :results output
-pacman --help
+#+BEGIN_SRC bash :exports both :results output
+pacaur -S $(grep -vE "^\s*#" ./packages/pacaur | tr "\n" " ")
 #+END_SRC
 
+Set ~fish~ as default shell
+#+BEGIN_SRC bash :exports both :results output
+chsh -s $(which fish)
+#+END_SRC
 
-** Install packages now
+* Stow basics
 
-TODO
+#+BEGIN_SRC bash :exports both :results output
+stow -t ~/ fish
+stow -t ~/ git
+stow -t ~/ scripts
+stow -t ~/ vis
+#+END_SRC
+
+* Window manager and related tools
+
+Stow config files.
+
+#+BEGIN_SRC bash :exports both :results output
+stow -t ~/ stumpwm
+stow -t ~/ polybar
+stow -t ~/ dunst
+stow -t ~/ rofi
+stow -t ~/ compton
+stow -t ~/ redshift
+stow -t ~/ xmodmap
+#+END_SRC
+
+** TODO Stumpwm
+
+** Fonts
+
+*** Custom iosevka
+#+BEGIN_SRC bash :exports both :results output :dir /sudo::
+git clone git@github.com/lepisma/iosevka-lepisma /tmp/iosevka-lepisma
+mkdir /usr/share/fonts/iosevka/
+mv /tmp/iosevka-lepisma/ttf/patched/*ttf /usr/share/fonts/iosevka/
+#+END_SRC
+
+Override medium fonts
+#+BEGIN_SRC bash :exports both :results output :dir /sudo::/usr/share/fonts
+y | cp iosevka/iosevka-lepisma-regular.ttf iosevka/iosevka-lepisma-medium.ttf
+y | cp iosevka/iosevka-lepisma-italic.ttf.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
+y | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumoblique.ttf
+
+fc-cache -f
+#+END_SRC
+
+*** Et book
+#+BEGIN_SRC bash :exports both :results output :dir /sudo::
+git clone git@github.com:edwardtufte/et-book /tmp/et-book
+mkdir /usr/share/fonts/et-book/
+mv /tmp/et-book/et-book/*/*.ttf /usr/share/fonts/et-book/
+
+fc-cache -f
+#+END_SRC
+
+*** TODO Lora
+
+*** TODO All the icons
+
+*** TODO Fira Code / Fira Sans
+
+*** TODO Source Code / Source Sans
+
+* Konsole theming
+
+Copy color scheme:
+#+BEGIN_SRC bash :exports both :results output
+cp ./konsole/lepisma.profile ~/.local/share/konsole/lepisma.profile
+cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
+#+END_SRC
+
+* Python setup
+
+Setup python using pyenv first
+
+#+BEGIN_SRC bash :exports both :results output
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+pyenv install miniconda3-latest
+#+END_SRC
+
+Install basic packages
+#+BEGIN_SRC 
+pip install -r ./packages/pip
+#+END_SRC
+
+Setup jupyter notebook theme.
+#+BEGIN_SRC bash :exports both :results output
+jt -t solarizedl -f fira -nf crimsonserif -tf merriserif -tfs 10 -T 
+#+END_SRC
+
+Some package config
+#+BEGIN_SRC bash :exports both :results output
+stow -t ~/ mpm
+stow -t ~/ beets
+#+END_SRC
+
+* TODO JS
+
+* TODO Setup email
+
+#+BEGIN_SRC bash :exports both :results output
+stow -t ~/ offlineimap
+#+END_SRC
+
+* TODO Setup hardware

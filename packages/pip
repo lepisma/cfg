@@ -9,7 +9,7 @@ autoflake
 yapf
 mypy
 #
-# Other command line tools
+# Other tools
 #
 hy
 grip
@@ -25,3 +25,4 @@ glances
 proselint
 pipenv
 pylast
+jupyterthemes
