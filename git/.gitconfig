@@ -3,7 +3,7 @@
 	email = lepisma@fastmail.com
 	signingkey = 24C44C69
 [core]
-	editor = micro
+	editor = mumacs
 [commit]
 	gpgsign = true
 [github]
