@@ -32,7 +32,7 @@
 #window {
     background-color: @background;
     border:           0;
-    padding:          250;
+    padding:          50;
 }
 #mainbox {
     border:  0;

@@ -1,9 +1,9 @@
 configuration {
 	modi: "window,windowcd,run,drun";
 	width: 50;
-	lines: 10;
+	lines: 5;
 	columns: 1;
-	font: "Iosevka Regular 15";
+	font: "Iosevka Regular 12";
 	bw: 0;
   location: 0;
 	yoffset: 0;
@@ -37,7 +37,7 @@ configuration {
 /*	filter: ;*/
 	separator-style: "dash";
 /*	hide-scrollbar: false;*/
-  fullscreen: true;
+  fullscreen: false;
 /*	fake-transparency: false;*/
 /*	dpi: -1;*/
 /*	threads: 0;*/
