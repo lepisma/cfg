@@ -62,21 +62,21 @@
 
 (set-fg-color "#eeeeee")
 (set-bg-color "#1C2028")
-(set-border-color "#1C2028")
+(set-border-color "#232731")
 (set-focus-color "#3B4252")
-(set-unfocus-color "#1C2028")
+(set-unfocus-color "#232731")
 (set-win-bg-color "#22272F")
 (set-float-focus-color "#3B4252")
-(set-float-unfocus-color "#1C2028")
+(set-float-unfocus-color "#232731")
 
-(setf *colors* (list "#1c1e1f"      ; 0 black
-                     "#ff6a6a"      ; 1 red
-                     "#66cd00"      ; 2 green
-                     "#ffd700"      ; 3 yellow
-                     "#4f94cd"      ; 4 blue
-                     "#c6e2ff"      ; 5 magenta
-                     "#00cdcd"      ; 6 cyan
-                     "#ffffff"))    ; 7 white
+(setf *colors* (list "#1C2028"      ; 0 black
+                     "#BF616A"      ; 1 red
+                     "#A3BE8C"      ; 2 green
+                     "#EBCB8B"      ; 3 yellow
+                     "#5E81AC"      ; 4 blue
+                     "#B48EAD"      ; 5 magenta
+                     "#8FBCBB"      ; 6 cyan
+                     "#ECEFF4"))    ; 7 white
 
 (defun shift-windows-forward (frames win)
   "Exchange windows through cycling frames."
