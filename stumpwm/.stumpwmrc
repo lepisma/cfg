@@ -36,8 +36,8 @@
 (load-module "swm-calibre")
 
 (setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
-(setf swm-gaps:*inner-gaps-size* 15
-      swm-gaps:*outer-gaps-size* 20)
+(setf swm-gaps:*inner-gaps-size* 10
+      swm-gaps:*outer-gaps-size* 15)
 
 ;; Looks
 (set-font (make-instance 'xft:font
@@ -49,10 +49,10 @@
       *input-window-gravity* :center
       *window-border-style* :thin
       *message-window-padding* 10
-      *maxsize-border-width* 0
-      *normal-border-width* 0
-      *transient-border-width* 0
-      stumpwm::*float-window-border* 0
+      *maxsize-border-width* 5
+      *normal-border-width* 5
+      *transient-border-width* 2
+      stumpwm::*float-window-border* 2
       stumpwm::*float-window-title-height* 5
       *mouse-focus-policy* :click)
 
@@ -60,14 +60,14 @@
 (set-maxsize-gravity :center)
 (set-transient-gravity :center)
 
-(set-fg-color "#fefff9")
-(set-bg-color "#333")
-(set-border-color "#333")
-(set-focus-color "#191d1d")
-(set-unfocus-color "#191d1d")
-(set-win-bg-color "#191d1d")
-(set-float-focus-color "#819391")
-(set-float-unfocus-color "#eee")
+(set-fg-color "#eeeeee")
+(set-bg-color "#1c2c33")
+(set-border-color "#1c2c33")
+(set-focus-color "#3B4252")
+(set-unfocus-color "#1c2c33")
+(set-win-bg-color "#22272F")
+(set-float-focus-color "#3B4252")
+(set-float-unfocus-color "#1c2c33")
 
 (setf *colors* (list "#1c1e1f"      ; 0 black
                      "#ff6a6a"      ; 1 red
