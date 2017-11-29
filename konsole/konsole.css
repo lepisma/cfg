@@ -1,6 +1,6 @@
 QMenu {
-  background-color: #2e3440;
-  color: #8a9899;
+  background-color: #2E3440;
+  color: #8A9899;
 }
 
 QMenuBar::item {
@@ -8,7 +8,7 @@ QMenuBar::item {
 }
 
 QMenu::item:selected {
-  background-color: #3b4252;
+  background-color: #3B4252;
 }
 
 QTabBar,
@@ -20,18 +20,18 @@ QTabBar::tab
   font-weight: normal;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-color: #2e3440;
-  background-color: #2e3440;
-  color: #666;
+  border-color: #2E3440;
+  background-color: #2E3440;
+  color: #666666;
 }
 
 QTabBar::tab:selected
 {
-  border-color: #8a9899;
+  border-color: #8A9899;
 }
 
 QWidget {
-  background: #2e3440;
+  background: #2E3440;
   padding: 6px;
   padding-bottom: 0;
 }

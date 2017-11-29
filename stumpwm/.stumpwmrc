@@ -61,13 +61,13 @@
 (set-transient-gravity :center)
 
 (set-fg-color "#eeeeee")
-(set-bg-color "#1c2c33")
-(set-border-color "#1c2c33")
+(set-bg-color "#1C2028")
+(set-border-color "#1C2028")
 (set-focus-color "#3B4252")
-(set-unfocus-color "#1c2c33")
+(set-unfocus-color "#1C2028")
 (set-win-bg-color "#22272F")
 (set-float-focus-color "#3B4252")
-(set-float-unfocus-color "#1c2c33")
+(set-float-unfocus-color "#1C2028")
 
 (setf *colors* (list "#1c1e1f"      ; 0 black
                      "#ff6a6a"      ; 1 red

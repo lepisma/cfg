@@ -1,11 +1,11 @@
 [colors]
-accent-dark = #1c2c33
-accent-light = #8a9899
+accent-dark = #1C2028
+accent-light = #8A9899
 background = ${colors.accent-dark}
 background-tray = ${colors.accent-dark}
-foreground = #eeeeee
+foreground = #ECEFF4
 foreground-alt = ${colors.accent-light}
-alert = #bd2c40
+alert = #BF616A
 
 [global/wm]
 margin-top = 2
