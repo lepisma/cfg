@@ -1,4 +1,4 @@
-abbr -a i "pacaur -Sy"
+abbr -a i "pacaur -S"
 abbr -a r "pacaur -Rsn"
 abbr -a up "pacaur -Syyu"
 abbr -a cl "pacaur -Rsn (pacaur -Qdtq); pacaur -Scc"
