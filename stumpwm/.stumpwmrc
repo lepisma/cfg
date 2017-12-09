@@ -105,7 +105,7 @@ run-or-raise with group search t."
 (defcommand run-or-raise-konsole () ()
   (run-or-raise-prefer-group "konsole --stylesheet ~/cfg/konsole/konsole.css" "konsole"))
 
-(defcommand run-or-raise-emacs () ()
+(defcommand emacs () ()
   (run-or-raise-prefer-group "emacs" "Emacs"))
 
 (defcommand refresh-stuff () ()
