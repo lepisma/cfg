@@ -107,12 +107,12 @@ label-open-foreground = ${colors.foreground}
 label-close = " "
 label-close-foreground = ${colors.foreground-alt}
 
-menu-0-0 = 
-menu-0-0-exec = lock-suspend
+menu-0-0 = 
+menu-0-0-exec = poweroff
 menu-0-1 = 
 menu-0-1-exec = reboot
-menu-0-2 = 
-menu-0-2-exec = poweroff
+menu-0-2 = 
+menu-0-2-exec = lock-suspend
 
 menu-0-0-padding = 1
 menu-0-1-padding = 1
