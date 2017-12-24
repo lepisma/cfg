@@ -1,8 +1,7 @@
 #+TITLE: cfg
 #+AUTHOR: Abhinav Tushar
 
-Config files and scripts in (almost) literate style configuration using Emacs
-Org mode.
+Config scripts and notes in literate style configuration using Org-Babel.
 
 * Basic packages
 
@@ -180,4 +179,16 @@ Copy over ~authinfo.gpg~
 cp ./misc/.authinfo.gpg ~/
 #+END_SRC
 
-* TODO Setup hardware
+* Setup hardware
+
+Digimend package from AUR should work fine. Otherwise this snippet should do:
+
+#+BEGIN_SRC shell :exports both :results output
+./aux-scripts/setup-huion-driver.fish
+#+END_SRC
+
+For keyboard scroll button mapping run this:
+
+#+BEGIN_SRC shell :exports both :results output
+./aux-scripts/setup-4000-scroll.fish
+#+END_SRC
