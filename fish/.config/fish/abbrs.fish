@@ -1,7 +1,7 @@
-abbr -a i "pacaur -S"
-abbr -a r "pacaur -Rsn"
-abbr -a up "pacaur -Syyu"
-abbr -a cl "pacaur -Rsn (pacaur -Qdtq); pacaur -Scc"
+abbr -a i "pacaur --color=auto -S"
+abbr -a r "pacaur --color=auto -Rsn"
+abbr -a up "pacaur --color=auto -Syyu"
+abbr -a cl "pacaur --color=auto -Rsn (pacaur -Qdtq); pacaur --color=auto -Scc"
 abbr -a s "sudo"
 
 abbr -a yt "youtube-dl --external-downloader=aria2c"
