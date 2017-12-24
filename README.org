@@ -84,6 +84,7 @@ fc-cache -f
 
 *** Other fonts to setup
 - All the icons
+
   Better install this using the Emacs package:
   #+BEGIN_SRC elisp :exports both :results output
   (require 'all-the-icons)
@@ -91,8 +92,10 @@ fc-cache -f
   #+END_SRC
 - Lora
 - Fira Code / Fira Sans
+
   Should be up on AUR
 - Source Code / Source Sans
+
   Also is probably on AUR
 
 * Konsole theming
