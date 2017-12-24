@@ -17,15 +17,10 @@ set PATH ~/bin $PATH
 set PATH ~/.cask/bin $PATH
 set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
-set PATH ~/.opam/system/bin $PATH
 set PATH ~/.gem/ruby/2.4.0/bin $PATH
 set PATH ~/.pyenv/bin $PATH
 set PATH ~/.cargo/bin $PATH
-set PATH ~/.nimble/bin $PATH
 
 # Pyenv stuff
 set -x PYENV_ROOT ~/.pyenv
 status --is-interactive; and . (pyenv init -|psub)
-
-# Ocaml stuff
-eval (opam config env)

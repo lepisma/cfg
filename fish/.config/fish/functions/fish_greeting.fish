@@ -1,4 +1,4 @@
-function fish_greeting -d
+function fish_greeting
   set_color $fish_color_autosuggestion
   uname -nmsr
   uptime

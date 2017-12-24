@@ -26,7 +26,7 @@ chsh -s $(which fish)
 
 * Stow basics
 
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
 stow -t ~/ fish
 stow -t ~/ git
 stow -t ~/ scripts
@@ -37,7 +37,7 @@ stow -t ~/ vis
 
 Stow config files.
 
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
 stow -t ~/ stumpwm
 stow -t ~/ polybar
 stow -t ~/ dunst
@@ -47,19 +47,26 @@ stow -t ~/ redshift
 stow -t ~/ xmodmap
 #+END_SRC
 
-** TODO Stumpwm
+** Stumpwm
+
+Need two sbcl setups. The one from main repo is going to run stumpwm with swank.
+The following snip setups that. Needs quicklisp:
+
+#+BEGIN_SRC shell :exports both :results output
+./aux-scripts/setup-stump.fish
+#+END_SRC
 
 ** Fonts
 
 *** Custom iosevka
-#+BEGIN_SRC bash :exports both :results output :dir /sudo::
+#+BEGIN_SRC shell :exports both :results output :dir /sudo::
 git clone git@github.com/lepisma/iosevka-lepisma /tmp/iosevka-lepisma
 mkdir /usr/share/fonts/iosevka/
 mv /tmp/iosevka-lepisma/ttf/patched/*ttf /usr/share/fonts/iosevka/
 #+END_SRC
 
 Override medium fonts
-#+BEGIN_SRC bash :exports both :results output :dir /sudo::/usr/share/fonts
+#+BEGIN_SRC shell :exports both :results output :dir /sudo::/usr/share/fonts
 y | cp iosevka/iosevka-lepisma-regular.ttf iosevka/iosevka-lepisma-medium.ttf
 y | cp iosevka/iosevka-lepisma-italic.ttf.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
 y | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumoblique.ttf
@@ -68,7 +75,7 @@ fc-cache -f
 #+END_SRC
 
 *** Et book
-#+BEGIN_SRC bash :exports both :results output :dir /sudo::
+#+BEGIN_SRC shell :exports both :results output :dir /sudo::
 git clone git@github.com:edwardtufte/et-book /tmp/et-book
 mkdir /usr/share/fonts/et-book/
 mv /tmp/et-book/et-book/*/*.ttf /usr/share/fonts/et-book/
@@ -76,53 +83,101 @@ mv /tmp/et-book/et-book/*/*.ttf /usr/share/fonts/et-book/
 fc-cache -f
 #+END_SRC
 
-*** TODO Lora
-
-*** TODO All the icons
-
-*** TODO Fira Code / Fira Sans
-
-*** TODO Source Code / Source Sans
+*** Other fonts to setup
+- All the icons
+  Better install this using the Emacs package:
+  #+BEGIN_SRC elisp :exports both :results output
+  (require 'all-the-icons)
+  (all-the-icons-install-fonts)
+  #+END_SRC
+- Lora
+- Fira Code / Fira Sans
+  Should be up on AUR
+- Source Code / Source Sans
+  Also is probably on AUR
 
 * Konsole theming
 
 Copy color scheme:
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
 cp ./konsole/lepisma.profile ~/.local/share/konsole/lepisma.profile
 cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
 #+END_SRC
 
-* Python setup
+* Language setup
+
+** Common Lisp
+
+Setup roswell and quicklisp.
+
+Symlink ~dune~ to roswell local projects
+#+BEGIN_SRC shell :exports both :results output
+ln -s ./dune ~/.roswell/local-projects
+#+END_SRC
+
+** Python setup
 
 Setup python using pyenv first
 
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pyenv install miniconda3-latest
 #+END_SRC
 
 Install basic packages
-#+BEGIN_SRC 
+#+BEGIN_SRC shell :exports both :results output
 pip install -r ./packages/pip
 #+END_SRC
 
 Setup jupyter notebook theme.
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
 jt -t solarizedl -f fira -nf crimsonserif -tf merriserif -tfs 10 -T 
 #+END_SRC
 
 Some package config
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
 stow -t ~/ mpm
 stow -t ~/ beets
 #+END_SRC
 
-* TODO JS
+** JS
 
-* TODO Setup email
+~fnm~ from fish should handle node.
 
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC shell :exports both :results output
+fnm use latest
+#+END_SRC
+
+Install some command line tools.
+
+#+BEGIN_SRC shell :exports both :results output
+cat ./packages/node | while read -l line
+  npm i -g $line
+end
+#+END_SRC
+
+** R
+
+Setup ~pkr~
+
+#+BEGIN_SRC shell :exports both :results output
+wget https://raw.githubusercontent.com/lepisma/pkr/master/pkr
+mv pkr ~/bin/
+chmod +x ~/bin/pkr
+#+END_SRC
+
+* Setup email
+
+Stow offlineimap
+
+#+BEGIN_SRC shell :exports both :results output
 stow -t ~/ offlineimap
+#+END_SRC
+
+Copy over ~authinfo.gpg~
+
+#+BEGIN_SRC shell :exports both :results output
+cp ./misc/.authinfo.gpg ~/
 #+END_SRC
 
 * TODO Setup hardware

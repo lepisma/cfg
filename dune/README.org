@@ -1,0 +1,12 @@
+#+TITLE: DUNE
+
+Package collecting other packages for small scale scripting. DUNE /uses/ the
+following packages:
+
+- ~#:alexandria~
+- ~#:anaphora~
+- ~#:serapeum~
+- ~#:cl-strings~
+- ~#:cl-arrows~
+- ~#:cl-ppcre~
+- ~#:cl-cut~
