@@ -66,9 +66,9 @@ mv /tmp/iosevka-lepisma/ttf/patched/*ttf /usr/share/fonts/iosevka/
 
 Override medium fonts
 #+BEGIN_SRC shell :exports both :results output :dir /sudo::/usr/share/fonts
-y | cp iosevka/iosevka-lepisma-regular.ttf iosevka/iosevka-lepisma-medium.ttf
-y | cp iosevka/iosevka-lepisma-italic.ttf.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
-y | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumoblique.ttf
+yes | cp iosevka/iosevka-lepisma-regular.ttf iosevka/iosevka-lepisma-medium.ttf
+yes | cp iosevka/iosevka-lepisma-italic.ttf.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
+yes | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumoblique.ttf
 
 fc-cache -f
 #+END_SRC
