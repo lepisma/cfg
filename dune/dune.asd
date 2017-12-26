@@ -10,7 +10,8 @@
                #:cl-strings
                #:cl-arrows
                #:cl-ppcre
-               #:cl-cut)
+               #:cl-cut
+               #:cl-interpol)
   :serial t
   :components ((:file "package")
                (:file "dune")))

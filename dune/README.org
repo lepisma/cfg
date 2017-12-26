@@ -10,3 +10,4 @@ following packages:
 - ~#:cl-arrows~
 - ~#:cl-ppcre~
 - ~#:cl-cut~
+- ~#:cl-interpol~
