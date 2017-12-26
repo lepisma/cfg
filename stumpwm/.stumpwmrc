@@ -108,6 +108,9 @@ run-or-raise with group search t."
 (defcommand emacs () ()
   (run-or-raise-prefer-group "emacs" "Emacs"))
 
+(defcommand battery () ()
+  (message (run-shell-command "bat" t)))
+
 (defcommand refresh-stuff () ()
   (run-shell-command "sh ~/.fehbg")
   (run-commands "mode-line" "mode-line")
@@ -204,6 +207,7 @@ run-or-raise with group search t."
 (define-key *root-map* (kbd "b") "rofi-windowcd")
 (define-key *root-map* (kbd "q") "refresh-stuff")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
+(define-key *root-map* (kbd "p") "battery")
 
 (define-key *groups-map* (kbd "Right") "gnext")
 (define-key *groups-map* (kbd "Left") "gprev")
