@@ -2,3 +2,4 @@
 /beets/.config/beets/state.pickle
 /beets/.config/beets/discogs_token.json
 /mpm/.mpm.d/play-log
+/mpm/.mpm.d/last-fm.json

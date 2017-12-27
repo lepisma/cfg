@@ -1,0 +1,37 @@
+#!/usr/bin/env hy
+;; -*- mode:hy -*-
+
+(import [pylast [LastFMNetwork]])
+(import json)
+(import yaml)
+(import [mpm.mpm [Mpm]])
+(import [mpm.db :as db])
+(import [high.utils [*]])
+(require [high.macros [*]])
+
+(def mpm-config #p"~/.mpm.d/config")
+(def log-file #p"~/.mpm.d/play-log")
+(def last-fm-file #p"~/.mpm.d/last-fm.json")
+(def mpm (Mpm (with-fp mpm-config (yaml.load fp))))
+
+(defn read-log [file-name]
+  (emap (fn [line] (emap int (.split line ",")))
+        (with-fp file-name
+          (efilter (fn [line] (> (len line) 0)) (.split (fp.read) "\n")))))
+
+(defn get-item [log-entry]
+  (let [song (db.get-song mpm.database (second log-entry))]
+       {"artist" (get song "artist")
+        "title" (get song "title")
+        "album" (get song "album")
+        "timestamp" (first log-entry)}))
+
+(defn scrobble [log-entries lastfm-network]
+  (let [items (emap get-item log-entries)]
+       (lastfm-network.scrobble-many items)))
+
+(defmain [&rest args]
+  (let [lastfm-config (with-fp last-fm-file (json.load fp))
+        log-entries (read-log log-file)
+        lastfm-network (apply LastFMNetwork [] lastfm-config)]
+       (scrobble log-entries lastfm-network)))
