@@ -151,9 +151,9 @@ run-or-raise with group search t."
 (defcommand rofi-windowcd () () (rofi "windowcd"))
 
 ;; All the keys
-(define-key *top-map* (kbd "C-M-Left") "exec player-prev")
-(define-key *top-map* (kbd "C-M-Right") "exec player-next")
-(define-key *top-map* (kbd "C-M-SPC") "exec player-toggle")
+(define-key *top-map* (kbd "C-M-Left") "exec bbq :prev")
+(define-key *top-map* (kbd "C-M-Right") "exec bbq :next")
+(define-key *top-map* (kbd "C-M-SPC") "exec bbq :toggle")
 (define-key *top-map* (kbd "s-t") "exec konsole --stylesheet ~/cfg/konsole/konsole.css")
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole --stylesheet ~/cfg/konsole/konsole.css -e htop ")
