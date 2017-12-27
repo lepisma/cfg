@@ -3,3 +3,9 @@
 /beets/.config/beets/discogs_token.json
 /mpm/.mpm.d/play-log
 /mpm/.mpm.d/last-fm.json
+/scripts/bin/ribosome.rb
+*.pyc
+/scripts/bin/bbq
+/scripts/bin/factor
+/scripts/bin/pkr
+/scripts/bin/red
