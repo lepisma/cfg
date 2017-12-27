@@ -231,6 +231,7 @@ run-or-raise with group search t."
 (run-shell-command "redshift")
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "xset b off")
+(run-shell-command "mpm-play")
 
 ;; Groups
 (setf (group-name (car (screen-groups (current-screen)))) "main")
