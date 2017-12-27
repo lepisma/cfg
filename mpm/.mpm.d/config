@@ -4,4 +4,4 @@ player:
   cache: /run/media/lepisma/Data/Music/.cache.d
   hooks:
     song-changed: "polybar-msg hook mpm 1"
-    song-played: "echo (date +%s) (http :6672/current | jq -r '.id') >> ~/.mpm.d/play-log"
+    song-played: "echo (date +%s),(http :6672/current | jq -r '.id') >> ~/.mpm.d/play-log"
