@@ -7,10 +7,12 @@
 (import [mpm.mpm [Mpm]])
 (import [mpm.db :as db])
 (import [high.utils [*]])
+(import [time [time]])
 (require [high.macros [*]])
 
 (def mpm-config #p"~/.mpm.d/config")
 (def log-file #p"~/.mpm.d/play-log")
+(def scrobbled-at-file #p"~/.mpm.d/scrobbled-at")
 (def last-fm-file #p"~/.mpm.d/last-fm.json")
 (def mpm (Mpm (with-fp mpm-config (yaml.load fp))))
 
@@ -26,12 +28,26 @@
         "album" (get song "album")
         "timestamp" (first log-entry)}))
 
+(defn filter-entries [log-entries timestamp]
+  "Remove entries older than the timestamp"
+  (efilter (fn [entry] (> (get (get-item entry) "timestamp") timestamp))
+           log-entries))
+
 (defn scrobble [log-entries lastfm-network]
   (let [items (emap get-item log-entries)]
-       (lastfm-network.scrobble-many items)))
+       (if (= (len items) 0)
+           (print "Nothing to do")
+           (do (print (+ "Scrobbling " (str (len items)) " items"))
+               (lastfm-network.scrobble-many items)))))
+
+(defn update-last-scrobble [file-name]
+  (with [fp (open file-name "w")]
+    (fp.write (str (int (time))))))
 
 (defmain [&rest args]
   (let [lastfm-config (with-fp last-fm-file (json.load fp))
         log-entries (read-log log-file)
+        last-scrobble (with-fp (ensure-file scrobbled-at-file "0") (int (fp.read)))
         lastfm-network (apply LastFMNetwork [] lastfm-config)]
-       (scrobble log-entries lastfm-network)))
+       (scrobble (filter-entries log-entries last-scrobble) lastfm-network)
+       (update-last-scrobble scrobbled-at-file)))
