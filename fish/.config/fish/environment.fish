@@ -20,6 +20,7 @@ set PATH ~/.pkr/bin $PATH
 set PATH ~/.gem/ruby/2.5.0/bin $PATH
 set PATH ~/.pyenv/bin $PATH
 set PATH ~/.cargo/bin $PATH
+set PATH /snap/bin $PATH
 
 # Rust stuff
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
