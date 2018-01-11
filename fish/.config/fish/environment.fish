@@ -17,8 +17,8 @@ set PATH ~/bin $PATH
 set PATH ~/.cask/bin $PATH
 set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
-set PATH ~/.gem/ruby/2.5.0/bin $PATH
 set PATH ~/.pyenv/bin $PATH
+set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH /snap/bin $PATH
 

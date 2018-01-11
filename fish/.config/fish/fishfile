@@ -13,5 +13,6 @@ fisherman/git_util
 fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/menu
+fisherman/rbenv
 simnalamburt/fish-sensible
 joehillen/to-fish

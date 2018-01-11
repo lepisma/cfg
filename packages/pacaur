@@ -31,9 +31,11 @@ openconnect
 polybar-git
 qt5ct
 ranger
+rbenv
 redshift
 rofi
 roswell
+ruby-build
 sbcl
 scrot
 sqlitebrowser
