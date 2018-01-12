@@ -47,7 +47,8 @@
 
 (defn update-last-scrobble [file-name]
   (with [fp (open file-name "w")]
-    (fp.write (str (int (time))))))
+    (fp.write (str (int (time))))
+    (exit 0)))
 
 (defmain [&rest args]
   (let [lastfm-config (with-fp last-fm-file (json.load fp))
