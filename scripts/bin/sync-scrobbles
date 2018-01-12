@@ -47,8 +47,7 @@
 
 (defn update-last-scrobble [file-name]
   (with [fp (open file-name "w")]
-    (fp.write (str (int (time))))
-    (exit 0)))
+    (fp.write (str (int (time))))))
 
 (defmain [&rest args]
   (let [lastfm-config (with-fp last-fm-file (json.load fp))
@@ -56,4 +55,5 @@
         last-scrobble (with-fp (ensure-file scrobbled-at-file "0") (int (fp.read)))
         lastfm-network (apply LastFMNetwork [] lastfm-config)]
        (scrobble (filter-entries log-entries last-scrobble) lastfm-network)
-       (update-last-scrobble scrobbled-at-file)))
+       (update-last-scrobble scrobbled-at-file)
+       (exit 0)))
