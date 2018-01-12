@@ -21,7 +21,12 @@
         (with-fp file-name
           (efilter (fn [line] (> (len line) 0)) (.split (fp.read) "\n")))))
 
+(defn item-present? [log-entry]
+  "Check if the item in entry is present in db"
+  (db.song-present? mpm.database :id (second log-entry)))
+
 (defn get-item [log-entry]
+  "Get the item represented in the entry"
   (let [song (db.get-song mpm.database (second log-entry))]
        {"artist" (get song "artist")
         "title" (get song "title")
@@ -31,7 +36,7 @@
 (defn filter-entries [log-entries timestamp]
   "Remove entries older than the timestamp"
   (efilter (fn [entry] (> (get (get-item entry) "timestamp") timestamp))
-           log-entries))
+           (efilter item-present? log-entries)))
 
 (defn scrobble [log-entries lastfm-network]
   (let [items (emap get-item log-entries)]
