@@ -1,5 +1,5 @@
 [colors]
-accent-dark = #1C2028
+accent-dark = #AA1C2028
 accent-light = #8A9899
 background = ${colors.accent-dark}
 background-tray = ${colors.accent-dark}
