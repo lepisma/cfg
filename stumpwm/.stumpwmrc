@@ -146,6 +146,8 @@ run-or-raise with group search t."
 (defun rofi (mode)
   (run-shell-command (concat "rofi -show " mode " -m " (write-to-string (head-number (current-head))))))
 
+(defcommand lol () () (message "lol kek"))
+
 (defcommand rofi-run () () (rofi "run -sidebar-mode"))
 (defcommand rofi-window () () (rofi "window"))
 (defcommand rofi-windowcd () () (rofi "windowcd"))
@@ -157,6 +159,7 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-t") "exec konsole --stylesheet ~/cfg/konsole/konsole.css")
 (define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole --stylesheet ~/cfg/konsole/konsole.css -e htop ")
+(define-key *top-map* (kbd "C-q") "lol")
 
 (define-key *top-map* (kbd "s-g") "toggle-gaps")
 (define-key *top-map* (kbd "s-r") "rotate-windows")
