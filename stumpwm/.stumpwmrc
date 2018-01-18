@@ -161,7 +161,14 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-w") "exec konsole --stylesheet ~/cfg/konsole/konsole.css -e htop ")
 (define-key *top-map* (kbd "C-q") "lol")
 
-(define-key *top-map* (kbd "s-g") "toggle-gaps")
+(defvar *toggle-map* (make-sparse-keymap))
+(define-key *root-map* (kbd "t") '*toggle-map*)
+(define-key *toggle-map* (kbd "g") "toggle-gaps")
+(define-key *toggle-map* (kbd "f") "float-this")
+(define-key *toggle-map* (kbd "u") "unfloat-this")
+(define-key *toggle-map* (kbd "a") "toggle-always-show")
+(define-key *toggle-map* (kbd "t") "toggle-always-on-top")
+
 (define-key *top-map* (kbd "s-r") "rotate-windows")
 (define-key *top-map* (kbd "s-v") "windows-left-right")
 (define-key *top-map* (kbd "s-h") "windows-up-down")
