@@ -14,6 +14,7 @@ set -x BORG_REPO /run/media/lepisma/Data/Cloud/Backup
 
 # PATH
 set PATH ~/bin $PATH
+set PATH ~/.local/bin $PATH
 set PATH ~/.cask/bin $PATH
 set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
