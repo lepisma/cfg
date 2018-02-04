@@ -41,7 +41,7 @@ font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = stumpwmgroups volume mpm
 modules-center = 
-modules-right = compton redshift cpu memory wlan muunreads battery date powermenu
+modules-right = compton redshift cpu memory wlan battery date powermenu
 
 enable-ipc = true
 
