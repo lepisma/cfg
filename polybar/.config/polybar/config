@@ -43,6 +43,10 @@ modules-left = stumpwmgroups volume mpm
 modules-center = 
 modules-right = compton redshift cpu memory wlan battery date powermenu
 
+tray-position = left
+tray-padding = 1
+tray-background = ${colors.background-tray}
+
 enable-ipc = true
 
 [bar/laptop]
@@ -76,10 +80,6 @@ font-1 = "FontAwesome:pixelsize=8;1"
 modules-left = 
 modules-center = 
 modules-right = wlan battery date
-
-tray-position = left
-tray-padding = 1
-tray-background = ${colors.background-tray}
 
 enable-ipc = true
 
