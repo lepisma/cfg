@@ -7,15 +7,13 @@
 !fishfile
 !music.fish
 !completions/peeve.fish
-!functions/:.fish
 !functions/do.fish
+!functions/gi.fish
 !functions/huion-setup-keys.fish
 !functions/ip-public.fish
-!functions/peeve.fish
 !functions/rm.fish
 !functions/sdl.fish
 !functions/bat.fish
-!functions/t.fish
 !functions/fish_greeting.fish
 !functions/fish_mode_prompt.fish
 !functions/fish_prompt.fish
