@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Author: Dolores Portalatin <hello@doloresportalatin.info>
-# Dependencies: imagemagick, i3lock-color-git, scrot, wmctrl (optional)
+#         Abhinav Tushar <lepisma@fastmail.com>
+# Dependencies: imagemagick, i3lock-color-git, scrot, golify, wmctrl (optional)
 set -o errexit -o noclobber -o nounset
 
 # Determines the brightness of the screenshot
@@ -82,7 +83,7 @@ scriptpath=$(readlink -f -- "$0")
 scriptpath=${scriptpath%/*}
 
 hue=(-level "0%,100%,0.6")
-effect=(-filter Gaussian -resize 20% -define "filter:sigma=1.5" -resize 500.5%)
+effect=() # (-filter Gaussian -resize 20% -define "filter:sigma=1.5" -resize 500.5%)
 # default system sans-serif font
 font=$(convert -list font | awk "{ a[NR] = \$2 } /family: $(fc-match sans -f "%{family}\n")/ { print a[NR-1]; exit }")
 
@@ -92,9 +93,7 @@ image="$(mktemp --suffix=.png)"
 threshold="60"
 
 desktop=""
-shot=(import -window root)
 i3lock_cmd=(i3lock -u -i "$image")
-shot_custom=false
 
 options="Options:
     -h, --help       This help menu.
@@ -164,14 +163,12 @@ while true ; do
     esac
 done
 
-if "$shot_custom" && [[ $# -gt 0 ]]; then
-    shot=("$@");
-fi
-
 text_options=(-font "$font" -pointsize 26)
 text_width=$(get_text_width "$text")
 
-command -- "${shot[@]}" "$image"
+# Take screenshot
+scrot $image
+convert -scale 10% -threshold 70% $image pgm:- | golify 200 | convert -scale 1000% -fill white -colorize 50% - $image
 
 # All the arguments to be passed to convert, to add the lock and text to the monitors is collected here so that we can
 # apply them in a single call to convert
