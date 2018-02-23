@@ -15,7 +15,7 @@ image slurp_pgm()
   char header[2];
   unsigned char max_val;
   image img;
-  fscanf(stdin, "%s\n\%d %d\n%d", header, &(img.width), &(img.height), &max_val);
+  fscanf(stdin, "%s\n%d %d\n%d", header, &(img.width), &(img.height), &max_val);
   img.pixels = malloc(img.width * img.height * sizeof(unsigned char));
   fread(img.pixels, img.width * img.height, 1, stdin);
 
