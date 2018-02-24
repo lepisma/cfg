@@ -1,5 +1,5 @@
 # Directories
-set -x JOURNAL_DIR /run/media/lepisma/Data/Cloud/Journal
+set -x JOURNAL_DIR ~/.tofish/c/Journal
 set -x PROJECTS_DIR ~/.tofish/p
 
 # Personal
