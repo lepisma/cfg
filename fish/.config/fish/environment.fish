@@ -1,5 +1,5 @@
 # Directories
-set -x JOURNAL_DIR ~/.tofish/c/Journal
+set -x CLOUD_DIR ~/.tofish/c
 set -x PROJECTS_DIR ~/.tofish/p
 
 # Personal
@@ -9,8 +9,7 @@ set -x NAME Abhinav Tushar
 set -x EDITOR mumacs
 set -x PAGER less
 set -x BROWSER firefox-nightly
-set -x XDG_MUSIC_DIR /run/media/lepisma/Data/Music
-set -x BORG_REPO /run/media/lepisma/Data/Cloud/Backup
+set -x BORG_REPO $CLOUD_DIR/Backup
 
 # PATH
 set PATH ~/bin $PATH
