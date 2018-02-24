@@ -1,6 +1,6 @@
 # Directories
 set -x JOURNAL_DIR /run/media/lepisma/Data/Cloud/Journal
-set -x PROJECTS_DIR /run/media/lepisma/Data/Projects
+set -x PROJECTS_DIR ~/.tofish/p
 
 # Personal
 set -x EMAIL lepisma@fastmail.com
