@@ -12,6 +12,7 @@ abbr -a v "sudo openconnect --config=/home/lepisma/.openconnect sslvpn.umass.edu
 abbr -a d "nmcli device disconnect wlo1"
 abbr -a w "live-server"
 
+alias el "eless"
 alias sl "ls"
 alias m "mumacs"
 alias dl "aria2c"
