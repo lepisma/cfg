@@ -54,3 +54,4 @@ xdotool
 xf86-input-wacom
 xorg-xinput
 xorg-xset
+xsel
