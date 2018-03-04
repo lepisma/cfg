@@ -10,3 +10,5 @@
 /scripts/bin/pkr
 /scripts/bin/red
 /mpm/.mpm.d/scrobbled-at
+/scripts/bin/eless
+/scripts/bin/golify
