@@ -148,6 +148,9 @@ run-or-raise with group search t."
 
 (defcommand lol () () (message "lol kek"))
 
+(defcommand emacs-anywhere () ()
+  (run-shell-command "bash ~/.emacs.d/private/rogue/emacs-anywhere/ea.sh"))
+
 (defcommand rofi-run () () (rofi "run -sidebar-mode"))
 (defcommand rofi-window () () (rofi "window"))
 (defcommand rofi-windowcd () () (rofi "windowcd"))
@@ -176,6 +179,7 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-c") "fclear")
 (define-key *top-map* (kbd "s-l") "exec lock")
 (define-key *top-map* (kbd "s-SPC") "bbq")
+(define-key *top-map* (kbd "s-e") "emacs-anywhere")
 
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
