@@ -168,6 +168,12 @@ mv pkr ~/bin/
 chmod +x ~/bin/pkr
 #+END_SRC
 
+** Haskell
+
+#+BEGIN_SRC shell :exports both :results output
+stow -t ~/ haskell
+#+END_SRC
+
 * Setup email
 
 Stow offlineimap

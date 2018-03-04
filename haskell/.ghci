@@ -1,0 +1,3 @@
+:set prompt "\SOH\ESC[32m\STX%s\SOH\ESC[0m\STX\n\SOH\ESC[32;1m\STXHλ>\SOH\ESC[0m\STX "
+:set prompt-cont "\SOH\ESC[32m\STX%s\SOH\ESC[0m\STX\n\SOH\ESC[32;1m\STXHλ.\SOH\ESC[0m\STX "
+:set +m
