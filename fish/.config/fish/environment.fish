@@ -29,5 +29,8 @@ set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 set -x PYENV_ROOT ~/.pyenv
 status --is-interactive; and . (pyenv init -|psub)
 
+# Nvm
+nvm use default
+
 # Conda
 source ~/.pyenv/versions/miniconda3-latest/etc/fish/conf.d/conda.fish
