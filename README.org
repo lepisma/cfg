@@ -119,14 +119,7 @@ ln -s ./dune ~/.roswell/local-projects
 
 ** Python setup
 
-Setup python using pyenv first
-
-#+BEGIN_SRC shell :exports both :results output
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-pyenv install miniconda3-latest
-#+END_SRC
-
-Install basic packages
+Setup miniconda. Install basic packages
 #+BEGIN_SRC shell :exports both :results output
 pip install -r ./packages/pip
 #+END_SRC
@@ -144,13 +137,7 @@ stow -t ~/ beets
 
 ** JS
 
-~fnm~ from fish should handle node.
-
-#+BEGIN_SRC shell :exports both :results output
-fnm use latest
-#+END_SRC
-
-Install some command line tools.
+Get nvm and use brigand/fast-nvm-fish. Install some command line tools.
 
 #+BEGIN_SRC shell :exports both :results output
 cat ./packages/node | while read -l line

@@ -17,20 +17,15 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cask/bin $PATH
 set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
-set PATH ~/.pyenv/bin $PATH
 set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
-set PATH /snap/bin $PATH
+set PATH ~/.miniconda/bin $PATH
 
 # Rust stuff
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
-# Pyenv stuff
-set -x PYENV_ROOT ~/.pyenv
-status --is-interactive; and . (pyenv init -|psub)
+# Conda stuff
+source ~/.miniconda/etc/fish/conf.d/conda.fish
 
-# Nvm
+# fast-nvm
 nvm use default
-
-# Conda
-source ~/.pyenv/versions/miniconda3-latest/etc/fish/conf.d/conda.fish
