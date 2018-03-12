@@ -1,13 +1,9 @@
 edc/bass
-fisherman/cprintf
-fisherman/debug
 fisherman/done
 brigand/fast-nvm-fish
 fisherman/fishtape
-fisherman/g2
 fisherman/get
 fisherman/getopts
-fisherman/git_util
 fisherman/humanize_duration
 fisherman/rbenv
 simnalamburt/fish-sensible
