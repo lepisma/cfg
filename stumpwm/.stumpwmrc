@@ -236,7 +236,7 @@ run-or-raise with group search t."
 
 ;; Init
 (update-color-map (current-screen))
-(run-shell-command "sh ~/.screenlayout/multi.sh")
+(run-shell-command "sh ~/.screenlayout/multi-vga.sh")
 ;(run-shell-command "polybar laptop --reload")
 ;(run-shell-command "polybar screen --reload")
 (run-shell-command "xmodmap ~/.Xmodmap")
