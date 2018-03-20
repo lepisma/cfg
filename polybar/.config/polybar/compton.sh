@@ -5,7 +5,7 @@ icon=""
 
 if pgrep -x "compton" > /dev/null
 then
-    echo "%{F#00AF02}$icon" #Green
+    echo "%{F#FFFFFF}$icon"
 else
-    echo "%{F#65737E}$icon" #Gray
+    echo "%{F#8A9899}$icon"
 fi
