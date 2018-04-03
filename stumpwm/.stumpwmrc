@@ -99,8 +99,8 @@ run-or-raise with group search t."
 (defcommand run-or-raise-firefox () ()
   (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
 
-(defcommand run-or-raise-brave () ()
-  (run-or-raise-prefer-group "brave-git" "brave"))
+(defcommand run-or-raise-alt-browser () ()
+  (run-or-raise-prefer-group "~/beaker-browser-0.7.11-x86_64.AppImage" "Beaker Browser"))
 
 (defcommand run-or-raise-konsole () ()
   (run-or-raise-prefer-group "konsole --stylesheet ~/cfg/konsole/konsole.css" "konsole"))
@@ -216,7 +216,7 @@ run-or-raise with group search t."
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
-(define-key *root-map* (kbd "C-v") "run-or-raise-brave")
+(define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
 (define-key *root-map* (kbd "!") "run-shell-command")
 (define-key *root-map* (kbd "b") "windowlist")
 (define-key *root-map* (kbd "q") "refresh-stuff")
