@@ -5,8 +5,7 @@
 !config.fish
 !environment.fish
 !fishfile
-!music.fish
-!completions/peeve.fish
+!functions/check-links.fish
 !functions/do.fish
 !functions/gi.fish
 !functions/huion-setup-keys.fish
