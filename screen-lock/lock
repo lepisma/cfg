@@ -168,7 +168,10 @@ text_width=$(get_text_width "$text")
 
 # Take screenshot
 scrot $image
-convert -scale 10% -threshold 70% $image pgm:- | golify 200 | convert -scale 1000% -fill white -colorize 50% - $image
+# convert -scale 20% -threshold 20% $image pgm:- | golify 20 | convert -scale 500% -fill white -colorize 50% - $image
+# Use current wallpaper
+# wallpaper=$(cat ~/.fehbg | tail -1 | cut -d' ' -f 3 | tr -d "'")
+convert -filter Gaussian -resize 20% -define "filter:sigma=1.0" -resize 500.5% $image $image
 
 # All the arguments to be passed to convert, to add the lock and text to the monitors is collected here so that we can
 # apply them in a single call to convert
