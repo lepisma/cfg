@@ -87,6 +87,22 @@
       (when win
         (stumpwm::pull-window win frame)))))
 
+(defun polybar-groups ()
+  "Return string representation for polybar stumpgroups module"
+  (apply #'concatenate 'string
+         (mapcar
+          (lambda (g)
+            (let* ((name (string-upcase (group-name g)))
+                   (n-win (write-to-string (length (group-windows g))))
+                   (display-text (cond ((string-equal name "MAIN" ) "   MAIN ")
+                                       ((string-equal name "CANVAS") "   CANVAS ")
+                                       ((string-equal name "FLOAT") "   FLOAT ")
+                                       (t (concat "   " name "  ")))))
+              (if (eq g (current-group))
+                  (concat "%{F#ECEFF4 B#882E3440 u#8A9899 +u}" display-text "[" n-win "] " "%{F- B- u- -u}")
+                  (concat "%{F#8A9899}" display-text "[" n-win "] " "%{F-}"))))
+          (sort (screen-groups (current-screen)) #'< :key #'group-number))))
+
 (defun run-or-raise-prefer-group (cmd win-cls)
   "If there are windows in the same class, cycle in those. Otherwise call
 run-or-raise with group search t."
