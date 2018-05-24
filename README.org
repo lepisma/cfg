@@ -55,6 +55,8 @@ The following snip setups that. Needs quicklisp:
 ./aux-scripts/setup-stump.fish
 #+END_SRC
 
+There might be a font loading issue which is fixed by ~(xft:cache-fonts)~.
+
 ** Fonts
 
 *** Custom iosevka
@@ -67,7 +69,7 @@ mv /tmp/iosevka-lepisma/ttf/patched/*ttf /usr/share/fonts/iosevka/
 Override medium fonts
 #+BEGIN_SRC shell :exports both :results output :dir /sudo::/usr/share/fonts
 yes | cp iosevka/iosevka-lepisma-regular.ttf iosevka/iosevka-lepisma-medium.ttf
-yes | cp iosevka/iosevka-lepisma-italic.ttf.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
+yes | cp iosevka/iosevka-lepisma-italic.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
 yes | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumoblique.ttf
 
 fc-cache -f
@@ -90,13 +92,10 @@ fc-cache -f
   (require 'all-the-icons)
   (all-the-icons-install-fonts)
   #+END_SRC
-- Lora
-- Fira Code / Fira Sans
-
-  Should be up on AUR
+- SauceCodePro Nerd font
+- Fira Code / Fira Sans. Also install Fira code symbol which is used for
+  ligatures in Emacs.
 - Source Code / Source Sans
-
-  Also is probably on AUR
 
 * Konsole theming
 
