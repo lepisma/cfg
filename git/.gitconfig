@@ -8,3 +8,5 @@
 	gpgsign = true
 [github]
 	user = lepisma
+[gpg]
+	program = /usr/bin/gpg2
