@@ -9,7 +9,7 @@ abbr -a ya "youtube-dl -x --audio-format opus --audio-quality 0 --no-playlist"
 
 abbr -a x "xdg-open"
 abbr -a v "sudo openconnect --config=/home/lepisma/.openconnect sslvpn.umass.edu"
-abbr -a d "nmcli device disconnect wlo1"
+abbr -a d "nmcli device disconnect wlp2s0"
 abbr -a w "live-server"
 
 alias el "eless"
