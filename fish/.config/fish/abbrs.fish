@@ -1,6 +1,6 @@
 abbr -a i "pacaur --color=auto -S"
 abbr -a r "pacaur --color=auto -Rsn"
-abbr -a up "pacaur --color=auto -Syyu"
+abbr -a up "pacaur --color=auto -Syu"
 abbr -a cl "pacaur --color=auto -Rsn (pacaur -Qdtq); pacaur --color=auto -Scc"
 abbr -a s "sudo"
 
