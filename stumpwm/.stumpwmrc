@@ -253,10 +253,10 @@ run-or-raise with group search t."
 ;; Init
 (update-color-map (current-screen))
 (run-shell-command "sh ~/.screenlayout/multi-vga.sh")
-;(run-shell-command "polybar laptop --reload")
-;(run-shell-command "polybar screen --reload")
+(run-shell-command "polybar screen --reload")
 (run-shell-command "xmodmap ~/.Xmodmap")
 (run-shell-command "compton")
+(run-shell-command "nm-applet")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
 (run-shell-command "sh ~/.fehbg")
