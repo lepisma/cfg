@@ -1,5 +1,5 @@
 [general]
-accounts = UMass, UMassCS, Gmail, Fastmail
+accounts = UMass, UMassCS, Gmail, Fastmail, Work
 maxsyncaccounts = 5
 pythonfile = ~/offlineimapext.py
 
@@ -14,8 +14,8 @@ localfolders = ~/Maildir/Gmail
 [Repository RemoteGmail]
 type = Gmail
 maxconnections = 2
-remoteusereval = get_authinfo_value("imap.gmail.com", "993", "login")
-remotepasseval = get_authinfo_value("imap.gmail.com", "993", "password")
+remoteusereval = get_authinfo_value("gmail-imap", "login")
+remotepasseval = get_authinfo_value("gmail-imap", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
@@ -29,9 +29,9 @@ localfolders = ~/Maildir/UMass
 
 [Repository RemoteUMass]
 type = IMAP
-remotehost = mail-a.oit.umass.edu
-remoteusereval = get_authinfo_value("mail-a.oit.umass.edu", "993", "login")
-remotepasseval = get_authinfo_value("mail-a.oit.umass.edu", "993", "password")
+remotehosteval = get_authinfo_value("umass-imap", "machine")
+remoteusereval = get_authinfo_value("umass-imap", "login")
+remotepasseval = get_authinfo_value("umass-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account UMassCS]
@@ -44,9 +44,9 @@ localfolders = ~/Maildir/UMassCS
 
 [Repository RemoteUMassCS]
 type = IMAP
-remotehost = mailsrv.cs.umass.edu
-remoteusereval = get_authinfo_value("mailsrv.cs.umass.edu", "993", "login")
-remotepasseval = get_authinfo_value("mailsrv.cs.umass.edu", "993", "password")
+remotehosteval = get_authinfo_value("csumass-imap", "machine")
+remoteusereval = get_authinfo_value("csumass-imap", "login")
+remotepasseval = get_authinfo_value("csumass-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account Fastmail]
@@ -59,7 +59,23 @@ localfolders = ~/Maildir/Fastmail
 
 [Repository RemoteFastmail]
 type = IMAP
-remotehost = imap.fastmail.com
-remoteusereval = get_authinfo_value("imap.fastmail.com", "993", "login")
-remotepasseval = get_authinfo_value("imap.fastmail.com", "993", "password")
+remotehosteval = get_authinfo_value("fastmail-imap", "machine")
+remoteusereval = get_authinfo_value("fastmail-imap", "login")
+remotepasseval = get_authinfo_value("fastmail-imap", "password")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account Work]
+localrepository = LocalWork
+remoterepository = RemoteWork
+
+[Repository LocalWork]
+type = Maildir
+localfolders = ~/Maildir/Work
+
+[Repository RemoteWork]
+type = Gmail
+maxconnections = 2
+remoteusereval = get_authinfo_value("work-imap", "login")
+remotepasseval = get_authinfo_value("work-imap", "password")
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
