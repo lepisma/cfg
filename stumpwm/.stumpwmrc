@@ -116,7 +116,7 @@ run-or-raise with group search t."
   (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
 
 (defcommand run-or-raise-alt-browser () ()
-  (run-or-raise-prefer-group "~/beaker-browser-0.7.11-x86_64.AppImage" "Beaker Browser"))
+  (run-or-raise-prefer-group "chromium" "Chromium"))
 
 (defcommand run-or-raise-konsole () ()
   (run-or-raise-prefer-group "konsole --stylesheet ~/cfg/konsole/konsole.css" "konsole"))
