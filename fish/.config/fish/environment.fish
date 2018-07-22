@@ -31,5 +31,8 @@ set -x GOPATH ~/go
 # Conda stuff
 source ~/.miniconda/etc/fish/conf.d/conda.fish
 
+# Qt5 stuff
+set -x QT_QPA_PLATFORMTHEME "qt5ct"
+
 # fast-nvm
 nvm use default
