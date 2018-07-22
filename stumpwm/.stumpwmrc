@@ -115,6 +115,9 @@ run-or-raise with group search t."
 (defcommand run-or-raise-firefox () ()
   (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
 
+(defcommand run-or-raise-rambox () ()
+  (run-or-raise-prefer-group "rambox" "Rambox"))
+
 (defcommand run-or-raise-alt-browser () ()
   (run-or-raise-prefer-group "chromium" "Chromium"))
 
@@ -232,6 +235,7 @@ run-or-raise with group search t."
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
+(define-key *root-map* (kbd "C-r") "run-or-raise-rambox")
 (define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
 (define-key *root-map* (kbd "!") "run-shell-command")
 (define-key *root-map* (kbd "b") "windowlist")
