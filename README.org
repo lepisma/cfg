@@ -187,3 +187,10 @@ For keyboard scroll button mapping run this:
 #+BEGIN_SRC shell :exports both :results output
 ./aux-scripts/setup-4000-scroll.fish
 #+END_SRC
+
+* Modules
+
+Some modules to blacklist:
+- ~i2c_hid~
+- ~r8169~
+- ~ideapad_laptop~

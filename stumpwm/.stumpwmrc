@@ -94,22 +94,27 @@
           (lambda (g)
             (let* ((name (string-upcase (group-name g)))
                    (n-win (write-to-string (length (group-windows g))))
-                   (display-text (cond ((string-equal name "MAIN" ) "   MAIN ")
-                                       ((string-equal name "CANVAS") "   CANVAS ")
-                                       ((string-equal name "FLOAT") "   FLOAT ")
+                   (display-text (cond ((string-equal name "TXT") "   TXT ")
+                                       ((string-equal name "WEB") "   WEB ")
+                                       ((string-equal name "EXT") "   EXT ")
+                                       ((string-equal name "FLT") "   FLT ")
                                        (t (concat "   " name "  ")))))
               (if (eq g (current-group))
                   (concat "%{F#ECEFF4 B#882E3440 u#8A9899 +u}" display-text "[" n-win "] " "%{F- B- u- -u}")
                   (concat "%{F#8A9899}" display-text "[" n-win "] " "%{F-}"))))
           (sort (screen-groups (current-screen)) #'< :key #'group-number))))
 
+(defun window-cls-present-p (win-cls &optional all-groups)
+  "Tell if a window (by class) is present"
+  (let ((windows (group-windows (if all-groups (current-screen) (current-group)))))
+    (member win-cls (mapcar #'window-class windows) :test #'string-equal)))
+
 (defun run-or-raise-prefer-group (cmd win-cls)
   "If there are windows in the same class, cycle in those. Otherwise call
 run-or-raise with group search t."
-  (let ((windows (group-windows (current-group))))
-    (if (member win-cls (mapcar #'window-class windows) :test #'string-equal)
-        (run-or-raise cmd `(:class ,win-cls) nil T)
-        (run-or-raise cmd `(:class ,win-cls) T T))))
+  (if (window-cls-present-p win-cls)
+      (run-or-raise cmd `(:class ,win-cls) nil T)
+      (run-or-raise cmd `(:class ,win-cls) T T)))
 
 ;; Commands
 (defcommand run-or-raise-firefox () ()
@@ -257,24 +262,35 @@ run-or-raise with group search t."
 ;; Init
 (update-color-map (current-screen))
 (run-shell-command "sh ~/.screenlayout/multi-vga.sh")
-(run-shell-command "polybar screen --reload")
 (run-shell-command "xmodmap ~/.Xmodmap")
+(run-shell-command "sh ~/.fehbg")
+(run-shell-command "xset b off")
+
+;; Groups
+(setf (group-name (car (screen-groups (current-screen)))) "txt")
+(run-commands "gnewbg web" "gnewbg ext" "gnewbg-float flt")
+
+(clear-window-placement-rules)
+
+(define-frame-preference "ext"
+    (nil nil t :class "Rambox"))
+
+(define-frame-preference "flt"
+    (nil nil t :class "electrum")
+  (nil nil t :class "Syncthing GTK"))
+
+;; Programs
 (run-shell-command "compton")
 (run-shell-command "nm-applet")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
-(run-shell-command "sh ~/.fehbg")
-(run-shell-command "xset b off")
 (run-shell-command "mpm-play")
-
-;; Groups
-(setf (group-name (car (screen-groups (current-screen)))) "main")
-(run-commands "gnewbg canvas" "gnewbg-float float")
-
-(clear-window-placement-rules)
-
-(define-frame-preference "float"
-    (nil nil t :class "Pithos"))
+(run-shell-command "gnome-encfs-manager")
+(run-shell-command "electrum")
+(run-shell-command "rambox")
+(run-shell-command "megasync")
+(run-shell-command "syncthing-gtk -m")
+(run-shell-command "polybar screen --reload")
 
 ;; Hooks
 (add-hook *post-command-hook* (lambda (command)

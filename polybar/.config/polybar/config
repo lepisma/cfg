@@ -1,9 +1,9 @@
 [colors]
-accent-dark = #AA1C2028
+accent-dark = #333446
 accent-light = #8A9899
 background = ${colors.accent-dark}
 background-tray = ${colors.accent-dark}
-foreground = #ECEFF4
+foreground = #ffffff
 foreground-alt = ${colors.accent-light}
 alert = #BF616A
 
@@ -41,9 +41,9 @@ font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = stumpwmgroups volume mpm
 modules-center = 
-modules-right = redshift compton cpu memory wlan battery date powermenu
+modules-right = redshift compton cpu memory wlan battery date
 
-tray-position = left
+tray-position = right
 tray-padding = 1
 tray-background = ${colors.background-tray}
 
