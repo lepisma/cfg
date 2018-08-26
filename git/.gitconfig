@@ -10,3 +10,9 @@
 	user = lepisma
 [gpg]
 	program = /usr/bin/gpg2
+[magithub]
+	online = false
+[magithub "status"]
+	includeStatusHeader = false
+	includePullRequestsSection = false
+	includeIssuesSection = false
