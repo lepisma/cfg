@@ -290,6 +290,7 @@ run-or-raise with group search t."
 (run-shell-command "rambox")
 (run-shell-command "megasync")
 (run-shell-command "syncthing-gtk -m")
+(run-shell-command "kdeconnect-indicator")
 (run-shell-command "polybar screen --reload")
 
 ;; Hooks
