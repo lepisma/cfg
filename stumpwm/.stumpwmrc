@@ -49,10 +49,10 @@
       *input-window-gravity* :center
       *window-border-style* :thin
       *message-window-padding* 10
-      *maxsize-border-width* 5
-      *normal-border-width* 5
-      *transient-border-width* 2
-      stumpwm::*float-window-border* 2
+      *maxsize-border-width* 0
+      *normal-border-width* 0
+      *transient-border-width* 0
+      stumpwm::*float-window-border* 0
       stumpwm::*float-window-title-height* 5
       *mouse-focus-policy* :click)
 
