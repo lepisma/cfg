@@ -13,7 +13,8 @@
                #:cl-cut
                #:cl-interpol
                #:inferior-shell
-               #:trivia)
+               #:trivia
+               #:uiop)
   :serial t
   :components ((:file "package")
                (:file "pod")))
