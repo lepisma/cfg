@@ -1,14 +1,15 @@
 # Directories
-set -x CLOUD_DIR /run/media/lepisma/Data/Cloud
-set -x PROJECTS_DIR /run/media/lepisma/Data/Projects
+set -x DATA_DIR /run/media/lepisma/Data
+set -x CLOUD_DIR $DATA_DIR/Cloud
+set -x PROJECTS_DIR $DATA_DIR/Projects
 
 # Personal
 set -x EMAIL lepisma@fastmail.com
 set -x NAME Abhinav Tushar
 
-set -x EDITOR mumacs
-set -x PAGER less
-set -x BROWSER www
+set -gx EDITOR mumacs
+set -gx PAGER less
+set -gx BROWSER www
 set -x BORG_REPO $CLOUD_DIR/Backup
 
 # PATH
