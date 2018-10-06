@@ -33,9 +33,7 @@
 (load-module "globalwindows")
 (load-module "amixer")
 (load-module "swm-gaps")
-(load-module "swm-calibre")
 
-(setf swm-calibre:*calibre-root* #p"~/.tofish/d/Cloud/Calibre Shared/")
 (setf swm-gaps:*inner-gaps-size* 10
       swm-gaps:*outer-gaps-size* 15)
 
