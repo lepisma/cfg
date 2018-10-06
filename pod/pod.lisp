@@ -15,7 +15,9 @@
 
 (defparameter www-dispatches
   `(("^(https?://)?[a-z]*\.google\.co" . ,alt-browser)
-    ("^(https?://)?wiki\.ver" . ,alt-browser))
+    ("^(https?://)slack\-redir\.net/link\\?url=(https?%3A%2F%2F)?[a-z]*\.google\.co" . ,alt-browser)
+    ("^(https?://)?wiki\.ver" . ,alt-browser)
+    ("^(https?://)?slack-redir\.net/link\\?url=(https?%3A%2F%2F)?wiki\.ver" . ,alt-browser))
   "Patterns for handling url based dispatches.")
 
 (defun www (&rest args)
