@@ -250,8 +250,6 @@ chmod +x ~/bin/pkr
 :set +s
 #+END_SRC
 
-#+RESULTS:
-
 * Setup email
 
 Stow offlineimap
