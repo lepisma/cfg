@@ -235,7 +235,7 @@ end
 Setup ~pkr~
 
 #+BEGIN_SRC shell
-wget https://raw.githubusercontent.com/lepisma/pkr/master/pkr
+wget https://raw.githubusercontent.com/reichlab/pkr/master/pkr
 mv pkr ~/bin/
 chmod +x ~/bin/pkr
 #+END_SRC
