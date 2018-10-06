@@ -96,7 +96,7 @@ Setup default programs:
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 xdg-mime default org.kde.gwenview.desktop image/jpeg
 xdg-mime default www.desktop x-scheme-handler/http
-xdg-mime default www.desktop x-scheme-handler/http
+xdg-mime default www.desktop x-scheme-handler/https
 xdg-mime default org.kde.okular.desktop application/pdf
 #+END_SRC
 
