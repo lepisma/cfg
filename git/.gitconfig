@@ -6,6 +6,8 @@
 	editor = mumacs
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
 [github]
 	user = lepisma
 [gpg]
