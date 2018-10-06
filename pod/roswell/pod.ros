@@ -4,14 +4,19 @@
 exec ros -Q -- $0 "$@"
 |#
 
-(ql:quickload '(:pod) :silent t)
+(ql:quickload '(:pod :trivia :serapeum) :silent t)
 
 (defpackage :ros.script.pod.3747827678
   (:use #:cl #:trivia))
 (in-package :ros.script.pod.3747827678)
 
+(defparameter dispatches
+  '(("www" . pod::www))
+  "Mapping from command to functions.")
+
 (defun main (&rest argv)
   (match argv
     ((list* sub-command args)
-     (princ "Not implemented yet"))
+     (let ((fn (serapeum:assocdr sub-command dispatches :test #'string-equal)))
+       (if fn (apply fn args) (princ "pod subcommand not found"))))
     (_ (princ "usage: pod <sub-command> [<args>]"))))
