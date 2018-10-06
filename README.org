@@ -145,7 +145,7 @@ fc-cache -f
 #+BEGIN_SRC init :tangle ~/.local/share/konsole/lepisma.profile
 [Appearance]
 ColorScheme=nord
-Font=Iosevka,10,-1,5,50,0,0,0,0,0,Regular
+Font=Iosevka,12,-1,5,50,0,0,0,0,0,Regular
 
 [Cursor Options]
 CursorShape=1
