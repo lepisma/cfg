@@ -8,7 +8,7 @@ set -x NAME Abhinav Tushar
 
 set -x EDITOR mumacs
 set -x PAGER less
-set -x BROWSER firefox-nightly
+set -x BROWSER www
 set -x BORG_REPO $CLOUD_DIR/Backup
 
 # PATH
