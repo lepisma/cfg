@@ -1,31 +1,33 @@
 #+TITLE: cfg
 #+AUTHOR: Abhinav Tushar
 
+#+PROPERTY: header-args :exports both :results output
+
 Config scripts and notes in literate style configuration using Org-Babel.
 
 * Basic packages
 
 My current OS is manjaro. Need to setup pacaur from AUR first.
 
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC bash
 uname -a
 #+END_SRC
 
 #+RESULTS:
-: Linux euclid-blue 4.9.60-1-MANJARO #1 SMP PREEMPT Thu Nov 2 13:08:20 UTC 2017 x86_64 GNU/Linux
+: Linux euclid-red 4.17.19-1-MANJARO #1 SMP PREEMPT Fri Aug 24 17:46:14 UTC 2018 x86_64 GNU/Linux
 
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC bash
 pacaur -S $(grep -vE "^\s*#" ./packages/pacaur | tr "\n" " ")
 #+END_SRC
 
 Set ~fish~ as default shell
-#+BEGIN_SRC bash :exports both :results output
+#+BEGIN_SRC bash
 chsh -s $(which fish)
 #+END_SRC
 
 * Stow basics
 
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 stow -t ~/ fish
 stow -t ~/ git
 stow -t ~/ scripts
@@ -36,14 +38,13 @@ stow -t ~/ vis
 
 Stow config files.
 
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 stow -t ~/ stumpwm
 stow -t ~/ polybar
 stow -t ~/ dunst
 stow -t ~/ rofi
 stow -t ~/ compton
 stow -t ~/ redshift
-stow -t ~/ xmodmap
 #+END_SRC
 
 ** Stumpwm
@@ -51,23 +52,65 @@ stow -t ~/ xmodmap
 Need two sbcl setups. The one from main repo is going to run stumpwm with swank.
 The following snip setups that. Needs quicklisp:
 
-#+BEGIN_SRC shell :exports both :results output
-./aux-scripts/setup-stump.fish
+#+BEGIN_SRC shell
+sbcl --eval "(ql:quickload '(clx-truetype swank stumpwm cl-strings inferior-shell))" --quit
+mkdir -p ~/stumpwm
+#+END_SRC
+
+Clone the repo and use make from there on
+#+BEGIN_SRC shell :dir ~/stumpwm/
+git clone https://github.com/stumpwm/stumpwm
+# Should checkout to some version
+git clone https://github.com/stumpwm/stumpwm-contrib ./contrib
+#+END_SRC
+
+Here goes the xsession file
+#+BEGIN_SRC ini :tangle /sudo::/usr/share/xsessions/stumpwm.desktop
+[Desktop Entry]
+Name=StumpWM
+Comment=StumpWM Session
+Exec=stumpwm
+Type=Application
 #+END_SRC
 
 There might be a font loading issue which is fixed by ~(xft:cache-fonts)~.
 
+** Desktop files and defaults
+
+Desktop file for ~www~.
+
+#+BEGIN_SRC ini :tangle ~/.local/share/applications/www.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=/home/lepisma/bin/www
+Name=www
+Comment=Browser dispatch
+#+END_SRC
+
+Setup default programs:
+
+#+BEGIN_SRC shell
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
+xdg-mime default org.kde.gwenview.desktop image/jpeg
+xdg-mime default www.desktop x-scheme-handler/http
+xdg-mime default www.desktop x-scheme-handler/http
+xdg-mime default org.kde.okular.desktop application/pdf
+#+END_SRC
+
 ** Fonts
 
 *** Custom iosevka
-#+BEGIN_SRC shell :exports both :results output :dir /sudo::
+#+BEGIN_SRC shell :dir /sudo::
 git clone git@github.com/lepisma/iosevka-lepisma /tmp/iosevka-lepisma
 mkdir /usr/share/fonts/iosevka/
 mv /tmp/iosevka-lepisma/ttf/patched/*ttf /usr/share/fonts/iosevka/
 #+END_SRC
 
 Override medium fonts
-#+BEGIN_SRC shell :exports both :results output :dir /sudo::/usr/share/fonts
+#+BEGIN_SRC shell :dir /sudo::/usr/share/fonts
 yes | cp iosevka/iosevka-lepisma-regular.ttf iosevka/iosevka-lepisma-medium.ttf
 yes | cp iosevka/iosevka-lepisma-italic.ttf iosevka/iosevka-lepisma-mediumitalic.ttf
 yes | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumoblique.ttf
@@ -76,7 +119,7 @@ fc-cache -f
 #+END_SRC
 
 *** Et book
-#+BEGIN_SRC shell :exports both :results output :dir /sudo::
+#+BEGIN_SRC shell :dir /sudo::
 git clone git@github.com:edwardtufte/et-book /tmp/et-book
 mkdir /usr/share/fonts/et-book/
 mv /tmp/et-book/et-book/*/*.ttf /usr/share/fonts/et-book/
@@ -88,7 +131,7 @@ fc-cache -f
 - All the icons
 
   Better install this using the Emacs package:
-  #+BEGIN_SRC elisp :exports both :results output
+  #+BEGIN_SRC elisp
   (require 'all-the-icons)
   (all-the-icons-install-fonts)
   #+END_SRC
@@ -99,9 +142,35 @@ fc-cache -f
 
 * Konsole theming
 
-Copy color scheme:
-#+BEGIN_SRC shell :exports both :results output
-cp ./konsole/lepisma.profile ~/.local/share/konsole/lepisma.profile
+#+BEGIN_SRC init :tangle ~/.local/share/konsole/lepisma.profile
+[Appearance]
+ColorScheme=nord
+Font=Iosevka,10,-1,5,50,0,0,0,0,0,Regular
+
+[Cursor Options]
+CursorShape=1
+
+[General]
+Command=/usr/bin/fish
+Directory=/home/lepisma/Desktop
+LocalTabTitleFormat=%d | %n
+Name=lepisma
+Parent=FALLBACK/
+RemoteTabTitleFormat=%d | %n
+
+[Interaction Options]
+AutoCopySelectedText=true
+
+[Scrolling]
+HistoryMode=2
+ScrollBarPosition=2
+
+[Terminal Features]
+BlinkingCursorEnabled=true
+UrlHintsModifiers=67108864
+#+END_SRC
+
+#+BEGIN_SRC shell
 cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
 #+END_SRC
 
@@ -109,40 +178,53 @@ cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
 
 ** Common Lisp
 
-Setup roswell and quicklisp.
+Setup roswell, quicklisp and other tools.
 
-Symlink ~pod~ to roswell local projects
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
+ros install lake
+#+END_SRC
+
+Symlink ~pod~ to roswell local projects.
+
+#+BEGIN_SRC shell
 ln -s ./pod ~/.roswell/local-projects
 #+END_SRC
 
-#+BEGIN_SRC shell :exports both :results output :dir ./pod
+Setup pod scripts.
+
+#+BEGIN_SRC shell :dir ./pod
 lake setup
 #+END_SRC
 
 ** Python setup
 
 Setup miniconda. Install basic packages
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 pip install -r ./packages/pip
 #+END_SRC
 
 Setup jupyter notebook theme.
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 jt -t solarizedl -f fira -nf crimsonserif -tf merriserif -tfs 10 -T 
 #+END_SRC
 
 Some package config
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 stow -t ~/ mpm
 stow -t ~/ beets
+#+END_SRC
+
+IPython init
+#+BEGIN_SRC python :tangle ~/.ipython/profile_default/startup/00-auto.py
+get_ipython().magic("%load_ext autoreload")
+get_ipython().magic("%autoreload 2")
 #+END_SRC
 
 ** JS
 
 Get nvm and use brigand/fast-nvm-fish. Install some command line tools.
 
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 cat ./packages/node | while read -l line
   npm i -g $line
 end
@@ -152,7 +234,7 @@ end
 
 Setup ~pkr~
 
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 wget https://raw.githubusercontent.com/lepisma/pkr/master/pkr
 mv pkr ~/bin/
 chmod +x ~/bin/pkr
@@ -160,21 +242,27 @@ chmod +x ~/bin/pkr
 
 ** Haskell
 
-#+BEGIN_SRC shell :exports both :results output
-stow -t ~/ haskell
+#+BEGIN_SRC haskell :tangle ~/.ghci
+:set prompt "\ESC[32mλ> \ESC[m"
+:set -XOverloadedStrings
+:set +m
+:set +t
+:set +s
 #+END_SRC
+
+#+RESULTS:
 
 * Setup email
 
 Stow offlineimap
 
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 stow -t ~/ offlineimap
 #+END_SRC
 
-Copy over ~authinfo.gpg~
+Copy over the template ~authinfo.gpg~
 
-#+BEGIN_SRC shell :exports both :results output
+#+BEGIN_SRC shell
 cp ./misc/.authinfo.gpg ~/
 #+END_SRC
 
@@ -182,19 +270,50 @@ cp ./misc/.authinfo.gpg ~/
 
 Digimend package from AUR should work fine. Otherwise this snippet should do:
 
-#+BEGIN_SRC shell :exports both :results output
-./aux-scripts/setup-huion-driver.fish
+#+BEGIN_SRC shell :dir /sudo::
+rmmod hid-kye
+rmmod hid-uclogic
+rmmod hid-huion
+
+# Setup driver
+# Use https://aur.archlinux.org/packages/digimend-kernel-drivers-dkms-git/
+
+mkdir -p /etc/X11/xorg.conf.d
 #+END_SRC
 
-For keyboard scroll button mapping run this:
+#+BEGIN_SRC ini :tangle /sudo::/etc/X11/xorg.conf.d/52-tablet.conf
+Section "InputClass"
+Identifier "Huion on wacom"
+MatchProduct "HUION"
+MatchDevicePath "/dev/input/event*"
+Driver "wacom"
+EndSection
+#+END_SRC
 
-#+BEGIN_SRC shell :exports both :results output
-./aux-scripts/setup-4000-scroll.fish
+For keyboard scroll button mapping tangle this:
+
+#+BEGIN_SRC ini :tangle /sudo::/etc/udev/hwdb.d/70-keyboard-local.hwdb
+evdev:input:b0003v045Ep00DB*
+  KEYBOARD_KEY_c022d=pageup
+  KEYBOARD_KEY_c022e=pagedown
+#+END_SRC
+
+#+BEGIN_SRC shell :dir /sudo::
+udevadm hwdb --update
+udevadm control --reload
+#+END_SRC
+
+Swap keys:
+
+#+BEGIN_SRC ini :tangle ~/.Xmodmap
+clear lock
+keycode  9 = Caps_Lock NoSymbol Caps_Lock
+keycode 66 = Escape NoSymbol Escape
 #+END_SRC
 
 * Modules
 
-Some modules to blacklist:
+Some modules that I might need to blacklist:
 - ~i2c_hid~
 - ~r8169~
 - ~ideapad_laptop~

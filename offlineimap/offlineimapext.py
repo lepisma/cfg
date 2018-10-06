@@ -4,11 +4,13 @@ Things for offlineimap
 
 import subprocess
 
+
 def plist_get(key, plist):
     for i in range(len(plist) // 2):
         if plist[i * 2] == key:
             return plist[1 + (i * 2)]
     return None
+
 
 def get_authinfo_value(name, key):
     machines = [

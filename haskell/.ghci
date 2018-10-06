@@ -1,5 +1,0 @@
-:set prompt "\ESC[32mλ> \ESC[m"
-:set -XOverloadedStrings
-:set +m
-:set +t
-:set +s

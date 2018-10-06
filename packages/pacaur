@@ -15,6 +15,7 @@ fish
 font-manager
 gimp
 gparted
+gwenview
 httpie
 i3lock-color-git
 imagemagick
@@ -27,6 +28,7 @@ light
 lxappearance
 mplayer
 mu
+nautilus
 neofetch
 nerd-fonts-source-code-pro
 network-manager-applet
@@ -58,11 +60,11 @@ the_silver_searcher
 tor-browser-en
 tree
 ttf-fira-code
-vivaldi-snapshot
 vlc
 w3m
 wine
 wmctrl
+xdg-utils
 xdotool
 xf86-input-wacom
 xorg-xinput
