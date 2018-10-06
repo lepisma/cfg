@@ -1,0 +1,11 @@
+;;; -*- mode: lisp -*-
+
+(defpackage #:lake.user
+  (:use #:cl #:lake #:cl-syntax)
+  (:shadowing-import-from #:lake :directory))
+
+(in-package #:lake.user)
+(use-syntax :interpol)
+
+(task "build" ()
+      (sh "ros build ./roswell/pod.ros"))
