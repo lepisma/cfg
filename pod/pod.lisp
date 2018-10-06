@@ -9,6 +9,10 @@
 (defparameter alt-browser "chromium"
   "Alternate browser")
 
+(defparameter dispatches
+  '(("www" . www))
+  "Mapping from command to functions.")
+
 (defparameter www-dispatches
   `(("^(https?://)?[a-z]*\.google\.co" . ,alt-browser)
     ("^(https?://)?wiki\.ver" . ,alt-browser))
