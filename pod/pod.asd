@@ -1,7 +1,7 @@
-;;;; dune.asd
+;;;; pod.asd
 
-(asdf:defsystem #:dune
-  :description "Package collecting other packages for small scale scripting"
+(defsystem #:pod
+  :description "Scripts in common lisp"
   :author "Abhinav Tushar <lepisma@fastmail.com>"
   :license "GPLv3"
   :depends-on (#:alexandria
@@ -11,7 +11,8 @@
                #:cl-arrows
                #:cl-ppcre
                #:cl-cut
-               #:cl-interpol)
+               #:cl-interpol
+               #:trivia)
   :serial t
   :components ((:file "package")
-               (:file "dune")))
+               (:file "pod")))

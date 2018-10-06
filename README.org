@@ -111,10 +111,7 @@ cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
 
 Setup roswell and quicklisp.
 
-Symlink ~dune~ to roswell local projects
-#+BEGIN_SRC shell :exports both :results output
-ln -s ./dune ~/.roswell/local-projects
-#+END_SRC
+Symlink ~pod~ to roswell local projects. Use lake to setup scripts.
 
 ** Python setup
 

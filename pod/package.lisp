@@ -1,6 +1,6 @@
 ;;;; package.lisp
 
-(defpackage #:dune
+(defpackage #:pod
   (:use #:cl
         #:alexandria
         #:anaphora
@@ -9,10 +9,11 @@
         #:cl-arrows
         #:cl-ppcre
         #:cl-cut
-        #:cl-interpol)
+        #:cl-interpol
+        #:trivia)
   (:shadowing-import-from #:cl-strings
    :starts-with :ends-with :parse-number :split)
   (:shadowing-import-from #:cl-arrows
    :->)
   (:shadowing-import-from #:serapeum
-   :scan))
+   :scan :@))
