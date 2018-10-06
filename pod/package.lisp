@@ -10,10 +10,15 @@
         #:cl-ppcre
         #:cl-cut
         #:cl-interpol
+        #:inferior-shell
         #:trivia)
   (:shadowing-import-from #:cl-strings
    :starts-with :ends-with :parse-number :split)
   (:shadowing-import-from #:cl-arrows
    :->)
   (:shadowing-import-from #:serapeum
-   :scan :@))
+   :scan :@)
+  (:shadowing-import-from #:inferior-shell
+   :fork)
+  (:shadowing-import-from #:trivia
+   :<>))

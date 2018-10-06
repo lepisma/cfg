@@ -12,6 +12,7 @@
                #:cl-ppcre
                #:cl-cut
                #:cl-interpol
+               #:inferior-shell
                #:trivia)
   :serial t
   :components ((:file "package")
