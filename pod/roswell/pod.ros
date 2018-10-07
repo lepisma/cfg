@@ -13,6 +13,6 @@ exec ros -Q -- $0 "$@"
 (defun main (&rest argv)
   (match argv
     ((list* sub-command args)
-     (let ((fn (serapeum:assocdr sub-command pod::dispatches :test #'string-equal)))
+     (let ((fn (serapeum:assocdr sub-command pod:*dispatches* :test #'string-equal)))
        (if fn (apply fn args) (princ "pod subcommand not found"))))
     (_ (princ "usage: pod <sub-command> [<args>]"))))

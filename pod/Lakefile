@@ -41,5 +41,5 @@
 
 (task "setup" ("./roswell/pod")
   (setup-pod)
-  (loop for pair in pod::dispatches
+  (loop for pair in pod:*dispatches*
         do (setup-cmd (car pair))))

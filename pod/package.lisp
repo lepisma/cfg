@@ -21,4 +21,5 @@
   (:shadowing-import-from #:inferior-shell
    :fork)
   (:shadowing-import-from #:trivia
-   :<>))
+   :<>)
+  (:export #:*dispatches*))
