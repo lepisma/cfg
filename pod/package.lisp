@@ -11,7 +11,10 @@
         #:cl-cut
         #:cl-interpol
         #:inferior-shell
+        #:lparallel
         #:trivia)
+  (:shadowing-import-from #:anaphora
+   :slet)
   (:shadowing-import-from #:cl-strings
    :starts-with :ends-with :parse-number :split)
   (:shadowing-import-from #:cl-arrows

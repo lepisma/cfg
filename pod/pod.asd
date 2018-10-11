@@ -13,6 +13,7 @@
                #:cl-cut
                #:cl-interpol
                #:inferior-shell
+               #:lparallel
                #:trivia
                #:uiop)
   :serial t
