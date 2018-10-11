@@ -5,6 +5,7 @@
 
 Config scripts and notes in literate style configuration using Org-Babel.
 
+
 * Basic packages
 
 My current OS is manjaro. Need to setup pacaur from AUR first.
@@ -74,6 +75,9 @@ Type=Application
 #+END_SRC
 
 There might be a font loading issue which is fixed by ~(xft:cache-fonts)~.
+
+** Compton
+[[https://github.com/tryone144/compton][This fork]] has better blurring support.
 
 ** Desktop files and defaults
 
