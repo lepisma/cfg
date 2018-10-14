@@ -35,5 +35,10 @@ source ~/.miniconda/etc/fish/conf.d/conda.fish
 # Qt5 stuff
 set -x QT_QPA_PLATFORMTHEME "qt5ct"
 
+# Nix
+if test -d $HOME/.nix-profile; and test -d /nix
+    bass source ~/.nix-profile/etc/profile.d/nix.sh
+end
+
 # fast-nvm
 nvm use default
