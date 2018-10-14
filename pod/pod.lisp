@@ -84,4 +84,4 @@
        (princ #?"File ${encrypted} saved in ${outdir}\n")))))
 
 (defun aux-backup ()
-  (backup *aux-backup-dirs* #p"~/Desktop/" "aux-backup.tar.gz"))
+  (backup *aux-backup-dirs* #p"~/.tofish/c/" "aux-backup.tar.gz"))
