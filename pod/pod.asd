@@ -13,7 +13,9 @@
                #:cl-cut
                #:cl-interpol
                #:inferior-shell
+               #:local-time
                #:lparallel
+               #:parenscript
                #:trivia
                #:uiop)
   :serial t
