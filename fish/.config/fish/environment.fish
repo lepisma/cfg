@@ -22,6 +22,7 @@ set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH ~/.miniconda/bin $PATH
 set PATH ~/go/bin $PATH
+set PATH ~/.guix-profile/bin $PATH
 
 # Rust stuff
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
