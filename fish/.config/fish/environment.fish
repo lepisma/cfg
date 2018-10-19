@@ -22,6 +22,7 @@ set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH ~/.miniconda/bin $PATH
 set PATH ~/go/bin $PATH
+set PATH ~/.poetry/bin $PATH
 
 if test -d $HOME/.guix-profile/bin
     set PATH ~/.guix-profile/bin $PATH
