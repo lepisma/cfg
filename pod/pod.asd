@@ -16,6 +16,7 @@
                #:local-time
                #:lparallel
                #:parenscript
+               #:spinneret
                #:trivia
                #:uiop)
   :serial t

@@ -17,3 +17,4 @@
 /scripts/bin/pod
 /scripts/bin/www
 /scripts/bin/aux-backup
+/scripts/bin/dump-commit-events

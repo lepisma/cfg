@@ -11,7 +11,8 @@
 
 (defparameter *dispatches*
   '(("www" . www)
-    ("aux-backup" . aux-backup))
+    ("aux-backup" . aux-backup)
+    ("dump-commit-events" . dump-commit-events))
   "Mapping from command to functions.")
 
 (defparameter *www-dispatches*
@@ -58,11 +59,17 @@
    (lambda ()
      (let ((log-out (trim-whitespace (run/s `(git log --all --author ,*git-author* "--pretty=format:%at")))))
        (unless (string-equal "" log-out)
-         (mapcar (compose #'local-time:unix-to-timestamp #'parse-integer) (split log-out #\linefeed)))))))
+         (mapcar #'parse-integer (split log-out #\linefeed)))))))
 
 (defun commit-events ()
-  (reduce #'append (mapcar #'repo-commit-events (git-repos))))
+  "Return all the local commit events"
+  (sort (reduce #'append (mapcar #'repo-commit-events (git-repos))) #'<))
 
+(defun dump-commit-events (&rest args)
+  (let ((f-name (or (car args) "./commit-events"))
+        (separator (make-string 1 :initial-element #\linefeed)))
+    (write-string-into-file (join (commit-events) :separator separator) f-name :if-exists :overwrite
+                                                                               :if-does-not-exist :create)))
 
 ;;; Aux backup stuff
 
