@@ -18,3 +18,4 @@
 /scripts/bin/www
 /scripts/bin/aux-backup
 /scripts/bin/dump-commit-events
+/scripts/bin/psc

@@ -12,7 +12,8 @@
 (defparameter *dispatches*
   '(("www" . www)
     ("aux-backup" . aux-backup)
-    ("dump-commit-events" . dump-commit-events))
+    ("dump-commit-events" . dump-commit-events)
+    ("psc" . parenscript-compile))
   "Mapping from command to functions.")
 
 (defparameter *www-dispatches*
@@ -76,6 +77,16 @@
         (lines (mapcar #'format-commit-line (commit-events))))
     (write-string-into-file (join (cons header lines) :separator separator) f-name :if-exists :overwrite
                                                                                    :if-does-not-exist :create)))
+
+(defun parenscript-compile (&rest args)
+  "Compile a parenscript file."
+  (match args
+    ((list input-file output-file)
+     (let ((output (ps:ps-compile-file input-file)))
+       (write-string-into-file output output-file :if-exists :supersede)))
+    ((list input-file)
+     (format *standard-output* (ps:ps-compile-file input-file)))
+    (_ (princ "usage: psc <input-file> <output-file>"))))
 
 ;;; Aux backup stuff
 
