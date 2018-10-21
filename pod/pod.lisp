@@ -59,17 +59,23 @@
    (lambda ()
      (let ((log-out (trim-whitespace (run/s `(git log --all --author ,*git-author* "--pretty=format:%at")))))
        (unless (string-equal "" log-out)
-         (mapcar #'parse-integer (split log-out #\linefeed)))))))
+         (mapcar (compose #'local-time:unix-to-timestamp #'parse-integer) (split log-out #\linefeed)))))))
+
+(defun format-commit-line (timestamp)
+  (multiple-value-bind (year week day) (local-time::%timestamp-decode-iso-week timestamp)
+    (format nil "~A,~A-~2,'0d" (local-time:timestamp-to-unix timestamp) year week)))
 
 (defun commit-events ()
   "Return all the local commit events"
-  (sort (reduce #'append (mapcar #'repo-commit-events (git-repos))) #'<))
+  (sort (reduce #'append (mapcar #'repo-commit-events (git-repos))) #'local-time:timestamp<))
 
 (defun dump-commit-events (&rest args)
-  (let ((f-name (or (car args) "./commit-events"))
-        (separator (make-string 1 :initial-element #\linefeed)))
-    (write-string-into-file (join (commit-events) :separator separator) f-name :if-exists :overwrite
-                                                                               :if-does-not-exist :create)))
+  (let ((f-name (or (car args) "./commit-events.csv"))
+        (separator (make-string 1 :initial-element #\linefeed))
+        (header "timestamp,week")
+        (lines (mapcar #'format-commit-line (commit-events))))
+    (write-string-into-file (join (cons header lines) :separator separator) f-name :if-exists :overwrite
+                                                                                   :if-does-not-exist :create)))
 
 ;;; Aux backup stuff
 
