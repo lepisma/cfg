@@ -80,13 +80,14 @@
 
 (defun parenscript-compile (&rest args)
   "Compile a parenscript file."
-  (match args
-    ((list input-file output-file)
-     (let ((output (ps:ps-compile-file input-file)))
-       (write-string-into-file output output-file :if-exists :supersede)))
-    ((list input-file)
-     (format *standard-output* (ps:ps-compile-file input-file)))
-    (_ (princ "usage: psc <input-file> <output-file>"))))
+  (let ((ps:*ps-print-pretty* nil))
+    (match args
+      ((list input-file output-file)
+       (let ((output (ps:ps-compile-file input-file)))
+         (write-string-into-file output output-file :if-exists :supersede)))
+      ((list input-file)
+       (format *standard-output* (ps:ps-compile-file input-file)))
+      (_ (princ "usage: psc <input-file> <output-file>")))))
 
 ;;; Aux backup stuff
 
