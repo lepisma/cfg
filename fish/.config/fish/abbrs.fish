@@ -12,6 +12,9 @@ abbr -a v "sudo openconnect --config=/home/lepisma/.openconnect sslvpn.umass.edu
 abbr -a d "nmcli device disconnect wlp2s0"
 abbr -a w "live-server"
 
+# We should have yasnippet in shell/term-emus
+abbr -a doc "sudo docker run -t -i -v (pwd):\"/that-dir\" ubuntu:trusty /bin/bash"
+
 alias el "eless"
 alias sl "ls"
 alias m "mumacs"
