@@ -18,6 +18,7 @@ remoteusereval = get_authinfo_value("gmail-imap", "login")
 remotepasseval = get_authinfo_value("gmail-imap", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl_version = tls1_2
 
 [Account UMass]
 localrepository = LocalUMass
@@ -79,3 +80,4 @@ remoteusereval = get_authinfo_value("work-imap", "login")
 remotepasseval = get_authinfo_value("work-imap", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl_version = tls1_2
