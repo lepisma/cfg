@@ -79,6 +79,20 @@ I might also need to disable the default display manager. See [[https://askubunt
 
 There might be a font loading issue which is fixed by ~(xft:cache-fonts)~.
 
+** Grub
+Currently using the [[https://github.com/lfelipe1501/Atomic-GRUB2-Theme][Atomic]] theme.
+
+#+BEGIN_SRC shell :dir /sudo::/tmp
+git clone https://github.com/lfelipe1501/Atomic-GRUB2-Theme.git
+cp -r Atomic-GRUB2-Theme/Atomic /usr/share/grub/themes
+#+END_SRC
+
+Change grub theme line in ~/etc/default/grub~
+
+#+BEGIN_SRC shell :dir /sudo::
+update-grub
+#+END_SRC
+
 ** Compton
 [[https://github.com/tryone144/compton][This fork]] has better blurring support.
 
