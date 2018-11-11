@@ -195,6 +195,13 @@ UrlHintsModifiers=67108864
 cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
 #+END_SRC
 
+** Linux Console
+
+#+BEGIN_SRC ini :tangle /sudo::/etc/vconsole.conf
+KEYMAP="us"
+FONT="ter-v18n"
+#+END_SRC
+
 * Language setup
 
 ** Common Lisp

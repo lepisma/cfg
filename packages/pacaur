@@ -54,7 +54,8 @@ scrot
 sqlitebrowser
 stow
 svox-pico-bin
-syncthing-gtk
+synching-gtk
+terminus-font
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
 tor-browser-en
