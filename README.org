@@ -65,14 +65,17 @@ git clone https://github.com/stumpwm/stumpwm
 git clone https://github.com/stumpwm/stumpwm-contrib ./contrib
 #+END_SRC
 
-Here goes the xsession file
-#+BEGIN_SRC ini :tangle /sudo::/usr/share/xsessions/stumpwm.desktop
-[Desktop Entry]
-Name=StumpWM
-Comment=StumpWM Session
-Exec=stumpwm
-Type=Application
+Here goes the xinitrc
+#+BEGIN_SRC shell :tangle ~/.xinitrc
+#!/bin/sh
+exec stumpwm
 #+END_SRC
+
+#+BEGIN_SRC shell
+chmod +x ~/.xinitrc
+#+END_SRC
+
+I might also need to disable the default display manager. See [[https://askubuntu.com/a/882436][this]].
 
 There might be a font loading issue which is fixed by ~(xft:cache-fonts)~.
 
