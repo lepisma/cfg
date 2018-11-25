@@ -63,6 +63,7 @@ type = internal/xkeyboard
 ; List of indicators to ignore
 blacklist-0 = num lock
 blacklist-1 = scroll lock
+blacklist-2 = caps lock
 
 ; Available tags:
 ;   <label-layout> (default)
