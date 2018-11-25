@@ -33,6 +33,9 @@
 (load-module "globalwindows")
 (load-module "amixer")
 (load-module "swm-gaps")
+(load-module "kbd-layouts")
+
+(kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx" "ru -variant phonetic")
 
 (setf swm-gaps:*inner-gaps-size* 10
       swm-gaps:*outer-gaps-size* 15)
@@ -202,6 +205,7 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-l") "exec lock")
 (define-key *top-map* (kbd "s-SPC") "bbq")
 (define-key *top-map* (kbd "s-e") "emacs-anywhere")
+(define-key *top-map* (kbd "s-S-SPC") "switch-keyboard-layout")
 
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
