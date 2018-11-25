@@ -41,45 +41,11 @@ font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = stumpwmgroups volume mpm
 modules-center = 
-modules-right = redshift compton cpu memory wlan battery date
+modules-right = redshift compton cpu memory wlan battery keyboard date
 
 tray-position = right
 tray-padding = 1
 tray-background = ${colors.background-tray}
-
-enable-ipc = true
-
-[bar/laptop]
-monitor = eDP1
-width = 100%
-height = 24
-offset-x = 0
-offset-y = 0
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-overline-size = 1
-overline-color = ${colors.background}
-underline-size = 2
-underline-color = ${colors.background}
-
-border-top-size = 0
-border-top-color = ${colors.background}
-border-bottom-size = 0
-border-bottom-color = ${colors.background}
-
-padding-left = 3
-padding-right = 3
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = "Source Code Pro:size=8;1"
-font-1 = "FontAwesome:pixelsize=8;1"
-
-modules-left = 
-modules-center = 
-modules-right = wlan battery date
 
 enable-ipc = true
 
@@ -90,6 +56,32 @@ format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/mu-unreads.sh
+
+[module/keyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-spacing = 0
+
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+; Default: %layout%
+label-layout = %name%
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-indicator = %name%
+label-indicator-padding = 2
 
 [module/compton]
 type = custom/script
@@ -170,7 +162,6 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-background = ${colors.background}
 label-background = ${colors.background}
-
 
 [module/volume]
 type = internal/volume
