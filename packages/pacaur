@@ -7,12 +7,12 @@ chromium
 cli-visualizer
 compton
 digimend-kernel-drivers-dkms-git
+dolphin
 dunst
 electrum
 emacs
 feh
 fish
-font-manager
 gimp
 gparted
 gwenview
@@ -28,7 +28,6 @@ light
 lxappearance
 mplayer
 mu
-nautilus
 neofetch
 nerd-fonts-source-code-pro
 network-manager-applet
@@ -41,7 +40,6 @@ pulseeffects
 qt5ct
 qt5-styleplugins
 rambox-bin
-ranger
 rbenv
 redshift
 rofi
@@ -50,11 +48,12 @@ ruby-build
 sagemath
 signal-desktop-bin
 sbcl
-scrot
+spectacle
 sqlitebrowser
 stow
 svox-pico-bin
 synching-gtk
+systemsettings
 terminus-font
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
@@ -62,7 +61,6 @@ tor-browser-en
 tree
 ttf-fira-code
 vlc
-w3m
 wine
 wmctrl
 xdg-utils
