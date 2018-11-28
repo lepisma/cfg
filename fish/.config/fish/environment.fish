@@ -21,18 +21,10 @@ set PATH ~/.pkr/bin $PATH
 set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH ~/.miniconda/bin $PATH
-set PATH ~/go/bin $PATH
 set PATH ~/.poetry/bin $PATH
-
-if test -d $HOME/.guix-profile/bin
-    set PATH ~/.guix-profile/bin $PATH
-end
 
 # Rust stuff
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
-
-# Go stuff
-set -x GOPATH ~/go
 
 # Conda stuff
 source ~/.miniconda/etc/fish/conf.d/conda.fish
