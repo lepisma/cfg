@@ -4,7 +4,7 @@ maxsyncaccounts = 5
 pythonfile = ~/offlineimapext.py
 
 [Account Gmail]
-autorefresh = 30
+autorefresh = 15
 localrepository = LocalGmail
 remoterepository = RemoteGmail
 
@@ -22,7 +22,7 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ssl_version = tls1_2
 
 [Account UMass]
-autorefresh = 30
+autorefresh = 15
 localrepository = LocalUMass
 remoterepository = RemoteUMass
 
@@ -38,7 +38,7 @@ remotepasseval = get_authinfo_value("umass-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account UMassCS]
-autorefresh = 30
+autorefresh = 15
 localrepository = LocalUMassCS
 remoterepository = RemoteUMassCS
 
@@ -54,7 +54,7 @@ remotepasseval = get_authinfo_value("csumass-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account Fastmail]
-autorefresh = 30
+autorefresh = 15
 localrepository = LocalFastmail
 remoterepository = RemoteFastmail
 
@@ -70,7 +70,7 @@ remotepasseval = get_authinfo_value("fastmail-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account Work]
-autorefresh = 30
+autorefresh = 15
 localrepository = LocalWork
 remoterepository = RemoteWork
 
