@@ -8,7 +8,7 @@ Config scripts and notes in literate style configuration using Org-Babel.
 
 * Basic packages
 
-My current OS is manjaro. Need to setup pacaur from AUR first.
+My current OS is manjaro. Need to setup yay first.
 
 #+BEGIN_SRC bash
 uname -a
@@ -18,7 +18,7 @@ uname -a
 : Linux euclid-red 4.17.19-1-MANJARO #1 SMP PREEMPT Fri Aug 24 17:46:14 UTC 2018 x86_64 GNU/Linux
 
 #+BEGIN_SRC bash
-pacaur -S $(grep -vE "^\s*#" ./packages/pacaur | tr "\n" " ")
+yay -S $(grep -vE "^\s*#" ./packages/arch | tr "\n" " ")
 #+END_SRC
 
 Set ~fish~ as default shell
