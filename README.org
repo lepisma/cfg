@@ -337,6 +337,18 @@ keycode  9 = Caps_Lock NoSymbol Caps_Lock
 keycode 66 = Escape NoSymbol Escape
 #+END_SRC
 
+** Graphics Card
+[[https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225?u=bogdancovaciu][This guide]] helps me setting up 1060. Although the battery drain goes up a bit,
+it's not really bad.
+
+Relevant portion for ~xinitrc~:
+
+#+BEGIN_SRC shell
+# Goes above exec stump..
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+#+END_SRC
+
 * Modules
 
 Some modules that I might need to blacklist:

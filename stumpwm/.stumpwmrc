@@ -44,7 +44,7 @@
 (set-font (make-instance 'xft:font
                          :family "SauceCodePro Nerd Font"
                          :subfamily "Regular"
-                         :size 10))
+                         :size 12))
 
 (setf *message-window-gravity* :center
       *input-window-gravity* :center
