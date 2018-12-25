@@ -1,5 +1,5 @@
 [general]
-accounts = UMass, UMassCS, Gmail, Fastmail, Work
+accounts = Gmail, Fastmail, Work
 maxsyncaccounts = 5
 pythonfile = ~/offlineimapext.py
 
@@ -20,38 +20,6 @@ remotepasseval = get_authinfo_value("gmail-imap", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ssl_version = tls1_2
-
-[Account UMass]
-autorefresh = 15
-localrepository = LocalUMass
-remoterepository = RemoteUMass
-
-[Repository LocalUMass]
-type = Maildir
-localfolders = ~/Maildir/UMass
-
-[Repository RemoteUMass]
-type = IMAP
-remotehosteval = get_authinfo_value("umass-imap", "machine")
-remoteusereval = get_authinfo_value("umass-imap", "login")
-remotepasseval = get_authinfo_value("umass-imap", "password")
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-
-[Account UMassCS]
-autorefresh = 15
-localrepository = LocalUMassCS
-remoterepository = RemoteUMassCS
-
-[Repository LocalUMassCS]
-type = Maildir
-localfolders = ~/Maildir/UMassCS
-
-[Repository RemoteUMassCS]
-type = IMAP
-remotehosteval = get_authinfo_value("csumass-imap", "machine")
-remoteusereval = get_authinfo_value("csumass-imap", "login")
-remotepasseval = get_authinfo_value("csumass-imap", "password")
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [Account Fastmail]
 autorefresh = 15
