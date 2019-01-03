@@ -20,14 +20,15 @@ set PATH ~/.roswell/bin $PATH
 set PATH ~/.pkr/bin $PATH
 set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
-set PATH ~/.miniconda/bin $PATH
+set PATH ~/.pyenv/bin $PATH
 set PATH ~/.poetry/bin $PATH
+
+# pyenv
+status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
 # Rust stuff
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
-
-# Conda stuff
-source ~/.miniconda/etc/fish/conf.d/conda.fish
 
 # Qt5 stuff
 set -x QT_QPA_PLATFORMTHEME "qt5ct"
