@@ -207,6 +207,8 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-e") "emacs-anywhere")
 (define-key *top-map* (kbd "s-S-SPC") "switch-keyboard-layout")
 
+(define-key *top-map* (kbd "XF86Mail") "exec emacsclient -c --eval '(progn (mu4e) (mu4e-update-mail-and-index nil))'")
+
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
 (define-key *top-map* (kbd "XF86Launch7") "gselect 3")
