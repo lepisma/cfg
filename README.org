@@ -333,8 +333,9 @@ Swap keys:
 
 #+BEGIN_SRC ini :tangle ~/.Xmodmap
 clear lock
-keycode  9 = Caps_Lock NoSymbol Caps_Lock
-keycode 66 = Escape NoSymbol Escape
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
 #+END_SRC
 
 ** Graphics Card
