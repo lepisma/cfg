@@ -22,6 +22,7 @@ set PATH (rbenv prefix)/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH ~/.pyenv/bin $PATH
 set PATH ~/.poetry/bin $PATH
+set PATH ~/go/bin $PATH
 
 # pyenv
 status --is-interactive; and source (pyenv init -|psub)
