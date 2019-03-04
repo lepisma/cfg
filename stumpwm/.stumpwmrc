@@ -36,7 +36,7 @@
 (load-module "kbd-layouts")
 
 (setf kbd-layouts:*caps-lock-behavior* :ctrl)
-(kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx" "ru -variant phonetic")
+(kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx")
 
 (setf swm-gaps:*inner-gaps-size* 10
       swm-gaps:*outer-gaps-size* 15)
