@@ -297,6 +297,7 @@ run-or-raise with group search t."
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "kdeconnect-indicator")
 (run-shell-command "polybar screen --reload")
+(run-shell-command "qtox")
 
 ;; Hooks
 (add-hook *post-command-hook* (lambda (command)
