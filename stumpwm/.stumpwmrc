@@ -28,7 +28,7 @@
  (pathname-as-directory (concat (getenv "HOME") "/stumpwm")))
 
 ;; Modules
-(load-module "ttf-fonts")
+;; (load-module "ttf-fonts")
 (load-module "winner-mode")
 (load-module "globalwindows")
 (load-module "amixer")
@@ -42,10 +42,11 @@
       swm-gaps:*outer-gaps-size* 15)
 
 ;; Looks
-(set-font (make-instance 'xft:font
-                         :family "SauceCodePro Nerd Font"
-                         :subfamily "Regular"
-                         :size 12))
+;; (set-font (make-instance 'xft:font
+;;                          :family "SauceCodePro Nerd Font"
+;;                          :subfamily "Regular"
+;;                          :size 12))
+(set-font "-windows-dina-medium-r-normal--13-100-96-96-c-80-iso8859-1")
 
 (setf *message-window-gravity* :center
       *input-window-gravity* :center
