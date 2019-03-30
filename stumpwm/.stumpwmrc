@@ -165,6 +165,29 @@ run-or-raise with group search t."
 (amixer::defvolcontrol amixer-Master-5- "Master" "5%-")
 (amixer::defvolcontrol amixer-Master-5+ "Master" "5%+")
 
+(defun executable-find (name)
+  "Tell if given executable is present in PATH."
+  (let ((which-out (string-trim '(#\  #\linefeed) (run-shell-command (concat "which " name) t))))
+    (unless (string-equal "" which-out) which-out)))
+
+(defun slop-get-pos ()
+  (mapcar #'parse-integer (ppcre:split "[^0-9]" (run-shell-command "slop -f \"%x %y %w %h\"" t))))
+
+(defun slop-or-float ()
+  "Slop the current window or just float if slop cli not present."
+  (if (executable-find "slop")
+      (let ((window (current-window))
+            (pos (slop-get-pos)))
+        (float-window window (current-group))
+        (float-window-move-resize window
+                                  :x (nth 0 pos)
+                                  :y (nth 1 pos)
+                                  :width (nth 2 pos)
+                                  :height (nth 3 pos)))
+      (run-commands "float-this")))
+
+(defcommand slop-this () () (slop-or-float))
+
 (defcommand bbq (search-term) ((:string " "))
   "Play via bbq"
   (if search-term
@@ -194,7 +217,7 @@ run-or-raise with group search t."
 (defvar *toggle-map* (make-sparse-keymap))
 (define-key *root-map* (kbd "t") '*toggle-map*)
 (define-key *toggle-map* (kbd "g") "toggle-gaps")
-(define-key *toggle-map* (kbd "f") "float-this")
+(define-key *toggle-map* (kbd "f") "slop-this")
 (define-key *toggle-map* (kbd "u") "unfloat-this")
 (define-key *toggle-map* (kbd "a") "toggle-always-show")
 (define-key *toggle-map* (kbd "t") "toggle-always-on-top")
