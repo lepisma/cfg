@@ -280,15 +280,15 @@ run-or-raise with group search t."
 (run-shell-command "xset b off")
 
 ;; Groups
-(setf (group-name (car (screen-groups (current-screen)))) "txt")
-(run-commands "gnewbg web" "gnewbg ext" "gnewbg-float flt")
+(setf (group-name (car (screen-groups (current-screen)))) "TXT")
+(run-commands "gnewbg WEB" "gnewbg EXT" "gnewbg-float FLT")
 
 (clear-window-placement-rules)
 
-(define-frame-preference "ext"
+(define-frame-preference "EXT"
     (nil nil t :class "Rambox"))
 
-(define-frame-preference "flt"
+(define-frame-preference "FLT"
     (nil nil t :class "electrum")
   (nil nil t :class "Syncthing GTK"))
 
