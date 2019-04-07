@@ -177,6 +177,13 @@ run-or-raise with group search t."
   (if search-term
       (run-shell-command (format nil "bbq ~A " search-term))))
 
+(defmacro define-keyboard-macro (name keys)
+  `(defcommand ,name () ()
+     (loop for k in (mapcar #'parse-key ,keys)
+           do (send-fake-key (current-window) k))))
+
+;; (define-keyboard-macro km-link-sel '("C-l" "C-c"))
+
 (defun rofi (mode)
   (run-shell-command (concat "rofi -show " mode " -m " (write-to-string (head-number (current-head))))))
 
@@ -304,7 +311,8 @@ run-or-raise with group search t."
 (run-shell-command "megasync")
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "kdeconnect-indicator")
-(run-shell-command "compton")
+;; Run compton after a while
+;; (run-shell-command "compton")
 
 ;; Hooks
 (add-hook *post-command-hook* (lambda (command)

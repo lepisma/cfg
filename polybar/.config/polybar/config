@@ -41,7 +41,7 @@ font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = ewmh alsa mpm
 modules-center = 
-modules-right = muunreads redshift compton cpu memory wlan battery keyboard date
+modules-right = redshift compton cpu memory wlan battery keyboard date
 
 tray-position = right
 tray-padding = 1
@@ -68,14 +68,6 @@ label-active-underline = ${colors.accent-light}
 
 label-empty = "  %icon% %name%  "
 label-empty-foreground = ${colors.foreground-alt}
-
-[module/muunreads]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/mu-unreads.sh
 
 [module/keyboard]
 type = internal/xkeyboard
