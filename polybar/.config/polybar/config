@@ -1,9 +1,9 @@
 [colors]
-accent-dark = #333446
-accent-light = #8A9899
+accent-dark = #44333446
+accent-light = #bbbbbb
 background = ${colors.accent-dark}
 background-tray = ${colors.accent-dark}
-foreground = #ffffff
+foreground = #FFFFFF
 foreground-alt = ${colors.accent-light}
 alert = #BF616A
 
@@ -39,15 +39,35 @@ module-margin-right = 1
 font-0 = "Source Code Pro:size=8;1"
 font-1 = "FontAwesome:pixelsize=8;1"
 
-modules-left = stumpwmgroups volume mpm
+modules-left = ewmh alsa mpm
 modules-center = 
-modules-right = redshift compton cpu memory wlan battery keyboard date
+modules-right = muunreads redshift compton cpu memory wlan battery keyboard date
 
 tray-position = right
 tray-padding = 1
 tray-background = ${colors.background-tray}
 
 enable-ipc = true
+
+[module/ewmh]
+type = internal/xworkspaces
+
+enable-click = true
+enable-scroll = false
+
+icon-0 = text;
+icon-1 = web;
+icon-2 = ext;
+icon-3 = flt;
+icon-default = 
+
+label-active = "  %icon% %name%  "
+label-active-foreground = ${colors.foreground}
+label-active-background = #882E3440
+label-active-underline = ${colors.accent-light}
+
+label-empty = "  %icon% %name%  "
+label-empty-foreground = ${colors.foreground-alt}
 
 [module/muunreads]
 type = custom/script
@@ -81,7 +101,7 @@ label-layout = %name%
 ; Available tokens:
 ;   %name%
 ; Default: %name%
-label-indicator = %name%
+label-indicator-on = %name%
 label-indicator-padding = 2
 
 [module/compton]
@@ -164,8 +184,8 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-background = ${colors.background}
 label-background = ${colors.background}
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
@@ -204,8 +224,3 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
-
-[module/stumpwmgroups]
-type = custom/ipc
-hook-0 = ~/.config/polybar/stumpwmgroups.sh
-initial = 1
