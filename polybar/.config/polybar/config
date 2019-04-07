@@ -55,10 +55,10 @@ type = internal/xworkspaces
 enable-click = true
 enable-scroll = false
 
-icon-0 = text;
-icon-1 = web;
-icon-2 = ext;
-icon-3 = flt;
+icon-0 = TEXT;
+icon-1 = WEB;
+icon-2 = EXT;
+icon-3 = FLT;
 icon-default = 
 
 label-active = "  %icon% %name%  "
