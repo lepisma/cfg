@@ -61,12 +61,14 @@ icon-2 = EXT;
 icon-3 = FLT;
 icon-default = 
 
-label-active = "  %icon% %name%  "
+; NOTE: nwin is not supported in the main repo, try
+;       https://github.com/lepisma/polybar/tree/nwin-for-xworkspaces
+label-active = "  %icon% %name% [%nwin%] "
 label-active-foreground = ${colors.foreground}
 label-active-background = #882E3440
 label-active-underline = ${colors.accent-light}
 
-label-empty = "  %icon% %name%  "
+label-empty = "  %icon% %name% [%nwin%] "
 label-empty-foreground = ${colors.foreground-alt}
 
 [module/keyboard]
