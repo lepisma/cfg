@@ -319,8 +319,8 @@ run-or-raise with group search t."
 (run-shell-command "megasync")
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "kdeconnect-indicator")
-;; Run compton after a while
-;; (run-shell-command "compton")
+(run-shell-command "pulseeffects --gapplication-service")
+(run-shell-command "compton")
 
 ;; Hooks
 (add-hook *post-command-hook* (lambda (command)
