@@ -105,11 +105,15 @@ run-or-raise with group search t."
 
 ;; Dunst on top fix from https://github.com/stumpwm/stumpwm/issues/469#issuecomment-488437555
 (defmethod raise-window :after (win)
-  (flet ((window-above-p (win) (find-wm-state win :_NET_WM_STATE_ABOVE)))
-    (unless (window-above-p (window-xwin win))
-      (mapc
-       (lambda (w) (setf (xlib:window-priority w) :above))
-       (remove-if-not #'window-above-p (xlib:query-tree (screen-root (current-screen))))))))
+  (let ((ignore-names '("polybar-screen_eDP-1-1")))
+    (flet ((window-above-p (win) (find-wm-state win :_NET_WM_STATE_ABOVE)))
+      (unless (window-above-p (window-xwin win))
+        (mapc
+         (lambda (w) (setf (xlib:window-priority w) :above))
+         (remove-if-not (lambda (w)
+                          (and (window-above-p w)
+                               (not (member (xlib:wm-name w) ignore-names :test #'string-equal))))
+                        (xlib:query-tree (screen-root (current-screen)))))))))
 
 ;; Commands
 (defcommand run-or-raise-firefox () ()
