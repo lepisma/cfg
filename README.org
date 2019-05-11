@@ -233,7 +233,7 @@ pip install -r ./packages/pip
 
 Setup jupyter notebook theme.
 #+BEGIN_SRC shell
-jt -t solarizedl -f fira -nf crimsonserif -tf merriserif -tfs 10 -T 
+jt -t grade3 -f iosevka -nf iosevka -tf iosevka -tfs 12 -cellw 1200
 #+END_SRC
 
 Some package config
