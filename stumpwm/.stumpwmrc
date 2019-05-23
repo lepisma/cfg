@@ -310,7 +310,7 @@ run-or-raise with group search t."
 (define-frame-preference "FLT"
     (nil nil t :class "electrum")
   (nil nil t :class "Syncthing GTK")
-  (nil nil t :class "patchwork"))
+  (nil nil t :class "Patchwork"))
 
 ;; Programs
 (run-shell-command "polybar screen --reload")
