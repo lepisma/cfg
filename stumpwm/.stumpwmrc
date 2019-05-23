@@ -309,7 +309,8 @@ run-or-raise with group search t."
 
 (define-frame-preference "FLT"
     (nil nil t :class "electrum")
-  (nil nil t :class "Syncthing GTK"))
+  (nil nil t :class "Syncthing GTK")
+  (nil nil t :class "patchwork"))
 
 ;; Programs
 (run-shell-command "polybar screen --reload")
@@ -324,6 +325,7 @@ run-or-raise with group search t."
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "kdeconnect-indicator")
 (run-shell-command "pulseeffects --gapplication-service")
+(run-shell-command "ssb-patchwork-3.12.0-x86_64.AppImage")
 (run-shell-command "compton")
 
 ;; Hooks
