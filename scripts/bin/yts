@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# No nonsense search for youtube
+# Usage:
+#   yts whatever you want to search for
+curl -G "https://www.youtube.com/results" --data-urlencode "search_query='$*'" \
+    | pup "a[href^=\"/watch\"].yt-uix-tile-link:not([href*=\"list=\"]) attr{href}" \
+    | sed -e 's/^/https:\/\/youtube.com/'
