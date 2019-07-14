@@ -1,38 +1,32 @@
-# Directories
 set -x DATA_DIR /run/media/lepisma/Data
 set -x CLOUD_DIR $DATA_DIR/Cloud
 set -x PROJECTS_DIR $DATA_DIR/Projects
 
-# Personal
 set -x EMAIL lepisma@fastmail.com
 set -x NAME Abhinav Tushar
 
-set -gx EDITOR mumacs
-set -gx PAGER less
-set -gx BROWSER www
+set -x EDITOR mumacs
+set -x PAGER less
+set -x BROWSER www
 set -x BORG_REPO $CLOUD_DIR/Backup
 
-# PATH
-set PATH ~/bin $PATH
-set PATH ~/.local/bin $PATH
-set PATH ~/.cask/bin $PATH
-set PATH ~/.roswell/bin $PATH
-set PATH ~/.pkr/bin $PATH
-set PATH (rbenv prefix)/bin $PATH
-set PATH ~/.cargo/bin $PATH
-set PATH ~/.pyenv/bin $PATH
-set PATH ~/.poetry/bin $PATH
-set PATH ~/go/bin $PATH
+set -a PATH ~/bin
+set -a PATH ~/.local/bin
+set -a PATH ~/.cask/bin
+set -a PATH ~/.roswell/bin
+set -a PATH ~/.pkr/bin
+set -a PATH (rbenv prefix)/bin
+set -a PATH ~/.cargo/bin
+set -a PATH ~/.pyenv/bin
+set -a PATH ~/.poetry/bin
+set -a PATH ~/go/bin
 
-# pyenv
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
 
-# Rust stuff
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
-# Qt5 stuff
 set -x QT_QPA_PLATFORMTHEME "qt5ct"
 
-# fast-nvm
+# faster nvm
 nvm use default
