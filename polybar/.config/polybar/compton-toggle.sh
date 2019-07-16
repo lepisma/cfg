@@ -2,7 +2,7 @@
 
 # The command for starting compton
 # always keep the -b argument!
-COMPTON="compton -b --vsync drm --paint-on-overlay"
+COMPTON="compton -b"
 
 if pgrep -x "compton" > /dev/null
 then
