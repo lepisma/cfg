@@ -16,3 +16,4 @@ function fish_title
 end
 
 eval (dircolors -c ~/cfg/misc/dircolors)
+direnv hook fish | source
