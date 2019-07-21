@@ -95,7 +95,8 @@
 
 (defparameter *aux-backup-dirs* (list #p"~/.tofish/d/Vault"
                                       #p"~/.tofish/d/Documents"
-                                      #p"~/.tofish/d/Notes")
+                                      #p"~/.tofish/d/Notes"
+                                      #p"~/.config/bbq")
   "Directories to backup on secondary cloud.")
 
 (defun backup (dirs outdir outfile)
