@@ -1,6 +1,6 @@
 # Main beets config
 directory: /run/media/lepisma/Data/Music
-library: /run/media/lepisma/Data/Music/beets.db
+library: /home/lepisma/.config/bbq/beets.sqlite
 import:
   copy: yes
   write: yes
