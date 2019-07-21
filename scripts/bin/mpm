@@ -1,3 +1,0 @@
-#!/usr/bin/env fish
-cd $PROJECTS_DIR/mpm
-poetry run mpm $argv

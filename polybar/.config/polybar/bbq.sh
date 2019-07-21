@@ -10,4 +10,4 @@ else
     REPCOLOR="F#8A9899"
 fi
 
-echo "%{$REPCOLOR}REP %{F#FFFFFF}$TITLE - $ARTIST"
+echo "$TITLE - $ARTIST"

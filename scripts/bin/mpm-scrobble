@@ -1,3 +1,0 @@
-#!/usr/bin/env fish
-cd $PROJECTS_DIR/mpm-play
-poetry run mpm-scrobble

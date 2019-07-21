@@ -39,7 +39,7 @@ module-margin-right = 1
 font-0 = "Source Code Pro:size=8;1"
 font-1 = "FontAwesome:pixelsize=8;1"
 
-modules-left = ewmh alsa mpm
+modules-left = ewmh alsa bbq
 modules-center = 
 modules-right = redshift compton cpu memory wlan battery keyboard date
 
@@ -133,11 +133,19 @@ format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/redshift.sh
 click-left = ~/.config/polybar/redshift-toggle.sh
 
-[module/mpm]
+[module/pulseeffects]
+type = custom/script
+interval = 5
+format-prefix = "PEPROF "
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/pulseeffects.sh
+click-left = ~/.config/polybar/pulseeffects-cycle.sh
+
+[module/bbq]
 type = custom/ipc
-hook-0 = ~/.config/polybar/mpm.sh
+hook-0 = ~/.config/polybar/bbq.sh
 initial = 1
-format-prefix = "MPM "
+format-prefix = "BBQ "
 format-prefix-foreground = ${colors.foreground-alt}
 
 [module/cpu]

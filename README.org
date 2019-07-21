@@ -238,7 +238,7 @@ jt -t grade3 -f iosevka -nf iosevka -tf iosevka -tfs 12 -cellw 1200
 
 Some package config
 #+BEGIN_SRC shell
-stow -t ~/ mpm
+stow -t ~/ bbq
 stow -t ~/ beets
 #+END_SRC
 

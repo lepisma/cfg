@@ -1,7 +1,0 @@
-database: ~/.mpm.d/database
-player:
-  port: 6672
-  cache: /run/media/lepisma/Data/Music/.cache.d
-  hooks:
-    song-changed: "polybar-msg hook mpm 1"
-    song-played: "echo (date +%s),(bbq :state | jq -r '.item.id') >> ~/.mpm.d/play-log"
