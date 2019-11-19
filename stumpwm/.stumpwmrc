@@ -39,9 +39,9 @@
 (setf kbd-layouts:*caps-lock-behavior* :ctrl)
 (kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx")
 
-(setf swm-gaps:*inner-gaps-size* 30
-      swm-gaps:*outer-gaps-size* 20
-      swm-gaps:*head-gaps-size* 20)
+(setf swm-gaps:*inner-gaps-size* 10
+      swm-gaps:*outer-gaps-size* 10
+      swm-gaps:*head-gaps-size* 10)
 
 ;; Looks
 ;; (set-font (make-instance 'xft:font
