@@ -70,16 +70,42 @@
   (multiple-value-bind (year week day) (local-time::%timestamp-decode-iso-week timestamp)
     (format nil "~A,~A-~2,'0d" (local-time:timestamp-to-unix timestamp) year week)))
 
+(defun parse-commit-line (line)
+  "Return timestamp from commit event line."
+  (let ((text (trim-whitespace (car (split line ",")))))
+    (local-time:unix-to-timestamp (parse-integer text))))
+
 (defun commit-events ()
   "Return all the local commit events"
-  (sort (reduce #'append (mapcar #'repo-commit-events (git-repos))) #'local-time:timestamp<))
+  (-<> (git-repos)
+      (mapcar #'repo-commit-events <>)
+      (reduce #'append <>)
+      (sort #'local-time:timestamp<)
+      (remove-duplicates :test #'local-time:timestamp=)))
+
+(defun read-commit-events (file-path)
+  "Read commit events as list of timestamps from the given csv path."
+  (when (probe-file file-path)
+    (-<> (read-file-into-string file-path)
+        trim-whitespace
+        (split #\linefeed)
+        cdr
+        (mapcar #'parse-commit-line <>)
+        (sort #'local-time:timestamp<)
+        (remove-duplicates :test #'local-time:timestamp=))))
+
+(defun merge-commit-events (events-a events-b)
+  "Merge events from a and b lists."
+  (remove-duplicates (sort (append events-a events-b) #'local-time:timestamp<) :test #'local-time:timestamp=))
 
 (defun dump-commit-events (&rest args)
-  (let ((f-name (or (car args) "./commit-events.csv"))
-        (separator (make-string 1 :initial-element #\linefeed))
-        (header "timestamp,week")
-        (lines (mapcar #'format-commit-line (commit-events))))
-    (write-string-into-file (join (cons header lines) :separator separator) f-name :if-exists :overwrite
+  (let* ((f-name (or (car args) "./commit-events.csv"))
+         (old-events (read-commit-events f-name))
+         (separator (make-string 1 :initial-element #\linefeed))
+         (header "timestamp,week")
+         (new-events (commit-events))
+         (lines (mapcar #'format-commit-line (merge-commit-events old-events new-events))))
+    (write-string-into-file (join (cons header lines) :separator separator) f-name :if-exists :supersede
                                                                                    :if-does-not-exist :create)))
 
 (defun parenscript-compile (&rest args)
