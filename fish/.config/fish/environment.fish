@@ -28,5 +28,7 @@ set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
 set -x QT_QPA_PLATFORMTHEME "qt5ct"
 
+set -a LD_LIBRARY_PATH /usr/local/lib
+
 # faster nvm
 nvm use default
