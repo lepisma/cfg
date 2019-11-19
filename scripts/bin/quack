@@ -5,7 +5,7 @@ if [[ $? -eq 0 ]]; then
     # Only kill the process
     killall aplay
 else
-    pico2wave -w=/tmp/test.wav "$1"
+    pico2wave -l "en-GB" -w=/tmp/test.wav "$1"
     aplay /tmp/test.wav
     rm /tmp/test.wav
 fi
