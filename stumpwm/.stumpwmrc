@@ -294,7 +294,7 @@ run-or-raise with group search t."
 
 ;; Init
 (update-color-map (current-screen))
-(run-shell-command "sh ~/.screenlayout/multi-vga.sh")
+(run-shell-command "sh ~/.screenlayout/multi.sh")
 (run-shell-command "xmodmap ~/.Xmodmap")
 (run-shell-command "sh ~/.fehbg")
 (run-shell-command "xset b off")
@@ -314,7 +314,7 @@ run-or-raise with group search t."
   (nil nil t :class "Patchwork"))
 
 ;; Programs
-(run-shell-command "polybar screen --reload")
+(run-shell-command "polybar laptop --reload")
 (run-shell-command "nm-applet")
 (run-shell-command "dunst")
 (run-shell-command "redshift")

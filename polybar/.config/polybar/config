@@ -11,7 +11,7 @@ alert = #BF616A
 margin-top = 2
 margin-bottom = 2
 
-[bar/screen]
+[bar/laptop]
 monitor = eDP-1-1
 width = 100%
 height = 28
@@ -46,6 +46,40 @@ modules-right = redshift compton cpu memory wlan battery keyboard date
 tray-position = right
 tray-padding = 1
 tray-background = ${colors.background-tray}
+
+enable-ipc = true
+
+[bar/screen]
+monitor = HDMI-0
+width = 100%
+height = 28
+offset-x = 0
+offset-y = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 1
+overline-color = ${colors.background}
+underline-size = 2
+underline-color = ${colors.background}
+
+border-top-size = 0
+border-top-color = ${colors.background}
+border-bottom-size = 0
+border-bottom-color = ${colors.background}
+
+padding-left = 3
+padding-right = 3
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Source Code Pro:size=8;1"
+font-1 = "FontAwesome:pixelsize=8;1"
+
+modules-left = ewmh alsa bbq
+modules-center = 
+modules-right = cpu memory wlan battery keyboard date
 
 enable-ipc = true
 
