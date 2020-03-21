@@ -118,7 +118,7 @@ run-or-raise with group search t."
 
 ;; Commands
 (defcommand run-or-raise-firefox () ()
-  (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
+  (run-or-raise-prefer-group "firefox-nightly" "firefoxnightly"))
 
 (defcommand run-or-raise-rambox () ()
   (run-or-raise-prefer-group "rambox" "Rambox"))
