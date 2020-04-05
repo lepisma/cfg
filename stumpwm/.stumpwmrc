@@ -329,6 +329,7 @@ run-or-raise with group search t."
 (run-shell-command "compton")
 
 ;; Hooks
-(add-hook *post-command-hook* (lambda (command)
-                                (when (member command winner-mode:*default-commands*)
-                                  (winner-mode:dump-group-to-file))))
+;; TODO: See this -> https://github.com/stumpwm/stumpwm-contrib/issues/189
+;; (add-hook *post-command-hook* (lambda (command)
+;;                                 (when (member command winner-mode:*default-commands*)
+;;                                   (winner-mode:dump-group-to-file))))
