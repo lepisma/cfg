@@ -6,6 +6,7 @@ fisherman/fishtape
 fisherman/get
 fisherman/getopts
 fisherman/humanize_duration
+lepisma/fish-progress
 fisherman/rbenv
 simnalamburt/fish-sensible
 joehillen/to-fish
