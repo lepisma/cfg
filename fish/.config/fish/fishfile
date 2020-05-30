@@ -5,6 +5,7 @@ brigand/fast-nvm-fish
 fisherman/fishtape
 fisherman/get
 fisherman/getopts
+fishpkg/fish-humanize-duration
 fisherman/humanize_duration
 lepisma/fish-progress
 fisherman/rbenv
