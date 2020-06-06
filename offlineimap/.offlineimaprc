@@ -14,7 +14,7 @@ localfolders = ~/Maildir/Gmail
 
 [Repository RemoteGmail]
 type = Gmail
-maxconnections = 2
+maxconnections = 10
 remoteusereval = get_authinfo_value("gmail-imap", "login")
 remotepasseval = get_authinfo_value("gmail-imap", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
@@ -32,6 +32,7 @@ localfolders = ~/Maildir/Fastmail
 
 [Repository RemoteFastmail]
 type = IMAP
+maxconnections = 10
 remotehosteval = get_authinfo_value("fastmail-imap", "machine")
 remoteusereval = get_authinfo_value("fastmail-imap", "login")
 remotepasseval = get_authinfo_value("fastmail-imap", "password")
@@ -48,7 +49,7 @@ localfolders = ~/Maildir/Work
 
 [Repository RemoteWork]
 type = Gmail
-maxconnections = 2
+maxconnections = 10
 remoteusereval = get_authinfo_value("work-imap", "login")
 remotepasseval = get_authinfo_value("work-imap", "password")
 folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
