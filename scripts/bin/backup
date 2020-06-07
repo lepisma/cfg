@@ -3,9 +3,7 @@
 begin
   set IGNORE_FILE ~/cfg/misc/borg-ignore.txt
   set TO_BACKUP $PROJECTS_DIR $DATA_DIR/Vault $CLOUD_DIR/Calibre\ Shared $DATA_DIR/Documents
-  set_color green
-  get -p "Enter repo passphrase: " --silent 0 | read -lx BORG_PASSPHRASE
-  set_color normal
+  read -P "Enter repo passphrase: " -s -lx BORG_PASSPHRASE
 
   borg create -v -s -p --compression lzma,9 --exclude-from $IGNORE_FILE --read-special ::"{hostname}-{now:%Y-%m-%d}" $TO_BACKUP
   borg prune --keep-daily 2 -v --list --prefix "{hostname}-"
