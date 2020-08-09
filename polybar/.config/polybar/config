@@ -102,6 +102,9 @@ label-active-foreground = ${colors.foreground}
 label-active-background = #882E3440
 label-active-underline = ${colors.accent-light}
 
+label-occupied = "  %icon% %name% [%nwin%] "
+label-occupied-foreground = ${colors.foreground-alt}
+
 label-empty = "  %icon% %name% [%nwin%] "
 label-empty-foreground = ${colors.foreground-alt}
 
