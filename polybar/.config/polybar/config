@@ -89,7 +89,7 @@ type = internal/xworkspaces
 enable-click = true
 enable-scroll = false
 
-icon-0 = TEXT;
+icon-0 = TXT;
 icon-1 = WEB;
 icon-2 = EXT;
 icon-3 = FLT;
