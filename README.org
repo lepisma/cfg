@@ -44,7 +44,7 @@ stow -t ~/ stumpwm
 stow -t ~/ polybar
 stow -t ~/ dunst
 stow -t ~/ rofi
-stow -t ~/ compton
+stow -t ~/ picom
 stow -t ~/ redshift
 #+END_SRC
 
@@ -96,9 +96,6 @@ Change grub theme line in ~/etc/default/grub~
 #+BEGIN_SRC shell :dir /sudo::
 update-grub
 #+END_SRC
-
-** Compton
-[[https://github.com/tryone144/compton][This fork]] has better blurring support.
 
 ** Desktop files and defaults
 

@@ -41,7 +41,7 @@ font-1 = "FontAwesome:pixelsize=8;1"
 
 modules-left = ewmh alsa bbq
 modules-center = 
-modules-right = redshift compton cpu memory wlan battery keyboard date
+modules-right = redshift picom cpu memory wlan battery keyboard date
 
 tray-position = right
 tray-padding = 1
@@ -135,12 +135,12 @@ label-layout = %name%
 label-indicator-on = %name%
 label-indicator-padding = 2
 
-[module/compton]
+[module/picom]
 type = custom/script
-format-prefix = "CMPTN "
+format-prefix = "PICOM "
 format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/compton.sh
-click-left = ~/.config/polybar/compton-toggle.sh
+exec = ~/.config/polybar/picom.sh
+click-left = ~/.config/polybar/picom-toggle.sh
 interval = 5
 
 [module/powermenu]
