@@ -195,8 +195,6 @@ run-or-raise with group search t."
      (loop for k in (mapcar #'parse-key ,keys)
            do (send-fake-key (current-window) k))))
 
-;; (define-keyboard-macro km-link-sel '("C-l" "C-c"))
-
 (defun rofi (mode)
   (run-shell-command (concat "rofi -show " mode " -m " (write-to-string (head-number (current-head))))))
 
@@ -310,8 +308,7 @@ run-or-raise with group search t."
 
 (define-frame-preference "FLT"
     (nil nil t :class "electrum")
-  (nil nil t :class "Syncthing GTK")
-  (nil nil t :class "Patchwork"))
+  (nil nil t :class "Syncthing GTK"))
 
 ;; Programs
 (run-shell-command "polybar laptop --reload")
@@ -325,8 +322,7 @@ run-or-raise with group search t."
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "kdeconnect-indicator")
 (run-shell-command "pulseeffects --gapplication-service")
-(run-shell-command "patchwork")
-(run-shell-command "compton")
+(run-shell-command "picom --experimental-backends")
 
 ;; Hooks
 ;; TODO: See this -> https://github.com/stumpwm/stumpwm-contrib/issues/189
