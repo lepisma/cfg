@@ -133,7 +133,7 @@
      (uiop:temporary-directory)
      (lambda ()
        (princ #?"Backing up ${dirs}\n")
-       (run/s `(tar czf ,outfile ,@dirs))
+       (run/s `(tar czf ,outfile --exclude=pdfs/* ,@dirs))
        (run/s `(gpg --symmetric ,outfile))
        (run/s `(rm ,outfile))
        (run/s `(mv ,encrypted ,(path-join outdir encrypted)))
