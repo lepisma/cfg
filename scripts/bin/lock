@@ -1,3 +1,2 @@
 #!/usr/bin/env fish
-cd ~/cfg/screen-lock
-bash ./lock -t '';
+betterlockscreen -l dimblur -t ":wave:"
