@@ -14,6 +14,7 @@ fish
 gimp
 gparted
 gwenview
+handlr-bin
 httpie
 imagemagick
 inkscape
@@ -30,6 +31,7 @@ network-manager-applet
 offlineimap
 okular
 openconnect
+pandoc-bin
 pavucontrol
 polybar-git
 pulseeffects

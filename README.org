@@ -15,7 +15,7 @@ uname -a
 #+END_SRC
 
 #+RESULTS:
-: Linux euclid-red 4.17.19-1-MANJARO #1 SMP PREEMPT Fri Aug 24 17:46:14 UTC 2018 x86_64 GNU/Linux
+: Linux euclid-red 4.19.147-1-MANJARO #1 SMP Wed Sep 23 18:00:56 UTC 2020 x86_64 GNU/Linux
 
 #+BEGIN_SRC bash
 yay -S $(grep -vE "^\s*#" ./packages/arch | tr "\n" " ")
@@ -32,7 +32,6 @@ chsh -s $(which fish)
 stow -t ~/ fish
 stow -t ~/ git
 stow -t ~/ scripts
-stow -t ~/ vis
 #+END_SRC
 
 * Window manager and related tools
@@ -43,7 +42,6 @@ Stow config files.
 stow -t ~/ stumpwm
 stow -t ~/ polybar
 stow -t ~/ dunst
-stow -t ~/ rofi
 stow -t ~/ picom
 stow -t ~/ redshift
 #+END_SRC
@@ -115,11 +113,15 @@ Comment=Browser dispatch
 Setup default programs:
 
 #+BEGIN_SRC shell
-xdg-mime default org.gnome.Nautilus.desktop inode/directory
-xdg-mime default org.kde.gwenview.desktop image/jpeg
+xdg-mime default org.kde.dolphin.desktop inode/directory
+xdg-mime default feh.desktop image/jpeg
+xdg-mime default feh.desktop image/png
 xdg-mime default www.desktop x-scheme-handler/http
 xdg-mime default www.desktop x-scheme-handler/https
 xdg-mime default org.kde.okular.desktop application/pdf
+
+handlr set .doc libreoffice-writer.desktop
+handlr set .docx libreoffice-writer.desktop
 #+END_SRC
 
 ** Fonts
