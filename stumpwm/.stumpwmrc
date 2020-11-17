@@ -323,6 +323,7 @@ run-or-raise with group search t."
 (run-shell-command "kdeconnect-indicator")
 (run-shell-command "pulseeffects --gapplication-service")
 (run-shell-command "picom --experimental-backends")
+(run-shell-command "blueman-applet")
 
 ;; Hooks
 ;; TODO: See this -> https://github.com/stumpwm/stumpwm-contrib/issues/189
