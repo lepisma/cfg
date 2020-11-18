@@ -1,2 +1,2 @@
 #!/usr/bin/env fish
-betterlockscreen -s dimblur -t ":wave:"
+betterlockscreen -s dim
