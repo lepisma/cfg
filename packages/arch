@@ -25,6 +25,7 @@ konsole
 krita
 light
 lxappearance
+maim
 mplayer
 mu
 neofetch
@@ -45,7 +46,7 @@ redshift
 roswell
 ruby-build
 sbcl
-spectacle
+slop
 sqlitebrowser
 stow
 synching-gtk

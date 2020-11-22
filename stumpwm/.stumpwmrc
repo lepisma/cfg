@@ -195,17 +195,14 @@ run-or-raise with group search t."
      (loop for k in (mapcar #'parse-key ,keys)
            do (send-fake-key (current-window) k))))
 
-(defun rofi (mode)
-  (run-shell-command (concat "rofi -show " mode " -m " (write-to-string (head-number (current-head))))))
-
 (defcommand lol () () (message "lol kek"))
 
 (defcommand emacs-anywhere () ()
   (run-shell-command "bash ~/.emacs.d/private/rogue/emacs-anywhere/ea.sh"))
 
-(defcommand rofi-run () () (rofi "run -sidebar-mode"))
-(defcommand rofi-window () () (rofi "window"))
-(defcommand rofi-windowcd () () (rofi "windowcd"))
+(defcommand scr () ()
+  (let ((selection (car (stumpwm:select-from-menu (current-screen) (list "rectangle" "window" "screen") "Screenshot: "))))
+    (run-shell-command (concat "scr " selection))))
 
 ;; All the keys
 (define-key *top-map* (kbd "C-M-Left") "exec bbq :prev")
