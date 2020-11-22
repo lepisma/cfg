@@ -3,11 +3,11 @@
 (in-package :stumpwm)
 
 ;; Start swank
-(require :swank)
-(swank-loader:init)
-(swank:create-server :port 4444
-                     :style swank:*communication-style*
-                     :dont-close t)
+;; (require :swank)
+;; (swank-loader:init)
+;; (swank:create-server :port 4444
+;;                      :style swank:*communication-style*
+;;                      :dont-close t)
 
 ;; Basics
 (set-prefix-key (kbd "C-e"))
@@ -29,15 +29,15 @@
 
 ;; Modules
 ;; (load-module "ttf-fonts")
-(load-module "winner-mode")
+;; (load-module "winner-mode")
 (load-module "globalwindows")
 (load-module "amixer")
 (load-module "swm-gaps")
-(load-module "kbd-layouts")
-(load-module "command-history")
+;; (load-module "kbd-layouts")
+;; (load-module "command-history")
 
-(setf kbd-layouts:*caps-lock-behavior* :ctrl)
-(kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx")
+;; (setf kbd-layouts:*caps-lock-behavior* :ctrl)
+;; (kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx")
 
 (setf swm-gaps:*inner-gaps-size* 10
       swm-gaps:*outer-gaps-size* 10
@@ -48,7 +48,7 @@
 ;;                          :family "SauceCodePro Nerd Font"
 ;;                          :subfamily "Regular"
 ;;                          :size 12))
-(set-font "-windows-dina-medium-r-normal--13-100-96-96-c-80-iso8859-1")
+;; (set-font "-windows-dina-medium-r-normal--13-100-96-96-c-80-iso8859-1")
 
 (setf *message-window-gravity* :center
       *input-window-gravity* :center
@@ -230,6 +230,7 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-SPC") "bbq")
 (define-key *top-map* (kbd "s-e") "emacs-anywhere")
 (define-key *top-map* (kbd "s-S-SPC") "switch-keyboard-layout")
+(define-key *top-map* (kbd "s-s") "scr")
 
 (define-key *top-map* (kbd "XF86Mail") "exec emacsclient -c --eval '(progn (mu4e) (mu4e-update-mail-and-index nil))'")
 
@@ -282,10 +283,10 @@ run-or-raise with group search t."
 (define-key *groups-map* (kbd "M-Left") "gprev-with-window")
 (define-key *groups-map* (kbd "b") "global-windowlist")
 
-(defvar *winner-map* (make-sparse-keymap))
-(define-key *root-map* (kbd "c") '*winner-map*)
-(define-key *winner-map* (kbd "Left") "winner-undo")
-(define-key *winner-map* (kbd "Right") "winner-redo")
+;; (defvar *winner-map* (make-sparse-keymap))
+;; (define-key *root-map* (kbd "c") '*winner-map*)
+;; (define-key *winner-map* (kbd "Left") "winner-undo")
+;; (define-key *winner-map* (kbd "Right") "winner-redo")
 
 ;; Init
 (update-color-map (current-screen))
