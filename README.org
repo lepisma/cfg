@@ -168,19 +168,26 @@ fc-cache -f
 
 #+BEGIN_SRC init :tangle ~/.local/share/konsole/lepisma.profile
 [Appearance]
-ColorScheme=nord
-Font=Iosevka,12,-1,5,50,0,0,0,0,0,Regular
+AntiAliasFonts=true
+BoldIntense=true
+ColorScheme=Nordic
+Font=Iosevka,12,-1,5,50,0,0,0,0,0
+LineSpacing=4
+UseFontLineChararacters=false
 
 [Cursor Options]
 CursorShape=1
 
 [General]
 Command=/usr/bin/fish
+DimWhenInactive=false
 Directory=/home/lepisma/Desktop
 LocalTabTitleFormat=%d | %n
 Name=lepisma
 Parent=FALLBACK/
 RemoteTabTitleFormat=%d | %n
+TerminalCenter=false
+TerminalMargin=10
 
 [Interaction Options]
 AutoCopySelectedText=true
@@ -195,7 +202,7 @@ UrlHintsModifiers=67108864
 #+END_SRC
 
 #+BEGIN_SRC shell
-cp ./konsole/nord.colorscheme ~/.local/share/konsole/nord.colorscheme
+cp ./konsole/Nordic.colorscheme ~/.local/share/konsole/Nordic.colorscheme
 #+END_SRC
 
 ** Linux Console
