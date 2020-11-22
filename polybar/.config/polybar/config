@@ -45,7 +45,7 @@ modules-right = redshift picom cpu memory wlan battery keyboard date
 
 tray-position = right
 tray-padding = 1
-tray-background = ${colors.background-tray}
+; tray-background = ${colors.background-tray}
 
 enable-ipc = true
 
