@@ -23,14 +23,14 @@ set file_name ~/Pictures/screenshot-(date +"%Y-%m-%d-%H-%M-%S").png
 
 switch $argv[1]
     case window
-        maim -st 9999999 | convert - \( +clone -background black -shadow 80x5+1+1 \) +swap -background none -layers merge +repage $file_name
+        maim -sut 9999999 | convert - \( +clone -background black -shadow 80x5+1+1 \) +swap -background none -layers merge +repage $file_name
         copy_and_save $file_name
     case rectangle
-        maim -s $file_name
+        maim -su $file_name
         copy_and_save $file_name
     case screen
         # Might want to handle multiple screens differently
-        maim $file_name
+        maim -u $file_name
         copy_and_save $file_name
     case "*"
         usage
