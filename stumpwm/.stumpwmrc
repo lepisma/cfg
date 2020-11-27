@@ -209,7 +209,6 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "C-M-Right") "exec bbq :next")
 (define-key *top-map* (kbd "C-M-SPC") "exec bbq :toggle")
 (define-key *top-map* (kbd "s-t") "exec konsole --notransparency --stylesheet ~/cfg/konsole/konsole.css")
-(define-key *top-map* (kbd "s-x") "exec xkill")
 (define-key *top-map* (kbd "s-w") "exec konsole --notransparency --stylesheet ~/cfg/konsole/konsole.css -e htop ")
 (define-key *top-map* (kbd "C-q") "lol")
 
