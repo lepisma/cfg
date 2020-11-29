@@ -313,42 +313,18 @@ cp ./misc/.authinfo.gpg ~/
 #+END_SRC
 
 * Setup hardware
+** Bluetooth sinks
+Dumping commands. Need to enable bluetooth service and stuff.
 
-Digimend package from AUR should work fine. Otherwise this snippet should do:
+#+begin_src shell
+  pacmd list-sinks | grep -e 'name:' -e 'index:'
+  pacmd set-default-sink <n>
+#+end_src
 
-#+BEGIN_SRC shell :dir /sudo::
-rmmod hid-kye
-rmmod hid-uclogic
-rmmod hid-huion
+** Tablet
+See [[https://wiki.archlinux.org/index.php/wacom_tablet#xrandr_setup][here]] till the automation is set up.
 
-# Setup driver
-# Use https://aur.archlinux.org/packages/digimend-kernel-drivers-dkms-git/
-
-mkdir -p /etc/X11/xorg.conf.d
-#+END_SRC
-
-#+BEGIN_SRC ini :tangle /sudo::/etc/X11/xorg.conf.d/52-tablet.conf
-Section "InputClass"
-Identifier "Huion on wacom"
-MatchProduct "HUION"
-MatchDevicePath "/dev/input/event*"
-Driver "wacom"
-EndSection
-#+END_SRC
-
-For keyboard scroll button mapping tangle this:
-
-#+BEGIN_SRC ini :tangle /sudo::/etc/udev/hwdb.d/70-keyboard-local.hwdb
-evdev:input:b0003v045Ep00DB*
-  KEYBOARD_KEY_c022d=pageup
-  KEYBOARD_KEY_c022e=pagedown
-#+END_SRC
-
-#+BEGIN_SRC shell :dir /sudo::
-udevadm hwdb --update
-udevadm control --reload
-#+END_SRC
-
+** Keyboard
 Swap keys:
 
 #+BEGIN_SRC ini :tangle ~/.Xmodmap
