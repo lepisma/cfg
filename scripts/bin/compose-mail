@@ -1,0 +1,3 @@
+#!/usr/bin/env fish
+
+emacsclient -c --eval "(browse-url-mail \"$argv\")"
