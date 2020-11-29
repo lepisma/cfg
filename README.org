@@ -110,6 +110,15 @@ Name=www
 Comment=Browser dispatch
 #+END_SRC
 
+#+begin_src ini :tangle ~/.local/share/applications/compose-mail.desktop
+[Desktop Entry]
+Type=Application
+Name=Compose Mail
+Exec=/home/lepisma/bin/compose-mail %u
+StartupNotify=false
+MimeType=x-scheme-handler/mailto
+#+end_src
+
 Setup default programs:
 
 #+BEGIN_SRC shell
@@ -118,6 +127,7 @@ xdg-mime default feh.desktop image/jpeg
 xdg-mime default feh.desktop image/png
 xdg-mime default www.desktop x-scheme-handler/http
 xdg-mime default www.desktop x-scheme-handler/https
+xdg-mime default compose-mail.desktop x-scheme-handler/mailto
 xdg-mime default org.kde.okular.desktop application/pdf
 
 handlr set .doc libreoffice-writer.desktop
