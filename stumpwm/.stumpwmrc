@@ -116,7 +116,7 @@ run-or-raise with group search t."
                                (not (member (xlib:wm-name w) ignore-names :test #'string-equal))))
                         (xlib:query-tree (screen-root (current-screen)))))))))
 
-;; Commands
+;; Command
 (defcommand run-or-raise-firefox () ()
   (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
 
@@ -127,7 +127,7 @@ run-or-raise with group search t."
   (run-or-raise-prefer-group "chromium" "Chromium"))
 
 (defcommand run-or-raise-konsole () ()
-  (run-or-raise-prefer-group "konsole --notransparency --stylesheet ~/cfg/konsole/konsole.css" "konsole"))
+  (run-or-raise-prefer-group "terminal" "konsole"))
 
 (defcommand emacs () ()
   (run-or-raise-prefer-group "emacs" "Emacs"))
@@ -208,8 +208,8 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "C-M-Left") "exec bbq :prev")
 (define-key *top-map* (kbd "C-M-Right") "exec bbq :next")
 (define-key *top-map* (kbd "C-M-SPC") "exec bbq :toggle")
-(define-key *top-map* (kbd "s-t") "exec konsole --notransparency --stylesheet ~/cfg/konsole/konsole.css")
-(define-key *top-map* (kbd "s-w") "exec konsole --notransparency --stylesheet ~/cfg/konsole/konsole.css -e htop ")
+(define-key *top-map* (kbd "s-t") "exec terminal")
+(define-key *top-map* (kbd "s-w") "exec terminal -e htop")
 (define-key *top-map* (kbd "C-q") "lol")
 
 (defvar *toggle-map* (make-sparse-keymap))
