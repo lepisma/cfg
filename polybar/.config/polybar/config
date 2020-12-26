@@ -39,14 +39,14 @@ module-margin-right = 1
 font-0 = "Source Code Pro:size=8;1"
 font-1 = "FontAwesome:pixelsize=8;1"
 
-modules-left = ewmh alsa bbq
+modules-left = ewmh alsa dnd redshift picom
 modules-center = 
-modules-right = dnd redshift picom cpu memory wlan battery keyboard date
+modules-right = cpu memory wlan battery keyboard date
 
 tray-position = right
 tray-padding = 1
-; tray-background = ${colors.background-tray}
 
+override-redirect = false
 enable-ipc = true
 
 [bar/screen]
@@ -77,9 +77,9 @@ module-margin-right = 1
 font-0 = "Source Code Pro:size=8;1"
 font-1 = "FontAwesome:pixelsize=8;1"
 
-modules-left = ewmh alsa bbq
+modules-left = 
 modules-center = 
-modules-right = cpu memory wlan battery keyboard date
+modules-right = wlan battery date
 
 enable-ipc = true
 
@@ -143,25 +143,6 @@ exec = ~/.config/polybar/picom.sh
 click-left = ~/.config/polybar/picom-toggle.sh
 interval = 5
 
-[module/powermenu]
-type = custom/menu
-
-label-open = 
-label-open-foreground = ${colors.foreground}
-label-close = " "
-label-close-foreground = ${colors.foreground-alt}
-
-menu-0-0 = 
-menu-0-0-exec = poweroff
-menu-0-1 = 
-menu-0-1-exec = reboot
-menu-0-2 = 
-menu-0-2-exec = lock-suspend
-
-menu-0-0-padding = 1
-menu-0-1-padding = 1
-menu-0-2-padding = 1
-
 [module/dnd]
 type = custom/script
 interval = 5
@@ -177,21 +158,6 @@ format-prefix = "RDSFT "
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/redshift.sh
 click-left = ~/.config/polybar/redshift-toggle.sh
-
-[module/pulseeffects]
-type = custom/script
-interval = 5
-format-prefix = "PEPROF "
-format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/pulseeffects.sh
-click-left = ~/.config/polybar/pulseeffects-cycle.sh
-
-[module/bbq]
-type = custom/ipc
-hook-0 = ~/.config/polybar/bbq.sh
-initial = 1
-format-prefix = "BBQ "
-format-prefix-foreground = ${colors.foreground-alt}
 
 [module/cpu]
 type = internal/cpu
