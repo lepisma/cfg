@@ -12,7 +12,7 @@ margin-top = 2
 margin-bottom = 2
 
 [bar/laptop]
-monitor = eDP1
+monitor = eDP-1
 width = 100%
 height = 28
 offset-x = 0
@@ -50,7 +50,7 @@ override-redirect = false
 enable-ipc = true
 
 [bar/screen]
-monitor = HDMI-0
+monitor = HDMI-1-1
 width = 100%
 height = 28
 offset-x = 0
