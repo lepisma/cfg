@@ -129,6 +129,9 @@ run-or-raise with group search t."
 (defcommand run-or-raise-konsole () ()
   (run-or-raise-prefer-group "terminal" "konsole"))
 
+(defcommand zotero () ()
+  (run-or-raise-prefer-group "zotero" "Zotero"))
+
 (defcommand emacs () ()
   (run-or-raise-prefer-group "emacs" "Emacs"))
 
@@ -270,6 +273,7 @@ run-or-raise with group search t."
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
 (define-key *root-map* (kbd "C-r") "run-or-raise-rambox")
 (define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
+(define-key *root-map* (kbd "C-z") "zotero")
 (define-key *root-map* (kbd "!") "run-shell-command")
 (define-key *root-map* (kbd "b") "windowlist")
 (define-key *root-map* (kbd "q") "refresh-stuff")
