@@ -14,4 +14,4 @@ end
 
 echo $dir
 
-konsole --notransparency --stylesheet /home/lepisma/cfg/konsole/konsole.css --workdir $dir
+konsole --notransparency --stylesheet /home/lepisma/cfg/konsole/konsole.css --workdir $dir $argv
