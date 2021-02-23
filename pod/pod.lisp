@@ -113,6 +113,7 @@
 (defparameter *aux-backup-dirs* (list #p"~/.tofish/d/Vault"
                                       #p"~/.tofish/d/Documents"
                                       #p"~/.tofish/d/Notes"
+                                      #p"~/Zotero"
                                       #p"~/.config/bbq")
   "Directories to backup on secondary cloud.")
 
