@@ -18,11 +18,13 @@ set -a PATH ~/.pkr/bin
 set -a PATH (rbenv prefix)/bin
 set -a PATH ~/.cargo/bin
 set -a PATH ~/.pyenv/bin
+set -a PATH ~/.rbenv/bin
 set -a PATH ~/.poetry/bin
 set -a PATH ~/go/bin
 
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
+status --is-interactive; and source (rbenv init -|psub)
 
 set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
 
