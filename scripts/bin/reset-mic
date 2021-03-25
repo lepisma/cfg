@@ -1,6 +1,9 @@
 #!/usr/bin/env fish
 
+# Usage:
+# reset-mic <poll-time-in-seconds>
+
 while true
-    sleep 3
+    sleep $argv[1]
     amixer sset 'Capture',0 25%
 end
