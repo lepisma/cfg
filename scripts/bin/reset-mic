@@ -1,0 +1,6 @@
+#!/usr/bin/env fish
+
+while true
+    sleep 3
+    amixer sset 'Capture',0 25%
+end
