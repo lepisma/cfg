@@ -6,7 +6,7 @@ blueman
 borg
 chromium
 copyq
-dolphin
+discord
 dunst
 electrum
 emacs
@@ -55,6 +55,7 @@ systemsettings
 terminus-font
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
+thunar
 tor-browser-en
 tree
 ttf-fira-code
