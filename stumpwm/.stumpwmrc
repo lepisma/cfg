@@ -275,7 +275,7 @@ run-or-raise with group search t."
 (define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
 (define-key *root-map* (kbd "C-z") "zotero")
 (define-key *root-map* (kbd "!") "run-shell-command")
-(define-key *root-map* (kbd "b") "windowlist")
+(define-key *root-map* (kbd "b") "exec launcher")
 (define-key *root-map* (kbd "q") "refresh-stuff")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
 (define-key *root-map* (kbd "p") "battery")
