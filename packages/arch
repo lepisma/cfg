@@ -13,10 +13,8 @@ emacs
 feh
 fish
 gimp
-gparted
 gwenview
 handlr-bin
-httpie
 imagemagick
 inkscape
 jq
@@ -28,7 +26,6 @@ lxappearance
 maim
 mplayer
 mu
-neofetch
 nerd-fonts-source-code-pro
 network-manager-applet
 ngrok
@@ -44,6 +41,7 @@ qt5ct
 qt5-styleplugins
 rambox-bin
 redshift
+rofi
 roswell
 ruby-build
 sbcl
@@ -56,7 +54,6 @@ terminus-font
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
 thunar
-tor-browser-en
 tree
 ttf-fira-code
 vlc
