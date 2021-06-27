@@ -143,6 +143,9 @@ run-or-raise with group search t."
   (run-commands "mode-line" "mode-line")
   (run-shell-command "xmodmap ~/.Xmodmap"))
 
+(defcommand run-launcher () ()
+  (stumpwm::run-prog "/bin/sh" :args (list "-c" "rofi -no-lazy-grab -show window -modi run,drun,window")))
+
 (defcommand rotate-windows () ()
   (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
          (win (stumpwm::frame-window (car (last frames)))))
@@ -188,11 +191,6 @@ run-or-raise with group search t."
 
 (defcommand slop-this () () (slop-or-float))
 
-(defcommand bbq (search-term) ((:string " "))
-  "Play via bbq"
-  (if search-term
-      (run-shell-command (format nil "bbq ~A " search-term))))
-
 (defmacro define-keyboard-macro (name keys)
   `(defcommand ,name () ()
      (loop for k in (mapcar #'parse-key ,keys)
@@ -208,9 +206,6 @@ run-or-raise with group search t."
     (run-shell-command (concat "scr " selection))))
 
 ;; All the keys
-(define-key *top-map* (kbd "C-M-Left") "exec bbq :prev")
-(define-key *top-map* (kbd "C-M-Right") "exec bbq :next")
-(define-key *top-map* (kbd "C-M-SPC") "exec bbq :toggle")
 (define-key *top-map* (kbd "s-t") "exec terminal")
 (define-key *top-map* (kbd "s-w") "exec terminal -e htop")
 (define-key *top-map* (kbd "C-q") "lol")
@@ -229,7 +224,6 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-f") "only")
 (define-key *top-map* (kbd "s-c") "fclear")
 (define-key *top-map* (kbd "s-l") "exec lock")
-(define-key *top-map* (kbd "s-SPC") "bbq")
 (define-key *top-map* (kbd "s-e") "emacs-anywhere")
 (define-key *top-map* (kbd "s-S-SPC") "switch-keyboard-layout")
 (define-key *top-map* (kbd "s-s") "scr")
@@ -275,7 +269,7 @@ run-or-raise with group search t."
 (define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
 (define-key *root-map* (kbd "C-z") "zotero")
 (define-key *root-map* (kbd "!") "run-shell-command")
-(define-key *root-map* (kbd "b") "exec launcher")
+(define-key *root-map* (kbd "b") "run-launcher")
 (define-key *root-map* (kbd "q") "refresh-stuff")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
 (define-key *root-map* (kbd "p") "battery")
