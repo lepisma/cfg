@@ -22,6 +22,8 @@ set -a PATH ~/.rbenv/bin
 set -a PATH ~/.poetry/bin
 set -a PATH ~/go/bin
 
+set -a PATH ~/.config/rofi/bin
+
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (pyenv virtualenv-init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
