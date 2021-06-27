@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+
+rofi -no-lazy-grab -show window \
+    -modi run,drun,window \
+    -theme ~/.config/rofi/config.rasi

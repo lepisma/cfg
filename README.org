@@ -44,6 +44,7 @@ stow -t ~/ polybar
 stow -t ~/ dunst
 stow -t ~/ picom
 stow -t ~/ redshift
+stow -t ~/ rofi
 #+END_SRC
 
 ** Stumpwm
