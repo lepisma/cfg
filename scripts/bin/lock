@@ -1,2 +1,4 @@
 #!/usr/bin/env fish
-betterlockscreen -l dim
+xwobf -s 11 /tmp/screen.png
+i3lock -u -i /tmp/screen.png
+rm /tmp/screen.png
