@@ -144,7 +144,7 @@ run-or-raise with group search t."
   (run-shell-command "xmodmap ~/.Xmodmap"))
 
 (defcommand run-launcher () ()
-  (stumpwm::run-prog "/bin/sh" :args (list "-c" "rofi -no-lazy-grab -show window -modi run,drun,window")))
+  (stumpwm::run-prog "/bin/sh" :args (list "-c" "rofi -no-lazy-grab -show window -modi run,drun,window -m -4")))
 
 (defcommand rotate-windows () ()
   (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
