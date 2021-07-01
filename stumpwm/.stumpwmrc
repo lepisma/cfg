@@ -310,7 +310,6 @@ run-or-raise with group search t."
 (run-shell-command "nm-applet")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
-(run-shell-command "gnome-encfs-manager")
 (run-shell-command "electrum")
 (run-shell-command "rambox")
 (run-shell-command "discord")
