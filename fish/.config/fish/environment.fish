@@ -2,7 +2,7 @@ set -x DATA_DIR /run/media/lepisma/Data
 set -x CLOUD_DIR $DATA_DIR/Cloud
 set -x PROJECTS_DIR $DATA_DIR/Projects
 
-set -x EMAIL lepisma@fastmail.com
+set -x EMAIL abhinav@lepisma.xyz
 set -x NAME Abhinav Tushar
 
 set -x EDITOR mumacs
