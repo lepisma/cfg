@@ -8,9 +8,11 @@ chromium
 copyq
 discord
 dunst
+electron
 electrum
 emacs
 feh
+ferdi
 fish
 gimp
 gwenview
@@ -39,7 +41,6 @@ polybar-git
 pulseeffects
 qt5ct
 qt5-styleplugins
-rambox-bin
 redshift
 rofi
 roswell
