@@ -325,6 +325,19 @@ Dumping commands. Need to enable bluetooth service and stuff.
 ** Tablet
 See [[https://wiki.archlinux.org/index.php/wacom_tablet#xrandr_setup][here]] till the automation is set up.
 
+** Touchpad
+Two finger for right click.
+
+#+begin_src ini :tangle /sudo::/etc/X11/xorg.conf.d/99-synaptics-overrides.conf
+Section "InputClass"
+	Identifier "touchpad overrides"
+	Driver "libinput"
+	MatchIsTouchpad "on"
+	Option "Tapping" "on"
+	Option "TappingButtonMap" "lrm"
+EndSection
+#+end_src
+
 ** Keyboard
 Swap keys:
 
