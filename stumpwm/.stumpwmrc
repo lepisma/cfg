@@ -309,7 +309,6 @@ run-or-raise with group search t."
 (run-shell-command "redshift")
 (run-shell-command "electrum")
 (run-shell-command "ferdi")
-(run-shell-command "discord")
 (run-shell-command "megasync")
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "pulseeffects --gapplication-service")
