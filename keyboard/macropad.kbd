@@ -15,8 +15,8 @@
   spc)
 
 (deflayer default
-  XX XX 7 8 9
-  XX XX 4 5 6
+  (tap-macro C-e P50 C-e) (tap-macro C-e P50 C-c) 7 8 9
+  (tap-macro C-e P50 C-f) (tap-macro C-e P50 C-v) 4 5 6
   home end 1 2 3
-  C-S-tab C-tab XX XX
+  C-S-tab C-tab (tap-macro C-e P50 C-r) XX
   spc)
