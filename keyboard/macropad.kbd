@@ -18,5 +18,5 @@
   (tap-macro C-e P50 C-e) (tap-macro C-e P50 C-c) 7 8 9
   (tap-macro C-e P50 C-f) (tap-macro C-e P50 C-v) 4 5 6
   home end 1 2 3
-  C-S-tab C-tab (tap-macro C-e P50 C-r) XX
+  C-S-tab C-tab (tap-macro C-e P50 C-r) (tap-macro C-e P50 C-v P50 C-t P50 m a i l ret)
   spc)
