@@ -323,7 +323,12 @@ Dumping commands. Need to enable bluetooth service and stuff.
 #+end_src
 
 ** Tablet
-See [[https://wiki.archlinux.org/index.php/wacom_tablet#xrandr_setup][here]] till the automation is set up.
+#+begin_src shell
+  set -l tablet_id (xinput list --id-only "Wacom One by Wacom M Pen stylus")
+  
+  xinput map-to-output $tablet_id HDMI-0
+  xsetwacom --set $tablet_id Rotate half
+#+end_src
 
 ** Touchpad
 Two finger for right click.
