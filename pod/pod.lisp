@@ -16,15 +16,10 @@
   "Mapping from command to functions.")
 
 (defparameter *www-dispatches*
-  `(("^(https?://)?[a-z]*\.google\.co" . ,*alt-browser*)
-    ("^(https?://)slack\-redir\.net/link\\?url=(https?%3A%2F%2F)?[a-z]*\.google\.co" . ,*alt-browser*)
-    ("^(https?://)?metabase\.ve" . ,*alt-browser*)
+  `((".google\.co" . ,*alt-browser*)
+    ("metabase\.skit" . ,*alt-browser*)
     ("^file:///*" . ,*alt-browser*)
-    ("^(https?://)?slack-redir\.net/link\\?url=(https?%3A%2F%2F)?metabase\.ve" . ,*alt-browser*)
-    ("^(https?://)?outline\.ve" . ,*alt-browser*)
-    ("^(https?://)?slack-redir\.net/link\\?url=(https?%3A%2F%2F)?outline\.ve" . ,*alt-browser*)
-    ("^(https?://)?discuss\.ve" . ,*alt-browser*)
-    ("^(https?://)?slack-redir\.net/link\\?url=(https?%3A%2F%2F)?discuss\.ve" . ,*alt-browser*))
+    ("outline\.skit" . ,*alt-browser*))
   "Patterns for handling url based dispatches.")
 
 (defun www (&rest args)
