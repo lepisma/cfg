@@ -143,8 +143,9 @@ run-or-raise with group search t."
   (run-commands "mode-line" "mode-line")
   (run-shell-command "xmodmap ~/.Xmodmap"))
 
+;; Using rofi themes from here https://github.com/adi1090x/rofi
 (defcommand run-launcher () ()
-  (stumpwm::run-prog "/bin/sh" :args (list "-c" "rofi -no-lazy-grab -show window -modi run,drun,window -m -4")))
+  (stumpwm::run-prog "/bin/sh" :args (list "-c" "/home/lepisma/.config/rofi/launchers/text/launcher.sh")))
 
 (defcommand rotate-windows () ()
   (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
