@@ -47,6 +47,26 @@ stow -t ~/ redshift
 stow -t ~/ rofi
 #+END_SRC
 
+** Rofi
+Use theme set up from [[https://github.com/adi1090x/rofi][here]] and the following colors.
+
+#+begin_src
+/* colors */
+,* {
+  al:      #00000000;
+  bg:      #2E3440ff;
+  se:      #374C6Bff;
+  fg:      #D8DEE9cc;
+  ac:      #81A1C1ff;
+  red:     #434C5Eff;
+  green:   #475C6Bff;
+  yellow:  #8a9899ff;
+  blue:    #42A5F5ff;
+  purple:  #B48EADff;
+  cyan:    #4DD0E1ff;
+}
+#+end_src
+
 ** Stumpwm
 
 Need two sbcl setups. The one from main repo is going to run stumpwm with swank.
