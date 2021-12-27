@@ -9,3 +9,7 @@ xinput map-to-output $tablet_id HDMI-0
 
 echo ":: Rotating 180 degrees"
 xsetwacom --set $tablet_id Rotate half
+
+echo ":: Setting up panning"
+xsetwacom --set $tablet_id Button 2 "pan"
+xsetwacom --set $tablet_id "PanScrollThreshold" 100
