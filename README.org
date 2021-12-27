@@ -343,12 +343,7 @@ Dumping commands. Need to enable bluetooth service and stuff.
 #+end_src
 
 ** Tablet
-#+begin_src shell
-  set -l tablet_id (xinput list --id-only "Wacom One by Wacom M Pen stylus")
-  
-  xinput map-to-output $tablet_id HDMI-0
-  xsetwacom --set $tablet_id Rotate half
-#+end_src
+Run ~configure-tablet~.
 
 ** Touchpad
 Two finger for right click.
