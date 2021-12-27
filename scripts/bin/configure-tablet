@@ -1,0 +1,11 @@
+#!/usr/bin/env fish
+
+set tablet_id (xinput list --id-only "Wacom One by Wacom M Pen stylus")
+
+echo "Found tablet with id: "$tablet_id
+
+echo ":: Mapping to screen"
+xinput map-to-output $tablet_id HDMI-0
+
+echo ":: Rotating 180 degrees"
+xsetwacom --set $tablet_id Rotate half
