@@ -316,6 +316,7 @@ run-or-raise with group search t."
 (run-shell-command "picom --experimental-backends")
 (run-shell-command "blueman-applet")
 (run-shell-command "copyq")
+(run-shell-command "dropbox")
 
 ;; Hooks
 ;; TODO: See this -> https://github.com/stumpwm/stumpwm-contrib/issues/189
