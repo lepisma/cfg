@@ -1,0 +1,246 @@
+{
+    "streamdeck_ui_version": 1,
+    "state": {
+        "AL39K2C50493": {
+            "buttons": {
+                "0": {
+                    "0": {
+                        "text": "",
+                        "write": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/messages.png",
+                        "command": "telegram-desktop"
+                    },
+                    "1": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/draw.png",
+                        "command": "krita"
+                    },
+                    "2": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/obs.png",
+                        "command": "obs"
+                    },
+                    "3": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/splash.png",
+                        "command": "splash"
+                    },
+                    "4": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/plus.png",
+                        "command": "stumpish \"amixer-Master-5+\""
+                    },
+                    "5": {
+                        "text": "",
+                        "command": "thunar",
+                        "keys": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/files.png"
+                    },
+                    "6": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/twitter.png",
+                        "write": "",
+                        "command": "www twitter.com"
+                    },
+                    "7": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/spotify.png",
+                        "command": "spotify"
+                    },
+                    "8": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/youtube.png",
+                        "command": "www youtube.com"
+                    },
+                    "9": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/minus.png",
+                        "command": "stumpish \"amixer-Master-5-\""
+                    },
+                    "10": {
+                        "text": "",
+                        "write": "",
+                        "command": "stumpish \"gselect 1\"",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/1.png"
+                    },
+                    "11": {
+                        "text": "",
+                        "command": "stumpish \"gselect 2\"",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/2.png"
+                    },
+                    "12": {
+                        "text": "",
+                        "command": "stumpish \"gselect 3\"",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/3.png"
+                    },
+                    "13": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/4.png",
+                        "command": "stumpish \"gselect 4\""
+                    },
+                    "14": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/suspend.png",
+                        "command": "lock-suspend"
+                    }
+                },
+                "1": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "2": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "3": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "4": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "5": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "6": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "7": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "8": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                },
+                "9": {
+                    "0": {},
+                    "1": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {}
+                }
+            },
+            "brightness": 57,
+            "brightness_dimmed": 0,
+            "page": 0
+        }
+    }
+}
