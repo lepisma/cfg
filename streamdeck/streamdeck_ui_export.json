@@ -17,7 +17,7 @@
                     },
                     "2": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/obs.png",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/record.png",
                         "command": "obs"
                     },
                     "3": {
