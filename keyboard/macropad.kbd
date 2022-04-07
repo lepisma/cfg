@@ -12,11 +12,15 @@
   tab q w e r
   caps a s d f
   lsft z x c
-  spc)
+  spc
+  alt
+  up down left right)
 
 (deflayer default
   (tap-macro C-e P50 C-e) (tap-macro C-e P50 C-c) 7 8 9
   (tap-macro C-e P50 C-f) (tap-macro C-e P50 C-v) 4 5 6
   home end 1 2 3
   C-S-tab C-tab (tap-macro C-e P50 C-r) 0
-  spc)
+  spc
+  alt
+  up down left right)
