@@ -4,7 +4,7 @@
   input (device-file "/dev/input/by-id/usb-Razer_Razer_Tartarus_V2-event-kbd")
   output (uinput-sink "Tartarus KMonad")
   cmp-seq ralt
-  fallthrough false
+  fallthrough true
   allow-cmd true)
 
 (defsrc
