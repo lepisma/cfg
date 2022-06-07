@@ -118,10 +118,10 @@ run-or-raise with group search t."
 
 ;; Command
 (defcommand run-or-raise-firefox () ()
-  (run-or-raise-prefer-group "firefox-nightly" "Nightly"))
+  (run-or-raise-prefer-group "firefox" "firefox"))
 
-(defcommand run-or-raise-ferdi () ()
-  (run-or-raise-prefer-group "ferdi" "Ferdi"))
+(defcommand run-or-raise-im () ()
+  (run-or-raise-prefer-group "slack" "Slack"))
 
 (defcommand run-or-raise-alt-browser () ()
   (run-or-raise-prefer-group "chromium" "Chromium"))
@@ -266,7 +266,7 @@ run-or-raise with group search t."
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
-(define-key *root-map* (kbd "C-r") "run-or-raise-ferdi")
+(define-key *root-map* (kbd "C-r") "run-or-raise-im")
 (define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
 (define-key *root-map* (kbd "C-z") "zotero")
 (define-key *root-map* (kbd "!") "run-shell-command")
@@ -300,7 +300,6 @@ run-or-raise with group search t."
 (clear-window-placement-rules)
 
 (define-frame-preference "FLT"
-    (nil nil t :class "electrum")
   (nil nil t :class "Syncthing GTK"))
 
 ;; Programs
