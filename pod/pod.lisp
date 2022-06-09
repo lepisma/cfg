@@ -3,7 +3,7 @@
 (in-package #:pod)
 (enable-interpol-syntax)
 
-(defparameter *browser* "firefox-nightly"
+(defparameter *browser* "firefox"
   "Main browser")
 
 (defparameter *alt-browser* "chromium"
