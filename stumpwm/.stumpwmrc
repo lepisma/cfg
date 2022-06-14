@@ -29,7 +29,7 @@
 
 ;; Modules
 ;; (load-module "ttf-fonts")
-;; (load-module "winner-mode")
+(load-module "winner-mode")
 (load-module "globalwindows")
 (load-module "amixer")
 (load-module "swm-gaps")
@@ -281,10 +281,10 @@ run-or-raise with group search t."
 (define-key *groups-map* (kbd "M-Left") "gprev-with-window")
 (define-key *groups-map* (kbd "b") "global-windowlist")
 
-;; (defvar *winner-map* (make-sparse-keymap))
-;; (define-key *root-map* (kbd "c") '*winner-map*)
-;; (define-key *winner-map* (kbd "Left") "winner-undo")
-;; (define-key *winner-map* (kbd "Right") "winner-redo")
+(defvar *winner-map* (make-sparse-keymap))
+(define-key *root-map* (kbd "c") '*winner-map*)
+(define-key *winner-map* (kbd "Left") "winner-undo")
+(define-key *winner-map* (kbd "Right") "winner-redo")
 
 ;; Init
 (update-color-map (current-screen))
@@ -316,7 +316,6 @@ run-or-raise with group search t."
 (run-shell-command "streamdeck")
 
 ;; Hooks
-;; TODO: See this -> https://github.com/stumpwm/stumpwm-contrib/issues/189
-;; (add-hook *post-command-hook* (lambda (command)
-;;                                 (when (member command winner-mode:*default-commands*)
-;;                                   (winner-mode:dump-group-to-file))))
+(add-hook *post-command-hook* (lambda (command)
+                                (when (member command winner-mode:*default-commands*)
+                                  (winner-mode:dump-group-to-file))))
