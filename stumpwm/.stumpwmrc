@@ -206,6 +206,17 @@ run-or-raise with group search t."
   (let ((selection (car (stumpwm:select-from-menu (current-screen) (list "rectangle" "window" "screen") "Screenshot: "))))
     (run-shell-command (concat "scr " selection))))
 
+(defparameter *frame-dump-file* (uiop:native-namestring "~/.stumpwm-fdump")
+  "Dump file for keeping frame positions.")
+
+(defcommand layout-save () ()
+  (dump-group-to-file *frame-dump-file*))
+
+(defcommand layout-load () ()
+  (if (probe-file *frame-dump-file*)
+      (restore-from-file *frame-dump-file*)
+      (message "Dump file not found")))
+
 ;; All the keys
 (define-key *top-map* (kbd "s-t") "exec terminal")
 (define-key *top-map* (kbd "s-w") "exec terminal -e htop")
@@ -285,6 +296,8 @@ run-or-raise with group search t."
 (define-key *root-map* (kbd "c") '*winner-map*)
 (define-key *winner-map* (kbd "Left") "winner-undo")
 (define-key *winner-map* (kbd "Right") "winner-redo")
+(define-key *winner-map* (kbd "Down") "layout-save")
+(define-key *winner-map* (kbd "Up") "layout-load")
 
 ;; Init
 (update-color-map (current-screen))
@@ -314,6 +327,9 @@ run-or-raise with group search t."
 (run-shell-command "copyq")
 (run-shell-command "dropbox")
 (run-shell-command "streamdeck")
+
+;; Load layout on the start
+(run-commands "layout-load")
 
 ;; Hooks
 (add-hook *post-command-hook* (lambda (command)
