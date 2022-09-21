@@ -27,8 +27,9 @@
                     },
                     "4": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/plus.png",
-                        "command": "stumpish \"amixer-Master-5+\""
+                        "icon": "",
+                        "write": "",
+                        "command": ""
                     },
                     "5": {
                         "text": "",
@@ -38,24 +39,23 @@
                     },
                     "6": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/twitter.png",
-                        "write": "",
-                        "command": "www twitter.com"
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/spotify.png",
+                        "command": "stumpish \"eval (stumpwm::run-or-raise-prefer-group \\\"spotify\\\" \\\"Spotify\\\")\" "
                     },
                     "7": {
-                        "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/spotify.png",
-                        "command": "spotify"
-                    },
-                    "8": {
                         "text": "",
                         "icon": "/home/lepisma/cfg/streamdeck/icons/youtube.png",
                         "command": "www youtube.com"
                     },
-                    "9": {
+                    "8": {
                         "text": "",
                         "icon": "/home/lepisma/cfg/streamdeck/icons/minus.png",
                         "command": "stumpish \"amixer-Master-5-\""
+                    },
+                    "9": {
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/plus.png",
+                        "command": "stumpish \"amixer-Master-5+\""
                     },
                     "10": {
                         "text": "",
@@ -79,9 +79,11 @@
                         "command": "stumpish \"gselect 4\""
                     },
                     "14": {
-                        "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/suspend.png",
-                        "command": "lock-suspend"
+                        "text": "NEXT",
+                        "icon": "",
+                        "command": "",
+                        "keys": "",
+                        "switch_page": 2
                     }
                 },
                 "1": {
@@ -91,15 +93,28 @@
                     "3": {},
                     "4": {},
                     "5": {},
-                    "6": {},
-                    "7": {},
-                    "8": {},
+                    "6": {
+                        "text": "PREV",
+                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+                    },
+                    "7": {
+                        "text": "TOGGLE",
+                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+                    },
+                    "8": {
+                        "text": "NEXT",
+                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+                    },
                     "9": {},
                     "10": {},
                     "11": {},
                     "12": {},
                     "13": {},
-                    "14": {}
+                    "14": {
+                        "switch_page": 1,
+                        "command": "",
+                        "text": "BACK"
+                    }
                 },
                 "2": {
                     "0": {},
@@ -238,9 +253,9 @@
                     "14": {}
                 }
             },
-            "brightness": 57,
+            "brightness": 55,
             "brightness_dimmed": 0,
-            "page": 0
+            "page": 1
         }
     }
 }
