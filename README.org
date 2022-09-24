@@ -263,7 +263,7 @@ ros install lake
 Symlink ~pod~ to roswell local projects.
 
 #+BEGIN_SRC shell
-ln -s ./pod ~/.roswell/local-projects
+ln -s (pwd)/pod ~/.roswell/local-projects
 #+END_SRC
 
 Setup pod scripts.
