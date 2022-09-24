@@ -8,13 +8,9 @@ abbr -a yt "youtube-dl --external-downloader=aria2c"
 abbr -a ya "youtube-dl -x --audio-format opus --audio-quality 0 --no-playlist"
 
 abbr -a x "xdg-open"
-abbr -a d "nmcli device disconnect wlp2s0"
 abbr -a w "live-server"
 
-# We should have yasnippet in shell/term-emus
-abbr -a doc "sudo docker run -t -i -v (pwd):\"/that-dir\" ubuntu:trusty /bin/bash"
-
-alias el "eless"
+alias l "la -alh"
 alias sl "ls"
 alias m "mumacs"
 alias dl "aria2c"

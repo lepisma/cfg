@@ -15,7 +15,7 @@ uname -a
 #+END_SRC
 
 #+RESULTS:
-: Linux euclid-red 4.19.147-1-MANJARO #1 SMP Wed Sep 23 18:00:56 UTC 2020 x86_64 GNU/Linux
+: Linux euclid-red 5.15.65-1-MANJARO #1 SMP PREEMPT Mon Sep 5 10:15:47 UTC 2022 x86_64 GNU/Linux
 
 #+BEGIN_SRC bash
 yay -S $(grep -vE "^\s*#" ./packages/arch | tr "\n" " ")
@@ -25,6 +25,16 @@ Set ~fish~ as default shell
 #+BEGIN_SRC bash
 chsh -s $(which fish)
 #+END_SRC
+
+Install fish packages
+#+begin_src shell
+  # Install fisher
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+  for p in (cat ./fish/.config/fish/fishfile)
+      fisher install $p
+  end
+#+end_src
 
 * Stow basics
 
@@ -44,7 +54,6 @@ stow -t ~/ polybar
 stow -t ~/ dunst
 stow -t ~/ picom
 stow -t ~/ redshift
-stow -t ~/ rofi
 #+END_SRC
 
 ** Rofi
@@ -88,10 +97,9 @@ Here goes the xinitrc
 #+BEGIN_SRC shell :tangle ~/.xinitrc
 #!/bin/sh
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
+# xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 exec stumpwm
-xset r rate 660 25
 #+END_SRC
 
 #+BEGIN_SRC shell
@@ -143,16 +151,16 @@ MimeType=x-scheme-handler/mailto
 Setup default programs:
 
 #+BEGIN_SRC shell
-xdg-mime default org.kde.dolphin.desktop inode/directory
-xdg-mime default feh.desktop image/jpeg
-xdg-mime default feh.desktop image/png
-xdg-mime default www.desktop x-scheme-handler/http
-xdg-mime default www.desktop x-scheme-handler/https
-xdg-mime default compose-mail.desktop x-scheme-handler/mailto
-xdg-mime default org.kde.okular.desktop application/pdf
+  xdg-mime default feh.desktop image/jpeg
+  xdg-mime default feh.desktop image/png
+  xdg-mime default www.desktop x-scheme-handler/http
+  xdg-mime default www.desktop x-scheme-handler/https
+  xdg-mime default compose-mail.desktop x-scheme-handler/mailto
+  xdg-mime default org.kde.okular.desktop application/pdf
 
-handlr set .doc libreoffice-writer.desktop
-handlr set .docx libreoffice-writer.desktop
+  handlr set inode/directory thunar.desktop
+  handlr set .doc libreoffice-writer.desktop
+  handlr set .docx libreoffice-writer.desktop
 #+END_SRC
 
 ** Fonts
@@ -190,10 +198,8 @@ fc-cache -f
   (require 'all-the-icons)
   (all-the-icons-install-fonts)
   #+END_SRC
-- SauceCodePro Nerd font
-- Fira Code / Fira Sans. Also install Fira code symbol which is used for
-  ligatures in Emacs.
-- Source Code / Source Sans
+
+  #+RESULTS:
 
 * Konsole theming
 
@@ -236,6 +242,8 @@ UrlHintsModifiers=67108864
 cp ./konsole/Nordic.colorscheme ~/.local/share/konsole/Nordic.colorscheme
 #+END_SRC
 
+#+RESULTS:
+
 ** Linux Console
 
 #+BEGIN_SRC ini :tangle /sudo::/etc/vconsole.conf
@@ -246,7 +254,6 @@ FONT="ter-v18n"
 * Language setup
 
 ** Common Lisp
-
 Setup roswell, quicklisp and other tools.
 
 #+BEGIN_SRC shell
@@ -289,36 +296,6 @@ get_ipython().magic("%load_ext autoreload")
 get_ipython().magic("%autoreload 2")
 #+END_SRC
 
-** JS
-
-Get nvm and use brigand/fast-nvm-fish. Install some command line tools.
-
-#+BEGIN_SRC shell
-cat ./packages/node | while read -l line
-  npm i -g $line
-end
-#+END_SRC
-
-** R
-
-Setup ~pkr~
-
-#+BEGIN_SRC shell
-wget https://raw.githubusercontent.com/reichlab/pkr/master/pkr
-mv pkr ~/bin/
-chmod +x ~/bin/pkr
-#+END_SRC
-
-** Haskell
-
-#+BEGIN_SRC haskell :tangle ~/.ghci
-:set prompt "\ESC[32mλ> \ESC[m"
-:set -XOverloadedStrings
-:set +m
-:set +t
-:set +s
-#+END_SRC
-
 * Setup email
 
 Stow offlineimap
@@ -327,7 +304,7 @@ Stow offlineimap
 stow -t ~/ offlineimap
 #+END_SRC
 
-Copy over the template ~authinfo.gpg~
+Copy over the template ~authinfo.gpg~ and fill in values.
 
 #+BEGIN_SRC shell
 cp ./misc/.authinfo.gpg ~/

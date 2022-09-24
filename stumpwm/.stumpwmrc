@@ -106,7 +106,7 @@ run-or-raise with group search t."
 
 ;; Dunst on top fix from https://github.com/stumpwm/stumpwm/issues/469#issuecomment-488437555
 (defmethod raise-window :after (win)
-  (let ((ignore-names '("polybar-laptop_eDP-1-1" "polybar-screen_HDMI-0" "polybar-laptop_eDP1")))
+  (let ((ignore-names '("polybar-laptop_eDP-1" "polybar-screen_HDMI-0" "polybar-laptop_eDP1")))
     (flet ((window-above-p (win) (find-wm-state win :_NET_WM_STATE_ABOVE)))
       (unless (window-above-p (window-xwin win))
         (mapc
@@ -145,7 +145,7 @@ run-or-raise with group search t."
 
 ;; Using rofi themes from here https://github.com/adi1090x/rofi
 (defcommand run-launcher () ()
-  (stumpwm::run-prog "/bin/sh" :args (list "-c" "/home/lepisma/.config/rofi/launchers/text/launcher.sh")))
+  (stumpwm::run-prog "/bin/sh" :args (list "-c" "/home/lepisma/.config/rofi/launchers/type-1/launcher.sh")))
 
 (defcommand rotate-windows () ()
   (let* ((frames (stumpwm::head-frames (current-group) (current-head)))
@@ -312,16 +312,11 @@ run-or-raise with group search t."
 
 (clear-window-placement-rules)
 
-(define-frame-preference "FLT"
-  (nil nil t :class "Syncthing GTK"))
-
 ;; Programs
-(run-shell-command "polybar laptop --reload")
+(run-shell-command "polybar monitor --reload")
 (run-shell-command "nm-applet")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
-(run-shell-command "syncthing-gtk -m")
-(run-shell-command "pulseeffects --gapplication-service")
 (run-shell-command "picom --experimental-backends")
 (run-shell-command "blueman-applet")
 (run-shell-command "copyq")
