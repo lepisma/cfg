@@ -43,6 +43,7 @@ roswell
 ruby-build
 rust
 sbcl
+slack-desktop
 slop
 snapd
 stow
