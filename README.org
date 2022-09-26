@@ -348,10 +348,8 @@ add control = Control_L Control_R
 Set up [[./keyboard/kmonad.service][kmonad service]] for macropad.
 
 ** Graphics Card
-[[https://forum.manjaro.org/t/howto-set-up-prime-with-nvidia-proprietary-driver/40225?u=bogdancovaciu][This guide]] helps me setting up 1060. Although the battery drain goes up a bit,
-it's not really bad.
-
-Relevant portion for ~xinitrc~:
+I have a laptop with Intel /and/ Nvidia card. I switch to just Nvidia drivers
+which works well for me. Relevant portion for ~xinitrc~:
 
 #+BEGIN_SRC shell
 # Goes above exec stump..
