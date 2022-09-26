@@ -97,7 +97,7 @@ Here goes the xinitrc
 #+BEGIN_SRC shell :tangle ~/.xinitrc
 #!/bin/sh
 
-# xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 exec stumpwm
 #+END_SRC
