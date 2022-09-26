@@ -1,0 +1,17 @@
+#!/usr/bin/env fish
+
+# Usage:
+#   www <url> ...
+
+set -l app "firefox"
+
+set -l alt_patterns ".google.co" "metabase.skit"
+
+for pattern in $alt_patterns
+    if test -n (string match -r $pattern $argv[1])
+        set app "chromium"
+        break
+    end
+end
+
+eval $app $argv

@@ -1,3 +1,0 @@
-#+TITLE: pod
-
-Scripts and default ~in-package~ for slime.
