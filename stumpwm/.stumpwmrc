@@ -106,7 +106,7 @@ run-or-raise with group search t."
 
 ;; Dunst on top fix from https://github.com/stumpwm/stumpwm/issues/469#issuecomment-488437555
 (defmethod raise-window :after (win)
-  (let ((ignore-names '("polybar-laptop_eDP-1" "polybar-screen_HDMI-0" "polybar-laptop_eDP1")))
+  (let ((ignore-names '("polybar-monitor_HDMI-0")))
     (flet ((window-above-p (win) (find-wm-state win :_NET_WM_STATE_ABOVE)))
       (unless (window-above-p (window-xwin win))
         (mapc
