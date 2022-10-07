@@ -12,13 +12,13 @@
                     },
                     "1": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/draw.png",
-                        "command": "krita"
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/obs.png",
+                        "command": "obs"
                     },
                     "2": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/record.png",
-                        "command": "obs"
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/hotkey.png",
+                        "command": ""
                     },
                     "3": {
                         "text": "",
@@ -27,8 +27,7 @@
                     },
                     "4": {
                         "text": "",
-                        "icon": "",
-                        "write": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/power.png",
                         "command": ""
                     },
                     "5": {
@@ -39,23 +38,24 @@
                     },
                     "6": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/spotify.png",
-                        "command": "stumpish \"eval (stumpwm::run-or-raise-prefer-group \\\"spotify\\\" \\\"Spotify\\\")\" "
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/multimedia-mute.png",
+                        "command": "stumpish \"amixer-Master-toggle\""
                     },
                     "7": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/youtube.png",
-                        "command": "www youtube.com"
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/volume-down.png",
+                        "command": "stumpish \"amixer-Master-5-\""
                     },
                     "8": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/minus.png",
-                        "command": "stumpish \"amixer-Master-5-\""
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/volume-up.png",
+                        "command": "stumpish \"amixer-Master-5+\""
                     },
                     "9": {
                         "text": "",
-                        "icon": "/home/lepisma/cfg/streamdeck/icons/plus.png",
-                        "command": "stumpish \"amixer-Master-5+\""
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/hue.png",
+                        "write": "",
+                        "command": ""
                     },
                     "10": {
                         "text": "",
@@ -79,8 +79,8 @@
                         "command": "stumpish \"gselect 4\""
                     },
                     "14": {
-                        "text": "NEXT",
-                        "icon": "",
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/spotify.png",
                         "command": "",
                         "keys": "",
                         "switch_page": 2
@@ -88,32 +88,48 @@
                 },
                 "1": {
                     "0": {},
-                    "1": {},
-                    "2": {},
-                    "3": {},
+                    "1": {
+                        "text": "",
+                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/multimedia-previous.png"
+                    },
+                    "2": {
+                        "text": "",
+                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/multimedia-toggle.png"
+                    },
+                    "3": {
+                        "text": "",
+                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/multimedia-next.png"
+                    },
                     "4": {},
                     "5": {},
                     "6": {
-                        "text": "PREV",
-                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+                        "command": "stumpish \"amixer-Master-toggle\"",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/multimedia-mute.png"
                     },
                     "7": {
-                        "text": "TOGGLE",
-                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+                        "command": "stumpish \"amixer-Master-5-\"",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/volume-down.png"
                     },
                     "8": {
-                        "text": "NEXT",
-                        "command": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+                        "command": "stumpish \"amixer-Master-5+\"",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/volume-up.png"
                     },
                     "9": {},
                     "10": {},
                     "11": {},
-                    "12": {},
+                    "12": {
+                        "command": "stumpish \"eval (stumpwm::run-or-raise-prefer-group \\\"spotify\\\" \\\"Spotify\\\")\" ",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/spotify.png"
+                    },
                     "13": {},
                     "14": {
                         "switch_page": 1,
                         "command": "",
-                        "text": "BACK"
+                        "text": "",
+                        "icon": "/home/lepisma/cfg/streamdeck/icons/previous.png"
                     }
                 },
                 "2": {
@@ -255,7 +271,7 @@
             },
             "brightness": 55,
             "brightness_dimmed": 0,
-            "page": 1
+            "page": 0
         }
     }
 }
