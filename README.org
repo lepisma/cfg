@@ -167,7 +167,7 @@ Setup default programs:
 
 *** Custom iosevka
 #+BEGIN_SRC shell :dir /sudo::
-git clone git@github.com/lepisma/iosevka-lepisma /tmp/iosevka-lepisma
+git clone git@github.com:lepisma/iosevka-lepisma /tmp/iosevka-lepisma
 mkdir /usr/share/fonts/iosevka/
 mv /tmp/iosevka-lepisma/ttf/patched/*ttf /usr/share/fonts/iosevka/
 #+END_SRC
