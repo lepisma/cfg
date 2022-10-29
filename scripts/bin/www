@@ -8,7 +8,8 @@ set -l app "firefox"
 set -l alt_patterns ".google.co" "metabase.skit"
 
 for pattern in $alt_patterns
-    if test -n (string match -r $pattern $argv[1])
+    string match -r $pattern (string escape --style=url $argv[1])
+    if test $status -eq 0
         set app "chromium"
         break
     end
