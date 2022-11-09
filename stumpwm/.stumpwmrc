@@ -322,6 +322,7 @@ run-or-raise with group search t."
 (run-shell-command "copyq")
 (run-shell-command "dropbox")
 (run-shell-command "streamdeck")
+(run-shell-command "polychromatic-tray-applet")
 
 ;; Load layout on the start
 (run-commands "layout-load")
