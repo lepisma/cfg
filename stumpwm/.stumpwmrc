@@ -317,7 +317,7 @@ run-or-raise with group search t."
 (run-shell-command "nm-applet")
 (run-shell-command "dunst")
 (run-shell-command "redshift")
-(run-shell-command "picom --experimental-backends")
+(run-shell-command "picom")
 (run-shell-command "blueman-applet")
 (run-shell-command "copyq")
 (run-shell-command "dropbox")
