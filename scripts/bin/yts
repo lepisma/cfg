@@ -1,8 +1,0 @@
-#!/usr/bin/env fish
-
-# No nonsense search for youtube (returns ids)
-# Usage:
-#   yts whatever you want to search for
-curl -s -G "https://www.youtube.com/results" --data-urlencode "search_query=$argv" \
-    | pup "a[href^=\"/watch\"].yt-uix-tile-link:not([href*=\"list=\"]) attr{href}" \
-    | sed -e "s/^\/watch?v=//"

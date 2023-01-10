@@ -1,6 +1,0 @@
-#!/usr/bin/env fish
-
-# Tell who is attending a given meeting. Works on a saved HTML file. Keep the
-# people pane open while saving the HTML.
-
-cat $argv[1] | pup 'div[aria-label="Participants"] > div > div > div > div > span:first-child text{}' | sort | uniq

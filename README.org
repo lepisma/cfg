@@ -8,25 +8,33 @@ Config scripts and notes in literate style configuration using Org-Babel.
 
 * Basic packages
 
-My current OS is manjaro. Need to setup yay first.
+My current OS is Manjaro across all Linux systems.
 
 #+BEGIN_SRC bash
 uname -a
 #+END_SRC
 
 #+RESULTS:
-: Linux euclid-red 5.15.65-1-MANJARO #1 SMP PREEMPT Mon Sep 5 10:15:47 UTC 2022 x86_64 GNU/Linux
+: Linux euclid-red 5.15.85-1-MANJARO #1 SMP PREEMPT Wed Dec 21 21:15:06 UTC 2022 x86_64 GNU/Linux
+
+Install ~yay~ before going ahead:
+
+#+begin_src bash :dir /sudo::
+pacman -S yay
+#+end_src
 
 #+BEGIN_SRC bash
 yay -S $(grep -vE "^\s*#" ./packages/arch | tr "\n" " ")
 #+END_SRC
 
-Set ~fish~ as default shell
+Now that ~fish~ is installed, we will set it as the default shell.
+
 #+BEGIN_SRC bash
 chsh -s $(which fish)
 #+END_SRC
 
 Install fish packages
+
 #+begin_src shell
   # Install fisher
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
@@ -45,8 +53,7 @@ stow -t ~/ scripts
 #+END_SRC
 
 * Window manager and related tools
-
-Stow config files.
+All of these are for the main machine running Stumpwm.
 
 #+BEGIN_SRC shell
 stow -t ~/ stumpwm
@@ -202,7 +209,6 @@ fc-cache -f
   #+RESULTS:
 
 * Konsole theming
-
 #+BEGIN_SRC init :tangle ~/.local/share/konsole/lepisma.profile
 [Appearance]
 AntiAliasFonts=true
@@ -242,8 +248,6 @@ UrlHintsModifiers=67108864
 cp ./konsole/Nordic.colorscheme ~/.local/share/konsole/Nordic.colorscheme
 #+END_SRC
 
-#+RESULTS:
-
 ** Linux Console
 
 #+BEGIN_SRC ini :tangle /sudo::/etc/vconsole.conf
@@ -274,23 +278,15 @@ lake setup
 
 ** Python setup
 
-Setup miniconda. Install basic packages
+TODO: Set up pyenv
+
+
 #+BEGIN_SRC shell
 pip install -r ./packages/pip
 #+END_SRC
 
-Setup jupyter notebook theme.
-#+BEGIN_SRC shell
-jt -t grade3 -f iosevka -nf iosevka -tf iosevka -tfs 12 -cellw 1200
-#+END_SRC
-
-Some package config
-#+BEGIN_SRC shell
-stow -t ~/ bbq
-stow -t ~/ beets
-#+END_SRC
-
 IPython init
+
 #+BEGIN_SRC python :tangle ~/.ipython/profile_default/startup/00-auto.py
 get_ipython().magic("%load_ext autoreload")
 get_ipython().magic("%autoreload 2")
