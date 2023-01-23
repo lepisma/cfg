@@ -54,8 +54,7 @@
                     "9": {
                         "text": "",
                         "icon": "/home/lepisma/cfg/streamdeck/icons/hue.png",
-                        "write": "",
-                        "command": ""
+                        "command": "www http://192.168.0.109:8123/lovelace"
                     },
                     "10": {
                         "text": "",
