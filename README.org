@@ -3,8 +3,22 @@
 
 #+PROPERTY: header-args :exports both :results output
 
-Config scripts and notes in literate style configuration using Org-Babel.
+Configuration scripts and notes in literate style configuration using Org-Babel.
 
+* Machines
+The configurations kept here are for the following machines:
+
+1. ~euclid-red~ that runs Manjaro with StumpWM (X). This is primarily a keyboard
+   driven system (Legion Y720) and stays at my home workspace.
+2. ~euclid-blue~ that runs Manjaro with GNOME (Wayland). This is a convertible
+   laptop (HP Spectre x360) that I use to move around, read, and take notes.
+3. ~euclid-black~ is my Android based cell phone.
+4. ~euclid-white~ is an M1 Macbook Air (2020) from my current workplace.
+5. ~euclid-silver~ is a Raspberry PI 4 with Home Assistant OS used for home
+   automation and other home network applications.
+
+Name prefix has a [[https://en.wikipedia.org/wiki/Pi_(film)][historical reason]]. There are a few other cloud machines other
+than these.
 
 * Basic packages
 
@@ -15,7 +29,7 @@ uname -a
 #+END_SRC
 
 #+RESULTS:
-: Linux euclid-red 5.15.85-1-MANJARO #1 SMP PREEMPT Wed Dec 21 21:15:06 UTC 2022 x86_64 GNU/Linux
+: Linux euclid-red 5.15.89-1-MANJARO #1 SMP PREEMPT Wed Jan 18 20:37:11 UTC 2023 x86_64 GNU/Linux
 
 Install ~yay~ before going ahead:
 
