@@ -14,7 +14,7 @@ feh
 fish
 gimp
 gwenview
-handlr-bin
+handlr
 imagemagick
 inkscape
 jq
@@ -25,7 +25,6 @@ light
 lxappearance
 maim
 mu
-nerd-fonts-source-code-pro
 network-manager-applet
 obs-studio
 offlineimap
@@ -57,6 +56,7 @@ the_silver_searcher
 thunar
 tree
 ttf-fira-code
+ttf-sourcecodepro-nerd
 vlc
 wmctrl
 xdg-utils

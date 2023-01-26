@@ -23,8 +23,14 @@ Install ~yay~ before going ahead:
 pacman -S yay
 #+end_src
 
+For convertible:
 #+BEGIN_SRC bash
-yay -S $(grep -vE "^\s*#" ./packages/arch | tr "\n" " ")
+yay -S $(grep -vE "^\s*#" ./packages/manjaro.euclid-blue | tr "\n" " ")
+#+END_SRC
+
+For main machine:
+#+BEGIN_SRC bash
+yay -S $(grep -vE "^\s*#" ./packages/manjaro.euclid-red | tr "\n" " ")
 #+END_SRC
 
 Now that ~fish~ is installed, we will set it as the default shell.
@@ -257,29 +263,9 @@ FONT="ter-v18n"
 
 * Language setup
 
-** Common Lisp
-Setup roswell, quicklisp and other tools.
-
-#+BEGIN_SRC shell
-ros install lake
-#+END_SRC
-
-Symlink ~pod~ to roswell local projects.
-
-#+BEGIN_SRC shell
-ln -s (pwd)/pod ~/.roswell/local-projects
-#+END_SRC
-
-Setup pod scripts.
-
-#+BEGIN_SRC shell :dir ./pod
-lake setup
-#+END_SRC
-
 ** Python setup
 
 TODO: Set up pyenv
-
 
 #+BEGIN_SRC shell
 pip install -r ./packages/pip
