@@ -4,8 +4,6 @@
 #+PROPERTY: header-args :exports both :results output
 
 Configuration scripts and notes in literate style configuration using Org-Babel.
-
-* Machines
 The configurations kept here are for the following machines:
 
 1. ~euclid-red~ that runs Manjaro with StumpWM (X). This is primarily a keyboard
