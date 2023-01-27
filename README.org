@@ -35,12 +35,12 @@ Install ~yay~ before going ahead:
 pacman -S yay
 #+end_src
 
-For convertible:
+For blue:
 #+BEGIN_SRC bash
 yay -S $(grep -vE "^\s*#" ./packages/manjaro.euclid-blue | tr "\n" " ")
 #+END_SRC
 
-For main machine:
+For red:
 #+BEGIN_SRC bash
 yay -S $(grep -vE "^\s*#" ./packages/manjaro.euclid-red | tr "\n" " ")
 #+END_SRC
@@ -224,7 +224,7 @@ fc-cache -f
   (all-the-icons-install-fonts)
   #+END_SRC
 
-  #+RESULTS:
+- Few fonts are present in the package installation list.
 
 * Konsole theming
 #+BEGIN_SRC init :tangle ~/.local/share/konsole/lepisma.profile
@@ -274,7 +274,6 @@ FONT="ter-v18n"
 #+END_SRC
 
 * Language setup
-
 ** Python setup
 
 TODO: Set up pyenv
@@ -304,19 +303,14 @@ Copy over the template ~authinfo.gpg~ and fill in values.
 cp ./misc/.authinfo.gpg ~/
 #+END_SRC
 
-* Setup hardware
-** Bluetooth sinks
-Dumping commands. Need to enable bluetooth service and stuff.
+* Hardware
+Hardware specific configurations or installation steps.
 
-#+begin_src shell
-  pacmd list-sinks | grep -e 'name:' -e 'index:'
-  pacmd set-default-sink <n>
-#+end_src
+** ~euclid-red~
+*** Graphics Tablet
+For Wacom One, run ~configure-tablet~.
 
-** Tablet
-Run ~configure-tablet~.
-
-** Touchpad
+*** Touchpad
 Two finger for right click.
 
 #+begin_src ini :tangle /sudo::/etc/X11/xorg.conf.d/99-synaptics-overrides.conf
@@ -329,8 +323,8 @@ Section "InputClass"
 EndSection
 #+end_src
 
-** Keyboard
-Swap keys on laptop's board.
+*** Keyboards
+Swap keys on laptop's main board.
 
 #+BEGIN_SRC ini :tangle ~/.Xmodmap
 clear lock
@@ -339,11 +333,12 @@ keycode 66 = Control_L
 add control = Control_L Control_R
 #+END_SRC
 
-Set up [[./keyboard/kmonad.service][kmonad service]] for macropad.
+*** Macropad
+Installed KMonad and set up [[./keyboard/kmonad.service][the service]] for macropad.
 
-** Graphics Card
-I have a laptop with Intel /and/ Nvidia card. I switch to just Nvidia drivers
-which works well for me. Relevant portion for ~xinitrc~:
+*** Graphics Card
+My laptop has Intel /and/ Nvidia card. I switch to just Nvidia drivers which works
+well for me. Relevant portion for ~xinitrc~:
 
 #+BEGIN_SRC shell
 # Goes above exec stump..
@@ -351,9 +346,18 @@ xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 #+END_SRC
 
-* Modules
+*** Streamdeck
+Import config from ~~./streamdeck~.
 
-Some modules that I might need to blacklist:
-- ~i2c_hid~
-- ~r8169~
-- ~ideapad_laptop~
+** ~euclid-blue~
+*** Battery
+Install ~tlp~ (already done in package installation), and enable the service.
+
+#+begin_src shell
+  systemctl enable tlp.service
+  systemctl start tlp.service
+#+end_src
+
+*** Keyboard
+GNOME allows setting caps to ctrl in the UI.
+

@@ -27,6 +27,7 @@ systemsettings
 telegram-desktop
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
+tlp
 tree
 ttf-fira-code
 ttf-sourcecodepro-nerd
