@@ -18,7 +18,7 @@
                     "2": {
                         "text": "",
                         "icon": "/home/lepisma/cfg/streamdeck/icons/hotkey.png",
-                        "command": ""
+                        "command": "www https://app.raindrop.io"
                     },
                     "3": {
                         "text": "",
