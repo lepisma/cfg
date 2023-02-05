@@ -16,6 +16,7 @@ obs-studio
 offlineimap
 pandoc-bin
 pyenv
+raindrop
 rbenv
 ruby-build
 rust
