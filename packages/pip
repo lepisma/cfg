@@ -1,18 +1,16 @@
 #
 # Spacemacs requirements
 #
-jedi
-json-rpc
-service_factory
 flake8
+ptvsd>=4.2
 autoflake
 yapf
 mypy
+python-lsp-server[all]
 #
 # Other tools
 #
 grip
 youtube_dl
 twine
-thefuck
 glances

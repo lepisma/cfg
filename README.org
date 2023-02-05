@@ -16,11 +16,12 @@ The configurations kept here are for the following machines:
    automation and other home network applications.
 
 Name prefix has a [[https://en.wikipedia.org/wiki/Pi_(film)][historical reason]]. There are a few other cloud machines other
-than these.
+than these. The repository itself has a few other items and assets that might
+not be connected with the process in this org file.
 
-* Basic packages
-
-My current OS is Manjaro across all Linux systems.
+* Basic packages & shell setup
+My current OS is Manjaro across almost all Linux systems so this stage is common
+across my two main machines.
 
 #+BEGIN_SRC bash
 uname -a
@@ -48,7 +49,7 @@ yay -S $(grep -vE "^\s*#" ./packages/manjaro.euclid-red | tr "\n" " ")
 Now that ~fish~ is installed, we will set it as the default shell.
 
 #+BEGIN_SRC bash
-chsh -s $(which fish)
+  chsh -s $(which fish)
 #+END_SRC
 
 Install fish packages
@@ -62,16 +63,14 @@ Install fish packages
   end
 #+end_src
 
-* Stow basics
-
 #+BEGIN_SRC shell
 stow -t ~/ fish
 stow -t ~/ git
 stow -t ~/ scripts
 #+END_SRC
 
-* Window manager and related tools
-All of these are for the main machine running Stumpwm.
+* Window Management
+All of these are for the main machine running StumpWM.
 
 #+BEGIN_SRC shell
 stow -t ~/ stumpwm
@@ -135,62 +134,11 @@ I might also need to disable the default display manager. See [[https://askubunt
 
 There might be a font loading issue which is fixed by ~(xft:cache-fonts)~.
 
-** Grub
-Currently using the [[https://github.com/lfelipe1501/Atomic-GRUB2-Theme][Atomic]] theme.
+* Fonts
+Few fonts are already installed when I install the basic packages. Rest are
+listed here.
 
-#+BEGIN_SRC shell :dir /sudo::/tmp
-git clone https://github.com/lfelipe1501/Atomic-GRUB2-Theme.git
-cp -r Atomic-GRUB2-Theme/Atomic /usr/share/grub/themes
-#+END_SRC
-
-Change grub theme line in ~/etc/default/grub~
-
-#+BEGIN_SRC shell :dir /sudo::
-update-grub
-#+END_SRC
-
-** Desktop files and defaults
-
-Desktop file for ~www~.
-
-#+BEGIN_SRC ini :tangle ~/.local/share/applications/www.desktop
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-NoDisplay=true
-Exec=/home/lepisma/bin/www
-Name=www
-Comment=Browser dispatch
-#+END_SRC
-
-#+begin_src ini :tangle ~/.local/share/applications/compose-mail.desktop
-[Desktop Entry]
-Type=Application
-Name=Compose Mail
-Exec=/home/lepisma/bin/compose-mail %u
-StartupNotify=false
-MimeType=x-scheme-handler/mailto
-#+end_src
-
-Setup default programs:
-
-#+BEGIN_SRC shell
-  xdg-mime default feh.desktop image/jpeg
-  xdg-mime default feh.desktop image/png
-  xdg-mime default www.desktop x-scheme-handler/http
-  xdg-mime default www.desktop x-scheme-handler/https
-  xdg-mime default compose-mail.desktop x-scheme-handler/mailto
-  xdg-mime default org.kde.okular.desktop application/pdf
-
-  handlr set inode/directory thunar.desktop
-  handlr set .doc libreoffice-writer.desktop
-  handlr set .docx libreoffice-writer.desktop
-#+END_SRC
-
-** Fonts
-
-*** Custom iosevka
+** Custom Iosevka
 #+BEGIN_SRC shell :dir /sudo::
 git clone git@github.com:lepisma/iosevka-lepisma /tmp/iosevka-lepisma
 mkdir /usr/share/fonts/iosevka/
@@ -206,7 +154,7 @@ yes | cp iosevka/iosevka-lepisma-oblique.ttf iosevka/iosevka-lepisma-mediumobliq
 fc-cache -f
 #+END_SRC
 
-*** Et book
+** Et book
 #+BEGIN_SRC shell :dir /sudo::
 git clone git@github.com:edwardtufte/et-book /tmp/et-book
 mkdir /usr/share/fonts/et-book/
@@ -215,18 +163,15 @@ mv /tmp/et-book/et-book/*/*.ttf /usr/share/fonts/et-book/
 fc-cache -f
 #+END_SRC
 
-*** Other fonts to setup
-- All the icons
+** All the Icons
+#+BEGIN_SRC elisp
+(require 'all-the-icons)
+(all-the-icons-install-fonts)
+#+END_SRC
 
-  Better install this using the Emacs package:
-  #+BEGIN_SRC elisp
-  (require 'all-the-icons)
-  (all-the-icons-install-fonts)
-  #+END_SRC
+* Terminal
+I use Konsole as the terminal emulator across machines.
 
-- Few fonts are present in the package installation list.
-
-* Konsole theming
 #+BEGIN_SRC init :tangle ~/.local/share/konsole/lepisma.profile
 [Appearance]
 AntiAliasFonts=true
@@ -266,17 +211,12 @@ UrlHintsModifiers=67108864
 cp ./konsole/Nordic.colorscheme ~/.local/share/konsole/Nordic.colorscheme
 #+END_SRC
 
-** Linux Console
+* Languages
+Programming language setup as needed. I only keep primary languages here and
+rest as on-demand.
 
-#+BEGIN_SRC ini :tangle /sudo::/etc/vconsole.conf
-KEYMAP="us"
-FONT="ter-v18n"
-#+END_SRC
-
-* Language setup
 ** Python setup
-
-TODO: Set up pyenv
+First set up [[https://github.com/pyenv/pyenv][pyenv]].
 
 #+BEGIN_SRC shell
 pip install -r ./packages/pip
@@ -289,9 +229,12 @@ get_ipython().magic("%load_ext autoreload")
 get_ipython().magic("%autoreload 2")
 #+END_SRC
 
-* Setup email
+** Node
+I use node primarily for a few CLI tools listed [[./packages/node][here]].
 
-Stow offlineimap
+* Email
+** ~euclid-red~
+On this machine, I use a combination of offlineimap and mu4e.
 
 #+BEGIN_SRC shell
 stow -t ~/ offlineimap
@@ -301,6 +244,55 @@ Copy over the template ~authinfo.gpg~ and fill in values.
 
 #+BEGIN_SRC shell
 cp ./misc/.authinfo.gpg ~/
+#+END_SRC
+
+#+begin_src ini :tangle ~/.local/share/applications/compose-mail.desktop
+[Desktop Entry]
+Type=Application
+Name=Compose Mail
+Exec=/home/lepisma/bin/compose-mail %u
+StartupNotify=false
+MimeType=x-scheme-handler/mailto
+#+end_src
+
+** ~euclid-blue~
+I have been using geary here and that works well.
+
+* Default Programs
+As a common item, I have a script ~www~ that dispatches urls to the right browser.
+That's supposed to be set as the primary web handler.
+
+#+BEGIN_SRC ini :tangle ~/.local/share/applications/www.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=/home/lepisma/bin/www
+Name=www
+Comment=Browser dispatch
+#+END_SRC
+
+** ~euclid-red~
+#+BEGIN_SRC shell
+  xdg-mime default feh.desktop image/jpeg
+  xdg-mime default feh.desktop image/png
+  xdg-mime default www.desktop x-scheme-handler/http
+  xdg-mime default www.desktop x-scheme-handler/https
+  xdg-mime default compose-mail.desktop x-scheme-handler/mailto
+  xdg-mime default org.kde.okular.desktop application/pdf
+
+  handlr set inode/directory nautilus.desktop
+  handlr set .doc org.onlyoffice.desktopeditors.desktop
+  handlr set .docx org.onlyoffice.desktopeditors.desktop
+#+END_SRC
+
+** ~euclid-blue~
+I don't have much customization here and I let GNOME handle most of items.
+
+#+BEGIN_SRC shell
+  xdg-mime default www.desktop x-scheme-handler/http
+  xdg-mime default www.desktop x-scheme-handler/https
 #+END_SRC
 
 * Hardware
@@ -360,4 +352,8 @@ Install ~tlp~ (already done in package installation), and enable the service.
 
 *** Keyboard
 GNOME allows setting caps to ctrl in the UI.
+
+*** Touch Scrolling
+Firefox needs some configuration to enable intuitive scrolling in touchscreen
+laptops. [[https://superuser.com/questions/1151161/enable-touch-scrolling-in-firefox][Here]] is a guide.
 

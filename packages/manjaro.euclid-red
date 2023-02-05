@@ -25,10 +25,12 @@ light
 lxappearance
 maim
 mu
+nautilus
 network-manager-applet
 obs-studio
 offlineimap
 okular
+onlyoffice-desktopeditors
 pandoc-bin
 picom
 polybar-git
@@ -50,10 +52,8 @@ stow
 streamdeck-ui
 systemsettings
 telegram-desktop
-terminus-font
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
-thunar
 tree
 ttf-fira-code
 ttf-sourcecodepro-nerd
