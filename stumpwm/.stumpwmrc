@@ -296,8 +296,8 @@ run-or-raise with group search t."
 (define-key *root-map* (kbd "c") '*winner-map*)
 (define-key *winner-map* (kbd "Left") "winner-undo")
 (define-key *winner-map* (kbd "Right") "winner-redo")
-(define-key *winner-map* (kbd "Down") "layout-save")
-(define-key *winner-map* (kbd "Up") "layout-load")
+(define-key *winner-map* (kbd "Up") "layout-save")
+(define-key *winner-map* (kbd "Down") "layout-load")
 
 ;; Init
 (update-color-map (current-screen))
