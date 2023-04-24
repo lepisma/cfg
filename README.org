@@ -240,13 +240,15 @@ On this machine, I use a combination of offlineimap and mu4e.
 stow -t ~/ offlineimap
 #+END_SRC
 
-Copy over the template ~authinfo.gpg~ and fill in values.
+Create ~.authinfo.gpg~ file in ~~/~ with two items like the following for each
+account:
 
-#+BEGIN_SRC shell
-cp ./misc/.authinfo.gpg ~/
-#+END_SRC
+#+begin_example
+# -*- epa-file-encrypt-to: ("<gpg-key-email-id>") -*-
+machine imap.gmail.com name gmail-imap port 993 login <> password <> email <>
+machine smtp.gmail.com name gmail-smtp port 465 login <> password <> email <>
+#+end_example
 
-<<<<<<< HEAD
 #+begin_src ini :tangle ~/.local/share/applications/compose-mail.desktop
 [Desktop Entry]
 Type=Application
@@ -254,13 +256,7 @@ Name=Compose Mail
 Exec=/home/lepisma/bin/compose-mail %u
 StartupNotify=false
 MimeType=x-scheme-handler/mailto
-=======
-For each email account, I add two items like the following:
-
-#+begin_example
-machine imap.gmail.com name gmail-imap port 993 login <> password <> email <>
-machine smtp.gmail.com name gmail-smtp port 465 login <> password <> email <>
-#+end_example
+#+end_src
 
 * Setup hardware
 ** Bluetooth sinks
