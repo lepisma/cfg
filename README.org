@@ -246,6 +246,7 @@ Copy over the template ~authinfo.gpg~ and fill in values.
 cp ./misc/.authinfo.gpg ~/
 #+END_SRC
 
+<<<<<<< HEAD
 #+begin_src ini :tangle ~/.local/share/applications/compose-mail.desktop
 [Desktop Entry]
 Type=Application
@@ -253,6 +254,22 @@ Name=Compose Mail
 Exec=/home/lepisma/bin/compose-mail %u
 StartupNotify=false
 MimeType=x-scheme-handler/mailto
+=======
+For each email account, I add two items like the following:
+
+#+begin_example
+machine imap.gmail.com name gmail-imap port 993 login <> password <> email <>
+machine smtp.gmail.com name gmail-smtp port 465 login <> password <> email <>
+#+end_example
+
+* Setup hardware
+** Bluetooth sinks
+Dumping commands. Need to enable bluetooth service and stuff.
+
+#+begin_src shell
+  pacmd list-sinks | grep -e 'name:' -e 'index:'
+  pacmd set-default-sink <n>
+>>>>>>> ce96b50 (add example for authinfo entry)
 #+end_src
 
 ** ~euclid-blue~
