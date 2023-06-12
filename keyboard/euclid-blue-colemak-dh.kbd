@@ -1,0 +1,24 @@
+;; euclid-blue laptop mapping
+
+(defcfg
+  input  (device-file "/dev/input/event21")
+  output (uinput-sink "Laptop KMonad")
+  cmp-seq ralt
+  fallthrough true
+  allow-cmd true)
+
+(defsrc
+  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12            del
+  grv     1    2    3    4    5    6    7    8    9    0    -    =         bspc home
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \         pgup
+  caps    a    s    d    f    g    h    j    k    l    ;    '              ret  pgdn
+  lsft    z    x    c    v    b    n    m    ,    .    /                   rsft end
+  lctrl        lmet lalt           spc            ralt             left up down right)
+
+(deflayer default
+  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12            del
+  grv     1    2    3    4    5    6    7    8    9    0    -    =         bspc home
+  tab     q    w    f    p    b    j    l    u    y    ;    [    ]    \         pgup
+  caps    a    r    s    t    g    m    n    e    i    o    '              ret  pgdn
+  lsft    z    x    c    d    v    k    h    ,    .    /                   rsft end
+  lctrl        lmet lalt           spc            ralt             left up down right)
