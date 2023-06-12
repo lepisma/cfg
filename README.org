@@ -364,7 +364,8 @@ Install ~tlp~ (already done in package installation), and enable the service.
 #+end_src
 
 *** Keyboard
-GNOME allows setting caps to ctrl in the UI.
+GNOME allows setting caps to ctrl in the UI. In addition to that, use ~setxkbmap
+us -variant colemak_dh_ortho~ for switching to Colemak-DH.
 
 *** Touch Scrolling
 Firefox needs some configuration to enable intuitive scrolling in touchscreen
