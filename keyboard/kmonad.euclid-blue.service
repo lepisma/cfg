@@ -1,0 +1,10 @@
+[Unit]
+Description=KMonad config
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/kmonad /home/lepisma/cfg/keyboard/euclid-blue-colemak-dh.kbd
+
+[Install]
+WantedBy=default.target
