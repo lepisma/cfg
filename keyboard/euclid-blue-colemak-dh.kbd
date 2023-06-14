@@ -1,7 +1,7 @@
 ;; euclid-blue laptop mapping
 
 (defcfg
-  input  (device-file "/dev/input/event21")
+  input  (device-file "/dev/input/event22")
   output (uinput-sink "Laptop KMonad")
   cmp-seq ralt
   fallthrough true
