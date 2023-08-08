@@ -1,5 +1,5 @@
 [general]
-accounts = Gmail, Fastmail, Work
+accounts = Gmail, Fastmail
 maxsyncaccounts = 3
 pythonfile = ~/offlineimapext.py
 
@@ -37,21 +37,3 @@ remotehosteval = get_authinfo_value("fastmail-imap", "machine")
 remoteusereval = get_authinfo_value("fastmail-imap", "login")
 remotepasseval = get_authinfo_value("fastmail-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-
-[Account Work]
-autorefresh = 15
-localrepository = LocalWork
-remoterepository = RemoteWork
-
-[Repository LocalWork]
-type = Maildir
-localfolders = ~/Maildir/Work
-
-[Repository RemoteWork]
-type = Gmail
-maxconnections = 3
-remoteusereval = get_authinfo_value("work-imap", "login")
-remotepasseval = get_authinfo_value("work-imap", "password")
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail]/Important']
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-ssl_version = tls1_2
