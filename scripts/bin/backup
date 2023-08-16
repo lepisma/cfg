@@ -2,7 +2,7 @@
 
 begin
   set IGNORE_FILE ~/cfg/misc/borg-ignore.txt
-  set TO_BACKUP $PROJECTS_DIR $DATA_DIR/Vault $CLOUD_DIR/Calibre\ Shared $DATA_DIR/Documents
+  set TO_BACKUP $PROJECTS_DIR
   read -P "Enter repo passphrase: " -s -lx BORG_PASSPHRASE
 
   borg create -v -s -p --compression lzma,9 --exclude-from $IGNORE_FILE --read-special ::"{hostname}-{now:%Y-%m-%d}" $TO_BACKUP
