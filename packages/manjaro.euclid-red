@@ -37,6 +37,7 @@ pandoc-bin
 picom
 polybar-git
 pyenv
+python-homeassistant-cli
 qt5ct
 qt5-styleplugins
 rbenv

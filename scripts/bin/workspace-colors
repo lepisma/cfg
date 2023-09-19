@@ -1,0 +1,15 @@
+#!/usr/bin/env fish
+
+set wallpaper_path (grep "feh" ~/.fehbg | cut -d "'" -f 2)
+
+# https://github.com/AbdoulMa/copycolors
+set colors (copycolors $wallpaper_path --bcw -n 2 -r | perl -nE 'my @colors = /RGB\((.*?)\)/g; say "[$colors[$_]]" for (0..1)')
+
+function set_light_color -a light_id rgb
+    curl -X POST -H "Authorization: Bearer $HA_TOKEN"  \
+        -H "Content-Type: application/json" -d "{\"entity_id\": \"$light_id\", \"rgb_color\": $rgb, \"brightness\": 100}"  \
+        http://$HA_URL/api/services/light/turn_on
+end
+
+set_light_color light.workspace_lightstrip $colors[1]
+set_light_color light.go $colors[2]
