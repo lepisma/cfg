@@ -8,7 +8,7 @@ set colors (copycolors $wallpaper_path --bcw -n 2 -r | perl -nE 'my @colors = /R
 function set_light_color -a light_id rgb
     curl -X POST -H "Authorization: Bearer $HA_TOKEN"  \
         -H "Content-Type: application/json" -d "{\"entity_id\": \"$light_id\", \"rgb_color\": $rgb, \"brightness\": 100}"  \
-        http://$HA_URL/api/services/light/turn_on
+        http://$HA_HOST/api/services/light/turn_on
 end
 
 set_light_color light.workspace_lightstrip $colors[1]
