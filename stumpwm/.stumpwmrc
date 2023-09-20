@@ -312,6 +312,9 @@ run-or-raise with group search t."
 
 (clear-window-placement-rules)
 
+(define-frame-preference "FLT"
+    (nil nil t :class "Syncthing GTK"))
+
 ;; Programs
 (run-shell-command "polybar monitor --reload")
 (run-shell-command "nm-applet")
@@ -323,6 +326,7 @@ run-or-raise with group search t."
 (run-shell-command "dropbox")
 (run-shell-command "streamdeck")
 (run-shell-command "polychromatic-tray-applet")
+(run-shell-command "syncthing-gtk -m")
 (run-shell-command "aw-qt")
 
 ;; Load layout on the start
