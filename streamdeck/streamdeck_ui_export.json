@@ -8,7 +8,7 @@
                         "text": "",
                         "write": "",
                         "icon": "/home/lepisma/cfg/streamdeck/icons/messages.png",
-                        "command": "telegram-desktop"
+                        "command": "signal-desktop"
                     },
                     "1": {
                         "text": "",
