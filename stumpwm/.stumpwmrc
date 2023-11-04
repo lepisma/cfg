@@ -324,7 +324,7 @@ run-or-raise with group search t."
 (run-shell-command "blueman-applet")
 (run-shell-command "copyq")
 (run-shell-command "dropbox")
-(run-shell-command "streamdeck")
+(run-shell-command "streamdeck -n")
 (run-shell-command "polychromatic-tray-applet")
 (run-shell-command "syncthing-gtk -m")
 (run-shell-command "aw-qt")
