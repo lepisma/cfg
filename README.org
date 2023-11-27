@@ -286,6 +286,17 @@ Name=www
 Comment=Browser dispatch
 #+END_SRC
 
+Org protocol for capturing literature nodes
+#+begin_src ini :tangle ~/.local/share/applications/org-protocol.desktop
+[Desktop Entry]
+Name=Org-Protocol
+Exec=emacsclient %u
+Icon=emacs-icon
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/org-protocol
+#+end_src
+
 ** ~euclid-red~
 #+BEGIN_SRC shell
   xdg-mime default feh.desktop image/jpeg
@@ -294,6 +305,7 @@ Comment=Browser dispatch
   xdg-mime default www.desktop x-scheme-handler/https
   xdg-mime default compose-mail.desktop x-scheme-handler/mailto
   xdg-mime default org.kde.okular.desktop application/pdf
+  xdg-mime default org-protocol.desktop x-scheme-handler/org-protocol
 
   handlr set inode/directory nautilus.desktop
   handlr set .doc org.onlyoffice.desktopeditors.desktop
@@ -306,6 +318,7 @@ I don't have much customization here and I let GNOME handle most of items.
 #+BEGIN_SRC shell
   xdg-mime default www.desktop x-scheme-handler/http
   xdg-mime default www.desktop x-scheme-handler/https
+  xdg-mime default org-protocol.desktop x-scheme-handler/org-protocol
 #+END_SRC
 
 * Hardware
