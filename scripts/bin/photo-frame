@@ -12,7 +12,7 @@ set kindle_height 800
 set uuid (uuidgen)
 set output_file "photoframe-$uuid.pdf"
 
-convert $photo_path -modulate 170 -resize $kindle_width"x"$kindle_height^ -gravity center -crop $kindle_width"x"$kindle_height+0+0 +repage -background white $output_file
+convert $photo_path -modulate 140 -resize $kindle_width"x"$kindle_height^ -gravity center -crop $kindle_width"x"$kindle_height+0+0 +repage -background white $output_file
 echo "Generated file: $output_file"
 
 mv $output_file /run/media/lepisma/Kindle/documents
