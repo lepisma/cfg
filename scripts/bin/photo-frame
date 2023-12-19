@@ -5,6 +5,16 @@ if test (count $argv) -eq 0
     exit 1
 end
 
+set kindle_path /run/media/lepisma/Kindle
+
+if not test -d $kindle_path
+    echo "Kindle not mounted"
+    exit 1
+end
+
+# Delete all older files
+rm -rf $kindle_path"/documents/photoframe-*"
+
 set photo_path $argv[1]
 set kindle_width 600
 set kindle_height 800
@@ -13,7 +23,7 @@ set uuid (uuidgen)
 set output_file "photoframe-$uuid.pdf"
 
 convert $photo_path -modulate 140 -resize $kindle_width"x"$kindle_height^ -gravity center -crop $kindle_width"x"$kindle_height+0+0 +repage -background white $output_file
-echo "Generated file: $output_file"
+echo "Generated document"
 
-mv $output_file /run/media/lepisma/Kindle/documents
+mv $output_file $kindle_path"/documents"
 echo "Moved to Kindle"
