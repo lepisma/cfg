@@ -1,6 +1,6 @@
 set -x DATA_DIR /home/lepisma
 set -x CLOUD_DIR $DATA_DIR/Dropbox
-set -x PROJECTS_DIR $DATA_DIR/Projects
+set -x PROJECTS_DIR $CLOUD_DIR/projects
 
 set -x EMAIL abhinav@lepisma.xyz
 set -x NAME Abhinav Tushar
