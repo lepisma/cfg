@@ -1,5 +1,5 @@
 set -x DATA_DIR /home/lepisma
-set -x CLOUD_DIR $DATA_DIR/Dropbox
+set -x CLOUD_DIR $DATA_DIR/Nextcloud
 set -x PROJECTS_DIR $CLOUD_DIR/projects
 
 set -x EMAIL abhinav@lepisma.xyz
@@ -8,7 +8,6 @@ set -x NAME Abhinav Tushar
 set -x EDITOR mumacs
 set -x PAGER less
 set -x BROWSER www
-set -x BORG_REPO $CLOUD_DIR/backup
 
 set -a PATH ~/bin
 set -a PATH ~/.local/bin
