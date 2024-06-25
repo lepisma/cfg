@@ -320,10 +320,9 @@ run-or-raise with group search t."
 (run-shell-command "picom")
 (run-shell-command "blueman-applet")
 (run-shell-command "copyq")
-(run-shell-command "dropbox")
+(run-shell-command "nextcloud")
 (run-shell-command "streamdeck -n")
 (run-shell-command "polychromatic-tray-applet")
-(run-shell-command "aw-qt")
 
 ;; Load layout on the start
 (run-commands "layout-load")
