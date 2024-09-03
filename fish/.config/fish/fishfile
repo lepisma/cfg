@@ -7,6 +7,5 @@ fisherman/getopts
 fishpkg/fish-humanize-duration
 fisherman/humanize_duration
 lepisma/fish-progress
-fisherman/rbenv
 simnalamburt/fish-sensible
 joehillen/to-fish
