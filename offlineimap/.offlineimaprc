@@ -1,5 +1,5 @@
 [general]
-accounts = Gmail, Fastmail
+accounts = Gmail, Personal, Carnil
 maxsyncaccounts = 3
 pythonfile = ~/offlineimapext.py
 
@@ -21,19 +21,36 @@ folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail', '[Gmail
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ssl_version = tls1_2
 
-[Account Fastmail]
+[Account Personal]
 autorefresh = 15
-localrepository = LocalFastmail
-remoterepository = RemoteFastmail
+localrepository = LocalPersonal
+remoterepository = RemotePersonal
 
-[Repository LocalFastmail]
+[Repository LocalPersonal]
 type = Maildir
-localfolders = ~/Maildir/Fastmail
+localfolders = ~/Maildir/Personal
 
-[Repository RemoteFastmail]
+[Repository RemotePersonal]
 type = IMAP
 maxconnections = 3
 remotehosteval = get_authinfo_value("fastmail-imap", "machine")
 remoteusereval = get_authinfo_value("fastmail-imap", "login")
 remotepasseval = get_authinfo_value("fastmail-imap", "password")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account Carnil]
+autorefresh = 15
+localrepository = LocalCarnil
+remoterepository = RemoteCarnil
+
+[Repository LocalCarnil]
+type = Maildir
+localfolders = ~/Maildir/Carnil
+
+[Repository RemoteCarnil]
+type = IMAP
+maxconnections = 3
+remotehosteval = get_authinfo_value("startmail-imap", "machine")
+remoteusereval = get_authinfo_value("startmail-imap", "login")
+remotepasseval = get_authinfo_value("startmail-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
