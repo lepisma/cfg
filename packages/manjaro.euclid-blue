@@ -1,6 +1,5 @@
 adobe-source-code-pro-fonts
 aspell-en
-chromium
 direnv
 emacs
 fd
@@ -22,11 +21,11 @@ onlyoffice-desktopeditors
 pandoc-bin
 poppler
 rust
+signal-desktop-beta-bin
 snapd
 solaar
 stow
 tar
-telegram-desktop
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 tlp
 tree
