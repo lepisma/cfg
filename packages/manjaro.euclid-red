@@ -6,7 +6,6 @@ borg
 chromium
 copyq
 direnv
-dropbox
 dunst
 emacs
 fd
@@ -47,14 +46,14 @@ roswell
 ruby-build
 rust
 sbcl
+signal-desktop-beta-bin
 slop
 snapd
 solaar
 stow
 streamcontroller
-syncthing-gtk
+streamcontroller-plugin-tools-git
 systemsettings
-signal-desktop-beta-bin
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 the_silver_searcher
 tree

@@ -8,7 +8,6 @@ fish
 gimp
 handlr
 imagemagick
-inkscape
 jq
 keepassxc
 konsole
@@ -25,6 +24,8 @@ signal-desktop-beta-bin
 snapd
 solaar
 stow
+streamcontroller
+streamcontroller-plugin-tools-git
 tar
 texlive-{bibtexextra,bin,core,fontsextra,pictures,publishers,science,latexextra}
 tlp
