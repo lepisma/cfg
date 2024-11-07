@@ -320,7 +320,7 @@ run-or-raise with group search t."
 (run-shell-command "picom")
 (run-shell-command "blueman-applet")
 (run-shell-command "copyq")
-(run-shell-command "nextcloud")
+(run-shell-command "/home/lepisma/Desktop/Nextcloud-3.13.4-x86_64.AppImage")
 (run-shell-command "streamcontroller -b")
 (run-shell-command "polychromatic-tray-applet")
 (run-shell-command "keepassxc ~/Nextcloud/keepass-vault/Vault.kdbx")
