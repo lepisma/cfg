@@ -62,15 +62,16 @@
 (set-transient-gravity :center)
 
 (let ((use-dark nil)
-      (light-accent "#7EA1CC"))
+      (light-active "#9EC1FC")
+      (light-inactive "#CCCFD4"))
   (set-fg-color "#eeeeee")
   (set-bg-color "#1C2028")
-  (set-border-color (if use-dark "#232731" "#ECEFF4"))
-  (set-focus-color (if use-dark "#3B4252" light-accent))
-  (set-unfocus-color (if use-dark "#232731" "#ECEFF4"))
+  (set-border-color (if use-dark "#232731" light-inactive))
+  (set-focus-color (if use-dark "#3B4252" light-active))
+  (set-unfocus-color (if use-dark "#232731" light-inactive))
   (set-win-bg-color (if use-dark "#22272F" "#eeeeee"))
-  (set-float-focus-color (if use-dark "#3B4252" "#ECEFF4"))
-  (set-float-unfocus-color (if use-dark "#232731" "#ECEFF4")))
+  (set-float-focus-color (if use-dark "#3B4252" light-active))
+  (set-float-unfocus-color (if use-dark "#232731" light-inactive)))
 
 (setf *colors* (list "#1C2028"      ; 0 black
                      "#BF616A"      ; 1 red
