@@ -33,11 +33,7 @@
 (load-module "globalwindows")
 (load-module "amixer")
 (load-module "swm-gaps")
-;; (load-module "kbd-layouts")
 ;; (load-module "command-history")
-
-;; (setf kbd-layouts:*caps-lock-behavior* :ctrl)
-;; (kbd-layouts:keyboard-layout-list "us" "in -variant hin-wx")
 
 (setf swm-gaps:*inner-gaps-size* 10
       swm-gaps:*outer-gaps-size* 10
