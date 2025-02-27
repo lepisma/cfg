@@ -323,6 +323,8 @@ run-or-raise with group search t."
 (run-shell-command "streamcontroller -b")
 (run-shell-command "polychromatic-tray-applet")
 (run-shell-command "keepassxc ~/Nextcloud/keepass-vault/Vault.kdbx")
+(run-shell-command "kdeconnectd")
+(run-shell-command "kdeconnect-indicator")
 
 ;; Load layout on the start
 (run-commands "layout-load")
