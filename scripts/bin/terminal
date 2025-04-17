@@ -3,7 +3,9 @@
 set expression "
 (with-current-buffer
   (window-buffer (selected-window))
-  (or (projectile-project-root) default-directory))
+  (or (when (project-current)
+        (project-root (project-current)))
+       default-directory))
 "
 
 set dir (string trim -c \" (emacsclient --eval $expression 2> /dev/null))
