@@ -3,11 +3,11 @@
 (in-package :stumpwm)
 
 ;; Start swank
-;; (require :swank)
-;; (swank-loader:init)
-;; (swank:create-server :port 4444
-;;                      :style swank:*communication-style*
-;;                      :dont-close t)
+(require :swank)
+(swank-loader:init)
+(swank:create-server :port 4444
+                     :style swank:*communication-style*
+                     :dont-close t)
 
 ;; Basics
 (set-prefix-key (kbd "C-e"))
@@ -61,17 +61,34 @@
 (set-maxsize-gravity :center)
 (set-transient-gravity :center)
 
-(let ((use-dark nil)
-      (light-active "#9EC1FC")
-      (light-inactive "#CCCFD4"))
-  (set-fg-color "#eeeeee")
-  (set-bg-color "#1C2028")
-  (set-border-color (if use-dark "#232731" light-inactive))
-  (set-focus-color (if use-dark "#3B4252" light-active))
-  (set-unfocus-color (if use-dark "#232731" light-inactive))
-  (set-win-bg-color (if use-dark "#22272F" "#eeeeee"))
-  (set-float-focus-color (if use-dark "#3B4252" light-active))
-  (set-float-unfocus-color (if use-dark "#232731" light-inactive)))
+(defun set-theme (dark?)
+  "Set theme and colors based on whether the dark? flag is true."
+
+  ;; Firstly we set the stumpwm colors
+  (let ((light-active "#9EC1FC")
+        (light-inactive "#CCCFD4"))
+    (set-fg-color "#eeeeee")
+    (set-bg-color "#1C2028")
+    (set-border-color (if dark? "#232731" light-inactive))
+    (set-focus-color (if dark? "#3B4252" light-active))
+    (set-unfocus-color (if dark? "#232731" light-inactive))
+    (set-win-bg-color (if dark? "#22272F" "#eeeeee"))
+    (set-float-focus-color (if dark? "#3B4252" light-active))
+    (set-float-unfocus-color (if dark? "#232731" light-inactive)))
+
+  ;; TODO Then we trigger Emacs
+
+  ;; TODO Then we force konsole settings
+
+  ;; TODO Force GTK applications
+
+  ;; TODO Force QT applications
+
+  ;; TODO Set wallpaper accordingly
+  )
+
+;; We start with dark theme
+(set-theme t)
 
 (setf *colors* (list "#1C2028"      ; 0 black
                      "#BF616A"      ; 1 red
@@ -119,23 +136,14 @@ run-or-raise with group search t."
 (defcommand run-or-raise-firefox () ()
   (run-or-raise-prefer-group "firefox" "firefox"))
 
-(defcommand run-or-raise-im () ()
-  (run-or-raise-prefer-group "slack" "Slack"))
-
 (defcommand run-or-raise-alt-browser () ()
   (run-or-raise-prefer-group "chromium" "Chromium"))
 
 (defcommand run-or-raise-konsole () ()
   (run-or-raise-prefer-group "terminal" "konsole"))
 
-(defcommand zotero () ()
-  (run-or-raise-prefer-group "zotero" "Zotero"))
-
 (defcommand emacs () ()
   (run-or-raise-prefer-group "emacs" "Emacs"))
-
-(defcommand battery () ()
-  (message (run-shell-command "bat" t)))
 
 (defcommand refresh-stuff () ()
   (run-shell-command "sh ~/.fehbg")
@@ -239,8 +247,6 @@ run-or-raise with group search t."
 (define-key *top-map* (kbd "s-S-SPC") "switch-keyboard-layout")
 (define-key *top-map* (kbd "s-s") "scr")
 
-(define-key *top-map* (kbd "XF86Mail") "exec emacsclient -c --eval '(progn (mu4e) (mu4e-update-mail-and-index nil))'")
-
 (define-key *top-map* (kbd "XF86Launch5") "gselect 1")
 (define-key *top-map* (kbd "XF86Launch6") "gselect 2")
 (define-key *top-map* (kbd "XF86Launch7") "gselect 3")
@@ -276,14 +282,11 @@ run-or-raise with group search t."
 
 (define-key *root-map* (kbd "C-f") "run-or-raise-firefox")
 (define-key *root-map* (kbd "C-c") "run-or-raise-konsole")
-(define-key *root-map* (kbd "C-r") "run-or-raise-im")
 (define-key *root-map* (kbd "C-v") "run-or-raise-alt-browser")
-(define-key *root-map* (kbd "C-z") "zotero")
 (define-key *root-map* (kbd "!") "run-shell-command")
 (define-key *root-map* (kbd "b") "run-launcher")
 (define-key *root-map* (kbd "q") "refresh-stuff")
 (define-key *root-map* (kbd "TAB") "pull-hidden-other")
-(define-key *root-map* (kbd "p") "battery")
 
 (define-key *groups-map* (kbd "Right") "gnext")
 (define-key *groups-map* (kbd "Left") "gprev")
