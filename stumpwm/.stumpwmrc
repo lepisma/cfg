@@ -3,11 +3,11 @@
 (in-package :stumpwm)
 
 ;; Start swank
-(require :swank)
-(swank-loader:init)
-(swank:create-server :port 4444
-                     :style swank:*communication-style*
-                     :dont-close t)
+;; (require :swank)
+;; (swank-loader:init)
+;; (swank:create-server :port 4444
+;;                      :style swank:*communication-style*
+;;                      :dont-close t)
 
 ;; Basics
 (set-prefix-key (kbd "C-e"))
@@ -79,6 +79,10 @@
   ;; TODO Then we trigger Emacs
 
   ;; TODO Then we force konsole settings
+
+  ;; There is the initial CSS for Qt to be handled Then profile for konsole
+  ;; along with the theme that goes inside (maybe color scheme for fish goes
+  ;; even lower).
 
   ;; TODO Force GTK applications
 
