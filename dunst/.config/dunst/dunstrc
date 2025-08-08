@@ -160,15 +160,6 @@
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
 
-# Experimental features that may or may not work correctly. Do not expect them
-# to have a consistent behaviour across releases.
-[experimental]
-    # Calculate the dpi to use on a per-monitor basis.
-    # Please note that this setting will not work if Xft.dpi X resource is set.
-    per_monitor_dpi = false
-
-[shortcuts]
-
     # Shortcuts are specified as [modifier+][modifier+]...key
     # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
     # "mod3" and "mod4" (windows-key).
@@ -188,6 +179,13 @@
 
     # Context menu.
     context = ctrl+shift+period
+
+# Experimental features that may or may not work correctly. Do not expect them
+# to have a consistent behaviour across releases.
+[experimental]
+    # Calculate the dpi to use on a per-monitor basis.
+    # Please note that this setting will not work if Xft.dpi X resource is set.
+    per_monitor_dpi = false
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
