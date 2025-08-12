@@ -1,5 +1,5 @@
 [general]
-accounts = Gmail, Personal, Carnil
+accounts = Gmail, Personal
 maxsyncaccounts = 5
 pythonfile = ~/offlineimapext.py
 
@@ -36,21 +36,4 @@ maxconnections = 10
 remotehosteval = get_authinfo_value("fastmail-imap", "machine")
 remoteusereval = get_authinfo_value("fastmail-imap", "login")
 remotepasseval = get_authinfo_value("fastmail-imap", "password")
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-
-[Account Carnil]
-autorefresh = 15
-localrepository = LocalCarnil
-remoterepository = RemoteCarnil
-
-[Repository LocalCarnil]
-type = Maildir
-localfolders = ~/Maildir/Carnil
-
-[Repository RemoteCarnil]
-type = IMAP
-maxconnections = 10
-remotehosteval = get_authinfo_value("startmail-imap", "machine")
-remoteusereval = get_authinfo_value("startmail-imap", "login")
-remotepasseval = get_authinfo_value("startmail-imap", "password")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
