@@ -3,6 +3,11 @@
 
 #+PROPERTY: header-args :exports both :results output
 
+#+begin_quote
+Development for this project has moved to sourcehut [[https://git.sr.ht/~lepisma/cfg][here]]. This repository is now in a read-only state.
+#+end_quote
+
+
 Configuration scripts and notes in literate style configuration using Org-Babel.
 The configurations kept here are for the following machines:
 
